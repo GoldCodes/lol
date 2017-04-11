@@ -1,0 +1,565 @@
+<head><title>Tea Party</title>
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d873cd0826c6c4aac80f6fe75822a8ce",petok:"d4dd2ceb3fec77dca8cfd05fd17d4a40a8ea45c6-1491840481-1800",adblock:1,betok:"7293344a2f630c028457377b8911286af7c0a616-1491840481-120",zone:"dashnet.org",rocket:"0",apps:{"ga_key":{"ua":"UA-29324474-2","ga_bs":"2"},"abetterbrowser":{"ie":"8"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies for ads and traffic analysis.","dismiss":"Got it!","learnMore":"Learn more","link":"http://orteil.dashnet.org/cookieconsentpolicy.html","target":"_blank","theme":"http://orteil.dashnet.org/cookieconsent.css","domain":"dashnet.org"};
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-29324474-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+<body>
+
+<script>
+
+var History=new Array();
+var Back=false;
+
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+function GoBack()
+{
+Back=true;
+if (History.length>1) Show(History[History.length-2]);
+}
+
+var Nodes=new Array();
+
+function Node(name,text,links,background)
+{
+this.name=name;
+this.text=text;
+this.links=links.split("|");
+this.background=background ? background : "";
+
+for (var i in this.links)
+{
+this.links[i]=this.links[i].split("/");
+}
+
+Nodes[this.name]=this;
+}
+
+Node.prototype.show=function()
+{
+var txt="";
+if (this.background!="") document.getElementById('bg').style.backgroundImage="url("+this.background+")";
+else document.getElementById('bg').style.backgroundImage="none";
+
+if (Back==false) History.push(this.name); else History.pop();
+Back=false;
+txt+=this.text;
+txt+='<div class="choices">';
+for (var i in this.links)
+{
+if (Nodes[this.links[i][1]]) txt+='<a class="choice" href="javascript:Show(\''+this.links[i][1]+'\')">'+this.links[i][0]+'</a>';
+else txt+='<a class="choice" style="opacity:0.5;" href="javascript:Show(\''+this.links[i][1]+'\')">'+this.links[i][0]+'</a>';
+}
+if (History.length>1) txt+='<br><br><a class="back" href="javascript:GoBack();">< back</a>';
+txt+='</div>';
+
+document.getElementById("text").innerHTML=txt;
+document.getElementById("currentNode").innerHTML=this.name;
+};
+
+function Show(what)
+{
+Nodes[what].show();
+}
+
+
+new Node(
+"hello",
+"Sir General Andrew McAmay once invited<br>the Hamilton sisters for tea",
+"and so tea they had/tea|but it was a rainy afternoon/rain"
+);
+
+new Node(
+"tea",
+"The tea was delightful and the crumpets scrumptious,<br>and all would have went well if not for",
+"the arrival of an unpleasant guest/guest|an unfortunate turn of event/turn"
+);
+
+new Node(
+"rain",
+"As the tea was being served, a storm<br>started drizzling inside the porcelain cups",
+"and on it went/storm"
+);
+
+new Node(
+"storm",
+"Cups and bowls filled with water from above,<br>the tea more than cut<br>strange lights in the distant clouds",
+"I say, indoors/indoors|I say, the garden/garden"
+);
+
+new Node(
+"guest",
+"In comes skeetering Sir Weevil, a top-hat sitting 'tween his antennas<br>Claims the sugarbowl and starts feasting on it.",
+"this did not, however, sit well with the General/upset"
+);
+
+new Node(
+"upset",
+"The General, although known for his calm and patience<br>surprises his audience and challenges Sir Weevil<br>to a match of fisticuffs.",
+"a tremendous fight if there ever was/fight"
+);
+
+new Node(
+"turn",
+"It appeared that at this very moment<br>a rogue oddity in the space-time continuum<br>happened to cross the General's tea party",
+"and quite disturbed it/disturbance"
+);
+
+new Node(
+"disturbance",
+"Off with Ms. Sarah Hamilton's straw hat and ribbon<br>now a bright purple cackling turkey.<br>off with Ms. Olivia's head also<br>which a steam engine becomes.",
+"heavens no/heavens no"
+);
+
+new Node(
+"heavens no",
+"Through no accordance of his own<br>Sir General McAmay's precious lacy petticoat morphs into<br>a mighty dirigible",
+"hop on !/hop on"
+);
+
+new Node(
+"indoors",
+"The party takes shelter inside<br>the General's country house<br>A sturdy though tasteful castle",
+"with quite a history/history"
+);
+
+new Node(
+"garden",
+"The wet party wanders off<br>to the General's garden<br>a topiary fortress<br>with many a thicket",
+"investigate the distant lights/lights|enter the hedge maze/maze"
+);
+
+new Node(
+"lights",
+"The thunder gets louder and the rain is pouring<br>lightning strikes a nearby deer",
+"granting it god-like powers/god deer"
+);
+
+new Node(
+"god deer",
+"Out of a copse comes the sizzling god-deer<br>with his eyes ablaze<br>and his neon antlers",
+"worship the deer god/worship|revolt against the deer god/revolt"
+);
+
+new Node(
+"maze",
+"The General and the Hamilton sisters, although very wet<br>and quite upset at the ruined tea party<br>decide to enter the sprawling hedge maze",
+"and they shall go right/right maze|or left/left maze"
+);
+
+new Node(
+"right maze",
+"The right path is an upwards slope<br>bordered with a tall topiary mess<br>it starts slowly at first but<br>steeps up to an awkward cliff",
+"this is no obstacle for a determined mind/climb"
+);
+
+new Node(
+"left maze",
+"The left path leads down<br>to a spiraling underground labyrinth<br>A warm tunnel that twists<br>in every possible direction",
+"onwards !/tunnel"
+);
+
+new Node(
+"climb",
+"The party starts resolutely climbing the vertical dirt path<br>which keeps curving up till it becomes ceiling",
+"also there is a mean cloud/cloud"
+);
+
+new Node(
+"cloud",
+"As the General and the Hamilton sisters<br>grasp the dirt path above their heads<br>a rude little white cloud<br>starts nagging each of them",
+"but he is but a vapor/vapor|give up and let go/fall"
+);
+
+new Node(
+"vapor",
+"It appears this was not a cloud<br>but a gigantic prehistoric animal",
+"it appears you were too hasty in your judgement/prehistoric animal"
+);
+
+new Node(
+"fall",
+"The three modern adventurers<br>let go of the dirt path above<br>and tumble down the grassy slope below",
+"weee !/weee"
+);
+
+new Node(
+"weee",
+"The party finds itself back<br>at the entrance of the maze.<br>They shall take :",
+"the right path/right maze|the left path/left maze|the other path/other path"
+);
+
+new Node(
+"prehistoric animal",
+"The large living fossil<br>strokes his furry jowls<br>and emits a resounding chirp",
+"an awesome sight to behold indeed/stare prehistoric|fight the creature !/fight prehistoric"
+);
+
+new Node(
+"fight",
+"Sir Weevil extends his chitinous limbs<br>while the General jabs the air menacingly<br>The two start an exquisite dance<br>and then wham each other senseless",
+"pow ! bam ! arp./arp"
+);
+
+new Node(
+"arp",
+"The General, his arse thoroughly kicked<br>recedes to his country house<br>while the somewhat ill-mannered Sir Weevil<br>finishes up the bowl of sugar",
+"without even a spoon/spoon"
+);
+
+new Node(
+"spoon",
+"With a sugary belch and a buzzing growl<br>Sir Weevil declares the party done<br>and dismisses his guests",
+"and so they went home/hamilton home"
+);
+
+new Node(
+"other path",
+"This is the Other Path.<br>Smalbles start qualving at the party's approach.<br>The walls are covered with noisy bweeflets.<br><br>The Plark lurks.",
+"snayward/snayward|froyward/froyward"
+);
+
+new Node(
+"snayward",
+"The party moves snaywards.<br>This section of the Other Path is full of naughty vwurlings.<br><br>The Plark lurks.",
+"higgleward/higgleward|murpleway/murpleway"
+);
+
+new Node(
+"froyward",
+"The party moves froywards.<br>This part of the Other Path echoes with the yelps of young fleists.<br><br>The Plark lurks.",
+"hoggleward/hoggleward|murpleway/murpleway"
+);
+
+new Node(
+"murpleway",
+"The party moves murpleways.<br>This place reeks of torpuscles !<br><br>The Plark lurks.",
+"preegeway/preegeway"
+);
+
+new Node(
+"preegeway",
+"The party moves preegeways.<br>A giant relp swurls its glarch in the distance.<br><br>The Plark lurks.",
+"higgleward/higgleward|hoggleward/hoggleward"
+);
+
+new Node(
+"higgleward",
+"The party moves higglewards.<br>Hundreds of gluttering zeemancers inhabit the place.<br><br>The Plark lurks.",
+"glyway/glyway|sloneward/sloneward"
+);
+
+new Node(
+"hoggleward",
+"The party moves hogglewards.<br>A mighty ontildate grows here.<br>The ground is covered in its discarded brottles.<br><br>The Plark lurks.",
+"sloneward/sloneward|plyway/plyway"
+);
+
+new Node(
+"sloneward",
+"The party moves slonewards.<br>A family of wild boars has settled here.<br><br>The Plark lurks.",
+"aurway/aurway"
+);
+
+new Node(
+"glyway",
+"The party moves glyways.<br>A bush of ksurses lets off an oglacious fragrance.<br><br>The Plark lurks.",
+"snayward/snayward"
+);
+
+new Node(
+"plyway",
+"The party moves plyways.<br>A myriad of tiny diutes floats silently in the air.<br><br>The Plark lurks.",
+"froyward/froyward"
+);
+
+new Node(
+"aurway",
+"The party moves aurways.<br>You finally see the end of the Other Path !",
+"to the exit/exit other path"
+);
+
+new Node(
+"exit other path",
+"The General and the two Hamilton sisters<br>stay stunned by the light for a moment.<br>After having blinked it off, they",
+"return to the tea party/return to tea|return to the garden/return to garden"
+);
+
+new Node(
+"return to tea",
+"As they walk back to the tea party,<br>the Plark ursects from the darkness of the Other Path<br>and shneards them to hoyces.",
+"to the Realm/realm"
+);
+
+new Node(
+"return to garden",
+"As they walk back to the garden,<br>the Plark ursects from the darkness of the Other Path<br>and shneards them to hoyces.",
+"to the Realm/realm"
+);
+
+new Node(
+"realm",
+"Green flames<br>red sky<br>the earth continuously shaken by a deep growling<br>this is the Realm",
+"eat some dirt/eat dirt|wave arms/wave arms"
+);
+
+new Node(
+"eat dirt",
+"A thousand billion souls<br>reaches down for some beige dirt<br>and quaffs it down avidly",
+"wave arms/wave arms"
+);
+
+new Node(
+"wave arms",
+"A thousand billion souls<br>flails the air with sickly arms<br>and summons up a hurricane",
+"eat some dirt/eat dirt|ride the hurricane/ride hurricane"
+);
+
+new Node(
+"ride hurricane",
+"A thousand billion souls<br>is whisked away by the hurricane",
+"and sent flying to exotic lands/exotic lands"
+);
+
+new Node(
+"history",
+"The castle's story goes back to<br>minus five billion years<br>Back then, real estate was cheap",
+"and plentiful/big bang"
+);
+
+new Node(
+"big bang",
+"Very many countless hot gaseous stars<br>swirling around each other<br>in a humongous astral orgy",
+"until/stars"
+);
+
+new Node(
+"hop on",
+"The quite changed Hamilton sisters<br>without hesitation climb into<br>the General's new-found dirigible<br>who not so willingly starts floating along with it",
+"up/dirigible up"
+);
+
+new Node(
+"dirigible up",
+"The fancy lacy balloon<br>rises with its metamorphosed passengers and owner<br>into the evening atmosphere<br>everything is quiet except<br>for a flock of wild gerbils",
+"go north/dirigible control|go south/dirigible control|go west/dirigible control|go east/dirigible east"
+);
+
+new Node(
+"dirigible control",
+"Don't be silly.<br>You can't control a dirigible petticoat.<br>Instead, the balloon floats east",
+"accept the inevitability of the situation/dirigible east"
+);
+
+new Node(
+"dirigible east",
+"The wind takes the little troupe east<br>towards the purple horizon.<br>The General, to pass the time<br>tells a few of his least interesting anectodes",
+"they are not so bad, really/dirigible horizon"
+);
+
+new Node(
+"hamilton home",
+"The Hamilton house is an orderly haven of<br>neat little shelves<br>and fragile tableware",
+"and pork products, too/pork products"
+);
+
+new Node(
+"tunnel",
+"The party crosses<br>many a peculiar beast<br>things with claws for eyes,<br>and eyes for lungs,<br>and lungs for cufflinks",
+"what a curious tunnel indeed/tunnel people"
+);
+
+new Node(
+"tunnel people",
+"The tunnel continues with much less interesting things<br>such as ladies with weird necks<br>and annoying people asking ridiculous questions",
+"(like \"what is your favorite lemur ?\")/favorite lemur"
+);
+
+new Node(
+"favorite lemur",
+"It turns out everyone's favorite lemur<br>is the manatee.<br>Strong with newer understanding of each other,<br>the party paces deeper into",
+"the very entrails of the maze/deep tunnel"
+);
+
+new Node(
+"deep tunnel",
+"An embarassing event then unfolds :<br>the fleshy walls begin to pulse and swell<br>as they close on the General, and the Hamilton sisters<br>reducing them to a pinkish paste<br>which is then expelled to",
+"another dimension/realm"
+);
+
+new Node(
+"worship",
+"The General and the two Hamilton sisters<br>kneel down in the grass and start to pray the new deer god<br>who silently judges each of them<br>with laser eyes",
+"begin a reign of 3000 years/reign"
+);
+
+new Node(
+"revolt",
+"The General and the two Hamilton sisters<br>cannot handle this new divinity<br>They seize the deer god by the antlers<br>but only manage to anger it",
+"feel the wrath/wrath"
+);
+
+new Node(
+"wrath",
+"The proud deer god stares at the impudent mortals<br>with bright laser eyes<br>A second later the deer god is staring<br>at three little piles of ashes",
+"which scatter in the wind/ashes"
+);
+
+new Node(
+"ashes",
+"The ashes of the late sir General Andrew McAmay<br>and the two Hamilton sisters<br>rise up in the evening air",
+"and are ingested by birds/birds"
+);
+
+new Node(
+"birds",
+"Quack bwok cluck bwuck bwuck chirp<br>cluck bwak quock bwek blek<br>quack quack gwak gwek",
+"gwak/gwak"
+);
+
+new Node(
+"gwak",
+"Suddenly, one of the 34 geese that constitute this flock<br>spontaneously develops sentience and<br>starts reflecting on calculus, geometry<br>and the many logistic problems encountered by the industry<br>of dairy products",
+"which could explain why it didn't spot that hunter in time/hunter"
+);
+
+new Node(
+"hunter",
+"The once-brilliant goose woke up<br>in the stomach of sir Emil Dewhurst, hunter<br>his wife Elena<br>and their three children, Frank<br>Harold<br>and<br><br>Tim.",
+"the goose found solace in knowing that it had been quite a delicious meal/realm"
+);
+
+new Node(
+"exotic lands",
+"This is the Island<br>it is not very large<br>it is not very interesting",
+"investigate the beach/beach|in its middle is a small grove of trees/grove"
+);
+
+
+
+function Input(what)
+{
+if (Nodes[what]) Nodes[what].show();
+}
+
+
+var Links=new Array();
+var NodesN=0;
+for (var i in Nodes)
+{
+for (var i2 in Nodes[i].links)
+{Links.push(Nodes[i].links[i2][1]);}
+NodesN++;
+}
+
+var txt="";
+for (var i in Links)
+{
+if (!Nodes[Links[i]]) txt+=Links[i]+' / ';
+}
+
+function Hint(what)
+{
+var Hints=[];
+for (var i in Nodes)
+{
+if (Nodes[i].name.toLowerCase().contains(what.value.toLowerCase())) Hints.push(Nodes[i]);
+}
+
+var txt="";
+for (i in Hints)
+{
+//txt+='<div onmouseup="Input(\''+Hints[i].name+'\')">'+Hints[i].name+'</div>';
+txt+='<a style="text-decoration:none;" href="javascript:Input(\''+Hints[i].name+'\')">'+Hints[i].name+'</a><br>';
+}
+document.getElementById("hints").innerHTML=txt;
+}
+
+document.write('<div style="font-size:8pt;opacity:0.5;">'+(NodesN)+' nodes available. Nodes missing : '+txt+'. This is a work in progress.</div>');
+
+</script>
+
+<table class="main"><tr><td id="bg">
+<table class="main"><tr><td style="background-color:rgba(0,0,0,0.5);vertical-align:middle;text-align:center;">
+<div class="bordercolor" id="bordercolor">
+<div id="text" class="text">
+</div>
+</div>
+<div style="position:absolute;bottom:0px;left:0px;opacity:0.5;padding:4px;font-size:8pt;text-align:left;">(c) <a href="../">Orteil</a> 2011<br>proudly hosted by <a href="http://dashnet.org">dashnet.org</a></div>
+
+<div style="position:absolute;bottom:0px;right:0px;opacity:0.5;padding:4px;font-size:8pt;width:500px;text-align:right;visibility:hidden;">
+<div id="hints" style="width:200px;text-align:center;position:relative;left:300px;"></div>
+<span id="currentNode" style="margin-right:16px;"></span>
+<input type="textfield" id="input" class="input" size="36" onkeydown="if (event.keyCode==13 && this.value.length>0) {Input(this.value);this.value='';}" onkeyup="if (event.keyCode!=13) Hint(this);" />
+</div>
+</td></tr></table>
+</td></tr></table>
+
+<script>
+Nodes["hello"].show();
+Hint(document.getElementById("input"));
+
+
+function hsvToRgb(h, s, v){
+	//so wait, I can actually just use hsv(h,s,v) in CSS ? I kinda wish I knew that sooner.
+    var r, g, b;
+
+    var i = Math.floor(h * 6);
+    var f = h * 6 - i;
+    var p = v * (1 - s);
+    var q = v * (1 - f * s);
+    var t = v * (1 - (1 - f) * s);
+
+    switch(i % 6){
+        case 0: r = v, g = t, b = p; break;
+        case 1: r = q, g = v, b = p; break;
+        case 2: r = p, g = v, b = t; break;
+        case 3: r = p, g = q, b = v; break;
+        case 4: r = t, g = p, b = v; break;
+        case 5: r = v, g = p, b = q; break;
+    }
+
+    return [r * 255, g * 255, b * 255];
+}
+
+
+var t=0;
+function Rainbow()
+{
+var Col=hsvToRgb((t%100)/100,1,1);
+document.getElementById("bordercolor").style.backgroundColor="rgb("+Math.floor(Col[0])+","+Math.floor(Col[1])+","+Math.floor(Col[2])+")";
+//document.getElementById("text").innerHTML="rgb("+Math.floor(Col[0])+","+Math.floor(Col[1])+","+Math.floor(Col[2])+")";
+t++;
+setTimeout("Rainbow();",1000/10);
+}
+
+Rainbow();
+
+</script>
+
+</body>

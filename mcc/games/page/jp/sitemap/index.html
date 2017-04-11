@@ -1,0 +1,4495 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Sitemap - Miniclip, Play Games</title>
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/en/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/pages/sitemap.css?823" rel="stylesheet" type="text/css" rel="stylesheet/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Sitemap - Miniclip, Play Games"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<meta property="og:image" content="https://www.miniclip.com/images/bg_h1.png" />
+		<meta property="og:description" content="Miniclip is the world's largest independent online games site with over 600 games. The site is updated at least twice a week...so you can get your gaming fix whenever you want it." />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/page\/sitemap\/","dimension9":"United States","dimension8":"en","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "P";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/page/jp/sitemap/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Hide","show":"Show","full_categories_list":"Full Categories List","all_games_and_categories":"All Games and Categories","show_more_results":"Show More Results &rsaquo;","no_comments":"No comments","report":"Report","comment_like_failed":"Sorry, the comment like failed. Please try again later.","comment_reporting_failed":"Sorry, the comment reporting failed.","the_word_is_not_allowed":"The word %s is not in our list of allowed words.","remove_red_messages":"Please edit your message to remove the words highlighted in red, these are not allowed.","enter_the_link":"Enter the link url","search_free_games":"You love free games? We <strong>LOVE<\/strong> free games! All Miniclip games have a free version you can play right here on the website.","password_reset_error_email":"<strong>Oops!<\/strong> You haven't entered an email address!","password_reset_error_username":"<strong>Sorry<\/strong> - That doesn't appear to be a valid email address.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Switch to Focus mode to concentrate on the game. This will restart your current game. Do you want to continue?","add_to_favorites":"Add to your favorite games","remove_from_favorites":"Remove from your favorite games","comment_autocomplete_placeholder":"Start typing to get suggestions","new":"New","next":"next","prev":"previous","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Error!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-page locale-us lang-en browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="en" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/en/" rel="nofollow">Play Games at Miniclip.com</a>
+			</h1>
+	<form class="search-form item" action="/games/search/en/" target="_top">
+		<label>
+			<span class="screen-reader">Search for...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Search Games" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Search</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Signup / Login</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Signup and Login With Facebook" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/US.png" width="44" height="32" alt="us" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>In Your Language</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/page/es/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/page/fr/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/page/in/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/page/de/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/page/ro/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/page/br/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/page/tr/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/games/page/pl/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/page/pt/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/page/ru/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/page/jp/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/page/it/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/page/hu/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/page/se/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/page/kr/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/page/cs/sitemap/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/page&return_post=sitemap/" class="button small greedy">
+		More	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/en/#t-n" class="button category home" title="Miniclip Homepage">
+				<span>Miniclip Home</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/en/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/en/#t-n" class="cat-13 catgory button">
+				Action			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/en/#t-n" class="cat-2 catgory button">
+				Multiplayer			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/en/#t-n" class="cat-1 catgory button">
+				Puzzle			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/en/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1194/iphone/en/#t-n" class="cat-1194 catgory button">
+				iPhone			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>More Categories</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Game Categories</h2>
+	<div class="category-list">
+		<a href="/games/genre-1301/2-player/en/#t-m-c" class="cat-1301" title="Play 2 Player Games">2 Player</a>
+		<a href="/games/genre-35/3d/en/#t-m-c" class="cat-35" title="Play 3D Games">3D</a>
+		<a href="/games/genre-1318/8-ball-pool-millionaire-marathon/en/#t-m-c" class="cat-1318" title="Play 8 Ball Pool Millionaire Marathon Games">8 Ball Pool Millionaire Marathon</a>
+		<a href="/games/genre-13/action/en/#t-m-c" class="cat-13" title="Play Action Games">Action</a>
+		<a href="/games/genre-515/adventure/en/#t-m-c" class="cat-515" title="Play Adventure Games">Adventure</a>
+		<a href="/games/genre-1278/alien/en/#t-m-c" class="cat-1278" title="Play Alien Games">Alien</a>
+		<a href="/games/genre-1001/american-football/en/#t-m-c" class="cat-1001" title="Play American Football Games">American Football</a>
+		<a href="/games/genre-503/android/en/#t-m-c" class="cat-503" title="Play Android Games">Android</a>
+		<a href="/games/genre-517/arcade/en/#t-m-c" class="cat-517" title="Play Arcade Games">Arcade</a>
+		<a href="/games/genre-525/award/en/#t-m-c" class="cat-525" title="Play Award Games">Award</a>
+		<a href="/games/genre-1305/award-series/en/#t-m-c" class="cat-1305" title="Play Award Series Games">Award Series</a>
+		<a href="/games/genre-1262/awesome/en/#t-m-c" class="cat-1262" title="Play Awesome Games">Awesome</a>
+		<a href="/games/genre-1293/basketball/en/#t-m-c" class="cat-1293" title="Play Basketball Games">Basketball</a>
+		<a href="/games/genre-497/buzz/en/#t-m-c" class="cat-497" title="Play Buzz Games">Buzz</a>
+		<a href="/games/genre-1133/card/en/#t-m-c" class="cat-1133" title="Play Card Games">Card</a>
+		<a href="/games/genre-1003/christmas/en/#t-m-c" class="cat-1003" title="Play Christmas Games">Christmas</a>
+		<a href="/games/genre-1185/credits/en/#t-m-c" class="cat-1185" title="Play Credits Games">Credits</a>
+		<a href="/games/genre-1268/cricket/en/#t-m-c" class="cat-1268" title="Play Cricket Games">Cricket</a>
+		<a href="/games/genre-1143/destruction/en/#t-m-c" class="cat-1143" title="Play Destruction Games">Destruction</a>
+		<a href="/games/genre-1315/dress-up/en/#t-m-c" class="cat-1315" title="Play Dress Up Games">Dress Up</a>
+		<a href="/games/genre-1155/extreme-sports/en/#t-m-c" class="cat-1155" title="Play Extreme Sports Games">Extreme Sports</a>
+		<a href="/games/genre-1309/fantasy/en/#t-m-c" class="cat-1309" title="Play Fantasy Games">Fantasy</a>
+		<a href="/games/genre-519/fighting/en/#t-m-c" class="cat-519" title="Play Fighting Games">Fighting</a>
+		<a href="/games/genre-1280/fireboy-and-watergirl/en/#t-m-c" class="cat-1280" title="Play Fireboy and Watergirl Games">Fireboy and Watergirl</a>
+		<a href="/games/genre-521/flying/en/#t-m-c" class="cat-521" title="Play Flying Games">Flying</a>
+		<a href="/games/genre-1296/football/en/#t-m-c" class="cat-1296" title="Play Football Games">Football</a>
+		<a href="/games/genre-488/golf/en/#t-m-c" class="cat-488" title="Play Golf Games">Golf</a>
+		<a href="/games/genre-490/halloween/en/#t-m-c" class="cat-490" title="Play Halloween Games">Halloween</a>
+		<a href="/games/genre-1238/holidays/en/#t-m-c" class="cat-1238" title="Play Holidays Games">Holidays</a>
+		<a href="/games/genre-1201/hot-games/en/#t-m-c" class="cat-1201" title="Play Hot Games Games">Hot Games</a>
+		<a href="/games/genre-1320/io/en/#t-m-c" class="cat-1320" title="Play IO Games">IO</a>
+		<a href="/games/genre-1194/iphone/en/#t-m-c" class="cat-1194" title="Play iPhone Games">iPhone</a>
+		<a href="/games/genre-482/kids/en/#t-m-c" class="cat-482" title="Play Kids Games">Kids</a>
+		<a href="/games/genre-7/latest/en/#t-m-c" class="cat-7" title="Play Latest Games">Latest</a>
+		<a href="/games/genre-1304/made-in-the-usa/en/#t-m-c" class="cat-1304" title="Play Made in the USA Games">Made in the USA</a>
+		<a href="/games/genre-1210//en/#t-m-c" class="cat-1210" title="Play Monster Games">Monster</a>
+		<a href="/games/genre-1157/motocross/en/#t-m-c" class="cat-1157" title="Play Motocross Games">Motocross</a>
+		<a href="/games/genre-26/motorsports/en/#t-m-c" class="cat-26" title="Play Motorsports Games">Motorsports</a>
+		<a href="/games/genre-2/multiplayer/en/#t-m-c" class="cat-2" title="Play Multiplayer Games">Multiplayer</a>
+		<a href="/games/genre-511/my-friends-league/en/#t-m-c" class="cat-511" title="Play My Friends League Games">My Friends League</a>
+		<a href="/games/genre-40/platform/en/#t-m-c" class="cat-40" title="Play Platform Games">Platform</a>
+		<a href="/games/genre-1299/platinum/en/#t-m-c" class="cat-1299" title="Play Platinum Games">Platinum</a>
+		<a href="/games/genre-14/political/en/#t-m-c" class="cat-14" title="Play Political Games">Political</a>
+		<a href="/games/genre-513/pool/en/#t-m-c" class="cat-513" title="Play Pool Games">Pool</a>
+		<a href="/games/genre-1/puzzle/en/#t-m-c" class="cat-1" title="Play Puzzle Games">Puzzle</a>
+		<a href="/games/genre-477/racing/en/#t-m-c" class="cat-477" title="Play Racing Games">Racing</a>
+		<a href="/games/genre-1209//en/#t-m-c" class="cat-1209" title="Play Rio 2016 Olympic Games Games">Rio 2016 Olympic Games</a>
+		<a href="/games/genre-1272/robot/en/#t-m-c" class="cat-1272" title="Play Robot Games">Robot</a>
+		<a href="/games/genre-5/shoot-em-up/en/#t-m-c" class="cat-5" title="Play Shoot 'Em Up Games">Shoot 'Em Up</a>
+		<a href="/games/genre-1307/simulation/en/#t-m-c" class="cat-1307" title="Play Simulation Games">Simulation</a>
+		<a href="/games/genre-18/soccer/en/#t-m-c" class="cat-18" title="Play Soccer Games">Soccer</a>
+		<a href="/games/genre-3/sports/en/#t-m-c" class="cat-3" title="Play Sports Games">Sports</a>
+		<a href="/games/genre-1244/staff-picks/en/#t-m-c" class="cat-1244" title="Play Staff Picks Games">Staff Picks</a>
+		<a href="/games/genre-523/strategy/en/#t-m-c" class="cat-523" title="Play Strategy Games">Strategy</a>
+		<a href="/games/genre-1151/stunt/en/#t-m-c" class="cat-1151" title="Play Stunt Games">Stunt</a>
+		<a href="/games/genre-1316/super-worlds/en/#t-m-c" class="cat-1316" title="Play Super Worlds Games">Super Worlds</a>
+		<a href="/games/genre-484/tennis/en/#t-m-c" class="cat-484" title="Play Tennis Games">Tennis</a>
+		<a href="/games/genre-1256/tips--tricks/en/#t-m-c" class="cat-1256" title="Play Tips & Tricks Games">Tips & Tricks</a>
+		<a href="/games/genre-6/top-10/en/#t-m-c" class="cat-6" title="Play Top 10 Games">Top 10</a>
+		<a href="/games/genre-23/top-100/en/#t-m-c" class="cat-23" title="Play Top 100 Games">Top 100</a>
+		<a href="/games/genre-1270/top-rated/en/#t-m-c" class="cat-1270" title="Play Top Rated Games">Top Rated</a>
+		<a href="/games/genre-1145/tower-defense/en/#t-m-c" class="cat-1145" title="Play Tower Defense Games">Tower Defense</a>
+		<a href="/games/genre-1290/videos/en/#t-m-c" class="cat-1290" title="Play Videos Games">Videos</a>
+		<a href="/games/genre-1317/webgl/en/#t-m-c" class="cat-1317" title="Play WebGL Games">WebGL</a>
+		<a href="/games/genre-432/webmaster-games/en/#t-m-c" class="cat-432" title="Play Webmaster Games Games">Webmaster Games</a>
+		<a href="/games/genre-1207/windows-phone/en/#t-m-c" class="cat-1207" title="Play Windows Phone Games">Windows Phone</a>
+		<a href="/games/genre-4/winter/en/#t-m-c" class="cat-4" title="Play Winter Games">Winter</a>
+		<a href="/games/genre-1292/winter-sports/en/#t-m-c" class="cat-1292" title="Play Winter Sports Games">Winter Sports</a>
+		<a href="/games/genre-1109/word/en/#t-m-c" class="cat-1109" title="Play Word Games">Word</a>
+		<a href="/games/genre-1311/xplore/en/#t-m-c" class="cat-1311" title="Play Xplore Games">Xplore</a>
+		<a href="/games/genre-1149/zombie/en/#t-m-c" class="cat-1149" title="Play Zombie Games">Zombie</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>More Cool Stuff</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip Blog" class="feed">
+					Miniclip Blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/en/downloadable-games/#t-m-s" title="Download games to play on your desktop" class="download">
+					Download Games				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Get Free Miniclip Games for YOUR website!" class="webmasters">
+					Free Website Games				</a>
+			</li>
+			<li>
+				<a href="/videos/en/#t-m-s" class="videos">
+					Video Tips and Tricks				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Help				</a>
+			</li>
+			<li >
+				<a href="/games/page/en/internet-safety/" rel="nofollow">
+					Internet Safety				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Privacy Policy				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Connect With Miniclip</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Like Miniclip on Facebook" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Follow Miniclip on Twitter" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Miniclip on Google+" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="Watch Miniclip Videos on YouTube" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+<style>
+	.inner {
+		overflow:hidden;
+	}
+	.inner li {
+		list-style-type:none;
+		width:25%;
+		padding:0 8px;
+		float:left;
+	}
+</style>
+	<div class="box greedy">
+		<header class="pretty juicy">
+			<h1>Miniclip Sitemap</h1>
+		</header>
+	</div>
+	<div class="box greedy">
+		<header class="pretty">
+			<h2>Games Categories</h2>
+		</header>
+		<ul class="inner">
+			<li><a href="/games/genre-1301/2-player/en/">2 Player</a></li>
+			<li><a href="/games/genre-35/3d/en/">3D</a></li>
+			<li><a href="/games/genre-1318/8-ball-pool-millionaire-marathon/en/">8 Ball Pool Millionaire Marathon</a></li>
+			<li><a href="/games/genre-13/action/en/">Action</a></li>
+			<li><a href="/games/genre-515/adventure/en/">Adventure</a></li>
+			<li><a href="/games/genre-1278/alien/en/">Alien</a></li>
+			<li><a href="/games/genre-1001/american-football/en/">American Football</a></li>
+			<li><a href="/games/genre-503/android/en/">Android</a></li>
+			<li><a href="/games/genre-517/arcade/en/">Arcade</a></li>
+			<li><a href="/games/genre-525/award/en/">Award</a></li>
+			<li><a href="/games/genre-1305/award-series/en/">Award Series</a></li>
+			<li><a href="/games/genre-1262/awesome/en/">Awesome</a></li>
+			<li><a href="/games/genre-1293/basketball/en/">Basketball</a></li>
+			<li><a href="/games/genre-497/buzz/en/">Buzz</a></li>
+			<li><a href="/games/genre-1133/card/en/">Card</a></li>
+			<li><a href="/games/genre-1003/christmas/en/">Christmas</a></li>
+			<li><a href="/games/genre-1185/credits/en/">Credits</a></li>
+			<li><a href="/games/genre-1268/cricket/en/">Cricket</a></li>
+			<li><a href="/games/genre-1143/destruction/en/">Destruction</a></li>
+			<li><a href="/games/genre-1315/dress-up/en/">Dress Up</a></li>
+			<li><a href="/games/genre-1155/extreme-sports/en/">Extreme Sports</a></li>
+			<li><a href="/games/genre-1309/fantasy/en/">Fantasy</a></li>
+			<li><a href="/games/genre-519/fighting/en/">Fighting</a></li>
+			<li><a href="/games/genre-1280/fireboy-and-watergirl/en/">Fireboy and Watergirl</a></li>
+			<li><a href="/games/genre-521/flying/en/">Flying</a></li>
+			<li><a href="/games/genre-1296/football/en/">Football</a></li>
+			<li><a href="/games/genre-488/golf/en/">Golf</a></li>
+			<li><a href="/games/genre-490/halloween/en/">Halloween</a></li>
+			<li><a href="/games/genre-1238/holidays/en/">Holidays</a></li>
+			<li><a href="/games/genre-1201/hot-games/en/">Hot Games</a></li>
+			<li><a href="/games/genre-1320/io/en/">IO</a></li>
+			<li><a href="/games/genre-1194/iphone/en/">iPhone</a></li>
+			<li><a href="/games/genre-482/kids/en/">Kids</a></li>
+			<li><a href="/games/genre-7/latest/en/">Latest</a></li>
+			<li><a href="/games/genre-1304/made-in-the-usa/en/">Made in the USA</a></li>
+			<li><a href="/games/genre-1210//en/">Monster</a></li>
+			<li><a href="/games/genre-1157/motocross/en/">Motocross</a></li>
+			<li><a href="/games/genre-26/motorsports/en/">Motorsports</a></li>
+			<li><a href="/games/genre-2/multiplayer/en/">Multiplayer</a></li>
+			<li><a href="/games/genre-511/my-friends-league/en/">My Friends League</a></li>
+			<li><a href="/games/genre-40/platform/en/">Platform</a></li>
+			<li><a href="/games/genre-1299/platinum/en/">Platinum</a></li>
+			<li><a href="/games/genre-14/political/en/">Political</a></li>
+			<li><a href="/games/genre-513/pool/en/">Pool</a></li>
+			<li><a href="/games/genre-1/puzzle/en/">Puzzle</a></li>
+			<li><a href="/games/genre-477/racing/en/">Racing</a></li>
+			<li><a href="/games/genre-1209//en/">Rio 2016 Olympic Games</a></li>
+			<li><a href="/games/genre-1272/robot/en/">Robot</a></li>
+			<li><a href="/games/genre-5/shoot-em-up/en/">Shoot 'Em Up</a></li>
+			<li><a href="/games/genre-1307/simulation/en/">Simulation</a></li>
+			<li><a href="/games/genre-18/soccer/en/">Soccer</a></li>
+			<li><a href="/games/genre-3/sports/en/">Sports</a></li>
+			<li><a href="/games/genre-1244/staff-picks/en/">Staff Picks</a></li>
+			<li><a href="/games/genre-523/strategy/en/">Strategy</a></li>
+			<li><a href="/games/genre-1151/stunt/en/">Stunt</a></li>
+			<li><a href="/games/genre-1316/super-worlds/en/">Super Worlds</a></li>
+			<li><a href="/games/genre-484/tennis/en/">Tennis</a></li>
+			<li><a href="/games/genre-1256/tips--tricks/en/">Tips & Tricks</a></li>
+			<li><a href="/games/genre-6/top-10/en/">Top 10</a></li>
+			<li><a href="/games/genre-23/top-100/en/">Top 100</a></li>
+			<li><a href="/games/genre-1270/top-rated/en/">Top Rated</a></li>
+			<li><a href="/games/genre-1145/tower-defense/en/">Tower Defense</a></li>
+			<li><a href="/games/genre-1290/videos/en/">Videos</a></li>
+			<li><a href="/games/genre-1317/webgl/en/">WebGL</a></li>
+			<li><a href="/games/genre-432/webmaster-games/en/">Webmaster Games</a></li>
+			<li><a href="/games/genre-1207/windows-phone/en/">Windows Phone</a></li>
+			<li><a href="/games/genre-4/winter/en/">Winter</a></li>
+			<li><a href="/games/genre-1292/winter-sports/en/">Winter Sports</a></li>
+			<li><a href="/games/genre-1109/word/en/">Word</a></li>
+			<li><a href="/games/genre-1311/xplore/en/">Xplore</a></li>
+			<li><a href="/games/genre-1149/zombie/en/">Zombie</a></li>
+		</ul>
+	</div>
+	<div class="box greedy">
+		<header class="pretty">
+			<h2>Games</h2>
+		</header>
+		<ul class="inner">
+			<li>
+				<a href="/games/100-little-monsters/en/">100 Little Monsters</a>
+			</li>
+			<li>
+				<a href="/games/12-days-of-christmas-sweepstake/en/">12 Days of Christmas Sweepstake</a>
+			</li>
+			<li>
+				<a href="/games/1941-frozen-front/en/">1941 Frozen Front</a>
+			</li>
+			<li>
+				<a href="/games/2020-reloaded/en/">2020 Reloaded</a>
+			</li>
+			<li>
+				<a href="/games/2048/en/">2048</a>
+			</li>
+			<li>
+				<a href="/games/3-foot-ninja/en/">3 Foot Ninja</a>
+			</li>
+			<li>
+				<a href="/games/3-foot-ninja-ii/en/">3 Foot Ninja II</a>
+			</li>
+			<li>
+				<a href="/games/300-miles-to-pigsland/en/">300 Miles to Pigsland</a>
+			</li>
+			<li>
+				<a href="/games/4444/en/">4444</a>
+			</li>
+			<li>
+				<a href="/games/5-in-a-row-gomoku/en/">5 in a Row Gomoku</a>
+			</li>
+			<li>
+				<a href="/games/5-minute-shoot-em-up/en/">5 Minute Shoot em Up</a>
+			</li>
+			<li>
+				<a href="/games/60-seconds-burger-run/en/">60 Seconds Burger Run</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/en/">8 Ball Pool</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-millionaire-marathon/en/">8 Ball Pool Millionaire Marathon</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-quick-fire-pool/en/">8 Ball Quick Fire Pool</a>
+			</li>
+			<li>
+				<a href="/games/9-ball-quick-fire-pool/en/">9 Ball Quick Fire Pool</a>
+			</li>
+			<li>
+				<a href="/games/a-christmas-cowell/en/">A Christmas Cowell</a>
+			</li>
+			<li>
+				<a href="/games/a-day-of-slacking/en/">A Day of Slacking</a>
+			</li>
+			<li>
+				<a href="/games/a-stroll-in-space/en/">A Stroll In Space</a>
+			</li>
+			<li>
+				<a href="/games/absolute-ninja/en/">Absolute Ninja</a>
+			</li>
+			<li>
+				<a href="/games/acid-factory/en/">Acid Factory</a>
+			</li>
+			<li>
+				<a href="/games/adventure-capitalist/en/">AdVenture Capitalist</a>
+			</li>
+			<li>
+				<a href="/games/adventures-of-bloo/en/">Adventures of Bloo</a>
+			</li>
+			<li>
+				<a href="/games/african-soccer-champions/en/">African Soccer Champions</a>
+			</li>
+			<li>
+				<a href="/games/after-sunset/en/">After Sunset</a>
+			</li>
+			<li>
+				<a href="/games/after-sunset-2/en/">After Sunset 2</a>
+			</li>
+			<li>
+				<a href="/games/agar-io/en/">Agar.io</a>
+			</li>
+			<li>
+				<a href="/games/age-of-speed/en/">Age Of Speed</a>
+			</li>
+			<li>
+				<a href="/games/age-of-speed-2/en/">Age of Speed 2</a>
+			</li>
+			<li>
+				<a href="/games/age-of-speed-underworld/en/">Age Of Speed Underworld</a>
+			</li>
+			<li>
+				<a href="/games/age-of-wonder/en/">Age of Wonder</a>
+			</li>
+			<li>
+				<a href="/games/age-of-wonder-2-the-lost-scrolls/en/">Age of Wonder 2: The Lost Scrolls</a>
+			</li>
+			<li>
+				<a href="/games/agent-freeride/en/">Agent Freeride</a>
+			</li>
+			<li>
+				<a href="/games/agent-freeride-2/en/">Agent Freeride 2</a>
+			</li>
+			<li>
+				<a href="/games/air-show/en/">Air Show</a>
+			</li>
+			<li>
+				<a href="/games/alex-in-danger/en/">Alex in Danger</a>
+			</li>
+			<li>
+				<a href="/games/alien-abduction/en/">Alien Abduction</a>
+			</li>
+			<li>
+				<a href="/games/alien-attack/en/">Alien Attack</a>
+			</li>
+			<li>
+				<a href="/games/alien-clones/en/">Alien Clones</a>
+			</li>
+			<li>
+				<a href="/games/alien-disorder/en/">Alien Disorder</a>
+			</li>
+			<li>
+				<a href="/games/alien-hive/en/">Alien Hive</a>
+			</li>
+			<li>
+				<a href="/games/alien-transporter/en/">Alien Transporter</a>
+			</li>
+			<li>
+				<a href="/games/aliens-must-die/en/">Aliens Must Die</a>
+			</li>
+			<li>
+				<a href="/games/alkekopter/en/">Alkekopter</a>
+			</li>
+			<li>
+				<a href="/games/all-out/en/">All Out</a>
+			</li>
+			<li>
+				<a href="/games/all-we-need-is-brain-2/en/">All we need is brain 2</a>
+			</li>
+			<li>
+				<a href="/games/alphattack/en/">Alphattack</a>
+			</li>
+			<li>
+				<a href="/games/amazing-sheriff/en/">Amazing Sheriff</a>
+			</li>
+			<li>
+				<a href="/games/amazing-world/en/">Amazing World</a>
+			</li>
+			<li>
+				<a href="/games/american-football/en/">American Football</a>
+			</li>
+			<li>
+				<a href="/games/anagram-magic/en/">Anagram Magic</a>
+			</li>
+			<li>
+				<a href="/games/andys-golf/en/">Andy's Golf</a>
+			</li>
+			<li>
+				<a href="/games/anger-of-stick-2/en/">Anger of Stick 2</a>
+			</li>
+			<li>
+				<a href="/games/anger-of-stick-3/en/">Anger Of Stick 3</a>
+			</li>
+			<li>
+				<a href="/games/anikas-odyssey/en/">Anika's Odyssey</a>
+			</li>
+			<li>
+				<a href="/games/animal-shelter/en/">Animal Shelter</a>
+			</li>
+			<li>
+				<a href="/games/apache-overkill/en/">Apache Overkill</a>
+			</li>
+			<li>
+				<a href="/games/aqua-energizer/en/">Aqua Energizer</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1421">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/aquanaut/en/">Aquanaut</a>
+			</li>
+			<li>
+				<a href="/games/archery-king/en/">Archery King</a>
+			</li>
+			<li>
+				<a href="/games/arctic-drift/en/">Arctic Drift</a>
+			</li>
+			<li>
+				<a href="/games/arcuz/en/">Arcuz</a>
+			</li>
+			<li>
+				<a href="/games/area-zero/en/">Area Zero</a>
+			</li>
+			<li>
+				<a href="/games/armada-tanks/en/">Armada Tanks</a>
+			</li>
+			<li>
+				<a href="/games/art-thief/en/">Art Thief</a>
+			</li>
+			<li>
+				<a href="/games/asgard/en/">Asgard</a>
+			</li>
+			<li>
+				<a href="/games/ask-guru-joe/en/">Ask Guru Joe</a>
+			</li>
+			<li>
+				<a href="/games/assault-course/en/">Assault Course</a>
+			</li>
+			<li>
+				<a href="/games/assault-course-2/en/">Assault Course 2</a>
+			</li>
+			<li>
+				<a href="/games/asteroid-rush/en/">Asteroid Rush</a>
+			</li>
+			<li>
+				<a href="/games/avalanche/en/">Avalanche</a>
+			</li>
+			<li>
+				<a href="/games/awesome-run/en/">Awesome Run</a>
+			</li>
+			<li>
+				<a href="/games/awesome-tanks/en/">Awesome Tanks</a>
+			</li>
+			<li>
+				<a href="/games/awesome-tanks-2/en/">Awesome Tanks 2</a>
+			</li>
+			<li>
+				<a href="/games/axon/en/">Axon</a>
+			</li>
+			<li>
+				<a href="/games/backfire/en/">Backfire</a>
+			</li>
+			<li>
+				<a href="/games/bad-apple/en/">Bad Apple</a>
+			</li>
+			<li>
+				<a href="/games/badlands/en/">Badland</a>
+			</li>
+			<li>
+				<a href="/games/bait-and-switch/en/">Bait and Switch</a>
+			</li>
+			<li>
+				<a href="/games/baja-motocross/en/">Baja Motocross</a>
+			</li>
+			<li>
+				<a href="/games/baking-competition/en/">Baking Competition</a>
+			</li>
+			<li>
+				<a href="/games/balance/en/">Balance</a>
+			</li>
+			<li>
+				<a href="/games/banana-mania/en/">Banana Mania</a>
+			</li>
+			<li>
+				<a href="/games/barons-gate/en/">Barons Gate</a>
+			</li>
+			<li>
+				<a href="/games/barrys-riverrun/en/">Barry's River Run</a>
+			</li>
+			<li>
+				<a href="/games/base-jumper/en/">Base Jumper</a>
+			</li>
+			<li>
+				<a href="/games/base-jumping/en/">Base Jumping</a>
+			</li>
+			<li>
+				<a href="/games/baseball/en/">Baseball</a>
+			</li>
+			<li>
+				<a href="/games/basket-champs/en/">Basket Champs</a>
+			</li>
+			<li>
+				<a href="/games/basketball-jam/en/">Basketball Jam</a>
+			</li>
+			<li>
+				<a href="/games/basketball-jam-shots/en/">Basketball Jam Shots</a>
+			</li>
+			<li>
+				<a href="/games/basketball-madness/en/">Basketball Madness</a>
+			</li>
+			<li>
+				<a href="/games/basketball-slam/en/">Basketball Slam</a>
+			</li>
+			<li>
+				<a href="/games/basketball-stars/en/">Basketball Stars</a>
+			</li>
+			<li>
+				<a href="/games/battle-golf/en/">Battle Golf</a>
+			</li>
+			<li>
+				<a href="/games/battlestick/en/">Battlestick</a>
+			</li>
+			<li>
+				<a href="/games/bazooki-a-silent-affair/en/">Bazooki A silent affair</a>
+			</li>
+			<li>
+				<a href="/games/bazooki-pocalypse/en/">Bazooki-Pocalypse</a>
+			</li>
+			<li>
+				<a href="/games/be-jumper/en/">Be Jumper</a>
+			</li>
+			<li>
+				<a href="/games/beach-soccer/en/">Beach Soccer</a>
+			</li>
+			<li>
+				<a href="/games/bear-in-super-action-adventure/en/">Bear in Super Action Adventure</a>
+			</li>
+			<li>
+				<a href="/games/bearbarians/en/">Bearbarians</a>
+			</li>
+			<li>
+				<a href="/games/bears-and-bees/en/">Bears & Bees</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1431">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/beast-quest/en/">Beast Quest</a>
+			</li>
+			<li>
+				<a href="/games/beat-the-wall/en/">Beat The Wall</a>
+			</li>
+			<li>
+				<a href="/games/beavus/en/">Beavus</a>
+			</li>
+			<li>
+				<a href="/games/bee-boxing/en/">Bee Boxing</a>
+			</li>
+			<li>
+				<a href="/games/bejeweled/en/">Bejeweled</a>
+			</li>
+			<li>
+				<a href="/games/berry-rush/en/">Berry Rush</a>
+			</li>
+			<li>
+				<a href="/games/big-catch/en/">Big Catch</a>
+			</li>
+			<li>
+				<a href="/games/big-farm/en/">Big Farm</a>
+			</li>
+			<li>
+				<a href="/games/big-jump-challenge/en/">Big Jump Challenge</a>
+			</li>
+			<li>
+				<a href="/games/big-snow-tricks/en/">Big Snow Tricks</a>
+			</li>
+			<li>
+				<a href="/games/big-time-butter-baron/en/">Big Time Butter Baron</a>
+			</li>
+			<li>
+				<a href="/games/bike-rivals/en/">Bike Rivals</a>
+			</li>
+			<li>
+				<a href="/games/bike-racing/en/">Bike Rush</a>
+			</li>
+			<li>
+				<a href="/games/bimmin/en/">Bimmin</a>
+			</li>
+			<li>
+				<a href="/games/bimmin-2/en/">Bimmin 2</a>
+			</li>
+			<li>
+				<a href="/games/bionic-bugz/en/">Bionic Bugz</a>
+			</li>
+			<li>
+				<a href="/games/black-knight/en/">Black Knight</a>
+			</li>
+			<li>
+				<a href="/games/black-sun/en/">Black Sun</a>
+			</li>
+			<li>
+				<a href="/games/blackjack-elf/en/">Blackjack Elf</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1436">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/blacksmith-lab/en/">Blacksmith Lab</a>
+			</li>
+			<li>
+				<a href="/games/blair-the-motivator/en/">Blair The Motivator</a>
+			</li>
+			<li>
+				<a href="/games/blashio/en/">Blash.io</a>
+			</li>
+			<li>
+				<a href="/games/blastwave/en/">BlastWave</a>
+			</li>
+			<li>
+				<a href="/games/blobs/en/">Blobs</a>
+			</li>
+			<li>
+				<a href="/games/blobs-2/en/">Blobs 2</a>
+			</li>
+			<li>
+				<a href="/games/block-drop/en/">Block Drop</a>
+			</li>
+			<li>
+				<a href="/games/blocnog/en/">BLOCnog</a>
+			</li>
+			<li>
+				<a href="/games/bloomin-gardens/en/">Bloomin' Gardens</a>
+			</li>
+			<li>
+				<a href="/games/bloons-2/en/">Bloons 2</a>
+			</li>
+			<li>
+				<a href="/games/blox-forever/en/">Blox Forever</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1441">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/bloxorz/en/">Bloxorz</a>
+			</li>
+			<li>
+				<a href="/games/blues-bikers/en/">Blues Bikers</a>
+			</li>
+			<li>
+				<a href="/games/blym/en/">BLYM</a>
+			</li>
+			<li>
+				<a href="/games/bmxfreestyle/en/">BMX Freestyle</a>
+			</li>
+			<li>
+				<a href="/games/bob-the-robber-2/en/">Bob the Robber 2</a>
+			</li>
+			<li>
+				<a href="/games/bobby-da-arrow/en/">Bobby Da Arrow</a>
+			</li>
+			<li>
+				<a href="/games/bobulous/en/">Bobulous</a>
+			</li>
+			<li>
+				<a href="/games/bois-darc/en/">Bois D'Arc</a>
+			</li>
+			<li>
+				<a href="/games/bomba/en/">Bomba</a>
+			</li>
+			<li>
+				<a href="/games/boom-boom-volleyball/en/">Boom Boom Volleyball</a>
+			</li>
+			<li>
+				<a href="/games/bouncy-cannon/en/">Bouncy Cannon</a>
+			</li>
+			<li>
+				<a href="/games/bounzy-2/en/">Bounzy 2</a>
+			</li>
+			<li>
+				<a href="/games/bow-master/en/">Bow Master</a>
+			</li>
+			<li>
+				<a href="/games/bow-master-halloween/en/">Bow Master Halloween</a>
+			</li>
+			<li>
+				<a href="/games/bow-master-japan/en/">Bow Master Japan</a>
+			</li>
+			<li>
+				<a href="/games/bowling-king/en/">Bowling King</a>
+			</li>
+			<li>
+				<a href="/games/bowmasters/en/">Bowmasters</a>
+			</li>
+			<li>
+				<a href="/games/boxing-bonanza/en/">Boxing Bonanza</a>
+			</li>
+			<li>
+				<a href="/games/boxo/en/">Boxo</a>
+			</li>
+			<li>
+				<a href="/games/bp-gas-mania/en/">BP Gas Mania</a>
+			</li>
+			<li>
+				<a href="/games/broforce/en/">Broforce</a>
+			</li>
+			<li>
+				<a href="/games/bubble-trouble/en/">Bubble Trouble</a>
+			</li>
+			<li>
+				<a href="/games/buck-ride/en/">Buck Ride</a>
+			</li>
+			<li>
+				<a href="/games/bug-on-a-wire/en/">Bug On A Wire</a>
+			</li>
+			<li>
+				<a href="/games/bullethead/en/">Bullethead</a>
+			</li>
+			<li>
+				<a href="/games/bullfrog-poker/en/">Bullfrog Poker</a>
+			</li>
+			<li>
+				<a href="/games/bullseye/en/">Bullseye</a>
+			</li>
+			<li>
+				<a href="/games/bumpballsio/en/">Bumpballs.io</a>
+			</li>
+			<li>
+				<a href="/games/bunny-fights/en/">Bunny Fights</a>
+			</li>
+			<li>
+				<a href="/games/burrito-bison/en/">Burrito Bison</a>
+			</li>
+			<li>
+				<a href="/games/bush-aerobics/en/">Bush Aerobics</a>
+			</li>
+			<li>
+				<a href="/games/bush-royal-rampage/en/">Bush Royal Rampage</a>
+			</li>
+			<li>
+				<a href="/games/bush-shoot-out/en/">Bush Shoot-Out</a>
+			</li>
+			<li>
+				<a href="/games/cab-driver/en/">Cab Driver</a>
+			</li>
+			<li>
+				<a href="/games/cable-capers-2/en/">Cable Capers 2</a>
+			</li>
+			<li>
+				<a href="/games/cactus-mccoy/en/">Cactus McCoy</a>
+			</li>
+			<li>
+				<a href="/games/cactus-mccoy-2/en/">Cactus McCoy 2</a>
+			</li>
+			<li>
+				<a href="/games/calabash-bros/en/">Calabash Bros</a>
+			</li>
+			<li>
+				<a href="/games/calamari/en/">Calamari</a>
+			</li>
+			<li>
+				<a href="/games/call-of-gods/en/">Call of Gods</a>
+			</li>
+			<li>
+				<a href="/games/call-of-war/en/">Call of War</a>
+			</li>
+			<li>
+				<a href="/games/canabalt/en/">Canabalt</a>
+			</li>
+			<li>
+				<a href="/games/canary/en/">Canary</a>
+			</li>
+			<li>
+				<a href="/games/candy-and-clyde/en/">Candy and Clyde</a>
+			</li>
+			<li>
+				<a href="/games/candy-magic/en/">Candy Magic</a>
+			</li>
+			<li>
+				<a href="/games/candy-rain-2/en/">Candy Rain 2</a>
+			</li>
+			<li>
+				<a href="/games/cannon-blast/en/">Cannon Blast</a>
+			</li>
+			<li>
+				<a href="/games/canyon-defense/en/">Canyon Defense</a>
+			</li>
+			<li>
+				<a href="/games/canyon-defense-2/en/">Canyon Defense 2</a>
+			</li>
+			<li>
+				<a href="/games/canyon-glider/en/">Canyon Glider</a>
+			</li>
+			<li>
+				<a href="/games/canyon-shooter/en/">Canyon Shooter</a>
+			</li>
+			<li>
+				<a href="/games/canyon-shooter-2/en/">Canyon Shooter 2</a>
+			</li>
+			<li>
+				<a href="/games/car-chaos/en/">Car Chaos</a>
+			</li>
+			<li>
+				<a href="/games/caravan-racers/en/">Caravan Racers</a>
+			</li>
+			<li>
+				<a href="/games/castle-conquest/en/">Castle Conquest</a>
+			</li>
+			<li>
+				<a href="/games/castle-corp/en/">Castle Corp</a>
+			</li>
+			<li>
+				<a href="/games/castle-of-pixel-skulls/en/">Castle of Pixel Skulls</a>
+			</li>
+			<li>
+				<a href="/games/castle-rush/en/">Castle Rush</a>
+			</li>
+			<li>
+				<a href="/games/catapult/en/">Catapult</a>
+			</li>
+			<li>
+				<a href="/games/cave-chaos/en/">Cave Chaos</a>
+			</li>
+			<li>
+				<a href="/games/cave-of-despair/en/">Cave of Despair</a>
+			</li>
+			<li>
+				<a href="/games/caveman/en/">Caveman</a>
+			</li>
+			<li>
+				<a href="/games/celebrity-ice-bucket-challenge/en/">Celebrity Ice Bucket Challenge</a>
+			</li>
+			<li>
+				<a href="/games/celebrity-table-tennis/en/">Celebrity Table Tennis</a>
+			</li>
+			<li>
+				<a href="/games/cell-out/en/">Cell Out</a>
+			</li>
+			<li>
+				<a href="/games/centre-court-tennis/en/">Centre Court Tennis</a>
+			</li>
+			<li>
+				<a href="/games/chasm/en/">Chasm</a>
+			</li>
+			<li>
+				<a href="/games/cheese-dreams/en/">Cheese Dreams</a>
+			</li>
+			<li>
+				<a href="/games/cherie-disco-blair/en/">Cherie 'Disco' Blair</a>
+			</li>
+			<li>
+				<a href="/games/chic-and-stylish-macie/en/">Chic and Stylish</a>
+			</li>
+			<li>
+				<a href="/games/chick-flick/en/">Chick Flick</a>
+			</li>
+			<li>
+				<a href="/games/china-2008/en/">China 2008</a>
+			</li>
+			<li>
+				<a href="/games/chisel/en/">Chisel</a>
+			</li>
+			<li>
+				<a href="/games/christmas-balls/en/">Christmas Balls</a>
+			</li>
+			<li>
+				<a href="/games/christmas-games/en/">Christmas Games</a>
+			</li>
+			<li>
+				<a href="/games/christmas-mayhem/en/">Christmas Mayhem</a>
+			</li>
+			<li>
+				<a href="/games/chronotron/en/">Chronotron</a>
+			</li>
+			<li>
+				<a href="/games/chuckaboom/en/">ChuckaBOOM</a>
+			</li>
+			<li>
+				<a href="/games/cinderella-midnight-dash/en/">Cinderella Midnight Dash</a>
+			</li>
+			<li>
+				<a href="/games/city-airport-3d-parking/en/">City Airport 3D Parking</a>
+			</li>
+			<li>
+				<a href="/games/civilization-wars/en/">Civilization wars</a>
+			</li>
+			<li>
+				<a href="/games/clash-n-slash/en/">Clash N Slash</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1465">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/classroom-pilot/en/">Classroom Pilot</a>
+			</li>
+			<li>
+				<a href="/games/click-and-slide/en/">Click & Slide</a>
+			</li>
+			<li>
+				<a href="/games/clicker-heroes/en/">Clicker Heroes</a>
+			</li>
+			<li>
+				<a href="/games/clickplay/en/">ClickPLAY</a>
+			</li>
+			<li>
+				<a href="/games/clowning-around/en/">Clowning Around</a>
+			</li>
+			<li>
+				<a href="/games/clowns-in-the-face/en/">Clowns in the Face</a>
+			</li>
+			<li>
+				<a href="/games/coign-of-vantage/en/">Coign of Vantage</a>
+			</li>
+			<li>
+				<a href="/games/cold-storage/en/">Cold Storage</a>
+			</li>
+			<li>
+				<a href="/games/color-switch/en/">Color Switch</a>
+			</li>
+			<li>
+				<a href="/games/commando/en/">Commando</a>
+			</li>
+			<li>
+				<a href="/games/commando-2/en/">Commando 2</a>
+			</li>
+			<li>
+				<a href="/games/commando-2-trailer/en/">Commando 2 Trailer</a>
+			</li>
+			<li>
+				<a href="/games/commando-3/en/">Commando 3</a>
+			</li>
+			<li>
+				<a href="/games/commando-assault/en/">Commando Assault</a>
+			</li>
+			<li>
+				<a href="/games/commando-defense/en/">Commando Defense</a>
+			</li>
+			<li>
+				<a href="/games/commando-rush/en/">Commando: Rush</a>
+			</li>
+			<li>
+				<a href="/games/contract-wars/en/">Contract Wars</a>
+			</li>
+			<li>
+				<a href="/games/cosmic-arena/en/">Cosmic Arena</a>
+			</li>
+			<li>
+				<a href="/games/cowabunga-candace/en/">Cowabunga Candace</a>
+			</li>
+			<li>
+				<a href="/games/cranergy-ball/en/">Cranergy Ball</a>
+			</li>
+			<li>
+				<a href="/games/crash-car-combat/en/">Crash Car Combat</a>
+			</li>
+			<li>
+				<a href="/games/crash-n-burn/en/">Crash n' Burn</a>
+			</li>
+			<li>
+				<a href="/games/crashdown/en/">Crashdown</a>
+			</li>
+			<li>
+				<a href="/games/crazy-go-nuts-2/en/">Crazy Go Nuts 2</a>
+			</li>
+			<li>
+				<a href="/games/crazy-karts/en/">Crazy Karts</a>
+			</li>
+			<li>
+				<a href="/games/crazycle/en/">Crazycle</a>
+			</li>
+			<li>
+				<a href="/games/creepy-pong/en/">Creepy Pong</a>
+			</li>
+			<li>
+				<a href="/games/cricket-defend-the-wicket/en/">Cricket Defend the Wicket!</a>
+			</li>
+			<li>
+				<a href="/games/crickle-breeze/en/">Crickle Breeze</a>
+			</li>
+			<li>
+				<a href="/games/crimson-viper/en/">Crimson Viper</a>
+			</li>
+			<li>
+				<a href="/games/crossword-daily/en/">Crossword Daily</a>
+			</li>
+			<li>
+				<a href="/games/crush-the-castle-2/en/">Crush the Castle 2</a>
+			</li>
+			<li>
+				<a href="/games/crypt-raider/en/">Crypt Raider</a>
+			</li>
+			<li>
+				<a href="/games/cube-buster/en/">Cube Buster</a>
+			</li>
+			<li>
+				<a href="/games/cubis-addictive-puzzler/en/">Cubis Addictive Puzzler</a>
+			</li>
+			<li>
+				<a href="/games/curse-of-the-mushroom-king/en/">Curse of the Mushroom King</a>
+			</li>
+			<li>
+				<a href="/games/cursed-treasure/en/">Cursed Treasure</a>
+			</li>
+			<li>
+				<a href="/games/cursed-treasure-2/en/">Cursed Treasure 2</a>
+			</li>
+			<li>
+				<a href="/games/cursor-chaos/en/">Cursor Chaos</a>
+			</li>
+			<li>
+				<a href="/games/cut-the-rope/en/">Cut the Rope</a>
+			</li>
+			<li>
+				<a href="/games/cut-the-rope-2/en/">Cut the Rope 2</a>
+			</li>
+			<li>
+				<a href="/games/cut-the-rope-time-travel/en/">Cut the Rope Time Travel</a>
+			</li>
+			<li>
+				<a href="/games/cyber-mice-party/en/">Cyber Mice Party</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1472">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/cyclomaniacs-epic/en/">Cyclomaniacs Epic</a>
+			</li>
+			<li>
+				<a href="/games/dale-and-peakot/en/">Dale and Peakot</a>
+			</li>
+			<li>
+				<a href="/games/dance-2-the-beat/en/">Dance 2 the Beat</a>
+			</li>
+			<li>
+				<a href="/games/dance-planet/en/">Dance Planet</a>
+			</li>
+			<li>
+				<a href="/games/dancing-blair/en/">Dancing Blair</a>
+			</li>
+			<li>
+				<a href="/games/dancing-bush/en/">Dancing Bush</a>
+			</li>
+			<li>
+				<a href="/games/dancing-hillary/en/">Dancing Hillary</a>
+			</li>
+			<li>
+				<a href="/games/dancing-palin/en/">Dancing Palin</a>
+			</li>
+			<li>
+				<a href="/games/darts-daily-180/en/">Darts Daily 180</a>
+			</li>
+			<li>
+				<a href="/games/david/en/">David</a>
+			</li>
+			<li>
+				<a href="/games/death-vs-monstars/en/">Death vs Monstars</a>
+			</li>
+			<li>
+				<a href="/games/death-vs-monstars-2/en/">Death vs Monstars 2</a>
+			</li>
+			<li>
+				<a href="/games/decajump/en/">DecaJump</a>
+			</li>
+			<li>
+				<a href="/games/deep-freeze/en/">Deep Freeze</a>
+			</li>
+			<li>
+				<a href="/games/deep-sea-patrol/en/">Deep Sea Patrol</a>
+			</li>
+			<li>
+				<a href="/games/deep-underground/en/">Deep Underground</a>
+			</li>
+			<li>
+				<a href="/games/defenders/en/">Defenders</a>
+			</li>
+			<li>
+				<a href="/games/delta-force/en/">Delta Force</a>
+			</li>
+			<li>
+				<a href="/games/deluxe-pool/en/">Deluxe Pool</a>
+			</li>
+			<li>
+				<a href="/games/desert-ambush/en/">Desert Ambush</a>
+			</li>
+			<li>
+				<a href="/games/desperado/en/">Desperado</a>
+			</li>
+			<li>
+				<a href="/games/destructo-dog/en/">Destructo Dog</a>
+			</li>
+			<li>
+				<a href="/games/destructo-shark/en/">Destructo Shark</a>
+			</li>
+			<li>
+				<a href="/games/detonator/en/">Detonator</a>
+			</li>
+			<li>
+				<a href="/games/diablo-valley-rally/en/">Diablo Valley Rally</a>
+			</li>
+			<li>
+				<a href="/games/diepio/en/">Diep.io</a>
+			</li>
+			<li>
+				<a href="/games/digital-switch/en/">Digital Switch</a>
+			</li>
+			<li>
+				<a href="/games/dillo-hills/en/">Dillo Hills</a>
+			</li>
+			<li>
+				<a href="/games/dino-assault/en/">Dino Assault</a>
+			</li>
+			<li>
+				<a href="/games/dino-pets/en/">Dino Pets</a>
+			</li>
+			<li>
+				<a href="/games/dino-quake/en/">Dino Quake</a>
+			</li>
+			<li>
+				<a href="/games/dino-run/en/">Dino Run</a>
+			</li>
+			<li>
+				<a href="/games/dino-strike/en/">Dino Strike</a>
+			</li>
+			<li>
+				<a href="/games/dirk-valentine/en/">Dirk Valentine</a>
+			</li>
+			<li>
+				<a href="/games/disc-golf/en/">Disc Golf</a>
+			</li>
+			<li>
+				<a href="/games/doblonsio/en/">Doblons.io</a>
+			</li>
+			<li>
+				<a href="/games/doctor-acorn/en/">Doctor Acorn</a>
+			</li>
+			<li>
+				<a href="/games/doeo/en/">Doeo</a>
+			</li>
+			<li>
+				<a href="/games/dolphin-show-2/en/">Dolphin Show 2</a>
+			</li>
+			<li>
+				<a href="/games/domestos-flush/en/">Domestos Flush</a>
+			</li>
+			<li>
+				<a href="/games/doodle/en/">Doodle</a>
+			</li>
+			<li>
+				<a href="/games/doodle-2/en/">Doodle 2</a>
+			</li>
+			<li>
+				<a href="/games/doodle-god-blitz/en/">Doodle God Blitz</a>
+			</li>
+			<li>
+				<a href="/games/doodle-jump/en/">Doodle Jump</a>
+			</li>
+			<li>
+				<a href="/games/down-hill-chill/en/">Down Hill Chill</a>
+			</li>
+			<li>
+				<a href="/games/down-perryscope/en/">Down Perryscope</a>
+			</li>
+			<li>
+				<a href="/games/dr-compactor/en/">Dr Compactor</a>
+			</li>
+			<li>
+				<a href="/games/dragon-attack/en/">Dragon Attack</a>
+			</li>
+			<li>
+				<a href="/games/dragon-fist-3d/en/">Dragon Fist 3D</a>
+			</li>
+			<li>
+				<a href="/games/drakensang/en/">Drakensang</a>
+			</li>
+			<li>
+				<a href="/games/dream-boy/en/">Dream Boy</a>
+			</li>
+			<li>
+				<a href="/games/dream-racer/en/">Dream Racer</a>
+			</li>
+			<li>
+				<a href="/games/dream-tower/en/">Dream Tower</a>
+			</li>
+			<li>
+				<a href="/games/drift-raiders/en/">Drift Raiders</a>
+			</li>
+			<li>
+				<a href="/games/drift-trike/en/">Drift Trike</a>
+			</li>
+			<li>
+				<a href="/games/droid-retaliation/en/">Droid Retaliation</a>
+			</li>
+			<li>
+				<a href="/games/dropping-dead/en/">Dropping Dead</a>
+			</li>
+			<li>
+				<a href="/games/drumming-alchemist/en/">Drumming Alchemist</a>
+			</li>
+			<li>
+				<a href="/games/dubai-police-supercar-rally/en/">Dubai Police Supercar Rally</a>
+			</li>
+			<li>
+				<a href="/games/dude-perfect-2/en/">Dude Perfect 2</a>
+			</li>
+			<li>
+				<a href="/games/dune-buggy/en/">Dune Buggy</a>
+			</li>
+			<li>
+				<a href="/games/dunkers/en/">Dunkers</a>
+			</li>
+			<li>
+				<a href="/games/dynaboy/en/">DynaBoy</a>
+			</li>
+			<li>
+				<a href="/games/earn-to-die/en/">Earn to Die</a>
+			</li>
+			<li>
+				<a href="/games/earn-to-die-2012-part-1/en/">Earn to Die 2012: Part 1</a>
+			</li>
+			<li>
+				<a href="/games/earn-to-die-2012-part-2/en/">Earn to Die 2012: Part 2</a>
+			</li>
+			<li>
+				<a href="/games/earn-to-die-2-exodus/en/">Earn to Die 2: Exodus</a>
+			</li>
+			<li>
+				<a href="/games/egg-blast/en/">Egg Blast</a>
+			</li>
+			<li>
+				<a href="/games/egg-run/en/">Egg Run</a>
+			</li>
+			<li>
+				<a href="/games/eggstinction/en/">Eggstinction</a>
+			</li>
+			<li>
+				<a href="/games/egyptian-tale/en/">Egyptian Tale</a>
+			</li>
+			<li>
+				<a href="/games/ekoloko/en/">Ekoloko</a>
+			</li>
+			<li>
+				<a href="/games/elastic-soccer/en/">Elastic Soccer</a>
+			</li>
+			<li>
+				<a href="/games/election-special/en/">Election Special</a>
+			</li>
+			<li>
+				<a href="/games/electro-air-hockey/en/">Electro Air Hockey</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1484">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/elements-and-magic/en/">Elements and Magic</a>
+			</li>
+			<li>
+				<a href="/games/elfquilibrium/en/">Elfquilibrium</a>
+			</li>
+			<li>
+				<a href="/games/elvenar/en/">Elvenar</a>
+			</li>
+			<li>
+				<a href="/games/empire/en/">Empire</a>
+			</li>
+			<li>
+				<a href="/games/empty-santas-sack/en/">Empty Santa's Sack</a>
+			</li>
+			<li>
+				<a href="/games/epic-boss-fighter/en/">Epic Boss Fighter</a>
+			</li>
+			<li>
+				<a href="/games/epic-boss-fighter-2/en/">Epic Boss Fighter 2</a>
+			</li>
+			<li>
+				<a href="/games/epic-rail/en/">Epic Rail</a>
+			</li>
+			<li>
+				<a href="/games/escape-to-hell/en/">Escape to Hell</a>
+			</li>
+			<li>
+				<a href="/games/euro-soccer-forever/en/">Euro Soccer Forever</a>
+			</li>
+			<li>
+				<a href="/games/euro-soccer-forever-preview/en/">Euro Soccer Forever Preview</a>
+			</li>
+			<li>
+				<a href="/games/european-soccer-champions/en/">European Soccer Champions</a>
+			</li>
+			<li>
+				<a href="/games/evac/en/">Evac</a>
+			</li>
+			<li>
+				<a href="/games/evil-darkness/en/">Evil Darkness</a>
+			</li>
+			<li>
+				<a href="/games/evilgeddon-spooky-max/en/">Evilgeddon Spooky Max</a>
+			</li>
+			<li>
+				<a href="/games/exile/en/">Exile</a>
+			</li>
+			<li>
+				<a href="/games/extreme-quad/en/">Extreme Quad</a>
+			</li>
+			<li>
+				<a href="/games/extreme-skater/en/">Extreme Skater</a>
+			</li>
+			<li>
+				<a href="/games/extreme-trial/en/">Extreme Trial</a>
+			</li>
+			<li>
+				<a href="/games/extreme-triathlon/en/">Extreme Triathlon</a>
+			</li>
+			<li>
+				<a href="/games/fa-18/en/">FA-18</a>
+			</li>
+			<li>
+				<a href="/games/family-barn/en/">Family Barn</a>
+			</li>
+			<li>
+				<a href="/games/fancy-pants-adventure-1/en/">Fancy Pants Adventure 1</a>
+			</li>
+			<li>
+				<a href="/games/fancy-pants-adventure-2/en/">Fancy Pants Adventure 2</a>
+			</li>
+			<li>
+				<a href="/games/fancy-snowboarding/en/">Fancy Snowboarding</a>
+			</li>
+			<li>
+				<a href="/games/fantage/en/">Fantage</a>
+			</li>
+			<li>
+				<a href="/games/fantasy-star-pinball/en/">Fantasy Star Pinball</a>
+			</li>
+			<li>
+				<a href="/games/fast-car-frenzy/en/">Fast Car Frenzy</a>
+			</li>
+			<li>
+				<a href="/games/fat-cat/en/">Fat Cat</a>
+			</li>
+			<li>
+				<a href="/games/fat-slice/en/">Fat Slice</a>
+			</li>
+			<li>
+				<a href="/games/fc-barcelona-ultimate-rush/en/">FC Barcelona Ultimate Rush</a>
+			</li>
+			<li>
+				<a href="/games/feather-keeper/en/">Feather Keeper</a>
+			</li>
+			<li>
+				<a href="/games/feed-me/en/">Feed Me</a>
+			</li>
+			<li>
+				<a href="/games/feed-that-dragon/en/">Feed That Dragon</a>
+			</li>
+			<li>
+				<a href="/games/field-goal/en/">Field Goal</a>
+			</li>
+			<li>
+				<a href="/games/fighter-patrol-42/en/">Fighter Patrol 42</a>
+			</li>
+			<li>
+				<a href="/games/fighter-pilot/en/">Fighter Pilot</a>
+			</li>
+			<li>
+				<a href="/games/fighter-pilot-2/en/">Fighter Pilot 2</a>
+			</li>
+			<li>
+				<a href="/games/filler/en/">Filler</a>
+			</li>
+			<li>
+				<a href="/games/final-fortress/en/">Final Fortress</a>
+			</li>
+			<li>
+				<a href="/games/final-fortress-preview/en/">Final Fortress Preview</a>
+			</li>
+			<li>
+				<a href="/games/final-ninja/en/">Final Ninja</a>
+			</li>
+			<li>
+				<a href="/games/finders-keepers/en/">Finders Keepers</a>
+			</li>
+			<li>
+				<a href="/games/fire-storm/en/">Fire Storm</a>
+			</li>
+			<li>
+				<a href="/games/crystal-temple/en/">Fireboy & Watergirl in Crystal Temple</a>
+			</li>
+			<li>
+				<a href="/games/ice-temple/en/">Fireboy & Watergirl in Ice Temple</a>
+			</li>
+			<li>
+				<a href="/games/light-temple/en/">Fireboy & Watergirl in Light Temple</a>
+			</li>
+			<li>
+				<a href="/games/fireworks/en/">Fireworks</a>
+			</li>
+			<li>
+				<a href="/games/fist-of-awesome/en/">Fist of Awesome</a>
+			</li>
+			<li>
+				<a href="/games/flappy-bird/en/">Flappy Bird</a>
+			</li>
+			<li>
+				<a href="/games/flash-tennis/en/">Flash Tennis</a>
+			</li>
+			<li>
+				<a href="/games/flavor-fling/en/">Flavor Fling</a>
+			</li>
+			<li>
+				<a href="/games/fling/en/">Fling</a>
+			</li>
+			<li>
+				<a href="/games/flingo/en/">Flingo</a>
+			</li>
+			<li>
+				<a href="/games/flip-and-go/en/">Flip and Go</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving/en/">Flip Diving</a>
+			</li>
+			<li>
+				<a href="/games/flip-words/en/">Flip Words</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1489">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flomo/en/">Flomo</a>
+			</li>
+			<li>
+				<a href="/games/flood-runner-2/en/">Flood Runner 2</a>
+			</li>
+			<li>
+				<a href="/games/fly-guy/en/">Fly Guy</a>
+			</li>
+			<li>
+				<a href="/games/foodimals-match-game/en/">Foodimals Match Game</a>
+			</li>
+			<li>
+				<a href="/games/foot-chinko/en/">Foot Chinko</a>
+			</li>
+			<li>
+				<a href="/games/forest-siege/en/">Forest Siege</a>
+			</li>
+			<li>
+				<a href="/games/forest-temple/en/">Forest Temple</a>
+			</li>
+			<li>
+				<a href="/games/forge-of-empires/en/">Forge of Empires</a>
+			</li>
+			<li>
+				<a href="/games/forks-and-arrows/en/">Forks and Arrows</a>
+			</li>
+			<li>
+				<a href="/games/formula-fever/en/">Formula Fever</a>
+			</li>
+			<li>
+				<a href="/games/formula-g1/en/">Formula G1</a>
+			</li>
+			<li>
+				<a href="/games/formula-racing/en/">Formula Racing</a>
+			</li>
+			<li>
+				<a href="/games/fragger/en/">Fragger</a>
+			</li>
+			<li>
+				<a href="/games/fragger-bonus-blast/en/">Fragger Bonus Blast</a>
+			</li>
+			<li>
+				<a href="/games/fragger-lost-city/en/">Fragger Lost City</a>
+			</li>
+			<li>
+				<a href="/games/frantic-chicken-easter-sweepstake/en/">Frantic Chicken Easter Sweepstake</a>
+			</li>
+			<li>
+				<a href="/games/fred-figglehorn/en/">Fred Figglehorn</a>
+			</li>
+			<li>
+				<a href="/games/free-aqua-zoo/en/">Free Aqua Zoo</a>
+			</li>
+			<li>
+				<a href="/games/free-kick-2012/en/">Free Kick 2012</a>
+			</li>
+			<li>
+				<a href="/games/free-kick-challenge/en/">Free Kick Challenge</a>
+			</li>
+			<li>
+				<a href="/games/free-running/en/">Free Running</a>
+			</li>
+			<li>
+				<a href="/games/free-running-2/en/">Free Running 2</a>
+			</li>
+			<li>
+				<a href="/games/free-wheels/en/">Free Wheels</a>
+			</li>
+			<li>
+				<a href="/games/freestyle-snowboard/en/">Freestyle Snowboard</a>
+			</li>
+			<li>
+				<a href="/games/frendz/en/">Frendz</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1495">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/fright-night/en/">Fright Night</a>
+			</li>
+			<li>
+				<a href="/games/frost-bite/en/">Frost Bite</a>
+			</li>
+			<li>
+				<a href="/games/frost-bite-2/en/">Frost Bite 2</a>
+			</li>
+			<li>
+				<a href="/games/fruit-smash/en/">Fruit Smash</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1496">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/funky-nurse/en/">Funky Nurse</a>
+			</li>
+			<li>
+				<a href="/games/galactic-goobers/en/">Galactic Goobers</a>
+			</li>
+			<li>
+				<a href="/games/galactic-warrior/en/">Galactic Warrior</a>
+			</li>
+			<li>
+				<a href="/games/galaxy-gunner/en/">Galaxy Gunner</a>
+			</li>
+			<li>
+				<a href="/games/game-of-thrones-ascent/en/">Game of Thrones Ascent</a>
+			</li>
+			<li>
+				<a href="/games/gamma-bros/en/">Gamma Bros</a>
+			</li>
+			<li>
+				<a href="/games/gangster/en/">Gangster</a>
+			</li>
+			<li>
+				<a href="/games/garden-gnome-carnage/en/">Garden Gnome Carnage</a>
+			</li>
+			<li>
+				<a href="/games/garden-panic/en/">Garden Panic</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=2919">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/gare/en/">Gare</a>
+			</li>
+			<li>
+				<a href="/games/gas-and-sand/en/">Gas & Sand</a>
+			</li>
+			<li>
+				<a href="/games/gateway/en/">Gateway</a>
+			</li>
+			<li>
+				<a href="/games/gemaica/en/">Gemaica</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=3294">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/ghostfire-attack/en/">Ghostfire Attack</a>
+			</li>
+			<li>
+				<a href="/games/ghosts-stole-my-dog/en/">Ghosts Stole My Dog</a>
+			</li>
+			<li>
+				<a href="/games/giants-and-dwarves/en/">Giants and Dwarves</a>
+			</li>
+			<li>
+				<a href="/games/gift-keeper/en/">Gift Keeper</a>
+			</li>
+			<li>
+				<a href="/games/gingerballs-sweepstake-christmas-2016/en/">GingerBalls Sweepstake Christmas 2016</a>
+			</li>
+			<li>
+				<a href="/games/gingerbread-circus/en/">Gingerbread Circus</a>
+			</li>
+			<li>
+				<a href="/games/gladiator/en/">Gladiator</a>
+			</li>
+			<li>
+				<a href="/games/gladiator-arena/en/">Gladiator Arena</a>
+			</li>
+			<li>
+				<a href="/games/gladiators/en/">Gladiators</a>
+			</li>
+			<li>
+				<a href="/games/glassworks/en/">Glassworks</a>
+			</li>
+			<li>
+				<a href="/games/gloomy-truck/en/">Gloomy Truck</a>
+			</li>
+			<li>
+				<a href="/games/glorkian-warrior/en/">Glorkian Warrior</a>
+			</li>
+			<li>
+				<a href="/games/gnomeo-kart/en/">Gnomeo Kart</a>
+			</li>
+			<li>
+				<a href="/games/go-kart-go-ultra/en/">Go Kart Go Ultra</a>
+			</li>
+			<li>
+				<a href="/games/go-karts/en/">Go Karts</a>
+			</li>
+			<li>
+				<a href="/games/go-santa-go/en/">Go Santa Go</a>
+			</li>
+			<li>
+				<a href="/games/goal-keeper/en/">Goal Keeper</a>
+			</li>
+			<li>
+				<a href="/games/gokartgo-nitro/en/">GoKartGo! Nitro!</a>
+			</li>
+			<li>
+				<a href="/games/gold-mine-strike/en/">Gold Mine Strike</a>
+			</li>
+			<li>
+				<a href="/games/golden-boot-sweepstake-2016/en/">Golden Boot Sweepstake - France 2016</a>
+			</li>
+			<li>
+				<a href="/games/golf-ace/en/">Golf Ace</a>
+			</li>
+			<li>
+				<a href="/games/golf-ace-hawaii/en/">Golf Ace Hawaii</a>
+			</li>
+			<li>
+				<a href="/games/golf-champions/en/">Golf Champions</a>
+			</li>
+			<li>
+				<a href="/games/golf-solitaire/en/">Golf Solitaire</a>
+			</li>
+			<li>
+				<a href="/games/golfish/en/">Golfish</a>
+			</li>
+			<li>
+				<a href="/games/grand-prix-go/en/">Grand Prix Go</a>
+			</li>
+			<li>
+				<a href="/games/granny-strikes-back/en/">Granny Strikes Back</a>
+			</li>
+			<li>
+				<a href="/games/graveyard-shift/en/">Graveyard Shift</a>
+			</li>
+			<li>
+				<a href="/games/gravinaytor/en/">Gravinaytor</a>
+			</li>
+			<li>
+				<a href="/games/gravity/en/">Gravity</a>
+			</li>
+			<li>
+				<a href="/games/gravity-guy/en/">Gravity Guy</a>
+			</li>
+			<li>
+				<a href="/games/gravity-guy-2/en/">Gravity Guy 2</a>
+			</li>
+			<li>
+				<a href="/games/gripz-globe-skater/en/">Gripz Globe Skater</a>
+			</li>
+			<li>
+				<a href="/games/groundhog-d-day/en/">Groundhog D-day</a>
+			</li>
+			<li>
+				<a href="/games/gun-run/en/">Gun Run</a>
+			</li>
+			<li>
+				<a href="/games/guns-and-glory-heroes/en/">Guns and Glory Heroes</a>
+			</li>
+			<li>
+				<a href="/games/guns-of-anarchy/en/">Guns Of Anarchy</a>
+			</li>
+			<li>
+				<a href="/games/gyroball/en/">Gyroball</a>
+			</li>
+			<li>
+				<a href="/games/hambo/en/">Hambo</a>
+			</li>
+			<li>
+				<a href="/games/hammer-2/en/">Hammer 2</a>
+			</li>
+			<li>
+				<a href="/games/hangaroo/en/">Hangaroo</a>
+			</li>
+			<li>
+				<a href="/games/hangaroo-2/en/">Hangaroo 2</a>
+			</li>
+			<li>
+				<a href="/games/happy-thanksgiving/en/">Happy Thanksgiving</a>
+			</li>
+			<li>
+				<a href="/games/happy-wheels/en/">Happy Wheels</a>
+			</li>
+			<li>
+				<a href="/games/haunted-house/en/">Haunted House</a>
+			</li>
+			<li>
+				<a href="/games/having-fun-together/en/">Having Fun Together</a>
+			</li>
+			<li>
+				<a href="/games/headless-zombie/en/">Headless Zombie</a>
+			</li>
+			<li>
+				<a href="/games/headless-zombie-2/en/">Headless Zombie 2</a>
+			</li>
+			<li>
+				<a href="/games/heart-breaker/en/">Heart Breaker</a>
+			</li>
+			<li>
+				<a href="/games/heli-attack-2/en/">Heli Attack 2</a>
+			</li>
+			<li>
+				<a href="/games/heli-attack-3/en/">Heli Attack 3</a>
+			</li>
+			<li>
+				<a href="/games/hen-coops/en/">Hen Coops</a>
+			</li>
+			<li>
+				<a href="/games/hero-in-the-ocean/en/">Hero in the Ocean</a>
+			</li>
+			<li>
+				<a href="/games/herotopia/en/">Herotopia</a>
+			</li>
+			<li>
+				<a href="/games/hexagon/en/">Hexagon</a>
+			</li>
+			<li>
+				<a href="/games/hexxagon/en/">Hexxagon</a>
+			</li>
+			<li>
+				<a href="/games/hip-hop-debate/en/">Hip-Hop Debate</a>
+			</li>
+			<li>
+				<a href="/games/hive-hero/en/">Hive Hero</a>
+			</li>
+			<li>
+				<a href="/games/hockey-showdown/en/">Hockey Showdown</a>
+			</li>
+			<li>
+				<a href="/games/hockey-stars-multiplayer/en/">Hockey Stars</a>
+			</li>
+			<li>
+				<a href="/games/hometown-street-race/en/">Hometown Street Race</a>
+			</li>
+			<li>
+				<a href="/games/hong-kong-ninja/en/">Hong Kong Ninja</a>
+			</li>
+			<li>
+				<a href="/games/horde-siege/en/">Horde Siege</a>
+			</li>
+			<li>
+				<a href="/games/horsey-racing/en/">Horsey Racing</a>
+			</li>
+			<li>
+				<a href="/games/hostile-skies/en/">Hostile Skies</a>
+			</li>
+			<li>
+				<a href="/games/hot-air/en/">Hot Air</a>
+			</li>
+			<li>
+				<a href="/games/hot-air-2/en/">Hot Air 2</a>
+			</li>
+			<li>
+				<a href="/games/hot-air-jr/en/">Hot Air Jr</a>
+			</li>
+			<li>
+				<a href="/games/hot-bikes/en/">Hot Bikes</a>
+			</li>
+			<li>
+				<a href="/games/hurry-up-bob-2/en/">Hurry up Bob 2</a>
+			</li>
+			<li>
+				<a href="/games/hydro-storm-2/en/">Hydro Storm 2</a>
+			</li>
+			<li>
+				<a href="/games/i-eat-bananas/en/">I Eat Bananas</a>
+			</li>
+			<li>
+				<a href="/games/i-spy-a-foodimal/en/">I Spy a Foodimal</a>
+			</li>
+			<li>
+				<a href="/games/ice-breaker/en/">Ice Breaker</a>
+			</li>
+			<li>
+				<a href="/games/ice-breaker-red-clan/en/">Ice Breaker Red Clan</a>
+			</li>
+			<li>
+				<a href="/games/ice-breakout/en/">Ice Breakout</a>
+			</li>
+			<li>
+				<a href="/games/ice-hockey-heroes/en/">Ice Hockey Heroes</a>
+			</li>
+			<li>
+				<a href="/games/ice-racer/en/">Ice Racer</a>
+			</li>
+			<li>
+				<a href="/games/ice-slide/en/">Ice Slide</a>
+			</li>
+			<li>
+				<a href="/games/icy-fishes/en/">Icy Fishes</a>
+			</li>
+			<li>
+				<a href="/games/icy-slicy/en/">Icy Slicy</a>
+			</li>
+			<li>
+				<a href="/games/imperia-online/en/">Imperia Online</a>
+			</li>
+			<li>
+				<a href="/games/in-the-doghouse/en/">In The Doghouse</a>
+			</li>
+			<li>
+				<a href="/games/infectonator-survivors/en/">Infectonator: Survivors</a>
+			</li>
+			<li>
+				<a href="/games/infinity-inc/en/">Infinity Inc</a>
+			</li>
+			<li>
+				<a href="/games/insane-ski-jump/en/">Insane Ski Jump</a>
+			</li>
+			<li>
+				<a href="/games/inventive-ami/en/">Inventive Ami</a>
+			</li>
+			<li>
+				<a href="/games/istunt-2/en/">iStunt 2</a>
+			</li>
+			<li>
+				<a href="/games/jack-lantern/en/">Jack Lantern</a>
+			</li>
+			<li>
+				<a href="/games/jacksmith/en/">Jacksmith</a>
+			</li>
+			<li>
+				<a href="/games/jelly-collapse/en/">Jelly Collapse</a>
+			</li>
+			<li>
+				<a href="/games/jet-defender/en/">Jet Defender</a>
+			</li>
+			<li>
+				<a href="/games/jet-ski/en/">Jet Ski</a>
+			</li>
+			<li>
+				<a href="/games/jet-ski-racer/en/">Jet Ski Racer</a>
+			</li>
+			<li>
+				<a href="/games/jet-ski-racing/en/">Jet Ski Racing</a>
+			</li>
+			<li>
+				<a href="/games/jet-velocity/en/">Jet Velocity</a>
+			</li>
+			<li>
+				<a href="/games/jet-velocity-2/en/">Jet Velocity 2</a>
+			</li>
+			<li>
+				<a href="/games/jewel-academy/en/">Jewel Academy</a>
+			</li>
+			<li>
+				<a href="/games/jigsaw-car/en/">Jigsaw - Car</a>
+			</li>
+			<li>
+				<a href="/games/jigsaw-ocean/en/">Jigsaw - Ocean</a>
+			</li>
+			<li>
+				<a href="/games/jingo/en/">Jingo</a>
+			</li>
+			<li>
+				<a href="/games/joe-destructo/en/">Joe Destructo</a>
+			</li>
+			<li>
+				<a href="/games/jonny-backflip/en/">Jonny Backflip</a>
+			</li>
+			<li>
+				<a href="/games/jousting/en/">Jousting</a>
+			</li>
+			<li>
+				<a href="/games/judy-moody-thrill-coaster/en/">Judy Moody Thrill Coaster</a>
+			</li>
+			<li>
+				<a href="/games/jump-start/en/">Jump Start</a>
+			</li>
+			<li>
+				<a href="/games/k-million/en/">K million</a>
+			</li>
+			<li>
+				<a href="/games/kamikaze-pigs/en/">Kamikaze Pigs</a>
+			</li>
+			<li>
+				<a href="/games/karate-king/en/">Karate King</a>
+			</li>
+			<li>
+				<a href="/games/kartwarsio/en/">Kartwars.io</a>
+			</li>
+			<li>
+				<a href="/games/katie-commando/en/">Katie Commando</a>
+			</li>
+			<li>
+				<a href="/games/kerry-workout/en/">Kerry Workout</a>
+			</li>
+			<li>
+				<a href="/games/key-and-shield/en/">Key and Shield</a>
+			</li>
+			<li>
+				<a href="/games/kickboxing/en/">Kickboxing</a>
+			</li>
+			<li>
+				<a href="/games/kind-of-soccer/en/">Kind of Soccer</a>
+			</li>
+			<li>
+				<a href="/games/king-of-the-hill/en/">King of the Hill</a>
+			</li>
+			<li>
+				<a href="/games/king-of-thieves/en/">King of Thieves</a>
+			</li>
+			<li>
+				<a href="/games/king-of-towers/en/">King of Towers</a>
+			</li>
+			<li>
+				<a href="/games/kingpin-bowling/en/">KingPin Bowling</a>
+			</li>
+			<li>
+				<a href="/games/kitts-kingdom/en/">Kitt's Kingdom</a>
+			</li>
+			<li>
+				<a href="/games/kiwi-tiki/en/">Kiwi Tiki</a>
+			</li>
+			<li>
+				<a href="/games/klondike-solitaire/en/">Klondike Solitaire</a>
+			</li>
+			<li>
+				<a href="/games/knight-age-2/en/">Knight Age 2</a>
+			</li>
+			<li>
+				<a href="/games/knight-age-nightmare/en/">Knight Age Nightmare</a>
+			</li>
+			<li>
+				<a href="/games/knight-slider/en/">Knight Slider</a>
+			</li>
+			<li>
+				<a href="/games/knightmare-tower/en/">Knightmare Tower</a>
+			</li>
+			<li>
+				<a href="/games/knights-and-brides/en/">Knights and Brides</a>
+			</li>
+			<li>
+				<a href="/games/koutack/en/">Koutack</a>
+			</li>
+			<li>
+				<a href="/games/kraft-lunchables/en/">Kraft Lunchables</a>
+			</li>
+			<li>
+				<a href="/games/kung-fu-statesmen/en/">Kung Fu Statesmen</a>
+			</li>
+			<li>
+				<a href="/games/lamb-chop-drop/en/">Lamb Chop Drop</a>
+			</li>
+			<li>
+				<a href="/games/last-christmas-2/en/">Last Christmas 2</a>
+			</li>
+			<li>
+				<a href="/games/last-horizon/en/">Last Horizon</a>
+			</li>
+			<li>
+				<a href="/games/last-samurai/en/">Last Samurai</a>
+			</li>
+			<li>
+				<a href="/games/lavalab/en/">Lavalab</a>
+			</li>
+			<li>
+				<a href="/games/lazerdriveio/en/">Lazerdrive.io</a>
+			</li>
+			<li>
+				<a href="/games/leave-me-alone/en/">Leave Me Alone</a>
+			</li>
+			<li>
+				<a href="/games/legends-of-honor/en/">Legends of Honor</a>
+			</li>
+			<li>
+				<a href="/games/lego-chima-online/en/">LEGO CHIMA Online</a>
+			</li>
+			<li>
+				<a href="/games/lego-chima/en/">LEGO Legends of CHIMA Online</a>
+			</li>
+			<li>
+				<a href="/games/lego-legends-of-chima-speedorz/en/">LEGO legends Of CHIMA: Speedorz</a>
+			</li>
+			<li>
+				<a href="/games/lego-you-make-the-game/en/">LEGO: You Make the Game</a>
+			</li>
+			<li>
+				<a href="/games/leo-steel/en/">Leo Steel</a>
+			</li>
+			<li>
+				<a href="/games/lethal-race/en/">Lethal Race</a>
+			</li>
+			<li>
+				<a href="/games/letter-lasso/en/">Letter Lasso</a>
+			</li>
+			<li>
+				<a href="/games/light-heroes/en/">Light Heroes</a>
+			</li>
+			<li>
+				<a href="/games/little-fins/en/">Little Fins</a>
+			</li>
+			<li>
+				<a href="/games/little-wheel/en/">Little Wheel</a>
+			</li>
+			<li>
+				<a href="/games/london-2012-olympic-games/en/">London 2012 Olympic Games</a>
+			</li>
+			<li>
+				<a href="/games/long-way/en/">Long Way</a>
+			</li>
+			<li>
+				<a href="/games/los-zombies/en/">Los Zombies</a>
+			</li>
+			<li>
+				<a href="/games/lost-yeti/en/">Lost Yeti</a>
+			</li>
+			<li>
+				<a href="/games/loves-arrow/en/">Love's Arrow</a>
+			</li>
+			<li>
+				<a href="/games/lumberjack-games/en/">Lumberjack Games</a>
+			</li>
+			<li>
+				<a href="/games/lunar-command/en/">Lunar Command</a>
+			</li>
+			<li>
+				<a href="/games/mad-day/en/">Mad Day</a>
+			</li>
+			<li>
+				<a href="/games/mad-day-2/en/">Mad Day 2</a>
+			</li>
+			<li>
+				<a href="/games/mad-skills-motocross/en/">Mad Skills Motocross</a>
+			</li>
+			<li>
+				<a href="/games/madmen-racing/en/">Madmen Racing</a>
+			</li>
+			<li>
+				<a href="/games/mafia-battle/en/">Mafia Battle</a>
+			</li>
+			<li>
+				<a href="/games/magic-balls/en/">Magic Balls</a>
+			</li>
+			<li>
+				<a href="/games/magic-pen/en/">Magic Pen</a>
+			</li>
+			<li>
+				<a href="/games/magic-pen-2/en/">Magic Pen 2</a>
+			</li>
+			<li>
+				<a href="/games/magnatron/en/">Magnatron</a>
+			</li>
+			<li>
+				<a href="/games/mahjong-daily/en/">Mahjong Daily</a>
+			</li>
+			<li>
+				<a href="/games/major-miner/en/">Major Miner</a>
+			</li>
+			<li>
+				<a href="/games/maldark-conqueror-of-all-worlds/en/">Maldark: Conqueror of All Worlds</a>
+			</li>
+			<li>
+				<a href="/games/mallet-mania/en/">Mallet Mania</a>
+			</li>
+			<li>
+				<a href="/games/man-or-monster/en/">Man or Monster</a>
+			</li>
+			<li>
+				<a href="/games/marble-temple/en/">Marble Temple</a>
+			</li>
+			<li>
+				<a href="/games/mariachi-mayhem/en/">Mariachi Mayhem</a>
+			</li>
+			<li>
+				<a href="/games/mars-patrol/en/">Mars Patrol</a>
+			</li>
+			<li>
+				<a href="/games/masters-of-wrestling/en/">Masters of Wrestling</a>
+			</li>
+			<li>
+				<a href="/games/math-blaster/en/">Math Blaster</a>
+			</li>
+			<li>
+				<a href="/games/max-speed/en/">Max Speed</a>
+			</li>
+			<li>
+				<a href="/games/mech-mice/en/">Mech Mice</a>
+			</li>
+			<li>
+				<a href="/games/meet-emily/en/">Meet Emily</a>
+			</li>
+			<li>
+				<a href="/games/merlins-christmas/en/">Merlin's Christmas</a>
+			</li>
+			<li>
+				<a href="/games/merry-christmas/en/">Merry Christmas</a>
+			</li>
+			<li>
+				<a href="/games/mexico-rex/en/">Mexico Rex</a>
+			</li>
+			<li>
+				<a href="/games/mighty-med-wheel-n-heal/en/">Mighty Med - Wheel 'n' Heal</a>
+			</li>
+			<li>
+				<a href="/games/milk-shake/en/">Milk Shake</a>
+			</li>
+			<li>
+				<a href="/games/mimelet/en/">Mimelet</a>
+			</li>
+			<li>
+				<a href="/games/minecart-madness/en/">Minecart Madness</a>
+			</li>
+			<li>
+				<a href="/games/minerz/en/">MinerZ</a>
+			</li>
+			<li>
+				<a href="/games/mini-golf/en/">Mini Golf</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1540">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/mini-pets/en/">Mini Pets</a>
+			</li>
+			<li>
+				<a href="/games/mini-soccer-classic/en/">Mini Soccer Classic</a>
+			</li>
+			<li>
+				<a href="/games/miniclip-allstar-baseball/en/">Miniclip Allstar Baseball</a>
+			</li>
+			<li>
+				<a href="/games/miniclip-free-bike/en/">Miniclip Free Bike</a>
+			</li>
+			<li>
+				<a href="/games/miniclip-rally/en/">Miniclip Rally</a>
+			</li>
+			<li>
+				<a href="/games/minicraft/en/">MiniCraft</a>
+			</li>
+			<li>
+				<a href="/games/minilympics/en/">Minilympics</a>
+			</li>
+			<li>
+				<a href="/games/mining-truck/en/">Mining Truck</a>
+			</li>
+			<li>
+				<a href="/games/mining-truck-2/en/">Mining Truck 2</a>
+			</li>
+			<li>
+				<a href="/games/minipets/en/">Minipets</a>
+			</li>
+			<li>
+				<a href="/games/minisoccer/en/">MiniSoccer</a>
+			</li>
+			<li>
+				<a href="/games/minisoccertest/en/">MiniSoccerTest</a>
+			</li>
+			<li>
+				<a href="/games/mission-mars/en/">Mission Mars</a>
+			</li>
+			<li>
+				<a href="/games/mister-easter/en/">Mister Easter</a>
+			</li>
+			<li>
+				<a href="/games/moby-dick/en/">Moby Dick</a>
+			</li>
+			<li>
+				<a href="/games/moby-dick-2/en/">Moby Dick 2</a>
+			</li>
+			<li>
+				<a href="/games/monkey-kick-off/en/">Monkey Kick Off</a>
+			</li>
+			<li>
+				<a href="/games/monkey-lander/en/">Monkey Lander</a>
+			</li>
+			<li>
+				<a href="/games/monkey-mines/en/">Monkey Mines</a>
+			</li>
+			<li>
+				<a href="/games/monster-basher/en/">Monster Basher</a>
+			</li>
+			<li>
+				<a href="/games/monster-castle/en/">Monster Castle</a>
+			</li>
+			<li>
+				<a href="/games/monster-golf/en/">Monster Golf</a>
+			</li>
+			<li>
+				<a href="/games/monster-invasion/en/">Monster Invasion</a>
+			</li>
+			<li>
+				<a href="/games/monster-island/en/">Monster Island</a>
+			</li>
+			<li>
+				<a href="/games/monster-mowdown-2/en/">Monster Mowdown 2</a>
+			</li>
+			<li>
+				<a href="/games/monster-stunts/en/">Monster Stunts</a>
+			</li>
+			<li>
+				<a href="/games/monster-sumo/en/">Monster Sumo</a>
+			</li>
+			<li>
+				<a href="/games/monster-truck-3d-arena-stunts/en/">Monster Truck 3D Arena Stunts</a>
+			</li>
+			<li>
+				<a href="/games/monster-truck-world-tour/en/">Monster Truck World Tour</a>
+			</li>
+			<li>
+				<a href="/games/monster-trucks/en/">Monster Trucks</a>
+			</li>
+			<li>
+				<a href="/games/monster-trucks-360/en/">Monster Trucks 360</a>
+			</li>
+			<li>
+				<a href="/games/monster-trucks-nitro/en/">Monster Trucks Nitro</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=2023">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/monster-trucks-nitro-2/en/">Monster Trucks Nitro 2</a>
+			</li>
+			<li>
+				<a href="/games/moon-rush/en/">Moon Rush</a>
+			</li>
+			<li>
+				<a href="/games/moonshadow/en/">Moonshadow</a>
+			</li>
+			<li>
+				<a href="/games/moshi-monsters/en/">Moshi Monsters</a>
+			</li>
+			<li>
+				<a href="/games/most-wanted/en/">Most Wanted</a>
+			</li>
+			<li>
+				<a href="/games/motherload/en/">MotherLoad</a>
+			</li>
+			<li>
+				<a href="/games/moto-jumping/en/">Moto Jumping</a>
+			</li>
+			<li>
+				<a href="/games/moto-trial-fest/en/">Moto Trial Fest</a>
+			</li>
+			<li>
+				<a href="/games/moto-x3m/en/">Moto x3m</a>
+			</li>
+			<li>
+				<a href="/games/motocross-country-fever/en/">Motocross Country Fever</a>
+			</li>
+			<li>
+				<a href="/games/motocross-fever/en/">Motocross Fever</a>
+			</li>
+			<li>
+				<a href="/games/motocross-nitro/en/">Motocross Nitro</a>
+			</li>
+			<li>
+				<a href="/games/motocross-urban-fever/en/">Motocross Urban Fever</a>
+			</li>
+			<li>
+				<a href="/games/motor-carnage/en/">Motor Carnage</a>
+			</li>
+			<li>
+				<a href="/games/mountain-bike/en/">Mountain Bike</a>
+			</li>
+			<li>
+				<a href="/games/movie-munchies/en/">Movie Munchies</a>
+			</li>
+			<li>
+				<a href="/games/mr-bounce/en/">Mr Bounce</a>
+			</li>
+			<li>
+				<a href="/games/mr-men-pinball/en/">Mr Men Pinball</a>
+			</li>
+			<li>
+				<a href="/games/muhammad-ali-puzzle-king/en/">Muhammad Ali Puzzle King</a>
+			</li>
+			<li>
+				<a href="/games/mushroom-madness/en/">Mushroom Madness</a>
+			</li>
+			<li>
+				<a href="/games/mushroom-madness-3/en/">Mushroom Madness 3</a>
+			</li>
+			<li>
+				<a href="/games/music-cube/en/">Music Cube</a>
+			</li>
+			<li>
+				<a href="/games/mutant-alien-assault/en/">Mutant Alien Assault</a>
+			</li>
+			<li>
+				<a href="/games/mx-nitro/en/">MX Nitro</a>
+			</li>
+			<li>
+				<a href="/games/nano-recon/en/">Nano Recon</a>
+			</li>
+			<li>
+				<a href="/games/nat-geo-animal-jam/en/">Nat Geo Animal Jam</a>
+			</li>
+			<li>
+				<a href="/games/need-for-madness/en/">Need for Madness</a>
+			</li>
+			<li>
+				<a href="/games/neon-race/en/">Neon Race</a>
+			</li>
+			<li>
+				<a href="/games/new-8-ball-pool/en/">New 8 Ball Pool </a>
+			</li>
+			<li>
+				<a href="/games/ninja-dogs-2/en/">Ninja Dogs 2</a>
+			</li>
+			<li>
+				<a href="/games/ninja-force/en/">Ninja Force</a>
+			</li>
+			<li>
+				<a href="/games/ninja-glove/en/">Ninja Glove</a>
+			</li>
+			<li>
+				<a href="/games/ninja-miner/en/">Ninja Miner</a>
+			</li>
+			<li>
+				<a href="/games/ninja-painter/en/">Ninja Painter</a>
+			</li>
+			<li>
+				<a href="/games/ninja-painter-2/en/">Ninja Painter 2</a>
+			</li>
+			<li>
+				<a href="/games/ninja-pig/en/">Ninja Pig</a>
+			</li>
+			<li>
+				<a href="/games/ninja-pig-2/en/">Ninja Pig 2</a>
+			</li>
+			<li>
+				<a href="/games/ninja-slash/en/">Ninja Slash</a>
+			</li>
+			<li>
+				<a href="/games/no-brakes/en/">No Brakes</a>
+			</li>
+			<li>
+				<a href="/games/nom-cat/en/">Nom Cat</a>
+			</li>
+			<li>
+				<a href="/games/nom-nation/en/">Nom Nation</a>
+			</li>
+			<li>
+				<a href="/games/nordic-chill/en/">Nordic Chill</a>
+			</li>
+			<li>
+				<a href="/games/not-in-my-dungeon/en/">Not in my Dungeon</a>
+			</li>
+			<li>
+				<a href="/games/notepad-chaos/en/">Notepad Chaos</a>
+			</li>
+			<li>
+				<a href="/games/nuclear-zombie-2000/en/">Nuclear Zombie 2000</a>
+			</li>
+			<li>
+				<a href="/games/numbskull/en/">Numbskull</a>
+			</li>
+			<li>
+				<a href="/games/obama-alien-defense/en/">Obama Alien Defense</a>
+			</li>
+			<li>
+				<a href="/games/off-the-rails/en/">Off The Rails</a>
+			</li>
+			<li>
+				<a href="/games/offroad-4x4/en/">Offroad 4x4</a>
+			</li>
+			<li>
+				<a href="/games/offroaders/en/">Offroaders</a>
+			</li>
+			<li>
+				<a href="/games/on-the-run/en/">On The Run</a>
+			</li>
+			<li>
+				<a href="/games/on-the-run-2/en/">On The Run 2</a>
+			</li>
+			<li>
+				<a href="/games/on-the-run-classic/en/">On The Run Classic</a>
+			</li>
+			<li>
+				<a href="/games/on-the-run-vegas/en/">On The Run Vegas</a>
+			</li>
+			<li>
+				<a href="/games/once-upon-a-life/en/">Once Upon A Life</a>
+			</li>
+			<li>
+				<a href="/games/one-and-one-story/en/">One and One Story</a>
+			</li>
+			<li>
+				<a href="/games/one-man-band/en/">One Man Band</a>
+			</li>
+			<li>
+				<a href="/games/onekey/en/">Onekey</a>
+			</li>
+			<li>
+				<a href="/games/operation-desert-road/en/">Operation Desert Road</a>
+			</li>
+			<li>
+				<a href="/games/opkaio/en/">Opka.io</a>
+			</li>
+			<li>
+				<a href="/games/orbox-c/en/">Orbox C</a>
+			</li>
+			<li>
+				<a href="/games/ores/en/">Ores</a>
+			</li>
+			<li>
+				<a href="/games/our-small-friends/en/">Our Small Friends</a>
+			</li>
+			<li>
+				<a href="/games/ourworld/en/">OurWorld</a>
+			</li>
+			<li>
+				<a href="/games/outpost-swarm/en/">Outpost Swarm</a>
+			</li>
+			<li>
+				<a href="/games/ovario/en/">Ovar.io</a>
+			</li>
+			<li>
+				<a href="/games/overhaul/en/">Overhaul</a>
+			</li>
+			<li>
+				<a href="/games/overkill-apache/en/">Overkill Apache</a>
+			</li>
+			<li>
+				<a href="/games/overvolt-racing/en/">OverVolt Racing</a>
+			</li>
+			<li>
+				<a href="/games/owl-spin/en/">Owl Spin</a>
+			</li>
+			<li>
+				<a href="/games/paintball/en/">Paintball</a>
+			</li>
+			<li>
+				<a href="/games/paintworld/en/">Paintworld</a>
+			</li>
+			<li>
+				<a href="/games/panfu/en/">Panfu</a>
+			</li>
+			<li>
+				<a href="/games/panik-in-chocoland/en/">Panik in Chocoland</a>
+			</li>
+			<li>
+				<a href="/games/papa-louie/en/">Papa Louie</a>
+			</li>
+			<li>
+				<a href="/games/papa-louie-2/en/">Papa Louie 2</a>
+			</li>
+			<li>
+				<a href="/games/papas-burgeria/en/">Papas Burgeria</a>
+			</li>
+			<li>
+				<a href="/games/papas-freezeria/en/">Papas Freezeria</a>
+			</li>
+			<li>
+				<a href="/games/papas-taco-mia/en/">Papas Taco Mia</a>
+			</li>
+			<li>
+				<a href="/games/pearl-diver/en/">Pearl Diver</a>
+			</li>
+			<li>
+				<a href="/games/pebble-dash/en/">Pebble Dash</a>
+			</li>
+			<li>
+				<a href="/games/pencak-silat/en/">Pencak Silat</a>
+			</li>
+			<li>
+				<a href="/games/pengapop/en/">Pengapop</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1562">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/pengu-wars/en/">Pengu Wars</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=2973">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/penguin-arcade/en/">Penguin Arcade</a>
+			</li>
+			<li>
+				<a href="/games/penguin-push/en/">Penguin Push</a>
+			</li>
+			<li>
+				<a href="/games/penguin-pusher/en/">Penguin Pusher</a>
+			</li>
+			<li>
+				<a href="/games/penguin-rush/en/">Penguin Rush</a>
+			</li>
+			<li>
+				<a href="/games/penguins-attack-iv/en/">Penguins Attack IV</a>
+			</li>
+			<li>
+				<a href="/games/pest-control/en/">Pest Control</a>
+			</li>
+			<li>
+				<a href="/games/pharaohs-tomb/en/">Pharaoh's Tomb</a>
+			</li>
+			<li>
+				<a href="/games/pheus-and-mor/en/">Pheus and Mor</a>
+			</li>
+			<li>
+				<a href="/games/pilot-heroes/en/">Pilot Heroes</a>
+			</li>
+			<li>
+				<a href="/games/pinch/en/">Pinch</a>
+			</li>
+			<li>
+				<a href="/games/ping-pong/en/">Ping Pong</a>
+			</li>
+			<li>
+				<a href="/games/pipe-riders/en/">Pipe Riders</a>
+			</li>
+			<li>
+				<a href="/games/pipsoh/en/">Pipsoh!</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1567">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/piranhas/en/">Piranhas</a>
+			</li>
+			<li>
+				<a href="/games/pirate-chains/en/">Pirate Chains</a>
+			</li>
+			<li>
+				<a href="/games/pirate-golf/en/">Pirate Golf</a>
+			</li>
+			<li>
+				<a href="/games/pirate-hunter/en/">Pirate Hunter</a>
+			</li>
+			<li>
+				<a href="/games/pixel-cricket/en/">Pixel Cricket</a>
+			</li>
+			<li>
+				<a href="/games/pizza-hot/en/">Pizza Hot</a>
+			</li>
+			<li>
+				<a href="/games/plague-inc/en/">Plague Inc.</a>
+			</li>
+			<li>
+				<a href="/games/planet-cruncher/en/">Planet Cruncher</a>
+			</li>
+			<li>
+				<a href="/games/plant-pong/en/">Plant Pong</a>
+			</li>
+			<li>
+				<a href="/games/plants-vs-zombies/en/">Plants vs Zombies</a>
+			</li>
+			<li>
+				<a href="/games/platcore/en/">PlatCore</a>
+			</li>
+			<li>
+				<a href="/games/plunger/en/">Plunger</a>
+			</li>
+			<li>
+				<a href="/games/pod-panic/en/">Pod Panic</a>
+			</li>
+			<li>
+				<a href="/games/polar-dash/en/">Polar Dash</a>
+			</li>
+			<li>
+				<a href="/games/polar-jump/en/">Polar Jump</a>
+			</li>
+			<li>
+				<a href="/games/polar-rescue/en/">Polar Rescue</a>
+			</li>
+			<li>
+				<a href="/games/polar-trouble/en/">Polar Trouble</a>
+			</li>
+			<li>
+				<a href="/games/police-pursuit/en/">Police Pursuit</a>
+			</li>
+			<li>
+				<a href="/games/pop-pirates/en/">Pop Pirates</a>
+			</li>
+			<li>
+				<a href="/games/potatoman/en/">Potatoman Seeks the Troof</a>
+			</li>
+			<li>
+				<a href="/games/power-boat/en/">Power Boat</a>
+			</li>
+			<li>
+				<a href="/games/power-rangers-samurai-defense/en/">Power Rangers Samurai Defense</a>
+			</li>
+			<li>
+				<a href="/games/power-rangers-super-samurai/en/">Power Rangers Super Samurai</a>
+			</li>
+			<li>
+				<a href="/games/power-soccer/en/">Power Soccer</a>
+			</li>
+			<li>
+				<a href="/games/present-panic/en/">Present Panic</a>
+			</li>
+			<li>
+				<a href="/games/presidential-paintball/en/">Presidential Paintball</a>
+			</li>
+			<li>
+				<a href="/games/presidential-pounding/en/">Presidential Pounding</a>
+			</li>
+			<li>
+				<a href="/games/pro-football/en/">Pro Football</a>
+			</li>
+			<li>
+				<a href="/games/pro-kick-revolution/en/">Pro Kick Revolution</a>
+			</li>
+			<li>
+				<a href="/games/pro-kicker/en/">Pro Kicker</a>
+			</li>
+			<li>
+				<a href="/games/pro-kicker-frenzy/en/">Pro Kicker Frenzy</a>
+			</li>
+			<li>
+				<a href="/games/probaseball/en/">ProBaseball</a>
+			</li>
+			<li>
+				<a href="/games/pumpkin-push/en/">Pumpkin Push</a>
+			</li>
+			<li>
+				<a href="/games/puppy-stew/en/">Puppy Stew</a>
+			</li>
+			<li>
+				<a href="/games/purbalds/en/">Purbalds</a>
+			</li>
+			<li>
+				<a href="/games/puzzle-pirates/en/">Puzzle Pirates</a>
+			</li>
+			<li>
+				<a href="/games/pyro-jump/en/">Pyro Jump</a>
+			</li>
+			<li>
+				<a href="/games/quantum-patrol/en/">Quantum Patrol</a>
+			</li>
+			<li>
+				<a href="/games/qubey/en/">Qubey</a>
+			</li>
+			<li>
+				<a href="/games/rift/en/">R.I.F.T.</a>
+			</li>
+			<li>
+				<a href="/games/raceway-500/en/">Raceway 500</a>
+			</li>
+			<li>
+				<a href="/games/radical-aces/en/">Radical Aces</a>
+			</li>
+			<li>
+				<a href="/games/raft-wars/en/">Raft Wars</a>
+			</li>
+			<li>
+				<a href="/games/raft-wars-2/en/">Raft Wars 2</a>
+			</li>
+			<li>
+				<a href="/games/raiders-took-my-dog/en/">Raiders Took My Dog</a>
+			</li>
+			<li>
+				<a href="/games/rail-rush/en/">Rail Rush</a>
+			</li>
+			<li>
+				<a href="/games/rail-rush-worlds/en/">Rail Rush Worlds</a>
+			</li>
+			<li>
+				<a href="/games/railroad-rampage/en/">Railroad Rampage</a>
+			</li>
+			<li>
+				<a href="/games/rally-point-2/en/">Rally Point 2</a>
+			</li>
+			<li>
+				<a href="/games/rally-racers/en/">Rally Racers</a>
+			</li>
+			<li>
+				<a href="/games/rapid-wars/en/">Rapid Wars</a>
+			</li>
+			<li>
+				<a href="/games/rat-fishing/en/">Rat Fishing</a>
+			</li>
+			<li>
+				<a href="/games/razor-run/en/">Razor Run</a>
+			</li>
+			<li>
+				<a href="/games/rc-time-trial/en/">RC Time Trial</a>
+			</li>
+			<li>
+				<a href="/games/real-space-2/en/">Real Space 2</a>
+			</li>
+			<li>
+				<a href="/games/red-beard/en/">Red Beard</a>
+			</li>
+			<li>
+				<a href="/games/red-bugs-puzzle/en/">Red Bugs Puzzle</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1943">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/red-code-3/en/">Red Code 3</a>
+			</li>
+			<li>
+				<a href="/games/red-riot/en/">Red Riot</a>
+			</li>
+			<li>
+				<a href="/games/reel-gold/en/">Reel Gold</a>
+			</li>
+			<li>
+				<a href="/games/reindeer-bounce/en/">Reindeer Bounce</a>
+			</li>
+			<li>
+				<a href="/games/renegade-racing/en/">Renegade Racing</a>
+			</li>
+			<li>
+				<a href="/games/retro-unicorn-attack/en/">Retro Unicorn Attack</a>
+			</li>
+			<li>
+				<a href="/games/retroshoot-360/en/">Retroshoot 360</a>
+			</li>
+			<li>
+				<a href="/games/rev-mx/en/">Rev MX</a>
+			</li>
+			<li>
+				<a href="/games/rhino-rush/en/">Rhino Rush</a>
+			</li>
+			<li>
+				<a href="/games/rhino-rush-stampede/en/">Rhino Rush Stampede</a>
+			</li>
+			<li>
+				<a href="/games/rich-racer/en/">Rich Racer</a>
+			</li>
+			<li>
+				<a href="/games/rifleman/en/">Rifleman</a>
+			</li>
+			<li>
+				<a href="/games/rigelian-hotshots/en/">Rigelian Hotshots</a>
+			</li>
+			<li>
+				<a href="/games/ringshot/en/">Ringshot</a>
+			</li>
+			<li>
+				<a href="/games/rio-2016-olympic-games/en/">Rio 2016 Olympic Games</a>
+			</li>
+			<li>
+				<a href="/games/rise-of-mythos/en/">Rise of Mythos</a>
+			</li>
+			<li>
+				<a href="/games/rising-cities/en/">Rising Cities</a>
+			</li>
+			<li>
+				<a href="/games/rival-rage/en/">Rival Rage</a>
+			</li>
+			<li>
+				<a href="/games/river-assault/en/">River Assault</a>
+			</li>
+			<li>
+				<a href="/games/river-raider/en/">River Raider</a>
+			</li>
+			<li>
+				<a href="/games/rizk/en/">Rizk</a>
+			</li>
+			<li>
+				<a href="/games/road-of-fury/en/">Road Of Fury</a>
+			</li>
+			<li>
+				<a href="/games/road-of-fury-2/en/">Road of Fury 2</a>
+			</li>
+			<li>
+				<a href="/games/roar-rampage/en/">Roar Rampage</a>
+			</li>
+			<li>
+				<a href="/games/robo-pop/en/">Robo Pop</a>
+			</li>
+			<li>
+				<a href="/games/robo-rampage/en/">Robo Rampage</a>
+			</li>
+			<li>
+				<a href="/games/robokill/en/">RoboKill</a>
+			</li>
+			<li>
+				<a href="/games/robot-shooting/en/">Robot Shooting</a>
+			</li>
+			<li>
+				<a href="/games/robots-vs-zombies/en/">Robots vs Zombies</a>
+			</li>
+			<li>
+				<a href="/games/robsta-da-mobsta-da-internet-gangsta-at-work-but-not-working-2000/en/">ROBSTA DA MOBSTA DA INTERNET GANGSTA</a>
+			</li>
+			<li>
+				<a href="/games/rock-bump-bowl/en/">Rock Bump Bowl</a>
+			</li>
+			<li>
+				<a href="/games/rock-wheels/en/">Rock Wheels</a>
+			</li>
+			<li>
+				<a href="/games/rocket-pets/en/">Rocket Pets</a>
+			</li>
+			<li>
+				<a href="/games/rocketman/en/">Rocketman</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1591">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/rockitty/en/">Rockitty</a>
+			</li>
+			<li>
+				<a href="/games/rodeo-ride-off/en/">Rodeo Ride-off</a>
+			</li>
+			<li>
+				<a href="/games/rollercoaster/en/">Rollercoaster</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1592">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/rolley/en/">Rolley</a>
+			</li>
+			<li>
+				<a href="/games/rollo-and-flex/en/">Rollo and Flex</a>
+			</li>
+			<li>
+				<a href="/games/rollon/en/">RollOn</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1594">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/roly-poly/en/">Roly Poly</a>
+			</li>
+			<li>
+				<a href="/games/rooftop-hop/en/">Rooftop-Hop</a>
+			</li>
+			<li>
+				<a href="/games/rot/en/">Rot</a>
+			</li>
+			<li>
+				<a href="/games/rotorstorm/en/">RotorStorm</a>
+			</li>
+			<li>
+				<a href="/games/royal-wedding/en/">Royal Wedding</a>
+			</li>
+			<li>
+				<a href="/games/rubble-trouble/en/">Rubble Trouble</a>
+			</li>
+			<li>
+				<a href="/games/rubble-trouble-moscow/en/">Rubble Trouble Moscow</a>
+			</li>
+			<li>
+				<a href="/games/rubble-trouble-tokyo/en/">Rubble Trouble Tokyo</a>
+			</li>
+			<li>
+				<a href="/games/rugby-challenge/en/">Rugby Challenge</a>
+			</li>
+			<li>
+				<a href="/games/rule-the-beach-volleyball/en/">Rule The Beach Volleyball</a>
+			</li>
+			<li>
+				<a href="/games/rumble-in-the-soup/en/">Rumble in the Soup</a>
+			</li>
+			<li>
+				<a href="/games/run-n-gun/en/">Run N Gun</a>
+			</li>
+			<li>
+				<a href="/games/rural-racer/en/">Rural Racer</a>
+			</li>
+			<li>
+				<a href="/games/saloon-brawl/en/">Saloon Brawl</a>
+			</li>
+			<li>
+				<a href="/games/saloon-brawl-2/en/">Saloon Brawl 2</a>
+			</li>
+			<li>
+				<a href="/games/samurai-warrior/en/">Samurai Warrior</a>
+			</li>
+			<li>
+				<a href="/games/sandman/en/">Sandman</a>
+			</li>
+			<li>
+				<a href="/games/sandstorm/en/">Sandstorm</a>
+			</li>
+			<li>
+				<a href="/games/santa-ski-jump/en/">Santa Ski Jump</a>
+			</li>
+			<li>
+				<a href="/games/santas-cannon/en/">Santa's Cannon</a>
+			</li>
+			<li>
+				<a href="/games/santas-gift-jump/en/">Santa's Gift Jump</a>
+			</li>
+			<li>
+				<a href="/games/save-the-fallen/en/">Save the Fallen</a>
+			</li>
+			<li>
+				<a href="/games/save-the-sheriff/en/">Save the Sheriff</a>
+			</li>
+			<li>
+				<a href="/games/scooby-doo-great-chase/en/">Scooby Doo Great Chase</a>
+			</li>
+			<li>
+				<a href="/games/scraper-caper/en/">Scraper Caper</a>
+			</li>
+			<li>
+				<a href="/games/scrappy-cat/en/">Scrappy Cat</a>
+			</li>
+			<li>
+				<a href="/games/scrappy-dog/en/">Scrappy Dog</a>
+			</li>
+			<li>
+				<a href="/games/scribble/en/">Scribble</a>
+			</li>
+			<li>
+				<a href="/games/serious-dave/en/">Serious Dave</a>
+			</li>
+			<li>
+				<a href="/games/sewer-run/en/">Sewer Run</a>
+			</li>
+			<li>
+				<a href="/games/shadow-factory/en/">Shadow Factory</a>
+			</li>
+			<li>
+				<a href="/games/shadow-kings/en/">Shadow Kings - Dark Ages</a>
+			</li>
+			<li>
+				<a href="/games/shadows-of-mummies/en/">Shadows of Mummies</a>
+			</li>
+			<li>
+				<a href="/games/shanghai-mahjongg/en/">Shanghai Mahjongg</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1537">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/shark-bait/en/">Shark Bait</a>
+			</li>
+			<li>
+				<a href="/games/sheepish/en/">Sheepish</a>
+			</li>
+			<li>
+				<a href="/games/sheriff-tripeaks/en/">Sheriff Tripeaks</a>
+			</li>
+			<li>
+				<a href="/games/shift-2/en/">Shift 2</a>
+			</li>
+			<li>
+				<a href="/games/shootin-hoops/en/">Shootin' Hoops</a>
+			</li>
+			<li>
+				<a href="/games/shooting-cybertrash-xl/en/">Shooting Cybertrash XL</a>
+			</li>
+			<li>
+				<a href="/games/shop-heroes/en/">Shop Heroes</a>
+			</li>
+			<li>
+				<a href="/games/shopping-mall-parking/en/">Shopping Mall Parking</a>
+			</li>
+			<li>
+				<a href="/games/short-history-of-the-world/en/">Short History of the World</a>
+			</li>
+			<li>
+				<a href="/games/shotgun-vs-zombies/en/">Shotgun vs Zombies</a>
+			</li>
+			<li>
+				<a href="/games/shove-it/en/">Shove It</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1615">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/shrunken-heads/en/">Shrunken Heads</a>
+			</li>
+			<li>
+				<a href="/games/siege-hero/en/">Siege Hero</a>
+			</li>
+			<li>
+				<a href="/games/siege-knight/en/">Siege Knight</a>
+			</li>
+			<li>
+				<a href="/games/silversphere/en/">Silversphere</a>
+			</li>
+			<li>
+				<a href="/games/simon-says/en/">Simon Says</a>
+			</li>
+			<li>
+				<a href="/games/simple-soccer/en/">Simple Soccer</a>
+			</li>
+			<li>
+				<a href="/games/skateboard-jam/en/">Skateboard Jam</a>
+			</li>
+			<li>
+				<a href="/games/sketchman/en/">SketchMan</a>
+			</li>
+			<li>
+				<a href="/games/ski-run/en/">Ski Run</a>
+			</li>
+			<li>
+				<a href="/games/ski-run-2/en/">Ski Run 2</a>
+			</li>
+			<li>
+				<a href="/games/ski-safari/en/">Ski Safari</a>
+			</li>
+			<li>
+				<a href="/games/sky-golf/en/">Sky Golf</a>
+			</li>
+			<li>
+				<a href="/games/skyboard/en/">Skyboard</a>
+			</li>
+			<li>
+				<a href="/games/skyward-ninja/en/">Skyward Ninja</a>
+			</li>
+			<li>
+				<a href="/games/skywire/en/">Skywire</a>
+			</li>
+			<li>
+				<a href="/games/skywire-2/en/">Skywire 2</a>
+			</li>
+			<li>
+				<a href="/games/sleigh-shot/en/">Sleigh Shot</a>
+			</li>
+			<li>
+				<a href="/games/slime-laboratory/en/">Slime Laboratory</a>
+			</li>
+			<li>
+				<a href="/games/slime-laboratory-2/en/">Slime Laboratory 2</a>
+			</li>
+			<li>
+				<a href="/games/sling/en/">Sling</a>
+			</li>
+			<li>
+				<a href="/games/slingfire/en/">Slingfire</a>
+			</li>
+			<li>
+				<a href="/games/slingshot/en/">Slingshot</a>
+			</li>
+			<li>
+				<a href="/games/slitherio/en/">Slither.io</a>
+			</li>
+			<li>
+				<a href="/games/slot-car-dodge/en/">Slot Car Dodge</a>
+			</li>
+			<li>
+				<a href="/games/small-fry/en/">Small Fry</a>
+			</li>
+			<li>
+				<a href="/games/smashing/en/">Smashing</a>
+			</li>
+			<li>
+				<a href="/games/smashz/en/">SmashZ</a>
+			</li>
+			<li>
+				<a href="/games/smokin-barrels/en/">Smokin' Barrels</a>
+			</li>
+			<li>
+				<a href="/games/smokin-barrels-2/en/">Smokin' Barrels 2</a>
+			</li>
+			<li>
+				<a href="/games/smurf-your-photo/en/">Smurf Your Photo</a>
+			</li>
+			<li>
+				<a href="/games/smurfette-vs-naughties/en/">Smurfette Vs Naughties</a>
+			</li>
+			<li>
+				<a href="/games/snake/en/">Snake</a>
+			</li>
+			<li>
+				<a href="/games/snake-squad/en/">Snake Squad</a>
+			</li>
+			<li>
+				<a href="/games/snap-n-spooky/en/">Snap n Spooky</a>
+			</li>
+			<li>
+				<a href="/games/sneeze/en/">Sneeze</a>
+			</li>
+			<li>
+				<a href="/games/sniper/en/">Sniper</a>
+			</li>
+			<li>
+				<a href="/games/snow-blazers/en/">Snow Blazers</a>
+			</li>
+			<li>
+				<a href="/games/snow-day/en/">Snow Day</a>
+			</li>
+			<li>
+				<a href="/games/snow-drift/en/">Snow Drift</a>
+			</li>
+			<li>
+				<a href="/games/snow-line/en/">Snow Line</a>
+			</li>
+			<li>
+				<a href="/games/snow-line-2/en/">Snow Line 2</a>
+			</li>
+			<li>
+				<a href="/games/snow-riders/en/">Snow Riders</a>
+			</li>
+			<li>
+				<a href="/games/snow-tale/en/">Snow Tale</a>
+			</li>
+			<li>
+				<a href="/games/snowball/en/">Snowball</a>
+			</li>
+			<li>
+				<a href="/games/snowball-warfare/en/">Snowball Warfare</a>
+			</li>
+			<li>
+				<a href="/games/snowboard-madness/en/">Snowboard Madness</a>
+			</li>
+			<li>
+				<a href="/games/snowboarder-xs/en/">Snowboarder XS</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1629">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/snowbowl/en/">Snowbowl</a>
+			</li>
+			<li>
+				<a href="/games/snowfight-io/en/">Snowfight.io</a>
+			</li>
+			<li>
+				<a href="/games/snowman-stacker/en/">Snowman Stacker</a>
+			</li>
+			<li>
+				<a href="/games/snowmans-hat/en/">Snowman's Hat</a>
+			</li>
+			<li>
+				<a href="/games/snowmen-parade/en/">Snowmen Parade</a>
+			</li>
+			<li>
+				<a href="/games/soap-bubble/en/">Soap Bubble</a>
+			</li>
+			<li>
+				<a href="/games/soap-bubble-2/en/">Soap Bubble 2</a>
+			</li>
+			<li>
+				<a href="/games/soccer-category/en/">Soccer Category</a>
+			</li>
+			<li>
+				<a href="/games/soccer-five/en/">Soccer Five</a>
+			</li>
+			<li>
+				<a href="/games/soccer-pro/en/">Soccer Pro</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars/en/">Soccer Stars Classic</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile/en/">Soccer Stars Mobile</a>
+			</li>
+			<li>
+				<a href="/games/space-escape/en/">Space Escape</a>
+			</li>
+			<li>
+				<a href="/games/space-fighter-rebellion/en/">Space Fighter Rebellion</a>
+			</li>
+			<li>
+				<a href="/games/space-hopper/en/">Space Hopper</a>
+			</li>
+			<li>
+				<a href="/games/space1io/en/">Space1.io</a>
+			</li>
+			<li>
+				<a href="/games/spectral-wizard/en/">Spectral Wizard</a>
+			</li>
+			<li>
+				<a href="/games/spellstorm/en/">Spellstorm</a>
+			</li>
+			<li>
+				<a href="/games/spellsword/en/">SpellSword</a>
+			</li>
+			<li>
+				<a href="/games/spider-game/en/">Spider Game</a>
+			</li>
+			<li>
+				<a href="/games/splitman/en/">Splitman</a>
+			</li>
+			<li>
+				<a href="/games/splixio/en/">Splix.io</a>
+			</li>
+			<li>
+				<a href="/games/sportbike-champion/en/">Sportbike Champion</a>
+			</li>
+			<li>
+				<a href="/games/sportbike-sprint/en/">Sportbike Sprint</a>
+			</li>
+			<li>
+				<a href="/games/sports-hero/en/">Sports Hero</a>
+			</li>
+			<li>
+				<a href="/games/sporty-and-pretty/en/">Sporty and Pretty</a>
+			</li>
+			<li>
+				<a href="/games/sprint-club-nitro/en/">Sprint Club Nitro</a>
+			</li>
+			<li>
+				<a href="/games/spurt/en/">Spurt</a>
+			</li>
+			<li>
+				<a href="/games/sqrl-golf/en/">SQRL Golf</a>
+			</li>
+			<li>
+				<a href="/games/sqrl-golf-2/en/">SQRL Golf 2</a>
+			</li>
+			<li>
+				<a href="/games/squaddio/en/">Squadd.io</a>
+			</li>
+			<li>
+				<a href="/games/square-meal/en/">Square Meal</a>
+			</li>
+			<li>
+				<a href="/games/squiggle-squid/en/">Squiggle Squid</a>
+			</li>
+			<li>
+				<a href="/games/stackopolis/en/">Stackopolis</a>
+			</li>
+			<li>
+				<a href="/games/stan-skates/en/">Stan Skates</a>
+			</li>
+			<li>
+				<a href="/games/star-stable/en/">Star Stable</a>
+			</li>
+			<li>
+				<a href="/games/star-wars-fighter-pods-battle-game/en/">Star Wars Fighter Pods Battle Game</a>
+			</li>
+			<li>
+				<a href="/games/starship-eleven/en/">Starship Eleven</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1641">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/starship-gunner/en/">Starship Gunner</a>
+			</li>
+			<li>
+				<a href="/games/starship-seven/en/">Starship Seven</a>
+			</li>
+			<li>
+				<a href="/games/stay-the-distance/en/">Stay the Distance</a>
+			</li>
+			<li>
+				<a href="/games/stealth-sniper/en/">Stealth Sniper</a>
+			</li>
+			<li>
+				<a href="/games/stealth-sniper-2/en/">Stealth Sniper 2</a>
+			</li>
+			<li>
+				<a href="/games/stick-rpg-2/en/">Stick RPG 2</a>
+			</li>
+			<li>
+				<a href="/games/stickman/en/">Stickman</a>
+			</li>
+			<li>
+				<a href="/games/stop-gmo-2/en/">Stop GMO 2</a>
+			</li>
+			<li>
+				<a href="/games/stop-trump/en/">Stop Trump</a>
+			</li>
+			<li>
+				<a href="/games/stork-race/en/">Stork Race</a>
+			</li>
+			<li>
+				<a href="/games/stormfall/en/">Stormfall</a>
+			</li>
+			<li>
+				<a href="/games/storybook/en/">Storybook</a>
+			</li>
+			<li>
+				<a href="/games/street-ball-jam/en/">Street Ball Jam</a>
+			</li>
+			<li>
+				<a href="/games/street-fight/en/">Street Fight</a>
+			</li>
+			<li>
+				<a href="/games/street-luge/en/">Street Luge</a>
+			</li>
+			<li>
+				<a href="/games/street-race-fury/en/">Street Race Fury</a>
+			</li>
+			<li>
+				<a href="/games/strike-force-heroes/en/">Strike Force Heroes</a>
+			</li>
+			<li>
+				<a href="/games/strike-force-heroes-2/en/">Strike Force Heroes 2</a>
+			</li>
+			<li>
+				<a href="/games/strike-force-heroes-3/en/">Strike Force Heroes 3</a>
+			</li>
+			<li>
+				<a href="/games/strike-force-kitty-2/en/">Strike Force Kitty 2</a>
+			</li>
+			<li>
+				<a href="/games/strike-force-kitty-last-stand/en/">Strike Force Kitty: Last Stand</a>
+			</li>
+			<li>
+				<a href="/games/stunt-crazy/en/">Stunt Crazy</a>
+			</li>
+			<li>
+				<a href="/games/stunt-dive/en/">Stunt Dive</a>
+			</li>
+			<li>
+				<a href="/games/stunt-driver/en/">Stunt Driver</a>
+			</li>
+			<li>
+				<a href="/games/stunt-pilot/en/">Stunt Pilot</a>
+			</li>
+			<li>
+				<a href="/games/stunt-pilot-2/en/">Stunt Pilot 2</a>
+			</li>
+			<li>
+				<a href="/games/stuntman/en/">Stuntman</a>
+			</li>
+			<li>
+				<a href="/games/sub-commander/en/">Sub Commander</a>
+			</li>
+			<li>
+				<a href="/games/subway-clash-3d/en/">Subway Clash 3D</a>
+			</li>
+			<li>
+				<a href="/games/sudoku/en/">Sudoku</a>
+			</li>
+			<li>
+				<a href="/games/sugar-skull-sweepstake-halloween-2016/en/">Sugar Skull Sweepstake - Halloween 2016</a>
+			</li>
+			<li>
+				<a href="/games/sugar-sugar-3/en/">Sugar Sugar 3</a>
+			</li>
+			<li>
+				<a href="/games/sugar-sugar-xmas/en/">Sugar Sugar Xmas</a>
+			</li>
+			<li>
+				<a href="/games/summer-athletics-2009/en/">Summer Athletics 2009</a>
+			</li>
+			<li>
+				<a href="/games/super-battle-city-1/en/">Super Battle City 1</a>
+			</li>
+			<li>
+				<a href="/games/super-battle-city-2/en/">Super Battle City 2</a>
+			</li>
+			<li>
+				<a href="/games/super-buddies/en/">Super Buddies</a>
+			</li>
+			<li>
+				<a href="/games/super-goblin-war-machine/en/">Super Goblin War Machine</a>
+			</li>
+			<li>
+				<a href="/games/super-hero-squad/en/">Super Hero Squad</a>
+			</li>
+			<li>
+				<a href="/games/super-robot-war/en/">Super Robot War</a>
+			</li>
+			<li>
+				<a href="/games/super-soccer-noggins/en/">Super Soccer Noggins</a>
+			</li>
+			<li>
+				<a href="/games/super-soccer-noggins-preview/en/">Super Soccer Noggins Preview</a>
+			</li>
+			<li>
+				<a href="/games/super-stocktake/en/">Super Stocktake</a>
+			</li>
+			<li>
+				<a href="/games/super-trucks/en/">Super Trucks</a>
+			</li>
+			<li>
+				<a href="/games/superbike-gp/en/">Superbike GP</a>
+			</li>
+			<li>
+				<a href="/games/supercar-showdown/en/">Supercar Showdown</a>
+			</li>
+			<li>
+				<a href="/games/superhero-pizza/en/">Superhero Pizza</a>
+			</li>
+			<li>
+				<a href="/games/superhot/en/">SuperHOT</a>
+			</li>
+			<li>
+				<a href="/games/surfs-up/en/">Surf's Up</a>
+			</li>
+			<li>
+				<a href="/games/surfmania/en/">Surfmania</a>
+			</li>
+			<li>
+				<a href="/games/sushi-cat/en/">Sushi Cat</a>
+			</li>
+			<li>
+				<a href="/games/sushi-go-round/en/">Sushi Go Round</a>
+			</li>
+			<li>
+				<a href="/games/swindler/en/">Swindler</a>
+			</li>
+			<li>
+				<a href="/games/swindler-2/en/">Swindler 2</a>
+			</li>
+			<li>
+				<a href="/games/swing-copters/en/">Swing Copters</a>
+			</li>
+			<li>
+				<a href="/games/table-tennis/en/">Table Tennis</a>
+			</li>
+			<li>
+				<a href="/games/table-tennis-tournament/en/">Table Tennis Tournament</a>
+			</li>
+			<li>
+				<a href="/games/tabletop-cricket/en/">Tabletop Cricket</a>
+			</li>
+			<li>
+				<a href="/games/tank-attack/en/">Tank Attack</a>
+			</li>
+			<li>
+				<a href="/games/tank-attack-3d/en/">Tank Attack 3D</a>
+			</li>
+			<li>
+				<a href="/games/tank-blitz-zero/en/">Tank Blitz Zero</a>
+			</li>
+			<li>
+				<a href="/games/tanked-up/en/">Tanked Up</a>
+			</li>
+			<li>
+				<a href="/games/tanki-online/en/">Tanki Online</a>
+			</li>
+			<li>
+				<a href="/games/tanxio/en/">Tanx.io</a>
+			</li>
+			<li>
+				<a href="/games/tap-heroes/en/">Tap Heroes</a>
+			</li>
+			<li>
+				<a href="/games/tap-the-frog/en/">Tap the Frog</a>
+			</li>
+			<li>
+				<a href="/games/tap-the-frog-doodle/en/">Tap the Frog Doodle</a>
+			</li>
+			<li>
+				<a href="/games/tarnation/en/">Tarnation</a>
+			</li>
+			<li>
+				<a href="/games/tennis-ace/en/">Tennis Ace</a>
+			</li>
+			<li>
+				<a href="/games/tennis-doubles/en/">Tennis Doubles</a>
+			</li>
+			<li>
+				<a href="/games/tennis-grand-slam/en/">Tennis Grand Slam</a>
+			</li>
+			<li>
+				<a href="/games/tennis-titans/en/">Tennis Titans</a>
+			</li>
+			<li>
+				<a href="/games/tetris-twist/en/">Tetris® Twist</a>
+			</li>
+			<li>
+				<a href="/games/tgmotocross-3/en/">TGMotocross 3</a>
+			</li>
+			<li>
+				<a href="/games/the-ashes/en/">The Ashes</a>
+			</li>
+			<li>
+				<a href="/games/the-champions-4/en/">The Champions 4</a>
+			</li>
+			<li>
+				<a href="/games/the-godfather-five-families/en/">The Godfather: Five Families</a>
+			</li>
+			<li>
+				<a href="/games/the-gun-game-redux/en/">The Gun Game Redux</a>
+			</li>
+			<li>
+				<a href="/games/the-last-dinosaurs/en/">The Last Dinosaurs</a>
+			</li>
+			<li>
+				<a href="/games/the-scruffs/en/">The Scruffs</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1996">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/the-tower/en/">The Tower</a>
+			</li>
+			<li>
+				<a href="/games/thin-ice/en/">Thin Ice</a>
+			</li>
+			<li>
+				<a href="/games/thunder-plunder/en/">Thunder Plunder</a>
+			</li>
+			<li>
+				<a href="/games/thunderbirds/en/">Thunderbirds Are Go: Team Rush</a>
+			</li>
+			<li>
+				<a href="/games/tiger-golf/en/">Tiger Golf</a>
+			</li>
+			<li>
+				<a href="/games/tiny-castle/en/">Tiny Castle</a>
+			</li>
+			<li>
+				<a href="/games/tiny-tanks/en/">Tiny Tanks</a>
+			</li>
+			<li>
+				<a href="/games/toboggan-run/en/">Toboggan Run</a>
+			</li>
+			<li>
+				<a href="/games/tooth-n-claw/en/">Tooth N Claw</a>
+			</li>
+			<li>
+				<a href="/games/top-cop/en/">Top Cop</a>
+			</li>
+			<li>
+				<a href="/games/top-shootout/en/">Top Shootout</a>
+			</li>
+			<li>
+				<a href="/games/total-wreckage/en/">Total Wreckage</a>
+			</li>
+			<li>
+				<a href="/games/touchdown-hero-new-season/en/">Touchdown Hero New Season</a>
+			</li>
+			<li>
+				<a href="/games/toys-vs-nightmares/en/">Toys Vs Nightmares</a>
+			</li>
+			<li>
+				<a href="/games/transformers-beast-hunters/en/">Transformers Beast Hunters</a>
+			</li>
+			<li>
+				<a href="/games/transmorpher/en/">Transmorpher</a>
+			</li>
+			<li>
+				<a href="/games/traps-mines-and-a-sheep/en/">Traps, Mines and a Sheep</a>
+			</li>
+			<li>
+				<a href="/games/trapshoot/en/">Trapshoot</a>
+			</li>
+			<li>
+				<a href="/games/treasure-arena/en/">Treasure Arena</a>
+			</li>
+			<li>
+				<a href="/games/trech/en/">Trech</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1661">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trial-bike/en/">Trial Bike</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1709">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trial-bike-pro/en/">Trial Bike PRO</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1664">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trials-2/en/">Trials 2</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1887">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trials-construction-yard/en/">Trials Construction Yard</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1665">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trials-dynamite/en/">Trials Dynamite</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1954">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/trials-mountain-heights/en/">Trials Mountain Heights</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1666">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/tribe/en/">Tribe</a>
+			</li>
+			<li>
+				<a href="/games/trick-or-treat-smash/en/">Trick or Treat Smash</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1667">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/tripeaks-solitaire/en/">TriPeaks Solitaire</a>
+			</li>
+			<li>
+				<a href="/games/trivia-machine/en/">Trivia Machine</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1668">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/tron/en/">Tron</a>
+			</li>
+			<li>
+				<a href="/games/tropi-golf/en/">Tropi Golf</a>
+			</li>
+			<li>
+				<a href="/games/troy/en/">Troy</a>
+			</li>
+			<li>
+				<a href="/games/tug-the-table/en/">Tug the Table</a>
+			</li>
+			<li>
+				<a href="/games/tumblestump-2/en/">Tumblestump 2</a>
+			</li>
+			<li>
+				<a href="/games/turbo-kids/en/">Turbo Kids</a>
+			</li>
+			<li>
+				<a href="/games/turbo-racing/en/">Turbo Racing</a>
+			</li>
+			<li>
+				<a href="/games/turbo-racing-2/en/">Turbo Racing 2</a>
+			</li>
+			<li>
+				<a href="/games/turbo-racing-3/en/">Turbo Racing 3</a>
+			</li>
+			<li>
+				<a href="/games/turkey-run/en/">Turkey Run</a>
+			</li>
+			<li>
+				<a href="/games/twiddlestix/en/">Twiddlestix</a>
+			</li>
+			<li>
+				<a href="/games/twisted-city/en/">Twisted City</a>
+			</li>
+			<li>
+				<a href="/games/twisted-lines/en/">Twisted Lines</a>
+			</li>
+			<li>
+				<a href="/games/ufo-joe/en/">UFO Joe</a>
+			</li>
+			<li>
+				<a href="/games/unforgettable-memories/en/">Unforgettable Memories</a>
+			</li>
+			<li>
+				<a href="/games/united-we-dance/en/">United We Dance</a>
+			</li>
+			<li>
+				<a href="/games/up-beat/en/">Up Beat</a>
+			</li>
+			<li>
+				<a href="/games/upipe-skateboard/en/">Upipe Skateboard</a>
+			</li>
+			<li>
+				<a href="/games/urban-basketball/en/">Urban Basketball</a>
+			</li>
+			<li>
+				<a href="/games/vector-rush/en/">Vector Rush</a>
+			</li>
+			<li>
+				<a href="/games/vectoroids/en/">Vectoroids</a>
+			</li>
+			<li>
+				<a href="/games/verge/en/">Verge</a>
+			</li>
+			<li>
+				<a href="/games/verti-golf/en/">Verti Golf</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1673">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/verti-golf-2/en/">Verti Golf 2</a>
+				<a href="https://www.miniclip.com/games/en/purchase-game.php?id=1674">
+					<small>[Get Full]</small>
+				</a>
+			</li>
+			<li>
+				<a href="/games/vertix-online/en/">Vertix Online</a>
+			</li>
+			<li>
+				<a href="/games/vexy-dress-up/en/">Vexy Dress Up</a>
+			</li>
+			<li>
+				<a href="/games/viking-age/en/">Viking Age</a>
+			</li>
+			<li>
+				<a href="/games/viking-defense/en/">Viking Defense</a>
+			</li>
+			<li>
+				<a href="/games/vinicius-run/en/">Vinicius Run</a>
+			</li>
+			<li>
+				<a href="/games/viper/en/">Viper</a>
+			</li>
+			<li>
+				<a href="/games/virtual-voodoo/en/">Virtual Voodoo</a>
+			</li>
+			<li>
+				<a href="/games/volcanic-airways/en/">Volcanic Airways</a>
+			</li>
+			<li>
+				<a href="/games/vortex-of-doom/en/">Vortex Of Doom</a>
+			</li>
+			<li>
+				<a href="/games/vuvuzela-shoot-out/en/">Vuvuzela Shoot Out</a>
+			</li>
+			<li>
+				<a href="/games/vvvvvv/en/">Vvvvvv</a>
+			</li>
+			<li>
+				<a href="/games/wacky-ballz/en/">Wacky Ballz</a>
+			</li>
+			<li>
+				<a href="/games/wacky-ballz-2/en/">Wacky Ballz 2</a>
+			</li>
+			<li>
+				<a href="/games/waffle-mania/en/">Waffle Mania</a>
+			</li>
+			<li>
+				<a href="/games/wait-4-me/en/">Wait 4 Me</a>
+			</li>
+			<li>
+				<a href="/games/wakeboard-pro/en/">Wakeboard Pro</a>
+			</li>
+			<li>
+				<a href="/games/wakeboarding-xs/en/">Wakeboarding XS</a>
+			</li>
+			<li>
+				<a href="/games/war-copter/en/">War Copter</a>
+			</li>
+			<li>
+				<a href="/games/war-dogs/en/">War Dogs</a>
+			</li>
+			<li>
+				<a href="/games/war-in-space/en/">War In Space</a>
+			</li>
+			<li>
+				<a href="/games/wasteland-siege/en/">Wasteland Siege</a>
+			</li>
+			<li>
+				<a href="/games/wave-jumper/en/">Wave Jumper</a>
+			</li>
+			<li>
+				<a href="/games/weirdville/en/">Weirdville</a>
+			</li>
+			<li>
+				<a href="/games/western-front-1914/en/">Western Front 1914</a>
+			</li>
+			<li>
+				<a href="/games/whack-a-ground-hog/en/">Whack a Ground Hog</a>
+			</li>
+			<li>
+				<a href="/games/whack-a-naughty/en/">Whack a Naughty</a>
+			</li>
+			<li>
+				<a href="/games/wheels-of-salvation/en/">Wheels of Salvation</a>
+			</li>
+			<li>
+				<a href="/games/white-water-rafting/en/">White Water Rafting</a>
+			</li>
+			<li>
+				<a href="/games/wild-wastelands/en/">Wild Wastelands</a>
+			</li>
+			<li>
+				<a href="/games/wildsio/en/">wilds.io</a>
+			</li>
+			<li>
+				<a href="/games/wingsio/en/">Wings.io</a>
+			</li>
+			<li>
+				<a href="/games/winter-bow-master/en/">Winter Bow Master</a>
+			</li>
+			<li>
+				<a href="/games/winter-games/en/">Winter Games</a>
+			</li>
+			<li>
+				<a href="/games/winter-workout/en/">Winter Workout</a>
+			</li>
+			<li>
+				<a href="/games/wizard-hult/en/">Wizard Hult</a>
+			</li>
+			<li>
+				<a href="/games/wolfgang-fights-the-future/en/">Wolfgang Fights The Future</a>
+			</li>
+			<li>
+				<a href="/games/wonderputt/en/">Wonderputt</a>
+			</li>
+			<li>
+				<a href="/games/wood-runner/en/">Wood Runner</a>
+			</li>
+			<li>
+				<a href="/games/word-sailing/en/">Word Sailing</a>
+			</li>
+			<li>
+				<a href="/games/word-vine/en/">Word Vine</a>
+			</li>
+			<li>
+				<a href="/games/world-cricket-2011/en/">World Cricket 2011</a>
+			</li>
+			<li>
+				<a href="/games/world-golf-tour/en/">World Golf Tour</a>
+			</li>
+			<li>
+				<a href="/games/world-rugby-2011/en/">World Rugby 2011</a>
+			</li>
+			<li>
+				<a href="/games/world-soccer/en/">World Soccer</a>
+			</li>
+			<li>
+				<a href="/games/world-soccer-champion/en/">World Soccer Champion</a>
+			</li>
+			<li>
+				<a href="/games/world-soccer-forever/en/">World Soccer Forever</a>
+			</li>
+			<li>
+				<a href="/games/worm-food/en/">Worm Food</a>
+			</li>
+			<li>
+				<a href="/games/wormateio/en/">Wormate.io Adventures Non-Stop</a>
+			</li>
+			<li>
+				<a href="/games/wrap-attack/en/">Wrap Attack</a>
+			</li>
+			<li>
+				<a href="/games/wrassling/en/">Wrassling</a>
+			</li>
+			<li>
+				<a href="/games/wrestle-jump/en/">Wrestle Jump</a>
+			</li>
+			<li>
+				<a href="/games/xbox-party-mansion/en/">Xbox Party Mansion</a>
+			</li>
+			<li>
+				<a href="/games/xraye/en/">XRaye</a>
+			</li>
+			<li>
+				<a href="/games/yome-creator/en/">YoMe Creator</a>
+			</li>
+			<li>
+				<a href="/games/z-infect/en/">Z Infect</a>
+			</li>
+			<li>
+				<a href="/games/zed/en/">Zed</a>
+			</li>
+			<li>
+				<a href="/games/zero-gravity/en/">Zero Gravity</a>
+			</li>
+			<li>
+				<a href="/games/zippy-boxes/en/">Zippy Boxes</a>
+			</li>
+			<li>
+				<a href="/games/zoikz/en/">Zoikz</a>
+			</li>
+			<li>
+				<a href="/games/zoikz-2/en/">Zoikz 2</a>
+			</li>
+			<li>
+				<a href="/games/zombality/en/">Zombality</a>
+			</li>
+			<li>
+				<a href="/games/zombie-big-trouble/en/">Zombie Big Trouble</a>
+			</li>
+			<li>
+				<a href="/games/zombie-breach/en/">Zombie Breach</a>
+			</li>
+			<li>
+				<a href="/games/zombie-breakout/en/">Zombie Breakout</a>
+			</li>
+			<li>
+				<a href="/games/zombie-crypt/en/">Zombie Crypt</a>
+			</li>
+			<li>
+				<a href="/games/zombie-defense-agency/en/">Zombie Defense Agency</a>
+			</li>
+			<li>
+				<a href="/games/zombie-dolls/en/">Zombie Dolls</a>
+			</li>
+			<li>
+				<a href="/games/zombie-gunship/en/">Zombie Gunship</a>
+			</li>
+			<li>
+				<a href="/games/zombie-karts/en/">Zombie Karts</a>
+			</li>
+			<li>
+				<a href="/games/zombie-mania/en/">Zombie Mania</a>
+			</li>
+			<li>
+				<a href="/games/zombie-situation/en/">Zombie Situation</a>
+			</li>
+			<li>
+				<a href="/games/zombie-stalker/en/">Zombie Stalker</a>
+			</li>
+			<li>
+				<a href="/games/zombie-trapper-2/en/">Zombie Trapper 2</a>
+			</li>
+			<li>
+				<a href="/games/zombinsanity/en/">Zombinsanity</a>
+			</li>
+			<li>
+				<a href="/games/zombo-buster-rising/en/">Zombo Buster Rising</a>
+			</li>
+			<li>
+				<a href="/games/zombotron/en/">Zombotron</a>
+			</li>
+			<li>
+				<a href="/games/zombotron-2-time-machine/en/">Zombotron 2 Time Machine</a>
+			</li>
+			<li>
+				<a href="/games/zoo-pop/en/">Zoo Pop</a>
+			</li>
+			<li>
+				<a href="/games/zoo-racer/en/">Zoo Racer</a>
+			</li>
+			<li>
+				<a href="/games/zumas-revenge/en/">Zuma's Revenge</a>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="box greedy">
+		<header class="pretty">
+			<h2>Pages</h2>
+		</header>
+		<ul class="inner">
+			<li><a href="/games/page/en/8ball-millionaire-marathon-terms-and-conditions/">8 Ball Pool Millionaire</a></li>
+			<li><a href="/games/page/en/pool-registration/">8 Ball Pool Registration </a></li>
+			<li><a href="/games/page/en/downloadable-games/">Downloadable Games</a></li>
+			<li><a href="/games/page/en/end-polio/">End Polio Campaign</a></li>
+			<li><a href="/games/page/en/facebook-error/">Facebook Login Error</a></li>
+			<li><a href="/games/page/en/facebook-privacy-policy/">Facebook Privacy Policy</a></li>
+			<li><a href="/games/page/en/frantic-chicken-easter-sweeps-terms-and-conditions/">Frantic Easter Sweeps</a></li>
+			<li><a href="/games/page/en/gingerballs-sweepstake-terms-and-conditions/">GingerBalls Sweepstake Te</a></li>
+			<li><a href="/games/page/en/golden-boot-sweeps-terms-and-conditions/">Golden Boot Sweepstake</a></li>
+			<li><a href="/games/page/en/internet-safety/">Internet Safety</a></li>
+			<li><a href="/games/page/en/choose-your-language/">Language Selection</a></li>
+			<li><a href="/games/page/en/push-ad-filler/">MAI Filler Push Ad</a></li>
+			<li><a href="/games/page/en/homepage/">Make Miniclip Your Homepa</a></li>
+			<li><a href="/games/page/en/minipets-terms-and-conditions/">Minipets comp T&Cs</a></li>
+			<li><a href="/games/page/en/password-reminder/">Password Reminder</a></li>
+			<li><a href="/games/page/en/privacy-policy/">Privacy Policy</a></li>
+			<li><a href="/games/page/en/real-madrid-prize-draw-terms-and-conditions/">Real Madrid Prize Draw</a></li>
+			<li><a href="/games/page/en/sitemap/">Sitemap</a></li>
+			<li><a href="/games/page/en/smartphone-information/">Smartphone info popup</a></li>
+			<li><a href="/games/page/en/sugar-sweeps-terms-and-conditions/">Sugar Skull Sweepstake</a></li>
+			<li><a href="/games/page/en/sweepstake-terms-and-conditions/">Sweepstake Terms and Cond</a></li>
+			<li><a href="/games/page/en/terms-and-conditions/">Terms & Conditions</a></li>
+			<li><a href="/credits/en/offers/">Credits Offers</a></li>
+		</ul>
+	</div>
+
+	<div class="box greedy">
+		<header class="pretty">
+			<h2>Other Sites</h2>
+		</header>
+		<ul class="inner">
+						<li><a href="http://twitter.com/miniclip">Miniclip on Twitter</a></li>
+						<li><a href="http://www.facebook.com/miniclip">Miniclip on Facebook</a></li>
+			<li><a href="http://www.youtube.com/miniclip">Miniclip on YouTube</a></li>
+			<li><a href="http://apps.facebook.com/quickfirepool/">8 Ball Pool on Facebook</a></li>
+			<li><a href="http://wikipedia.org/wiki/Miniclip">Miniclip on Wikipedia</a></li>
+			<li><a href="http://www.flickr.com/photos/miniclipgames/">Miniclip on Flickr</a></li>
+		</ul>
+	</div>
+
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/en/" rel="nofollow">Play Games at Miniclip.com</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Home</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone Games</a></li>
+				<li><a href="/games/genre-503/" class="android">Android Games</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">Games for Your Website</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Submit a Game</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Advertisers</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Get in touch with the Miniclip Team">Contact Us</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="All About Miniclip.com">Corporate</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Current Vacancies at Miniclip.com">Careers</a></li>
+					<li><a href="/games/page/en/internet-safety/" title="Internet Safety">Internet Safety</a></li>
+					<li><a href="/videos/">Video Tips and Tricks</a></li>
+					<li><a href="/games/en/feed.xml" rel="nofollow">RSS Game Feed</a></li>
+					<li><a href="/games/page/en/sitemap/">Sitemap</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/en/terms-and-conditions/" rel="nofollow">Terms and Conditions</a></li>
+				<li><a href="/privacy/" rel="nofollow">Privacy Policy</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Cookies</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Help</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Login to Miniclip.com</h2>
+			</header>
+
+			<label>
+				<span>Email Address				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Password</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Login" />
+			</label>
+			<label class="col">
+				<span class="inline">Remember Me</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/en/">Password Reminder</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2>Signup <em>Free</em></h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">close drawer</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/page/jp/sitemap/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-08212ccadce252e38
+	q's = 1
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGxFQVl1JQlpXTg==","queueTime":0,"applicationTime":357,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

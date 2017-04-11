@@ -1,0 +1,103 @@
+body
+{
+background-color:#000;
+color:#fff;
+text-align:center;
+font-family:Georgia,serif;
+}
+
+.main
+{
+position:absolute;
+top:0px;
+left:0px;
+width:100%;
+height:100%;
+
+}
+
+.bordercolor
+{
+background-color:#c09;
+width:678px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.text
+{
+font-size:16pt;
+
+width:550px;
+border:double 32px #c09;
+ -moz-border-image: url('framea.gif') 32 32 32 32 repeat repeat;
+ -webkit-border-image: url('framea.gif') 32 32 32 32 repeat repeat;
+border-image: url('framea.gif') 32 32 32 32 repeat repeat;
+margin-left:auto;
+margin-right:auto;
+padding:32px;
+
+//-webkit-box-shadow: 0px 0px 5px #000, 0px 0px 15px #000, 0px 0px 30px #000;
+//-moz-box-shadow: 0px 0px 5px #000, 0px 0px 15px #000, 0px 0px 30px #000;
+//box-shadow: 0px 0px 5px #000, 0px 0px 15px #000, 0px 0px 30px #000;
+
+}
+
+.text:first-letter
+{
+font-size:150%;
+font-weight:bold;
+}
+
+.choices
+{
+margin-top:32px;
+}
+
+a, a:active
+{
+text-decoration:underline;
+color:#fff;
+}
+
+a:hover
+{
+background-color:#fff;
+color:#000;
+}
+
+.choice
+{
+font-size:12pt;
+border:double #fff;
+padding:8px;
+margin:8px;
+text-decoration:none;
+color:#fff;
+}
+
+.choice:hover
+{
+border:double #000;
+background-color:#fff;
+color:#000;
+}
+
+.back
+{
+position:relative;
+top:32px;
+font-size:8pt;
+padding:8px;
+margin:8px;
+text-decoration:none;
+color:#fff;
+}
+
+.input
+{
+background-color:#000;
+color:#fff;
+border:1px solid #fff;
+font-size:8pt;
+}

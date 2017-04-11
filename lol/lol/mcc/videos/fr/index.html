@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Vidéos de jeu, astuces et guides de jeu Miniclip</title>
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/videos/fr/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/fr/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/video.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Vidéos de jeu, astuces et guides de jeu Miniclip"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/videos/fr/" />
+		<meta property="og:title" content="NEW update!" />
+		<meta property="og:type" content="video" />
+		<meta property="og:image" content="https://i1.ytimg.com/vi/ZlAtjzXDnGE/maxresdefault.jpg?feature=og">
+		<meta property="og:video" content="https://www.youtube.com/v/ZlAtjzXDnGE?autohide=1&amp;version=3">
+		<meta property="og:video:type" content="application/x-shockwave-flash">
+		<meta property="og:video:width" content="1280">
+		<meta property="og:video:height" content="720">
+
+		<meta name="twitter:card" content="player">
+		<meta name="twitter:url" content="https://www.miniclip.com/videos/fr/">
+		<meta name="twitter:title" content="NEW update!">
+		<meta name="twitter:image" content="https://i1.ytimg.com/vi/ZlAtjzXDnGE/maxresdefault.jpg">
+		<meta name="twitter:player" content="https://www.youtube.com/embed/ZlAtjzXDnGE">
+		<meta name="twitter:player:width" content="1280">
+		<meta name="twitter:player:height" content="720">
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/rating.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/videos\/","dimension9":"United States","dimension8":"fr","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "fr";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "V";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/videos/fr/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/videos/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/videos/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/videos/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/videos/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/videos/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/videos/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/videos/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/videos/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/videos/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/videos/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/videos/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/videos/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/videos/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/videos/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/videos/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/videos/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/videos/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Masquer","show":"Afficher","full_categories_list":"Liste compl\u00e8te des cat\u00e9gories","all_games_and_categories":"Tous les jeux et cat\u00e9gories","show_more_results":"Afficher plus de r\u00e9sultats &rsaquo;","no_comments":"Aucun commentaire","report":"Signaler","comment_like_failed":"D\u00e9sol\u00e9, \u00e9chec \u00e0 aimer le commentaire. Merci de r\u00e9essayer plus tard.","comment_reporting_failed":"D\u00e9sol\u00e9, le signalement du commentaire a \u00e9chou\u00e9.","the_word_is_not_allowed":"Le mot %s n'est pas dans notre liste de mots autoris\u00e9s.","remove_red_messages":"Merci de retirer les mots surlign\u00e9s en rouge de ton message, ils sont interdits.","enter_the_link":"Saisis l'url du lien","search_free_games":"Tu aimes les jeux gratuits\u00a0? Nous <strong>AIMONS<\/strong> les jeux gratuits\u00a0! Tous les jeux Miniclip ont une version gratuite \u00e0 laquelle tu peux jouer directement sur le site.","password_reset_error_email":"<strong>Oups\u00a0!<\/strong> Tu n'a pas saisi d'adresse e-mail\u00a0!","password_reset_error_username":"<strong>D\u00e9sol\u00e9<\/strong> - Cette adresse e-mail ne semble pas valide.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Passer en mode Focus pour se concentrer sur le jeu. Cela relancera la partie en cours. Continuer\u00a0?","add_to_favorites":"Ajouter \u00e0 tes jeux favoris","remove_from_favorites":"Retirer de tes jeux favoris","comment_autocomplete_placeholder":"Commence \u00e0 taper pour obtenir des suggestions","new":"Nouveau","next":"suivant","prev":"pr\u00e9c\u00e9dent","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Erreur\u00a0!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-video video-id- locale-us lang-fr browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="fr" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/fr/" rel="nofollow">Joue sur Miniclip.com</a>
+			</h1>
+	<form class="search-form item" action="/games/search/fr/" target="_top">
+		<label>
+			<span class="screen-reader">Rechercher...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Rechercher des jeux" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Rechercher</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Inscription / Connexion</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="S'inscrire et se connecter avec Facebook" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" width="44" height="32" alt="fr" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>Dans ta langue</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/videos/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/videos/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/videos/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/videos/de/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/videos/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/videos/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/videos/tr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/videos/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/videos/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/videos/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/videos/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/videos/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/videos/hu/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/videos/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/videos/kr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/videos/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/videos&return_post=" class="button small greedy">
+		Plus	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/fr/#t-n" class="button category home" title="Page d'accueil de Miniclip">
+				<span>Accueil Miniclip</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/fr/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/jeux-d-action/fr/#t-n" class="cat-13 catgory button">
+				Jeux d'action			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/jeux-multijoueurs/fr/#t-n" class="cat-2 catgory button">
+				Multijoueur			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/jeux-de-puzzle/fr/#t-n" class="cat-1 catgory button">
+				Réflexion			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/fr/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Plus de catégories</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Catégories de jeux</h2>
+	<div class="category-list">
+		<a href="/games/genre-6/-top-10/fr/#t-m-c" class="cat-6" title="Jouer aux jeux detype - Top 10">- Top 10</a>
+		<a href="/games/genre-35/3d/fr/#t-m-c" class="cat-35" title="Jouer aux jeux detype 3D">3D</a>
+		<a href="/games/genre-503/android/fr/#t-m-c" class="cat-503" title="Jouer aux jeux detype Android">Android</a>
+		<a href="/games/genre-517/arcade/fr/#t-m-c" class="cat-517" title="Jouer aux jeux detype Arcade">Arcade</a>
+		<a href="/games/genre-515/adventure/fr/#t-m-c" class="cat-515" title="Jouer aux jeux detype Aventure">Aventure</a>
+		<a href="/games/genre-497/buzz/fr/#t-m-c" class="cat-497" title="Jouer aux jeux detype Buzz">Buzz</a>
+		<a href="/games/genre-1151/cascade/fr/#t-m-c" class="cat-1151" title="Jouer aux jeux detype Cascade">Cascade</a>
+		<a href="/games/genre-519/fighting/fr/#t-m-c" class="cat-519" title="Jouer aux jeux detype Combat">Combat</a>
+		<a href="/games/genre-477/racing/fr/#t-m-c" class="cat-477" title="Jouer aux jeux detype Course">Course</a>
+		<a href="/games/genre-1185/credits/fr/#t-m-c" class="cat-1185" title="Jouer aux jeux detype Crédits">Crédits</a>
+		<a href="/games/genre-1143/destruction/fr/#t-m-c" class="cat-1143" title="Jouer aux jeux detype Destruction">Destruction</a>
+		<a href="/games/genre-482/kids/fr/#t-m-c" class="cat-482" title="Jouer aux jeux detype Enfants">Enfants</a>
+		<a href="/games/genre-1238/holidays/fr/#t-m-c" class="cat-1238" title="Jouer aux jeux detype Fêtes
+">Fêtes
+</a>
+		<a href="/games/genre-18/coupe-du-monde/fr/#t-m-c" class="cat-18" title="Jouer aux jeux detype Football">Football</a>
+		<a href="/games/genre-1001/football-americain/fr/#t-m-c" class="cat-1001" title="Jouer aux jeux detype Football américain
+">Football américain
+</a>
+		<a href="/games/genre-488/golf/fr/#t-m-c" class="cat-488" title="Jouer aux jeux detype Golf">Golf</a>
+		<a href="/games/genre-490/halloween/fr/#t-m-c" class="cat-490" title="Jouer aux jeux detype Halloween">Halloween</a>
+		<a href="/games/genre-4/nol/fr/#t-m-c" class="cat-4" title="Jouer aux jeux detype Hiver">Hiver</a>
+		<a href="/games/genre-13/jeux-d-action/fr/#t-m-c" class="cat-13" title="Jouer aux jeux detype Jeux d'action">Jeux d'action</a>
+		<a href="/games/genre-1133/cartes/fr/#t-m-c" class="cat-1133" title="Jouer aux jeux detype Jeux de cartes
+">Jeux de cartes
+</a>
+		<a href="/games/genre-3/jeux-de-sport/fr/#t-m-c" class="cat-3" title="Jouer aux jeux detype Jeux de sport">Jeux de sport</a>
+		<a href="/games/genre-5/jeux-de-tir/fr/#t-m-c" class="cat-5" title="Jouer aux jeux detype Jeux de tir">Jeux de tir</a>
+		<a href="/games/genre-1194/iphone/fr/#t-m-c" class="cat-1194" title="Jouer aux jeux detype Jeux iPhone
+">Jeux iPhone
+</a>
+		<a href="/games/genre-1201/hot-games/fr/#t-m-c" class="cat-1201" title="Jouer aux jeux detype Jeux Populaire
+">Jeux Populaire
+</a>
+		<a href="/games/genre-432/webmaster-games/fr/#t-m-c" class="cat-432" title="Jouer aux jeux detype Jeux pour les webmasters
+">Jeux pour les webmasters
+</a>
+		<a href="/games/genre-1109/mot/fr/#t-m-c" class="cat-1109" title="Jouer aux jeux detype Jouer avec les mots
+">Jouer avec les mots
+</a>
+		<a href="/games/genre-7/nouveaux-jeux/fr/#t-m-c" class="cat-7" title="Jouer aux jeux detype Les plus récents
+">Les plus récents
+</a>
+		<a href="/games/genre-1209//fr/#t-m-c" class="cat-1209" title="Jouer aux jeux detype London Olympics 2012">Jeux olympiques de Londres 2012</a>
+		<a href="/games/genre-1157/motocross/fr/#t-m-c" class="cat-1157" title="Jouer aux jeux detype Motocross">Motocross</a>
+		<a href="/games/genre-2/jeux-multijoueurs/fr/#t-m-c" class="cat-2" title="Jouer aux jeux detype Multijoueur">Multijoueur</a>
+		<a href="/games/genre-511/my-friends-league/fr/#t-m-c" class="cat-511" title="Jouer aux jeux detype My Friends League">Avec mes amis</a>
+		<a href="/games/genre-1003/noel/fr/#t-m-c" class="cat-1003" title="Jouer aux jeux detype Noël
+">Noël
+</a>
+		<a href="/games/genre-40/jeux-de-plateforme/fr/#t-m-c" class="cat-40" title="Jouer aux jeux detype Plateforme">Plateforme</a>
+		<a href="/games/genre-14/jeux-politiques/fr/#t-m-c" class="cat-14" title="Jouer aux jeux detype Politique">Politique</a>
+		<a href="/games/genre-513/pool/fr/#t-m-c" class="cat-513" title="Jouer aux jeux detype Pool">Billard</a>
+		<a href="/games/genre-1/jeux-de-puzzle/fr/#t-m-c" class="cat-1" title="Jouer aux jeux detype Réflexion">Réflexion</a>
+		<a href="/games/genre-26/sports-automobiles/fr/#t-m-c" class="cat-26" title="Jouer aux jeux detype Sports automobiles">Sports automobiles</a>
+		<a href="/games/genre-1155/sports-extremes/fr/#t-m-c" class="cat-1155" title="Jouer aux jeux detype Sports extrêmes
+">Sports extrêmes
+</a>
+		<a href="/games/genre-523/strategy/fr/#t-m-c" class="cat-523" title="Jouer aux jeux detype Stratégie">Stratégie</a>
+		<a href="/games/genre-484/tennis/fr/#t-m-c" class="cat-484" title="Jouer aux jeux detype Tennis">Tennis</a>
+		<a href="/games/genre-23/top-100/fr/#t-m-c" class="cat-23" title="Jouer aux jeux detype Top 100">Top 100</a>
+		<a href="/games/genre-1145/tower-defense/fr/#t-m-c" class="cat-1145" title="Jouer aux jeux detype Tower Defense">Tower Defense</a>
+		<a href="/games/genre-525/award/fr/#t-m-c" class="cat-525" title="Jouer aux jeux detype Trophées
+">Trophées
+</a>
+		<a href="/games/genre-521/flying/fr/#t-m-c" class="cat-521" title="Jouer aux jeux detype Vol">Vol</a>
+		<a href="/games/genre-1149/zombie/fr/#t-m-c" class="cat-1149" title="Jouer aux jeux detype Zombie">Zombie</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Plus de trucs cool</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Blog Miniclip" class="feed">
+					Blog Miniclip				</a>
+			</li>
+			<li>
+				<a href="/games/page/fr/downloadable-games/#t-m-s" title="Télécharge les jeux pour jouer sur ton ordinateur" class="download">
+					Télécharger les jeux				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Obtiens des jeux Miniclip pour TON site web !" class="webmasters">
+					Jeux internet gratuits				</a>
+			</li>
+			<li>
+				<a href="/videos/fr/#t-m-s" class="videos">
+					Vidéos de trucs et astuces				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Aide				</a>
+			</li>
+			<li >
+				<a href="/games/page/fr/internet-safety/" rel="nofollow">
+					Sécurité internet				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Politique de confidentialité				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Se connecter à Miniclip</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Aimer Miniclip sur Facebook" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Suivre Miniclip sur Twitter" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Miniclip sur Google+" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="Regarder les vidéos Miniclip sur YouTube" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+
+<section class="primary">
+	<div class="box greedy" id="video-container">
+<iframe width="672" height="370" src="https://www.youtube.com/embed/ZlAtjzXDnGE?showinfo=0&enablejsapi=1&rel=0&modestbranding=1&theme=light" id="show-player" frameborder="0" allowfullscreen></iframe>		<nav class="menu" role="navigation">
+			<ul>
+				<li>	<div class="rate-item">
+		<span class="title">Taux :</span>
+		<ul class="star-rating active-rating" data-product-type-id="2" data-product-id="511" data-initial-rating="4">
+			<li class="star-0" data-rate="0.5"></li>
+			<li class="star-1 half-star" data-rate="1"></li>
+			<li class="star-1-5" data-rate="1.5"></li>
+			<li class="star-2 half-star" data-rate="2"></li>
+			<li class="star-2-5" data-rate="2.5"></li>
+			<li class="star-3 half-star" data-rate="3"></li>
+			<li class="star-3-5" data-rate="3.5"></li>
+			<li class="star-4 half-star" data-rate="4"></li>
+			<li class="star-4-5" data-rate="4.5"></li>
+			<li class="star-5 half-star" data-rate="5"></li>
+		</ul>
+		<div class="rated-feedback">
+			<div class="rating-message"></div>
+		</div>
+	</div>
+	<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="toolbox game-rating-toolbox" id="game-rating-id">
+		<span itemprop="itemreviewed" class="helper">NEW update!</span>
+		<div>
+			<span itemprop="worstRating" class="hidden">0</span>
+			<span itemprop="ratingValue">4</span>/<span itemprop="bestRating">5</span> basé sur <span itemprop="reviewCount">3</span> commentaires		</div>
+	</div>
+
+</li>
+				<li>	<ul class="social-sites">
+		<li class="share-title">Partager :</li><!--
+		--><li>
+			<a class="tooltip twitter" href="https://twitter.com/intent/tweet?text=J%27ai+regard%C3%A9+une+vid%C3%A9o+sur+Agar.io%2C+appel%C3%A9e+NEW+update%21%20@miniclip&amp;url=http%3A%2F%2Fwww.miniclip.com%2Fvideos%2Fwatch-511%2Fnew-update%2Ffr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-twitter%26utm_campaign%3Dsocial-video-share&amp;related=miniclip" target="_blank" data-tip="Partager sur Twitter" rel="nofollow"><span class="screen-reader">Partager sur Twitter</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip facebook" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.miniclip.com%2Fvideos%2Fwatch-511%2Fnew-update%2Ffr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-facebook%26utm_campaign%3Dsocial-video-share&t=NEW update!" target="_blank" data-tip="Partager sur Facebook" rel="nofollow"><span class="screen-reader">Partager sur Facebook</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip google-plus" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.miniclip.com%2Fvideos%2Fwatch-511%2Fnew-update%2Ffr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-google-plus%26utm_campaign%3Dsocial-video-share" target="_blank" data-tip="Partager sur Google+" rel="nofollow"><span class="screen-reader">Partager sur Google+</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip email" href="mailto:?subject=I'm%20watching%20NEW update!%20on%20Miniclip.com!&body=J%27ai%20regard%C3%A9%20une%20vid%C3%A9o%20sur%20Agar.io%2C%20appel%C3%A9e%20NEW%20update%21.%20Check%20it%20out:%20http%3A%2F%2Fwww.miniclip.com%2Fvideos%2Fwatch-511%2Fnew-update%2Ffr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-email%26utm_campaign%3Dsocial-video-share" target="_blank" data-tip="Partager par e-mail" rel="nofollow"><span class="screen-reader">Partager par e-mail</span></a>
+		</li><!--
+		--></ul>
+</li>
+			</ul>
+		</nav>
+	</div>
+
+	<!-- video info -->
+	<div class="box greedy">
+		<header class="pretty page-title">
+						<a class="game-icon alt" href="/games/agar-io/fr/">
+				<img src="//static.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" alt="Agar.io" title="Jouer à Agar.io16">
+			</a>
+						<h1>NEW update!</h1>
+			<p>par <span class="video-author"><a href="/user/1282850799/fr/">Sam</a></span> pour <span class="video-game"><a href="/games/agar-io/fr/">Agar.io</a></span></p>
+			<footer class="overhang">
+				<a href="/games/agar-io/fr/" class="button hot action">Jouer</a>
+			</footer>
+		</header>
+	</div>
+
+	<!-- related videos -->
+
+	<!-- recent videos -->
+	<div class="box greedy">
+		<header class="pretty">
+			<h2>Vidéos récentes</h2>
+		</header>
+		<ul class="video-icons">
+<li>	<a href="/videos/watch-507/tips--tricks/fr/">
+		<img src="https://img.youtube.com/vi/obcj1LFNyvI/hqdefault.jpg" alt="Tips & Tricks Thumbnail" title="Play Tips & Tricks" width="208" />
+		<h3>Tips & Tricks</h3>
+	</a>
+</li><li>	<a href="/videos/watch-503/contract-wars-trailer/fr/">
+		<img src="https://img.youtube.com/vi/Fz5Nf-ALFKY/hqdefault.jpg" alt="Contract Wars trailer Thumbnail" title="Play Contract Wars trailer" width="208" />
+		<h3>Contract Wars trailer</h3>
+	</a>
+</li><li>	<a href="/videos/watch-500/beast-quest---out-now-on-ios-and-android/fr/">
+		<img src="https://img.youtube.com/vi/Z_OhhMYyweU/hqdefault.jpg" alt="Beast Quest - OUT NOW on iOS&hellip; Thumbnail" title="Play Beast Quest - OUT NOW on iOS&hellip;" width="208" />
+		<h3>Beast Quest - OUT NOW on iOS&hellip;</h3>
+	</a>
+</li><li>	<a href="/videos/watch-493/clicker-heroes-trailer/fr/">
+		<img src="https://img.youtube.com/vi/blhyiecWeNw/hqdefault.jpg" alt="Clicker Heroes Trailer Thumbnail" title="Play Clicker Heroes Trailer" width="208" />
+		<h3>Clicker Heroes Trailer</h3>
+	</a>
+</li><li>	<a href="/videos/watch-486/miniclip-update-3/fr/">
+		<img src="https://img.youtube.com/vi/7BfmUqWtqbc/hqdefault.jpg" alt="Miniclip Update #3 Thumbnail" title="Play Miniclip Update #3" width="208" />
+		<h3>Miniclip Update #3</h3>
+	</a>
+</li><li>	<a href="/videos/watch-484/berry-rush-trailer/fr/">
+		<img src="https://img.youtube.com/vi/_K6oVXXPCQ4/hqdefault.jpg" alt="Berry Rush Trailer Thumbnail" title="Play Berry Rush Trailer" width="208" />
+		<h3>Berry Rush Trailer</h3>
+	</a>
+</li><li>	<a href="/videos/watch-482/miniclip-monthly-update-2/fr/">
+		<img src="https://img.youtube.com/vi/3HD6TVqKlPs/hqdefault.jpg" alt="Miniclip Monthly Update #2 Thumbnail" title="Play Miniclip Monthly Update #2" width="208" />
+		<h3>Miniclip Monthly Update #2</h3>
+	</a>
+</li><li>	<a href="/videos/watch-479/supercar-showdown-trailer/fr/">
+		<img src="https://img.youtube.com/vi/SHp_y1_j-EU/hqdefault.jpg" alt="Supercar Showdown trailer Thumbnail" title="Play Supercar Showdown trailer" width="208" />
+		<h3>Supercar Showdown trailer</h3>
+	</a>
+</li><li>	<a href="/videos/watch-478/adventure-capitalist-trailer/fr/">
+		<img src="https://img.youtube.com/vi/oOp41OYZMZo/hqdefault.jpg" alt="AdVenture Capitalist trailer Thumbnail" title="Play AdVenture Capitalist trailer" width="208" />
+		<h3>AdVenture Capitalist trailer</h3>
+	</a>
+</li>		</ul>
+	</div>
+
+	<div class="box greedy">
+		<a class="button greedy hot" href="/videos/latest/fr/">View All Videos &rsaquo;</a>
+	</div>
+</section>
+
+<section class="secondary">
+	<!-- youtube subscribe link -->
+	<div class="youtube-subscribe box">
+		<div class="g-ytsubscribe" data-channel="miniclip" data-layout="full"></div>
+	</div>
+
+	    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Publicité            <a href="#" rel="nofollow" class="feedback">Remarques</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-2 widget-883">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/jeux-multijoueurs/fr/#t-w-c" title="Plus de jeux Multijoueur">
+			Multijoueur		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/fr/#t-w-c" title=""><div class="notification blip offset hot">Nouveau !</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Squadd.io" title="Jouer à Squadd.io" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/fr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Empire" title="Jouer à Empire" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/fr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Forge" title="Jouer à Forge of Empires" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/fr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Elvenar" title="Jouer à Elvenar" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/fr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Soccer Stars " title="Jouer à Soccer Stars" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/fr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jouer à Space1.io" title="Jouer à Space1.io" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/jeux-multijoueurs/fr/#t-w-c">
+			Plus de Multijoueur		</a>
+	</footer>
+</section>
+<div class="widget box no-chrome widget-top-smartphone-games tab-wrapper widget-885" data-current-tab="appleiphone" data-cookie="top-smartphone">
+	<nav class="tab-bar greedy">
+		<ul>
+			<li><a class="button cool appleiphone selected" href="#" data-panel="appleiphone" rel="nofollow">iPhone</a></li>
+			<li><a class="button cool android" href="#" data-panel="android" rel="nofollow">Android</a></li>
+		</ul>
+	</nav>
+	<div class="inner panel panel-appleiphone">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Populaire !</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/basketball-stars" class="game-icon game-smartphone" target="_blank" title="Basketball Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/BasketballStars512.png" />
+					<span class="meta">Basketball Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-1194/iphone/fr/#t-w-c">
+				Plus de jeux iOS			</a>
+		</footer>
+	</div>
+	<div class="inner panel panel-android">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Populaire !</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/bowmasters" class="game-icon game-smartphone" target="_blank" title="Bowmasters">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/artwork.png" />
+					<span class="meta">Bowmasters</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-503/android/fr/#t-w-c">
+				Plus de jeux Android			</a>
+		</footer>
+	</div>
+</div>	<div class="widget box widget-push-ads hp-sidebar widget-885" data-type="hp-sidebar" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Jouer</a>
+		</footer>
+
+
+	</div></section>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/fr/" rel="nofollow">Joue sur Miniclip.com</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Accueil</a></li>
+				<li><a href="/games/genre-1194/" class="ios">Jeux pour iPhone</a></li>
+				<li><a href="/games/genre-503/" class="android">Jeux Android</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">Jeux pour ton site internet</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Soumettre un jeu</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Annonceurs</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Contacter l'équipe Miniclip">Contacte-nous</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Tout sur Miniclip.com">Entreprise</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Poste à pourvoir chez Miniclip.com">Emplois</a></li>
+					<li><a href="/games/page/fr/internet-safety/" title="Sécurité internet">Sécurité internet</a></li>
+					<li><a href="/videos/">Vidéos de trucs et astuces</a></li>
+					<li><a href="/games/fr/feed.xml" rel="nofollow">Flux RSS</a></li>
+					<li><a href="/games/page/fr/sitemap/">Plan du site</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/fr/terms-and-conditions/" rel="nofollow">Termes et Conditions d'utilisation</a></li>
+				<li><a href="/privacy/" rel="nofollow">Politique de confidentialité</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Cookies</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Aide</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Connecte-toi à Miniclip.com</h2>
+			</header>
+
+			<label>
+				<span>Adresse e-mail				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Mot de passe</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Se connecter" />
+			</label>
+			<label class="col">
+				<span class="inline">Se souvenir de moi</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/fr/">Rappel mot de passe</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2>S'inscrire <em>gratuitement</em></h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">fermer le tiroir</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"cat-side-1":[{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"push-small":[{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/videos/fr/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-04fe402914521703e
+	q's = 2
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGxdYVV0JG1pcXVVM","queueTime":0,"applicationTime":84,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

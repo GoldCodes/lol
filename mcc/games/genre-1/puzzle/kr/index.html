@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="kr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json', forcePath: '/puzzleHP'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Miniclip.com에서 퍼즐
+ 게임을 즐겨 보세요</title>
+		<meta name="description" content="Miniclip에서 퍼즐
+ 게임을 즐길 수 있어요. 톱 퍼즐
+ 게임은 Bubble Trouble, Bloxorz, Color Switch입니다. 그리고 그 외에도 다른 퍼즐
+ 게임이 243개 이상 있습니다!" />
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/genre-1/puzzle/kr/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/kr/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/games.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Miniclip.com에서 퍼즐
+ 게임을 즐겨 보세요"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/genre-1/puzzle/kr/" />
+		<meta property="og:image" content="https://static.miniclip.com/content/category/icons/puzzle-g.png" />
+		<meta property="og:description" content="" />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/genre-1\/puzzle\/","dimension9":"United States","dimension8":"kr","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "kr";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "C";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="kr" href="https://www.miniclip.com/games/genre-1/puzzle/kr/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/genre-1/puzzle/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/genre-1/puzzle/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/genre-1/puzzle/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/genre-1/puzzle/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/genre-1/puzzle/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/genre-1/puzzle/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/genre-1/puzzle/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/genre-1/puzzle/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/genre-1/puzzle/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/genre-1/puzzle/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/genre-1/puzzle/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/genre-1/puzzle/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/genre-1/puzzle/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/genre-1/puzzle/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/genre-1/puzzle/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/genre-1/puzzle/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/genre-1/puzzle/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {"header_height":"2","background_color":["#FFFFFF"],"background_image":["http:\/\/www.miniclip.com\/images\/takeovers\/tetris_miniclip_1600x800.jpg"],"internal":true,"agency":"Miniclip","client":"MIniclip","campaign":"Tetris Twist Puzzle","click_url":"http:\/\/www.miniclip.com\/games\/tetris-twist\/","hide_leaderboard":false,"award_marathon":false};
+            var mcto = {};
+        </script>
+        <script>var translate = {"hide":"\uc228\uae30\uae30","show":"\ud45c\uc2dc","full_categories_list":"\uc804\uccb4 \uce74\ud14c\uace0\ub9ac \ubaa9\ub85d","all_games_and_categories":"\ubaa8\ub4e0 \uac8c\uc784\uacfc \uce74\ud14c\uace0\ub9ac","show_more_results":"\uacb0\uacfc \ub354 \ud45c\uc2dc\ud558\uae30 &rsaquo;","no_comments":"\ucf54\uba58\ud2b8 \uc5c6\uc74c","report":"\uc2e0\uace0","comment_like_failed":"\uc8c4\uc1a1\ud558\uc9c0\ub9cc \ucf54\uba58\ud2b8\uc5d0 \uc88b\uc544\uc694\ub97c \ud558\ub294 \ub370 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4. \ub098\uc911\uc5d0 \ub2e4\uc2dc \uc2dc\ub3c4\ud558\uc138\uc694.","comment_reporting_failed":"\uc8c4\uc1a1\ud558\uc9c0\ub9cc \ucf54\uba58\ud2b8\ub97c \uc2e0\uace0\ud558\ub294 \ub370 \uc2e4\ud328\ud588\uc2b5\ub2c8\ub2e4.","the_word_is_not_allowed":"%s(\uc774)\ub77c\ub294 \ub2e8\uc5b4\ub294 \ud5c8\uc6a9 \ub2e8\uc5b4 \ubaa9\ub85d\uc5d0 \ud3ec\ud568\ub418\uc9c0 \uc54a\uc2b5\ub2c8\ub2e4.","remove_red_messages":"\uba54\uc2dc\uc9c0\ub97c \ud3b8\uc9d1\ud558\uc5ec \ud5c8\uc6a9\ub418\uc9c0 \uc54a\ub294 \ube68\uac04\uc0c9 \ub2e8\uc5b4\ub97c \uc0ad\uc81c\ud574 \uc8fc\uc138\uc694.","enter_the_link":"\ub9c1\ud06c url \uc785\ub825","search_free_games":"\ubb34\ub8cc \uac8c\uc784\uc744 \uc88b\uc544\ud558\uc138\uc694? \uc6b0\ub9ac\ub294 \ubb34\ub8cc \uac8c\uc784\uc744 <strong>\uc544\uc8fc \uc88b\uc544\ud574\uc694<\/strong>! \ubaa8\ub4e0 Miniclip \uac8c\uc784\uc740 \ubb34\ub8cc \ubc84\uc804\uc774 \uc788\uc73c\uba70 \uc6f9\uc0ac\uc774\ud2b8\uc5d0\uc11c \uc774\ub97c \ubc14\ub85c \uc990\uae38 \uc218 \uc788\uc5b4\uc694.","password_reset_error_email":"<strong>\uc774\ub7f0!<\/strong> \uc774\uba54\uc77c \uc8fc\uc18c\ub97c \uc785\ub825\ud558\uc9c0 \uc54a\uc558\uc5b4\uc694!","password_reset_error_username":"<strong>\uc8c4\uc1a1\ud574\uc694.<\/strong> \uc62c\ubc14\ub978 \uc774\uba54\uc77c \uc8fc\uc18c\ub85c \ubcf4\uc774\uc9c0 \uc54a\uc544\uc694.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"\uc9d1\uc911 \ubaa8\ub4dc\ub85c \ubcc0\uacbd\ud558\uc5ec \uac8c\uc784\uc5d0 \uc9d1\uc911\ud558\uc138\uc694. \uc774\uac83\uc740 \ud604\uc7ac \uac8c\uc784\uc744 \ub2e4\uc2dc \uc2dc\uc791\ud558\uac8c \ub429\ub2c8\ub2e4. \uacc4\uc18d\ud560\uae4c\uc694?","add_to_favorites":"\uc990\uaca8\ucc3e\uae30 \uac8c\uc784\uc5d0 \ucd94\uac00\ud558\uae30","remove_from_favorites":"\uc990\uaca8\ucc3e\uae30 \uac8c\uc784\uc5d0\uc11c \uc81c\uac70\ud558\uae30","comment_autocomplete_placeholder":"\uc785\ub825\uc744 \uc2dc\uc791\ud558\uba74 \ucd94\ucc9c\uc774 \ub098\ud0c0\ub0a9\ub2c8\ub2e4","new":"\uc2e0\uaddc","next":"\ub2e4\uc74c","prev":"\uc774\uc804","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"\uc624\ub958!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-games category-id-1 locale-us lang-kr browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="kr" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/kr/" rel="nofollow">Miniclip.com에서 게임하기</a>
+			</h1>
+	<form class="search-form item" action="/games/search/kr/" target="_top">
+		<label>
+			<span class="screen-reader">검색하기...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="게임 검색하기" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>검색</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">가입 / 로그인</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Facebook으로 가입하고 로그인하기" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" width="44" height="32" alt="kr" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>자신의 언어로</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/genre-1/puzzle/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/fr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/de/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/tr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/hu/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/genre-1/puzzle/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/genre-1/puzzle&return_post=" class="button small greedy">
+		더 보기	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/kr/#t-n" class="button category home" title="Miniclip 홈페이지">
+				<span>Miniclip 홈</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/kr/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/kr/#t-n" class="cat-13 catgory button">
+				액션
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/kr/#t-n" class="cat-2 catgory button">
+				멀티플레이어			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/kr/#t-n" class="cat-1 catgory button">
+				퍼즐
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/kr/#t-n" class="cat-503 catgory button">
+				안드로이드
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1194/iphone/kr/#t-n" class="cat-1194 catgory button">
+				iPhone 게임			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>카테고리 더 보기</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>게임 카테고리</h2>
+	<div class="category-list">
+		<a href="/games/genre-35/3d/kr/#t-m-c" class="cat-35" title="3D 게임 즐기기">3D</a>
+		<a href="/games/genre-477/racing/kr/#t-m-c" class="cat-477" title="레이싱
+ 게임 즐기기">레이싱
+</a>
+		<a href="/games/genre-2/multiplayer/kr/#t-m-c" class="cat-2" title="멀티플레이어 게임 즐기기">멀티플레이어</a>
+		<a href="/games/genre-26/motorsports/kr/#t-m-c" class="cat-26" title="모터스포츠
+ 게임 즐기기">모터스포츠
+</a>
+		<a href="/games/genre-1157/motocross/kr/#t-m-c" class="cat-1157" title="모토크로스
+ 게임 즐기기">모토크로스
+</a>
+		<a href="/games/genre-1001/-/kr/#t-m-c" class="cat-1001" title="미식 축구
+ 게임 즐기기">미식 축구
+</a>
+		<a href="/games/genre-4/winter/kr/#t-m-c" class="cat-4" title="겨울
+ 게임 즐기기">겨울
+</a>
+		<a href="/games/genre-497/buzz/kr/#t-m-c" class="cat-497" title="버즈
+ 게임 즐기기">버즈
+</a>
+		<a href="/games/genre-488/golf/kr/#t-m-c" class="cat-488" title="골프
+ 게임 즐기기">골프
+</a>
+		<a href="/games/genre-511/my-friends-league/kr/#t-m-c" class="cat-511" title="나의 친구 리그
+ 게임 즐기기">나의 친구 리그
+</a>
+		<a href="/games/genre-1109/word/kr/#t-m-c" class="cat-1109" title="단어
+
+ 게임 즐기기">단어
+
+</a>
+		<a href="/games/genre-1194/iphone/kr/#t-m-c" class="cat-1194" title="iPhone Games 게임 즐기기">iPhone 게임</a>
+		<a href="/games/genre-3/sport/kr/#t-m-c" class="cat-3" title="스포츠
+ 게임 즐기기">스포츠
+</a>
+		<a href="/games/genre-1151/stunt/kr/#t-m-c" class="cat-1151" title="스턴트
+ 게임 즐기기">스턴트
+</a>
+		<a href="/games/genre-5/shoot-em-up/kr/#t-m-c" class="cat-5" title="슈팅
+ 게임 즐기기">슈팅
+</a>
+		<a href="/games/genre-1185/credits/kr/#t-m-c" class="cat-1185" title="크레딧
+ 게임 즐기기">크레딧
+</a>
+		<a href="/games/genre-1003/christmas/kr/#t-m-c" class="cat-1003" title="크리스마스 게임 즐기기">크리스마스</a>
+		<a href="/games/genre-1/puzzle/kr/#t-m-c" class="cat-1" title="퍼즐
+ 게임 즐기기">퍼즐
+</a>
+		<a href="/games/genre-1155/-/kr/#t-m-c" class="cat-1155" title="익스트림 스포츠
+ 게임 즐기기">익스트림 스포츠
+</a>
+		<a href="/games/genre-523/strategy/kr/#t-m-c" class="cat-523" title="전략
+ 게임 즐기기">전략
+</a>
+		<a href="/games/genre-14/political/kr/#t-m-c" class="cat-14" title="정치적
+ 게임 즐기기">정치적
+</a>
+		<a href="/games/genre-1149/zombie/kr/#t-m-c" class="cat-1149" title="좀비
+ 게임 즐기기">좀비
+</a>
+		<a href="/games/genre-18/soccer/kr/#t-m-c" class="cat-18" title="축구
+ 게임 즐기기">축구
+</a>
+		<a href="/games/genre-1133/card/kr/#t-m-c" class="cat-1133" title="카드
+ 게임 즐기기">카드
+</a>
+		<a href="/games/genre-1238/holidays/kr/#t-m-c" class="cat-1238" title="휴일
+ 게임 즐기기">휴일
+</a>
+		<a href="/games/genre-1143/destruction/kr/#t-m-c" class="cat-1143" title="파괴
+ 게임 즐기기">파괴
+</a>
+		<a href="/games/genre-519/fighting/kr/#t-m-c" class="cat-519" title="파이팅
+ 게임 즐기기">파이팅
+</a>
+		<a href="/games/genre-1145/tower-defense/kr/#t-m-c" class="cat-1145" title="타워 방어
+ 게임 즐기기">타워 방어
+</a>
+		<a href="/games/genre-513/pool/kr/#t-m-c" class="cat-513" title="수영장
+ 게임 즐기기">수영장
+</a>
+		<a href="/games/genre-7/latest-games/kr/#t-m-c" class="cat-7" title="최신
+ 게임 즐기기">최신
+</a>
+		<a href="/games/genre-482/kids/kr/#t-m-c" class="cat-482" title="어린이
+ 게임 즐기기">어린이
+</a>
+		<a href="/games/genre-515/adventure/kr/#t-m-c" class="cat-515" title="어드벤처
+ 게임 즐기기">어드벤처
+</a>
+		<a href="/games/genre-525/award/kr/#t-m-c" class="cat-525" title="어워드
+ 게임 즐기기">어워드
+</a>
+		<a href="/games/genre-40/platform/kr/#t-m-c" class="cat-40" title="플랫폼 게임 즐기기">플랫폼</a>
+		<a href="/games/genre-521/flying/kr/#t-m-c" class="cat-521" title="플라잉
+ 게임 즐기기">플라잉
+</a>
+		<a href="/games/genre-6/-top-10/kr/#t-m-c" class="cat-6" title="톱 10 게임 즐기기">톱 10</a>
+		<a href="/games/genre-23/top-100/kr/#t-m-c" class="cat-23" title="톱 100 게임 즐기기">톱 100</a>
+		<a href="/games/genre-490/halloween/kr/#t-m-c" class="cat-490" title="할로윈
+
+ 게임 즐기기">할로윈
+
+</a>
+		<a href="/games/genre-13/action/kr/#t-m-c" class="cat-13" title="액션
+ 게임 즐기기">액션
+</a>
+		<a href="/games/genre-1201/hot-games/kr/#t-m-c" class="cat-1201" title="핫 게임
+ 게임 즐기기">핫 게임
+</a>
+		<a href="/games/genre-503/android/kr/#t-m-c" class="cat-503" title="안드로이드
+ 게임 즐기기">안드로이드
+</a>
+		<a href="/games/genre-517/arcade/kr/#t-m-c" class="cat-517" title="아케이드
+ 게임 즐기기">아케이드
+</a>
+		<a href="/games/genre-484/tennis/kr/#t-m-c" class="cat-484" title="테니스
+ 게임 즐기기">테니스
+</a>
+		<a href="/games/genre-432/webmaster-games/kr/#t-m-c" class="cat-432" title="웹마스터 게임
+ 게임 즐기기">웹마스터 게임
+</a>
+		<a href="/games/genre-1209/london-olympics/kr/#t-m-c" class="cat-1209" title="London Olympics 2012 게임 즐기기">런던 올림픽 2012</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>그 외 멋진 것들</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip 블로그" class="feed">
+					Miniclip 블로그				</a>
+			</li>
+			<li>
+				<a href="/games/page/kr/downloadable-games/#t-m-s" title="데스크톱에서 즐기려면 게임을 다운로드하세요" class="download">
+					게임 다운로드하기				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="자신의 웹사이트를 위한 Miniclip 게임을 받으세요!" class="webmasters">
+					무료 웹사이트 게임				</a>
+			</li>
+			<li>
+				<a href="/videos/kr/#t-m-s" class="videos">
+					동영상 힌트 및 조언				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					도움말				</a>
+			</li>
+			<li >
+				<a href="/games/page/kr/internet-safety/" rel="nofollow">
+					인터넷 안전				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					개인정보취급방침				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Miniclip과 연결하기</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Facebook에서 Miniclip 좋아요 하기" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="트위터에서 Miniclip 팔로우하기" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Google+에서 Miniclip 보기" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="YouTube에서 Miniclip 동영상 보기" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+                    <div data-pw-desk="leaderboard_atf"></div>
+                	<div class="box greedy">
+		<header class="pretty juicy">
+			<h1 class="cat-1">퍼즐
+</h1>
+		</header>
+	</div>
+		<section class="primary">
+		<section id="category-intro">
+<div class="widget widget-size-2 box widget-game-scroller widget-891">
+	<article>
+		<a href="/games/bubble-trouble/kr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/BubbleTrouble_444x287_2.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Bubble Trouble" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/bloxorz/kr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/Bloxorz_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Bloxorz" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/color-switch/kr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/colorswitch_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Color Switch" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/jewel-academy/kr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/jewel_academy_4_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Jewel Academy" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/crystal-temple/kr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/FBWG_Crystal_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Fireboy & Watergirl in Crystal Temple" />
+		</a>
+	</article>
+	<nav>
+<a data-tip="Bubble Trouble" data-slide="#slide_1" class="tooltip game-icon game-id-1445" href="/games/bubble-trouble/kr/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/bubbletroublemedicon.jpg" alt="BubbleTrouble 하기" title="Bubble Trouble 하기" width="84" height="63" /></a><a data-tip="Bloxorz" data-slide="#slide_2" class="tooltip game-icon game-id-1843" href="/games/bloxorz/kr/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/bloxorz20.jpg" alt="Bloxorz 하기" title="Bloxorz 하기" width="84" height="63" /></a><a data-tip="Color Switch" data-slide="#slide_3" class="tooltip game-icon game-id-4555" href="/games/color-switch/kr/#t-l-gs1" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" alt="Color Switch 하기" title="Color Switch 하기" width="84" height="63" /></a><a data-tip="Jewel Academy" data-slide="#slide_4" class="tooltip game-icon game-id-4249" href="/games/jewel-academy/kr/#t-l-gs1" title=""><div class="notification blip offset positive">업데이트됨</div><img src="//static2.miniclipcdn.com/content/game-icons/medium/jewel_academy_2_150x110.jpg" alt="Jewel Academy 하기" title="Jewel Academy 하기" width="84" height="63" /></a><a data-tip="Crystal Temple" data-slide="#slide_5" class="tooltip game-icon game-id-3868" href="/games/crystal-temple/kr/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/FBWG4.jpg" alt="Crystal Temple 하기" title="Crystal Temple 하기" width="84" height="63" /></a>	</nav>
+</div><section class="widget box widget-hot-games widget-hot-games-1 widget-893">
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4631" href="/games/muhammad-ali-puzzle-king/kr/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/Muhammad-Ali-150X110.jpg" alt="Muhammad Ali 하기" title="Muhammad Ali 하기" width="84" height="63" /><span class="meta">Muhammad Ali</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4547" href="/games/purbalds/kr/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/purbalds_150x110.jpg" alt="Purbalds 하기" title="Purbalds 하기" width="84" height="63" /><span class="meta">Purbalds</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4629" href="/games/twisted-lines/kr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/Twisted_150.jpg" alt="Twisted Lines 하기" title="Twisted Lines 하기" width="84" height="63" /><span class="meta">Twisted Lines</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4524" href="/games/king-of-thieves/kr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/king_thieves_150x110.jpg" alt="King of Thieve 하기" title="King of Thieves 하기" width="84" height="63" /><span class="meta">King of Thieve</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4712" href="/games/crickle-breeze/kr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/crickle_150X110.jpg" alt="Crickle 하기" title="Crickle Breeze 하기" width="84" height="63" /><span class="meta">Crickle</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4557" href="/games/tetris-twist/kr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/tetris_miniclip_150x110.jpg" alt="Tetris® Twist 하기" title="Tetris® Twist 하기" width="84" height="63" /><span class="meta">Tetris® Twist</span></a>		</li>
+	</ul>
+</section>
+		</section>
+
+		<nav class="tab-bar category-sort">
+			<ul>
+				<li><a class="button cool selected top" id="tab-top" data-order="order" href="">톱 게임</a></li>
+				<li><a class="button cool calendar" id="tab-recent" data-order="release" href="">최근 게임</a></li>
+				<li><a class="button cool top-rated" id="tab-top-rated" data-order="rating" href="">최고 평가를 받은 게임</a></li>
+			</ul>
+		</nav>
+		<div class="box greedy tab-content selected" id="category-games-list">
+			<ul class="games-list inner">
+				<li data-order="1" data-rating="4.3297" data-rating-count="68701" data-release="-62169984000">
+					<a class="game-icon game-id-1445" href="/games/bubble-trouble/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bubbletroublemedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BubbleTrouble 하기" title="Bubble Trouble 하기" width="84" height="63" /><span class="meta">BubbleTrouble</span></a>				</li>
+				<li data-order="2" data-rating="4.3743" data-rating-count="78254" data-release="1186531200">
+					<a class="game-icon game-id-1843" href="/games/bloxorz/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bloxorz20.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bloxorz 하기" title="Bloxorz 하기" width="84" height="63" /><span class="meta">Bloxorz</span></a>				</li>
+				<li data-order="3" data-rating="4.2936" data-rating-count="10596" data-release="">
+					<a class="game-icon game-id-4555" href="/games/color-switch/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Color Switch 하기" title="Color Switch 하기" width="84" height="63" /><span class="meta">Color Switch</span></a>				</li>
+				<li data-order="4" data-rating="4.1196" data-rating-count="2576" data-release="">
+					<a class="game-icon game-id-4249" href="/games/jewel-academy/kr/#t-c-f" title=""><div class="notification blip offset positive">업데이트됨</div><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jewel_academy_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jewel Academy 하기" title="Jewel Academy 하기" width="84" height="63" /><span class="meta">Jewel Academy</span></a>				</li>
+				<li data-order="5" data-rating="4.4285" data-rating-count="55486" data-release="1382572800">
+					<a class="game-icon game-id-3868" href="/games/crystal-temple/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/FBWG4.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crystal Temple 하기" title="Crystal Temple 하기" width="84" height="63" /><span class="meta">Crystal Temple</span></a>				</li>
+				<li data-order="6" data-rating="4.2708" data-rating-count="2308" data-release="">
+					<a class="game-icon game-id-4631" href="/games/muhammad-ali-puzzle-king/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Muhammad-Ali-150X110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Muhammad Ali 하기" title="Muhammad Ali 하기" width="84" height="63" /><span class="meta">Muhammad Ali</span></a>				</li>
+				<li data-order="7" data-rating="4.1777" data-rating-count="242" data-release="">
+					<a class="game-icon game-id-4547" href="/games/purbalds/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/purbalds_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Purbalds 하기" title="Purbalds 하기" width="84" height="63" /><span class="meta">Purbalds</span></a>				</li>
+				<li data-order="8" data-rating="4.236" data-rating-count="805" data-release="">
+					<a class="game-icon game-id-4629" href="/games/twisted-lines/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Twisted_150.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Twisted Lines 하기" title="Twisted Lines 하기" width="84" height="63" /><span class="meta">Twisted Lines</span></a>				</li>
+				<li data-order="9" data-rating="4.283" data-rating-count="4827" data-release="">
+					<a class="game-icon game-id-4524" href="/games/king-of-thieves/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/king_thieves_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="King of Thieve 하기" title="King of Thieves 하기" width="84" height="63" /><span class="meta">King of Thieve</span></a>				</li>
+				<li data-order="10" data-rating="4.1034" data-rating-count="116" data-release="">
+					<a class="game-icon game-id-4712" href="/games/crickle-breeze/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/crickle_150X110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crickle 하기" title="Crickle Breeze 하기" width="84" height="63" /><span class="meta">Crickle</span></a>				</li>
+				<li data-order="11" data-rating="3.6744" data-rating-count="2629" data-release="">
+					<a class="game-icon game-id-4557" href="/games/tetris-twist/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/tetris_miniclip_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tetris® Twist 하기" title="Tetris® Twist 하기" width="84" height="63" /><span class="meta">Tetris® Twist</span></a>				</li>
+				<li data-order="12" data-rating="4.1342" data-rating-count="596" data-release="">
+					<a class="game-icon game-id-4536" href="/games/nom-cat/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/nomcat_150.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Nom Cat 하기" title="Nom Cat 하기" width="84" height="63" /><span class="meta">Nom Cat</span></a>				</li>
+				<li data-order="13" data-rating="2.5" data-rating-count="0" data-release="">
+					<a class="game-icon game-id-4389" href="/games/doodle-god-blitz/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/doodle_god_blitzv2_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Doodle God 하기" title="Doodle God Blitz 하기" width="84" height="63" /><span class="meta">Doodle God</span></a>				</li>
+				<li data-order="14" data-rating="4.1279" data-rating-count="852" data-release="">
+					<a class="game-icon game-id-4543" href="/games/100-little-monsters/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/100m_150x110-Miniclip.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="100 Monsters 하기" title="100 Little Monsters 하기" width="84" height="63" /><span class="meta">100 Monsters</span></a>				</li>
+				<li data-order="15" data-rating="4.396" data-rating-count="47715" data-release="1271289600">
+					<a class="game-icon game-id-2247" href="/games/forest-temple/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/foresttemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ForestTemple 하기" title="Forest Temple 하기" width="84" height="63" /><span class="meta">ForestTemple</span></a>				</li>
+				<li data-order="16" data-rating="4.2023" data-rating-count="5913" data-release="">
+					<a class="game-icon game-id-4462" href="/games/stop-trump/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/StopTrump_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stop Trump 하기" title="Stop Trump 하기" width="84" height="63" /><span class="meta">Stop Trump</span></a>				</li>
+				<li data-order="17" data-rating="4.432" data-rating-count="926" data-release="">
+					<a class="game-icon game-id-4502" href="/games/alien-transporter/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Alien-Transporter_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Alien Transpor 하기" title="Alien Transporter 하기" width="84" height="63" /><span class="meta">Alien Transpor</span></a>				</li>
+				<li data-order="18" data-rating="4.4538" data-rating-count="9591" data-release="">
+					<a class="game-icon game-id-4435" href="/games/cut-the-rope-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/CTR2_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cut the Rope 2 하기" title="Cut the Rope 2 하기" width="84" height="63" /><span class="meta">Cut the Rope 2</span></a>				</li>
+				<li data-order="19" data-rating="3.7516" data-rating-count="1429" data-release="">
+					<a class="game-icon game-id-4454" href="/games/2020-reloaded/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/2020_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="2020 하기" title="2020 Reloaded 하기" width="84" height="63" /><span class="meta">2020</span></a>				</li>
+				<li data-order="20" data-rating="3.4885" data-rating-count="911" data-release="">
+					<a class="game-icon game-id-4399" href="/games/smashz/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Smash-Z_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SmashZ 하기" title="SmashZ 하기" width="84" height="63" /><span class="meta">SmashZ</span></a>				</li>
+				<li data-order="21" data-rating="4.3192" data-rating-count="614" data-release="">
+					<a class="game-icon game-id-4397" href="/games/not-in-my-dungeon/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Not-in-my-Dungeon_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="My Dungeon 하기" title="Not in my Dungeon 하기" width="84" height="63" /><span class="meta">My Dungeon</span></a>				</li>
+				<li data-order="22" data-rating="4.0359" data-rating-count="918" data-release="">
+					<a class="game-icon game-id-4429" href="/games/curse-of-the-mushroom-king/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/COTMK_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mushroom King 하기" title="Curse of the shroom King 하기" width="84" height="63" /><span class="meta">Mushroom King</span></a>				</li>
+				<li data-order="23" data-rating="4.134" data-rating-count="567" data-release="">
+					<a class="game-icon game-id-4398" href="/games/z-infect/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/ZINFECT_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Z Infect 하기" title="Z Infect 하기" width="84" height="63" /><span class="meta">Z Infect</span></a>				</li>
+				<li data-order="24" data-rating="4.2032" data-rating-count="2037" data-release="">
+					<a class="game-icon game-id-4451" href="/games/tap-the-frog-doodle/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/TTFD_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tap Frog Doodl 하기" title="Tap the Frog Doodle 하기" width="84" height="63" /><span class="meta">Tap Frog Doodl</span></a>				</li>
+				<li data-order="25" data-rating="4.3917" data-rating-count="1935" data-release="">
+					<a class="game-icon game-id-4241" href="/games/headless-zombie-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/HZ2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Headless 2 하기" title="Headless Zombie 2 하기" width="84" height="63" /><span class="meta">Headless 2</span></a>				</li>
+				<li data-order="26" data-rating="4.2041" data-rating-count="490" data-release="">
+					<a class="game-icon game-id-4376" href="/games/knight-slider/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Knight-Slider_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Knight Slider 하기" title="Knight Slider 하기" width="84" height="63" /><span class="meta">Knight Slider</span></a>				</li>
+				<li data-order="27" data-rating="4.3477" data-rating-count="834" data-release="">
+					<a class="game-icon game-id-4375" href="/games/bobby-da-arrow/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Bobby-da-Arrow_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bobby Da Arrow 하기" title="Bobby Da Arrow 하기" width="84" height="63" /><span class="meta">Bobby Da Arrow</span></a>				</li>
+				<li data-order="28" data-rating="4.1896" data-rating-count="865" data-release="">
+					<a class="game-icon game-id-4386" href="/games/blocnog/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/blocnog_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BLOCnog 하기" title="BLOCnog 하기" width="84" height="63" /><span class="meta">BLOCnog</span></a>				</li>
+				<li data-order="29" data-rating="4.4151" data-rating-count="32181" data-release="1415836800">
+					<a class="game-icon game-id-4179" href="/games/cut-the-rope/kr/#t-c-f" title=""><div class="notification blip offset positive">업데이트됨</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cuttherope.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cut the Rope 하기" title="Cut the Rope 하기" width="84" height="63" /><span class="meta">Cut the Rope</span></a>				</li>
+				<li data-order="30" data-rating="4.3848" data-rating-count="551" data-release="">
+					<a class="game-icon game-id-4374" href="/games/age-of-wonder-2-the-lost-scrolls/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Age-of-W_scrolls_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="The Lost Scrol 하기" title="The Lost Scrolls 하기" width="84" height="63" /><span class="meta">The Lost Scrol</span></a>				</li>
+				<li data-order="31" data-rating="4.2322" data-rating-count="2291" data-release="">
+					<a class="game-icon game-id-4413" href="/games/tap-the-frog/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Tap-the-Frog_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tap the Frog 하기" title="Tap the Frog 하기" width="84" height="63" /><span class="meta">Tap the Frog</span></a>				</li>
+				<li data-order="32" data-rating="4.3386" data-rating-count="765" data-release="">
+					<a class="game-icon game-id-4373" href="/games/age-of-wonder/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Age-of-Wonder_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Age of Wonder 하기" title="Age of Wonder 하기" width="84" height="63" /><span class="meta">Age of Wonder</span></a>				</li>
+				<li data-order="33" data-rating="3.9774" data-rating-count="665" data-release="">
+					<a class="game-icon game-id-4348" href="/games/zippy-boxes/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Zippy-Boxes_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zippy Boxes 하기" title="Zippy Boxes 하기" width="84" height="63" /><span class="meta">Zippy Boxes</span></a>				</li>
+				<li data-order="34" data-rating="4.3515" data-rating-count="3434" data-release="">
+					<a class="game-icon game-id-4357" href="/games/sugar-sugar-3/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Sugar3_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sugar Sugar 3 하기" title="Sugar Sugar 3 하기" width="84" height="63" /><span class="meta">Sugar Sugar 3</span></a>				</li>
+				<li data-order="35" data-rating="4.4931" data-rating-count="86114" data-release="">
+					<a class="game-icon game-id-3894" href="/games/bob-the-robber-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bobtherobber2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BobRobber2 하기" title="Bob the Robber 2 하기" width="84" height="63" /><span class="meta">BobRobber2</span></a>				</li>
+				<li data-order="36" data-rating="4.4062" data-rating-count="11028" data-release="1415836800">
+					<a class="game-icon game-id-4347" href="/games/cut-the-rope-time-travel/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ctr_tt_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Time Travel 하기" title="Cut the Rope Time Travel 하기" width="84" height="63" /><span class="meta">Time Travel</span></a>				</li>
+				<li data-order="37" data-rating="4.4525" data-rating-count="3335" data-release="1426809600">
+					<a class="game-icon game-id-4240" href="/games/headless-zombie/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/headless_1_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Headless Zombi 하기" title="Headless Zombie 하기" width="84" height="63" /><span class="meta">Headless Zombi</span></a>				</li>
+				<li data-order="38" data-rating="4.2542" data-rating-count="2274" data-release="1428364800">
+					<a class="game-icon game-id-4327" href="/games/candy-rain-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/candy_rain2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Candy Rain 2 하기" title="Candy Rain 2 하기" width="84" height="63" /><span class="meta">Candy Rain 2</span></a>				</li>
+				<li data-order="39" data-rating="4.3105" data-rating-count="10468" data-release="1433376000">
+					<a class="game-icon game-id-4350" href="/games/dude-perfect-2/kr/#t-c-f" title=""><div class="notification blip offset positive">업데이트됨</div><img data-src="//static.miniclipcdn.com/content/game-icons/medium/DPlargeicon_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="DudePerfect2 하기" title="Dude Perfect 2 하기" width="84" height="63" /><span class="meta">DudePerfect2</span></a>				</li>
+				<li data-order="40" data-rating="4.2443" data-rating-count="3299" data-release="">
+					<a class="game-icon game-id-4238" href="/games/a-stroll-in-space/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/strollinspacev2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stroll In  하기" title="A Stroll In Space 하기" width="84" height="63" /><span class="meta">Stroll In </span></a>				</li>
+				<li data-order="41" data-rating="4.344" data-rating-count="6851" data-release="">
+					<a class="game-icon game-id-4242" href="/games/clowns-in-the-face/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Clowns 하기" title="Clowns in the Face 하기" width="84" height="63" /><span class="meta">Clowns</span></a>				</li>
+				<li data-order="42" data-rating="4.0501" data-rating-count="619" data-release="1430352000">
+					<a class="game-icon game-id-4337" href="/games/banana-mania/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Bananamania_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Banana Mania 하기" title="Banana Mania 하기" width="84" height="63" /><span class="meta">Banana Mania</span></a>				</li>
+				<li data-order="43" data-rating="4.2036" data-rating-count="10318" data-release="1427673600">
+					<a class="game-icon game-id-4269" href="/games/foot-chinko/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/FootChinko_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Foot Chinko 하기" title="Foot Chinko 하기" width="84" height="63" /><span class="meta">Foot Chinko</span></a>				</li>
+				<li data-order="44" data-rating="4.2248" data-rating-count="3599" data-release="">
+					<a class="game-icon game-id-4201" href="/games/hexagon/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/hexagon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hexagon 하기" title="Hexagon 하기" width="84" height="63" /><span class="meta">Hexagon</span></a>				</li>
+				<li data-order="45" data-rating="4.0191" data-rating-count="209" data-release="">
+					<a class="game-icon game-id-4404" href="/games/fantasy-star-pinball/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/fantasypinball_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fantasy Pinbal 하기" title="Fantasy Star Pinball 하기" width="84" height="63" /><span class="meta">Fantasy Pinbal</span></a>				</li>
+				<li data-order="46" data-rating="4.2384" data-rating-count="1246" data-release="">
+					<a class="game-icon game-id-4156" href="/games/lost-yeti/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/lostyetiv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Lost Yeti 하기" title="Lost Yeti 하기" width="84" height="63" /><span class="meta">Lost Yeti</span></a>				</li>
+				<li data-order="47" data-rating="3.9315" data-rating-count="16500" data-release="">
+					<a class="game-icon game-id-4159" href="/games/zumas-revenge/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zuma.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zuma 하기" title="Zuma's Revenge 하기" width="84" height="63" /><span class="meta">Zuma</span></a>				</li>
+				<li data-order="48" data-rating="4.4292" data-rating-count="14097" data-release="-62169984000">
+					<a class="game-icon game-id-3746" href="/games/slime-laboratory-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelab2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab 2 하기" title="Slime Laboratory 2 하기" width="84" height="63" /><span class="meta">Slime Lab 2</span></a>				</li>
+				<li data-order="49" data-rating="4.2037" data-rating-count="1453" data-release="">
+					<a class="game-icon game-id-4192" href="/games/2048/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/2048.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="2048 하기" title="2048 하기" width="84" height="63" /><span class="meta">2048</span></a>				</li>
+				<li data-order="50" data-rating="4.3448" data-rating-count="24185" data-release="-62169984000">
+					<a class="game-icon game-id-1551" href="/games/motherload/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/motherload.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="MotherLoad 하기" title="MotherLoad 하기" width="84" height="63" /><span class="meta">MotherLoad</span></a>				</li>
+				<li data-order="51" data-rating="3.9089" data-rating-count="3799" data-release="">
+					<a class="game-icon game-id-4119" href="/games/jelly-collapse/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jellycollapse.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jelly Collapse 하기" title="Jelly Collapse 하기" width="84" height="63" /><span class="meta">Jelly Collapse</span></a>				</li>
+				<li data-order="52" data-rating="4.0127" data-rating-count="1578" data-release="">
+					<a class="game-icon game-id-4167" href="/games/cubis-addictive-puzzler/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/cubis.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cubis Puzzler 하기" title="Cubis Addictive Puzzler 하기" width="84" height="63" /><span class="meta">Cubis Puzzler</span></a>				</li>
+				<li data-order="53" data-rating="4.1528" data-rating-count="5759" data-release="1227484800">
+					<a class="game-icon game-id-1989" href="/games/mahjong-daily/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mahjongdaily.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mahjong Daily 하기" title="Mahjong Daily 하기" width="84" height="63" /><span class="meta">Mahjong Daily</span></a>				</li>
+				<li data-order="54" data-rating="4.4026" data-rating-count="4203" data-release="">
+					<a class="game-icon game-id-4147" href="/games/vvvvvv/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/vvvvvv.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Vvvvvv 하기" title="Vvvvvv 하기" width="84" height="63" /><span class="meta">Vvvvvv</span></a>				</li>
+				<li data-order="55" data-rating="4.4105" data-rating-count="11718" data-release="">
+					<a class="game-icon game-id-4076" href="/games/blym/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/BLYM.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blym 하기" title="Blym 하기" width="84" height="63" /><span class="meta">Blym</span></a>				</li>
+				<li data-order="56" data-rating="4.3401" data-rating-count="13134" data-release="1356307200">
+					<a class="game-icon game-id-3388" href="/games/epic-rail/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/epicrail.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Epic Rail 하기" title="Epic Rail 하기" width="84" height="63" /><span class="meta">Epic Rail</span></a>				</li>
+				<li data-order="57" data-rating="4.4111" data-rating-count="34475" data-release="1325635200">
+					<a class="game-icon game-id-3195" href="/games/ice-temple/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/icetemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ice Temple 하기" title="Ice Temple 하기" width="84" height="63" /><span class="meta">Ice Temple</span></a>				</li>
+				<li data-order="58" data-rating="4.6393" data-rating-count="8106" data-release="1335916800">
+					<a class="game-icon game-id-3278" href="/games/boxo/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/boxo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Boxo 하기" title="Boxo 하기" width="84" height="63" /><span class="meta">Boxo</span></a>				</li>
+				<li data-order="59" data-rating="4.2569" data-rating-count="12172" data-release="">
+					<a class="game-icon game-id-3818" href="/games/doctor-acorn/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/doctoracorn.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dr Acorn 하기" title="Doctor Acorn 하기" width="84" height="63" /><span class="meta">Dr Acorn</span></a>				</li>
+				<li data-order="60" data-rating="4.074" data-rating-count="5524" data-release="">
+					<a class="game-icon game-id-4105" href="/games/4444/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/4444.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="4444 하기" title="4444 하기" width="84" height="63" /><span class="meta">4444</span></a>				</li>
+				<li data-order="61" data-rating="4.3994" data-rating-count="9126" data-release="1232928000">
+					<a class="game-icon game-id-2062" href="/games/ice-breaker/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/icebreaker.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ice Breaker 하기" title="Ice Breaker 하기" width="84" height="63" /><span class="meta">Ice Breaker</span></a>				</li>
+				<li data-order="62" data-rating="4.3905" data-rating-count="5331" data-release="1352678400">
+					<a class="game-icon game-id-3524" href="/games/ninja-painter-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/ninjapainter2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="NinjaPainter2 하기" title="Ninja Painter 2 하기" width="84" height="63" /><span class="meta">NinjaPainter2</span></a>				</li>
+				<li data-order="63" data-rating="4.3454" data-rating-count="3769" data-release="1326067200">
+					<a class="game-icon game-id-3219" href="/games/sugar-sugar-xmas/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/sugarxmasspecial.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sugar Xmas 하기" title="Sugar Sugar Xmas 하기" width="84" height="63" /><span class="meta">Sugar Xmas</span></a>				</li>
+				<li data-order="64" data-rating="3.8537" data-rating-count="2461" data-release="">
+					<a class="game-icon game-id-3892" href="/games/beavus/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/beavus.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Beavus 하기" title="Beavus 하기" width="84" height="63" /><span class="meta">Beavus</span></a>				</li>
+				<li data-order="65" data-rating="4.3532" data-rating-count="29727" data-release="1269475200">
+					<a class="game-icon game-id-2213" href="/games/anagram-magic/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/anagrammagic.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Anagram 하기" title="Anagram Magic 하기" width="84" height="63" /><span class="meta">Anagram</span></a>				</li>
+				<li data-order="66" data-rating="4.4999" data-rating-count="13703" data-release="">
+					<a class="game-icon game-id-3898" href="/games/cursed-treasure-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/cursedtreasure2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cursed Treas2 하기" title="Cursed Treasure 2 하기" width="84" height="63" /><span class="meta">Cursed Treas2</span></a>				</li>
+				<li data-order="67" data-rating="4.4236" data-rating-count="2845" data-release="">
+					<a class="game-icon game-id-3770" href="/games/ninja-miner/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ninjaminer-medium.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ninja Miner 하기" title="Ninja Miner 하기" width="84" height="63" /><span class="meta">Ninja Miner</span></a>				</li>
+				<li data-order="68" data-rating="4.3819" data-rating-count="14808" data-release="-62169984000">
+					<a class="game-icon game-id-3866" href="/games/dynaboy/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/dyna-boy_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="DynaBoy 하기" title="DynaBoy 하기" width="84" height="63" /><span class="meta">DynaBoy</span></a>				</li>
+				<li data-order="69" data-rating="4.3917" data-rating-count="27243" data-release="1295481600">
+					<a class="game-icon game-id-2585" href="/games/light-temple/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/lighttemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Light Temple 하기" title="Light Temple 하기" width="84" height="63" /><span class="meta">Light Temple</span></a>				</li>
+				<li data-order="70" data-rating="4.4137" data-rating-count="2695" data-release="-62169984000">
+					<a class="game-icon game-id-3738" href="/games/plunger/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/plunger.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Plunger 하기" title="Plunger 하기" width="84" height="63" /><span class="meta">Plunger</span></a>				</li>
+				<li data-order="71" data-rating="4.5009" data-rating-count="1693" data-release="1362355200">
+					<a class="game-icon game-id-3624" href="/games/pheus-and-mor/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/pheusandmor.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pheus&Mor 하기" title="Pheus and Mor 하기" width="84" height="63" /><span class="meta">Pheus&Mor</span></a>				</li>
+				<li data-order="72" data-rating="4.13" data-rating-count="777" data-release="-62169984000">
+					<a class="game-icon game-id-3740" href="/games/super-stocktake/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/superstocktake.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Super Stock 하기" title="Super Stocktake 하기" width="84" height="63" /><span class="meta">Super Stock</span></a>				</li>
+				<li data-order="73" data-rating="4.3288" data-rating-count="1104" data-release="-62169984000">
+					<a class="game-icon game-id-3790" href="/games/flip-and-go/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/flipandgo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip and Go 하기" title="Flip and Go 하기" width="84" height="63" /><span class="meta">Flip and Go</span></a>				</li>
+				<li data-order="74" data-rating="4.1076" data-rating-count="5839" data-release="">
+					<a class="game-icon game-id-4160" href="/games/bejeweled/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Bejeweled.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bejeweled 하기" title="Bejeweled 하기" width="84" height="63" /><span class="meta">Bejeweled</span></a>				</li>
+				<li data-order="75" data-rating="4.3921" data-rating-count="533" data-release="1360800000">
+					<a class="game-icon game-id-3650" href="/games/swindler-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/swindler2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Swindler 2 하기" title="Swindler 2 하기" width="84" height="63" /><span class="meta">Swindler 2</span></a>				</li>
+				<li data-order="76" data-rating="4.4881" data-rating-count="3489" data-release="1363564800">
+					<a class="game-icon game-id-3662" href="/games/transmorpher/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/transmorphermedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Transmorpher 하기" title="Transmorpher 하기" width="84" height="63" /><span class="meta">Transmorpher</span></a>				</li>
+				<li data-order="77" data-rating="4.4459" data-rating-count="4465" data-release="1316649600">
+					<a class="game-icon game-id-2891" href="/games/monster-island/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/monsterisland.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="MonsterIsland 하기" title="Monster Island 하기" width="84" height="63" /><span class="meta">MonsterIsland</span></a>				</li>
+				<li data-order="78" data-rating="4.3805" data-rating-count="19400" data-release="1346630400">
+					<a class="game-icon game-id-3463" href="/games/papas-burgeria/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/papasburgeria.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="PapasBurgeria 하기" title="Papas Burgeria 하기" width="84" height="63" /><span class="meta">PapasBurgeria</span></a>				</li>
+				<li data-order="79" data-rating="3.7782" data-rating-count="3250" data-release="1328745600">
+					<a class="game-icon game-id-3173" href="/games/mushroom-madness-3/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mushroommadness3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mushroom 3 하기" title="Mushroom Madness 3 하기" width="84" height="63" /><span class="meta">Mushroom 3</span></a>				</li>
+				<li data-order="80" data-rating="4.4093" data-rating-count="2211" data-release="1348444800">
+					<a class="game-icon game-id-3354" href="/games/big-time-butter-baron/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/bigtimebutterbaron.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Butter Baron 하기" title="Big Time Butter Baron 하기" width="84" height="63" /><span class="meta">Butter Baron</span></a>				</li>
+				<li data-order="81" data-rating="4.3224" data-rating-count="2168" data-release="1369612800">
+					<a class="game-icon game-id-3664" href="/games/paintworld/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/paintworld.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Paintworld 하기" title="Paintworld 하기" width="84" height="63" /><span class="meta">Paintworld</span></a>				</li>
+				<li data-order="82" data-rating="4.329" data-rating-count="535" data-release="-62169984000">
+					<a class="game-icon game-id-3756" href="/games/koutack/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/koutack.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Koutack 하기" title="Koutack 하기" width="84" height="63" /><span class="meta">Koutack</span></a>				</li>
+				<li data-order="83" data-rating="4.4226" data-rating-count="40702" data-release="1346630400">
+					<a class="game-icon game-id-3467" href="/games/papas-freezeria/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/papasfreezeria.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Freezeria 하기" title="Papas Freezeria 하기" width="84" height="63" /><span class="meta">Freezeria</span></a>				</li>
+				<li data-order="84" data-rating="4.2168" data-rating-count="2786" data-release="1346112000">
+					<a class="game-icon game-id-3350" href="/games/ores/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/ores.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ores 하기" title="Ores 하기" width="84" height="63" /><span class="meta">Ores</span></a>				</li>
+				<li data-order="85" data-rating="4.4577" data-rating-count="544" data-release="1366588800">
+					<a class="game-icon game-id-3668" href="/games/orbox-c/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/orboxc.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Orbox C 하기" title="Orbox C 하기" width="84" height="63" /><span class="meta">Orbox C</span></a>				</li>
+				<li data-order="86" data-rating="4.3112" data-rating-count="649" data-release="1225670400">
+					<a class="game-icon game-id-2008" href="/games/bomba/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bomba.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bomba 하기" title="Bomba 하기" width="84" height="63" /><span class="meta">Bomba</span></a>				</li>
+				<li data-order="87" data-rating="4.2974" data-rating-count="3706" data-release="1358985600">
+					<a class="game-icon game-id-3469" href="/games/bounzy-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/bounzy2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bounzy 2 하기" title="Bounzy 2 하기" width="84" height="63" /><span class="meta">Bounzy 2</span></a>				</li>
+				<li data-order="88" data-rating="4.4109" data-rating-count="4940" data-release="1321228800">
+					<a class="game-icon game-id-3013" href="/games/5-in-a-row-gomoku/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/5inarow.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="5 in a Row 하기" title="5 in a Row Gomoku 하기" width="84" height="63" /><span class="meta">5 in a Row</span></a>				</li>
+				<li data-order="89" data-rating="4.4417" data-rating-count="1725" data-release="1266451200">
+					<a class="game-icon game-id-2105" href="/games/art-thief/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/artthief.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Art Thief 하기" title="Art Thief 하기" width="84" height="63" /><span class="meta">Art Thief</span></a>				</li>
+				<li data-order="90" data-rating="4.4801" data-rating-count="4834" data-release="1334793600">
+					<a class="game-icon game-id-2875" href="/games/hambo/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/hambo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hambo 하기" title="Hambo 하기" width="84" height="63" /><span class="meta">Hambo</span></a>				</li>
+				<li data-order="91" data-rating="4.5" data-rating-count="2626" data-release="1313625600">
+					<a class="game-icon game-id-2899" href="/games/ninja-painter/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ninjapainter.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ninja Painter 하기" title="Ninja Painter 하기" width="84" height="63" /><span class="meta">Ninja Painter</span></a>				</li>
+				<li data-order="92" data-rating="4.4549" data-rating-count="4548" data-release="1329091200">
+					<a class="game-icon game-id-3290" href="/games/one-and-one-story/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/oneandonestory.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="One & One 하기" title="One and One Story 하기" width="84" height="63" /><span class="meta">One & One</span></a>				</li>
+				<li data-order="93" data-rating="4.2758" data-rating-count="649" data-release="1255478400">
+					<a class="game-icon game-id-2141" href="/games/adventures-of-bloo/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/theadventuresofbloo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Adventures 하기" title="Adventures of Bloo 하기" width="84" height="63" /><span class="meta">Adventures</span></a>				</li>
+				<li data-order="94" data-rating="3.8012" data-rating-count="976" data-release="1243814400">
+					<a class="game-icon game-id-2103" href="/games/plant-pong/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/plantpong.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Plant Pong 하기" title="Plant Pong 하기" width="84" height="63" /><span class="meta">Plant Pong</span></a>				</li>
+				<li data-order="95" data-rating="4.4096" data-rating-count="1223" data-release="1353542400">
+					<a class="game-icon game-id-3330" href="/games/wacky-ballz-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wackyballzs2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wacky Ballz 2 하기" title="Wacky Ballz 2 하기" width="84" height="63" /><span class="meta">Wacky Ballz 2</span></a>				</li>
+				<li data-order="96" data-rating="4.1522" data-rating-count="3943" data-release="1191542400">
+					<a class="game-icon game-id-1861" href="/games/sushi-go-round/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/sushigoround.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SushiGoRound 하기" title="Sushi Go Round 하기" width="84" height="63" /><span class="meta">SushiGoRound</span></a>				</li>
+				<li data-order="97" data-rating="4.2349" data-rating-count="1205" data-release="1249257600">
+					<a class="game-icon game-id-2118" href="/games/magic-pen-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/magicpen2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Magic Pen 2 하기" title="Magic Pen 2 하기" width="84" height="63" /><span class="meta">Magic Pen 2</span></a>				</li>
+				<li data-order="98" data-rating="4.3912" data-rating-count="1825" data-release="1330905600">
+					<a class="game-icon game-id-2657" href="/games/short-history-of-the-world/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/historyoftheworld.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Short History  하기" title="Short History of the World 하기" width="84" height="63" /><span class="meta">Short History </span></a>				</li>
+				<li data-order="99" data-rating="4.4338" data-rating-count="491" data-release="1360800000">
+					<a class="game-icon game-id-3648" href="/games/swindler/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/swindler.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Swindler 하기" title="Swindler 하기" width="84" height="63" /><span class="meta">Swindler</span></a>				</li>
+				<li data-order="100" data-rating="4.4668" data-rating-count="2500" data-release="1333584000">
+					<a class="game-icon game-id-3032" href="/games/wonderputt/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wonderputt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wonderputt 하기" title="Wonderputt 하기" width="84" height="63" /><span class="meta">Wonderputt</span></a>				</li>
+				<li data-order="101" data-rating="4.4204" data-rating-count="904" data-release="1300924800">
+					<a class="game-icon game-id-2697" href="/games/wizard-hult/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/wizardhult.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wizard Hult 하기" title="Wizard Hult 하기" width="84" height="63" /><span class="meta">Wizard Hult</span></a>				</li>
+				<li data-order="102" data-rating="3.9186" data-rating-count="3402" data-release="1349049600">
+					<a class="game-icon game-id-3416" href="/games/icy-fishes/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/icyfishes.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Icy Fishes 하기" title="Icy Fishes 하기" width="84" height="63" /><span class="meta">Icy Fishes</span></a>				</li>
+				<li data-order="103" data-rating="4.2794" data-rating-count="6284" data-release="1352073600">
+					<a class="game-icon game-id-3418" href="/games/300-miles-to-pigsland/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/300milestopigsland.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="300 Miles 하기" title="300 Miles to Pigsland 하기" width="84" height="63" /><span class="meta">300 Miles</span></a>				</li>
+				<li data-order="104" data-rating="4.0389" data-rating-count="257" data-release="1355961600">
+					<a class="game-icon game-id-3471" href="/games/ninja-pig-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ninjapig2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ninja Pig 2 하기" title="Ninja Pig 2 하기" width="84" height="63" /><span class="meta">Ninja Pig 2</span></a>				</li>
+				<li data-order="105" data-rating="4.1728" data-rating-count="972" data-release="1347840000">
+					<a class="game-icon game-id-3479" href="/games/hot-air-jr/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/hotairjr.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air Jr 하기" title="Hot Air Jr 하기" width="84" height="63" /><span class="meta">Hot Air Jr</span></a>				</li>
+				<li data-order="106" data-rating="4.5011" data-rating-count="6743" data-release="-62169984000">
+					<a class="game-icon game-id-3786" href="/games/zombality/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zombality.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombality 하기" title="Zombality 하기" width="84" height="63" /><span class="meta">Zombality</span></a>				</li>
+				<li data-order="107" data-rating="4.2199" data-rating-count="191" data-release="1357776000">
+					<a class="game-icon game-id-3372" href="/games/splitman/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/splitman.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Splitman 하기" title="Splitman 하기" width="84" height="63" /><span class="meta">Splitman</span></a>				</li>
+				<li data-order="108" data-rating="4.1655" data-rating-count="139" data-release="1343088000">
+					<a class="game-icon game-id-2690" href="/games/magnatron/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/magnatron.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Magnatron 하기" title="Magnatron 하기" width="84" height="63" /><span class="meta">Magnatron</span></a>				</li>
+				<li data-order="109" data-rating="4.2967" data-rating-count="7035" data-release="1311811200">
+					<a class="game-icon game-id-2933" href="/games/rubble-trouble-tokyo/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rubbletroubletokyo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RT Tokyo 하기" title="Rubble Trouble Tokyo 하기" width="84" height="63" /><span class="meta">RT Tokyo</span></a>				</li>
+				<li data-order="110" data-rating="4.3229" data-rating-count="542" data-release="1336953600">
+					<a class="game-icon game-id-3294" href="/games/gemaica/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/gemaicav2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gemaica 하기" title="Gemaica 하기" width="84" height="63" /><span class="meta">Gemaica</span></a>				</li>
+				<li data-order="111" data-rating="4.0986" data-rating-count="2354" data-release="1251072000">
+					<a class="game-icon game-id-2119" href="/games/clickplay/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/clickplay.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ClickPLAY 하기" title="ClickPLAY 하기" width="84" height="63" /><span class="meta">ClickPLAY</span></a>				</li>
+				<li data-order="112" data-rating="4.3538" data-rating-count="619" data-release="-62169984000">
+					<a class="game-icon game-id-2009" href="/games/numbskull/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/numbskull.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Numbskull 하기" title="Numbskull 하기" width="84" height="63" /><span class="meta">Numbskull</span></a>				</li>
+				<li data-order="113" data-rating="4.375" data-rating-count="560" data-release="1334620800">
+					<a class="game-icon game-id-2749" href="/games/all-we-need-is-brain-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/allweneedisbrain2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Brains 2 하기" title="All we need is brain 2 하기" width="84" height="63" /><span class="meta">Brains 2</span></a>				</li>
+				<li data-order="114" data-rating="4.3705" data-rating-count="1900" data-release="1343260800">
+					<a class="game-icon game-id-3241" href="/games/rat-fishing/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/ratfishing.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rat Fishing 하기" title="Rat Fishing 하기" width="84" height="63" /><span class="meta">Rat Fishing</span></a>				</li>
+				<li data-order="115" data-rating="4.3545" data-rating-count="1650" data-release="1296604800">
+					<a class="game-icon game-id-2485" href="/games/canary/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Canary.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Canary 하기" title="Canary 하기" width="84" height="63" /><span class="meta">Canary</span></a>				</li>
+				<li data-order="116" data-rating="4.1098" data-rating-count="1585" data-release="1338163200">
+					<a class="game-icon game-id-3245" href="/games/major-miner/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/majorminer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Major Miner 하기" title="Major Miner 하기" width="84" height="63" /><span class="meta">Major Miner</span></a>				</li>
+				<li data-order="117" data-rating="4.373" data-rating-count="4442" data-release="1327449600">
+					<a class="game-icon game-id-3225" href="/games/rubble-trouble-moscow/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/rubbletroublemoscow2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RT Moscow 하기" title="Rubble Trouble Moscow 하기" width="84" height="63" /><span class="meta">RT Moscow</span></a>				</li>
+				<li data-order="118" data-rating="4.4807" data-rating-count="2230" data-release="1332115200">
+					<a class="game-icon game-id-2893" href="/games/cursed-treasure/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cursedtreasure.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="CursedTreasure 하기" title="Cursed Treasure 하기" width="84" height="63" /><span class="meta">CursedTreasure</span></a>				</li>
+				<li data-order="119" data-rating="4.4645" data-rating-count="844" data-release="1316390400">
+					<a class="game-icon game-id-2975" href="/games/bazooki-a-silent-affair/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bazookisilentaffair.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bazooki 하기" title="Bazooki 하기" width="84" height="63" /><span class="meta">Bazooki</span></a>				</li>
+				<li data-order="120" data-rating="4.3835" data-rating-count="279" data-release="1282176000">
+					<a class="game-icon game-id-2363" href="/games/robo-pop/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/robopop.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Robo Pop 하기" title="Robo Pop 하기" width="84" height="63" /><span class="meta">Robo Pop</span></a>				</li>
+				<li data-order="121" data-rating="4.3418" data-rating-count="1182" data-release="1213833600">
+					<a class="game-icon game-id-1932" href="/games/magic-pen/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/magicpen.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Magic Pen 하기" title="Magic Pen 하기" width="84" height="63" /><span class="meta">Magic Pen</span></a>				</li>
+				<li data-order="122" data-rating="4.3281" data-rating-count="11194" data-release="1264723200">
+					<a class="game-icon game-id-2181" href="/games/rubble-trouble/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rubbletrouble.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RubbleTrouble 하기" title="Rubble Trouble 하기" width="84" height="63" /><span class="meta">RubbleTrouble</span></a>				</li>
+				<li data-order="123" data-rating="4.2926" data-rating-count="687" data-release="1299628800">
+					<a class="game-icon game-id-2679" href="/games/shift-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/shift2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Shift 2 하기" title="Shift 2 하기" width="84" height="63" /><span class="meta">Shift 2</span></a>				</li>
+				<li data-order="124" data-rating="4.3038" data-rating-count="869" data-release="1216598400">
+					<a class="game-icon game-id-1963" href="/games/word-vine/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/wordvine.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Word Vine 하기" title="Word Vine 하기" width="84" height="63" /><span class="meta">Word Vine</span></a>				</li>
+				<li data-order="125" data-rating="3.9567" data-rating-count="3138" data-release="-62169984000">
+					<a class="game-icon game-id-1440" href="/games/bloomin-gardens/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bloomingardens.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gardens 하기" title="Bloomin' Gardens 하기" width="84" height="63" /><span class="meta">Gardens</span></a>				</li>
+				<li data-order="126" data-rating="4.3456" data-rating-count="651" data-release="1343692800">
+					<a class="game-icon game-id-3396" href="/games/owl-spin/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/owlspin.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Owl Spin 하기" title="Owl Spin 하기" width="84" height="63" /><span class="meta">Owl Spin</span></a>				</li>
+				<li data-order="127" data-rating="4.3337" data-rating-count="12670" data-release="1180396800">
+					<a class="game-icon game-id-1812" href="/games/candy-and-clyde/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/candyandclyde.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Candy n Clyde 하기" title="Candy and Clyde 하기" width="84" height="63" /><span class="meta">Candy n Clyde</span></a>				</li>
+				<li data-order="128" data-rating="4.3589" data-rating-count="808" data-release="1231459200">
+					<a class="game-icon game-id-1984" href="/games/doeo/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/doeo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Doeo 하기" title="Doeo 하기" width="84" height="63" /><span class="meta">Doeo</span></a>				</li>
+				<li data-order="129" data-rating="4.4575" data-rating-count="1694" data-release="1311552000">
+					<a class="game-icon game-id-2686" href="/games/gravinaytor/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gravinaytor.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gravinaytor 하기" title="Gravinaytor 하기" width="84" height="63" /><span class="meta">Gravinaytor</span></a>				</li>
+				<li data-order="130" data-rating="4.503" data-rating-count="2690" data-release="1300665600">
+					<a class="game-icon game-id-2469" href="/games/mimelet/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mimelet.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mimelet 하기" title="Mimelet 하기" width="84" height="63" /><span class="meta">Mimelet</span></a>				</li>
+				<li data-order="131" data-rating="4.2758" data-rating-count="1095" data-release="-62169984000">
+					<a class="game-icon game-id-1565" href="/games/pharaohs-tomb/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/pharaoh.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pharaoh's Tomb 하기" title="Pharaoh's Tomb 하기" width="84" height="63" /><span class="meta">Pharaoh's Tomb</span></a>				</li>
+				<li data-order="132" data-rating="4.393" data-rating-count="2005" data-release="-62169984000">
+					<a class="game-icon game-id-1602" href="/games/sandman/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/sandman.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sandman 하기" title="Sandman 하기" width="84" height="63" /><span class="meta">Sandman</span></a>				</li>
+				<li data-order="133" data-rating="4.4074" data-rating-count="869" data-release="-62169984000">
+					<a class="game-icon game-id-1757" href="/games/scribble/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/scribble.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Scribble 하기" title="Scribble 하기" width="84" height="63" /><span class="meta">Scribble</span></a>				</li>
+				<li data-order="134" data-rating="4.2511" data-rating-count="904" data-release="-62169984000">
+					<a class="game-icon game-id-1639" href="/games/stackopolis/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/stackopolis.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stackopolis 하기" title="Stackopolis 하기" width="84" height="63" /><span class="meta">Stackopolis</span></a>				</li>
+				<li data-order="135" data-rating="3.8727" data-rating-count="534" data-release="-62169984000">
+					<a class="game-icon game-id-1647" href="/games/sudoku/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/sudoku_new.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sudoku 하기" title="Sudoku 하기" width="84" height="63" /><span class="meta">Sudoku</span></a>				</li>
+				<li data-order="136" data-rating="4.4811" data-rating-count="3490" data-release="-62169984000">
+					<a class="game-icon game-id-1752" href="/games/acid-factory/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/AcidFactorynew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Acid Factory 하기" title="Acid Factory 하기" width="84" height="63" /><span class="meta">Acid Factory</span></a>				</li>
+				<li data-order="137" data-rating="4.4495" data-rating-count="2494" data-release="-62169984000">
+					<a class="game-icon game-id-1421" href="/games/aqua-energizer/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/aquaenergizer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Aqua Energ 하기" title="Aqua Energizer 하기" width="84" height="63" /><span class="meta">Aqua Energ</span></a>				</li>
+				<li data-order="138" data-rating="4.472" data-rating-count="1481" data-release="1316649600">
+					<a class="game-icon game-id-3042" href="/games/siege-hero/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/SiegeHero.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Siege Hero 하기" title="Siege Hero 하기" width="84" height="63" /><span class="meta">Siege Hero</span></a>				</li>
+				<li data-order="139" data-rating="3.8438" data-rating-count="1037" data-release="1245888000">
+					<a class="game-icon game-id-2114" href="/games/castle-corp/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/castlecorp.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Castle Corp 하기" title="Castle Corp 하기" width="84" height="63" /><span class="meta">Castle Corp</span></a>				</li>
+				<li data-order="140" data-rating="4.4537" data-rating-count="335" data-release="1242000000">
+					<a class="game-icon game-id-2051" href="/games/chronotron/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/chronotron.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Chronotron 하기" title="Chronotron 하기" width="84" height="63" /><span class="meta">Chronotron</span></a>				</li>
+				<li data-order="141" data-rating="4.1322" data-rating-count="174" data-release="1268784000">
+					<a class="game-icon game-id-2122" href="/games/chuckaboom/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/chuckaboom.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ChuckaBOOM 하기" title="ChuckaBOOM 하기" width="84" height="63" /><span class="meta">ChuckaBOOM</span></a>				</li>
+				<li data-order="142" data-rating="4.2358" data-rating-count="246" data-release="-62169984000">
+					<a class="game-icon game-id-1985" href="/games/coign-of-vantage/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/coignofvantage.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Coign of Vanta 하기" title="Coign of Vantage 하기" width="84" height="63" /><span class="meta">Coign of Vanta</span></a>				</li>
+				<li data-order="143" data-rating="4.3978" data-rating-count="5963" data-release="-62169984000">
+					<a class="game-icon game-id-1470" href="/games/crypt-raider/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/crypt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crypt Raider 하기" title="Crypt Raider 하기" width="84" height="63" /><span class="meta">Crypt Raider</span></a>				</li>
+				<li data-order="144" data-rating="4.355" data-rating-count="307" data-release="1352073600">
+					<a class="game-icon game-id-3243" href="/games/verge/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/verge.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Verge 하기" title="Verge 하기" width="84" height="63" /><span class="meta">Verge</span></a>				</li>
+				<li data-order="145" data-rating="4.4336" data-rating-count="339" data-release="1302566400">
+					<a class="game-icon game-id-2121" href="/games/cursor-chaos/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/cursorchaos.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cursor Chaos 하기" title="Cursor Chaos 하기" width="84" height="63" /><span class="meta">Cursor Chaos</span></a>				</li>
+				<li data-order="146" data-rating="4.3659" data-rating-count="1298" data-release="1297382400">
+					<a class="game-icon game-id-2399" href="/games/fling/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/fling.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fling 하기" title="Fling 하기" width="84" height="63" /><span class="meta">Fling</span></a>				</li>
+				<li data-order="147" data-rating="4.478" data-rating-count="1705" data-release="1286496000">
+					<a class="game-icon game-id-2493" href="/games/sushi-cat/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/sushicat.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sushi Cat 하기" title="Sushi Cat 하기" width="84" height="63" /><span class="meta">Sushi Cat</span></a>				</li>
+				<li data-order="148" data-rating="4.2544" data-rating-count="228" data-release="1192492800">
+					<a class="game-icon game-id-1821" href="/games/flingo/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/flingo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flingo 하기" title="Flingo 하기" width="84" height="63" /><span class="meta">Flingo</span></a>				</li>
+				<li data-order="149" data-rating="4.334" data-rating-count="1006" data-release="1259712000">
+					<a class="game-icon game-id-2245" href="/games/ice-breaker-red-clan/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/icebreakerredclan.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="IceBreaker RC 하기" title="Ice Breaker RC 하기" width="84" height="63" /><span class="meta">IceBreaker RC</span></a>				</li>
+				<li data-order="150" data-rating="4.1376" data-rating-count="654" data-release="1227830400">
+					<a class="game-icon game-id-1971" href="/games/icy-slicy/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/icyslicy.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Icy Slicy 하기" title="Icy Slicy 하기" width="84" height="63" /><span class="meta">Icy Slicy</span></a>				</li>
+				<li data-order="151" data-rating="4.2752" data-rating-count="1163" data-release="1221868800">
+					<a class="game-icon game-id-1947" href="/games/in-the-doghouse/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/inthedoghouse.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="In The Dogho 하기" title="In The Doghouse 하기" width="84" height="63" /><span class="meta">In The Dogho</span></a>				</li>
+				<li data-order="152" data-rating="4.0982" data-rating-count="2190" data-release="1300752000">
+					<a class="game-icon game-id-2581" href="/games/klondike-solitaire/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/klondikesolitaire20.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Klondike Solit 하기" title="Klondike Solitaire 하기" width="84" height="63" /><span class="meta">Klondike Solit</span></a>				</li>
+				<li data-order="153" data-rating="4.067" data-rating-count="3404" data-release="1221091200">
+					<a class="game-icon game-id-1934" href="/games/mallet-mania/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/malletmania.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mallet Mania 하기" title="Mallet Mania 하기" width="84" height="63" /><span class="meta">Mallet Mania</span></a>				</li>
+				<li data-order="154" data-rating="4.4268" data-rating-count="239" data-release="1232323200">
+					<a class="game-icon game-id-2010" href="/games/monster-invasion/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/monsterinvasion.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Monster 하기" title="Monster Invasion 하기" width="84" height="63" /><span class="meta">Monster</span></a>				</li>
+				<li data-order="155" data-rating="4.298" data-rating-count="594" data-release="-62169984000">
+					<a class="game-icon game-id-1568" href="/games/piranhas/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/piranhas.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Piranhas 하기" title="Piranhas 하기" width="84" height="63" /><span class="meta">Piranhas</span></a>				</li>
+				<li data-order="156" data-rating="3.9561" data-rating-count="387" data-release="-62169984000">
+					<a class="game-icon game-id-1579" href="/games/puzzle-pirates/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/puzzlepirates_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Puzzle Pirates 하기" title="Puzzle Pirates 하기" width="84" height="63" /><span class="meta">Puzzle Pirates</span></a>				</li>
+				<li data-order="157" data-rating="4.2644" data-rating-count="87" data-release="1257206400">
+					<a class="game-icon game-id-2123" href="/games/rolley/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rolley.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rolley 하기" title="Rolley 하기" width="84" height="63" /><span class="meta">Rolley</span></a>				</li>
+				<li data-order="158" data-rating="4.3398" data-rating-count="359" data-release="-62169984000">
+					<a class="game-icon game-id-1703" href="/games/roly-poly/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/rolypoly.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Roly Poly 하기" title="Roly Poly 하기" width="84" height="63" /><span class="meta">Roly Poly</span></a>				</li>
+				<li data-order="159" data-rating="4.0161" data-rating-count="622" data-release="-62169984000">
+					<a class="game-icon game-id-1612" href="/games/sheriff-tripeaks/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/sherifftripeaks.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SheriffTripeak 하기" title="Sheriff Tripeaks 하기" width="84" height="63" /><span class="meta">SheriffTripeak</span></a>				</li>
+				<li data-order="160" data-rating="3.8244" data-rating-count="131" data-release="-62169984000">
+					<a class="game-icon game-id-1617" href="/games/shrunken-heads/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/shrunkenheads.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Shrunken 하기" title="Shrunken Heads 하기" width="84" height="63" /><span class="meta">Shrunken</span></a>				</li>
+				<li data-order="161" data-rating="4.2854" data-rating-count="1023" data-release="-62169984000">
+					<a class="game-icon game-id-1779" href="/games/silversphere/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/silversphere.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Silversphere 하기" title="Silversphere 하기" width="84" height="63" /><span class="meta">Silversphere</span></a>				</li>
+				<li data-order="162" data-rating="4.4493" data-rating-count="6474" data-release="1310083200">
+					<a class="game-icon game-id-2682" href="/games/slime-laboratory/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelaboratory.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab 하기" title="Slime Laboratory 하기" width="84" height="63" /><span class="meta">Slime Lab</span></a>				</li>
+				<li data-order="163" data-rating="4.2281" data-rating-count="912" data-release="-62169984000">
+					<a class="game-icon game-id-1624" href="/games/smashing/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/smashing.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Smashing 하기" title="Smashing 하기" width="84" height="63" /><span class="meta">Smashing</span></a>				</li>
+				<li data-order="164" data-rating="4.4276" data-rating-count="760" data-release="1233532800">
+					<a class="game-icon game-id-2061" href="/games/sneeze/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/sneeze.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sneeze 하기" title="Sneeze 하기" width="84" height="63" /><span class="meta">Sneeze</span></a>				</li>
+				<li data-order="165" data-rating="4.4738" data-rating-count="3871" data-release="1185753600">
+					<a class="game-icon game-id-1807" href="/games/square-meal/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/squaremeal.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Square Meal 하기" title="Square Meal 하기" width="84" height="63" /><span class="meta">Square Meal</span></a>				</li>
+				<li data-order="166" data-rating="4.4163" data-rating-count="2145" data-release="1314316800">
+					<a class="game-icon game-id-2431" href="/games/superhero-pizza/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/superheropizza.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SuperheroPizza 하기" title="Superhero Pizza 하기" width="84" height="63" /><span class="meta">SuperheroPizza</span></a>				</li>
+				<li data-order="167" data-rating="4.3881" data-rating-count="1559" data-release="1226448000">
+					<a class="game-icon game-id-1996" href="/games/the-scruffs/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/thescruffs.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="The Scruffs 하기" title="The Scruffs 하기" width="84" height="63" /><span class="meta">The Scruffs</span></a>				</li>
+				<li data-order="168" data-rating="4.0645" data-rating-count="1875" data-release="1300752000">
+					<a class="game-icon game-id-2583" href="/games/tripeaks-solitaire/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/tripeakssolitaire.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="TriPeaks Solit 하기" title="TriPeaks Solitaire 하기" width="84" height="63" /><span class="meta">TriPeaks Solit</span></a>				</li>
+				<li data-order="169" data-rating="4.0824" data-rating-count="267" data-release="-62169984000">
+					<a class="game-icon game-id-1669" href="/games/twiddlestix/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/twiddlestix.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Twiddlestix 하기" title="Twiddlestix 하기" width="84" height="63" /><span class="meta">Twiddlestix</span></a>				</li>
+				<li data-order="170" data-rating="4.2133" data-rating-count="830" data-release="-62169984000">
+					<a class="game-icon game-id-1673" href="/games/verti-golf/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/vertigolf.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Verti Golf 하기" title="Verti Golf 하기" width="84" height="63" /><span class="meta">Verti Golf</span></a>				</li>
+				<li data-order="171" data-rating="4.3318" data-rating-count="431" data-release="-62169984000">
+					<a class="game-icon game-id-1686" href="/games/xraye/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/xraye.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="XRaye 하기" title="XRaye 하기" width="84" height="63" /><span class="meta">XRaye</span></a>				</li>
+				<li data-order="172" data-rating="4.4773" data-rating-count="2185" data-release="-62169984000">
+					<a class="game-icon game-id-1687" href="/games/zed/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/zed.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zed 하기" title="Zed 하기" width="84" height="63" /><span class="meta">Zed</span></a>				</li>
+				<li data-order="173" data-rating="4.2607" data-rating-count="491" data-release="1345161600">
+					<a class="game-icon game-id-3203" href="/games/nom-nation/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/nomnation.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Nom Nation 하기" title="Nom Nation 하기" width="84" height="63" /><span class="meta">Nom Nation</span></a>				</li>
+				<li data-order="174" data-rating="4.2548" data-rating-count="259" data-release="1246320000">
+					<a class="game-icon game-id-2112" href="/games/block-drop/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/blockdrop.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Block Drop 하기" title="Block Drop 하기" width="84" height="63" /><span class="meta">Block Drop</span></a>				</li>
+				<li data-order="175" data-rating="4.2286" data-rating-count="350" data-release="-62169984000">
+					<a class="game-icon game-id-1441" href="/games/blox-forever/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bloxforever.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blox Forever 하기" title="Blox Forever 하기" width="84" height="63" /><span class="meta">Blox Forever</span></a>				</li>
+				<li data-order="176" data-rating="3.7077" data-rating-count="1358" data-release="-62169984000">
+					<a class="game-icon game-id-1711" href="/games/crashdown/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/crashdown.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crashdown 하기" title="Crashdown 하기" width="84" height="63" /><span class="meta">Crashdown</span></a>				</li>
+				<li data-order="177" data-rating="4.2228" data-rating-count="1086" data-release="1260403200">
+					<a class="game-icon game-id-2143" href="/games/crazy-go-nuts-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/crazygonuts2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crazy Go N 하기" title="Crazy Go Nuts 2 하기" width="84" height="63" /><span class="meta">Crazy Go N</span></a>				</li>
+				<li data-order="178" data-rating="3.866" data-rating-count="530" data-release="-62169984000">
+					<a class="game-icon game-id-1471" href="/games/cube-buster/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cube.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cube Buster 하기" title="Cube Buster 하기" width="84" height="63" /><span class="meta">Cube Buster</span></a>				</li>
+				<li data-order="179" data-rating="4.4186" data-rating-count="430" data-release="-62169984000">
+					<a class="game-icon game-id-1472" href="/games/cyber-mice-party/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/cybermice.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cyber Mice 하기" title="Cyber Mice Party 하기" width="84" height="63" /><span class="meta">Cyber Mice</span></a>				</li>
+				<li data-order="180" data-rating="4.239" data-rating-count="770" data-release="1269216000">
+					<a class="game-icon game-id-2159" href="/games/fat-slice/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/fatslice.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fat Slice 하기" title="Fat Slice 하기" width="84" height="63" /><span class="meta">Fat Slice</span></a>				</li>
+				<li data-order="181" data-rating="4.1147" data-rating-count="1778" data-release="1300752000">
+					<a class="game-icon game-id-2579" href="/games/golf-solitaire/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/golfsolitaire.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Golf Solitair 하기" title="Golf Solitaire 하기" width="84" height="63" /><span class="meta">Golf Solitair</span></a>				</li>
+				<li data-order="182" data-rating="4.2553" data-rating-count="235" data-release="-62169984000">
+					<a class="game-icon game-id-1746" href="/games/jingo/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/jingo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jingo 하기" title="Jingo 하기" width="84" height="63" /><span class="meta">Jingo</span></a>				</li>
+				<li data-order="183" data-rating="3.9464" data-rating-count="280" data-release="-62169984000">
+					<a class="game-icon game-id-1531" href="/games/letter-lasso/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/letterlasso.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Letter Lasso 하기" title="Letter Lasso 하기" width="84" height="63" /><span class="meta">Letter Lasso</span></a>				</li>
+				<li data-order="184" data-rating="4.5039" data-rating-count="770" data-release="1249862400">
+					<a class="game-icon game-id-2124" href="/games/little-wheel/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/littlewheel.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Little Wheel 하기" title="Little Wheel 하기" width="84" height="63" /><span class="meta">Little Wheel</span></a>				</li>
+				<li data-order="185" data-rating="3.8324" data-rating-count="179" data-release="1292371200">
+					<a class="game-icon game-id-2097" href="/games/monkey-mines/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/monkeymines.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Monkey Mines 하기" title="Monkey Mines 하기" width="84" height="63" /><span class="meta">Monkey Mines</span></a>				</li>
+				<li data-order="186" data-rating="4.1149" data-rating-count="261" data-release="-62169984000">
+					<a class="game-icon game-id-1564" href="/games/penguin-push/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/penguinpush.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Penguin Push 하기" title="Penguin Push 하기" width="84" height="63" /><span class="meta">Penguin Push</span></a>				</li>
+				<li data-order="187" data-rating="3.9065" data-rating-count="107" data-release="1248912000">
+					<a class="game-icon game-id-2063" href="/games/planet-cruncher/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/planetcruncher.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="PlanetCruncher 하기" title="Planet Cruncher 하기" width="84" height="63" /><span class="meta">PlanetCruncher</span></a>				</li>
+				<li data-order="188" data-rating="4.409" data-rating-count="335" data-release="1250726400">
+					<a class="game-icon game-id-2142" href="/games/rockitty/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/rockitty.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rockitty 하기" title="Rockitty 하기" width="84" height="63" /><span class="meta">Rockitty</span></a>				</li>
+				<li data-order="189" data-rating="3.8384" data-rating-count="99" data-release="-62169984000">
+					<a class="game-icon game-id-1537" href="/games/shanghai-mahjongg/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mahjongg.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SH Mahjongg 하기" title="Shanghai Mahjongg 하기" width="84" height="63" /><span class="meta">SH Mahjongg</span></a>				</li>
+				<li data-order="190" data-rating="4.216" data-rating-count="1639" data-release="-62169984000">
+					<a class="game-icon game-id-1761" href="/games/sling/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/sling.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sling 하기" title="Sling 하기" width="84" height="63" /><span class="meta">Sling</span></a>				</li>
+				<li data-order="191" data-rating="4.4093" data-rating-count="645" data-release="1214784000">
+					<a class="game-icon game-id-1912" href="/games/small-fry/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/smallfry.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Small Fry 하기" title="Small Fry 하기" width="84" height="63" /><span class="meta">Small Fry</span></a>				</li>
+				<li data-order="192" data-rating="4.1125" data-rating-count="1564" data-release="-62169984000">
+					<a class="game-icon game-id-1625" href="/games/snake/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/snake.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snake 하기" title="Snake 하기" width="84" height="63" /><span class="meta">Snake</span></a>				</li>
+				<li data-order="193" data-rating="4.313" data-rating-count="262" data-release="1242950400">
+					<a class="game-icon game-id-2094" href="/games/storybook/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/storybook.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Storybook 하기" title="Storybook 하기" width="84" height="63" /><span class="meta">Storybook</span></a>				</li>
+				<li data-order="194" data-rating="4.3929" data-rating-count="789" data-release="1319673600">
+					<a class="game-icon game-id-2909" href="/games/zombie-crypt/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zombiecrypt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombie Crypt 하기" title="Zombie Crypt 하기" width="84" height="63" /><span class="meta">Zombie Crypt</span></a>				</li>
+				<li data-order="195" data-rating="4.3632" data-rating-count="391" data-release="1234828800">
+					<a class="game-icon game-id-2020" href="/games/anikas-odyssey/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/anikasodyssey.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Anika's Ody 하기" title="Anika's Odyssey 하기" width="84" height="63" /><span class="meta">Anika's Ody</span></a>				</li>
+				<li data-order="196" data-rating="4.062" data-rating-count="129" data-release="-62169984000">
+					<a class="game-icon game-id-1438" href="/games/blobs/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/blobs.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blobs 하기" title="Blobs 하기" width="84" height="63" /><span class="meta">Blobs</span></a>				</li>
+				<li data-order="197" data-rating="3.9821" data-rating-count="112" data-release="-62169984000">
+					<a class="game-icon game-id-1439" href="/games/blobs-2/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/blobs2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blobs 2 하기" title="Blobs 2 하기" width="84" height="63" /><span class="meta">Blobs 2</span></a>				</li>
+				<li data-order="198" data-rating="4.3009" data-rating-count="2057" data-release="-62169984000">
+					<a class="game-icon game-id-1817" href="/games/bp-gas-mania/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gasmania.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BP Gas Mania 하기" title="BP Gas Mania 하기" width="84" height="63" /><span class="meta">BP Gas Mania</span></a>				</li>
+				<li data-order="199" data-rating="4.1608" data-rating-count="1766" data-release="-62169984000">
+					<a class="game-icon game-id-1461" href="/games/chasm/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/chasm.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Chasm 하기" title="Chasm 하기" width="84" height="63" /><span class="meta">Chasm</span></a>				</li>
+				<li data-order="200" data-rating="4.1587" data-rating-count="208" data-release="-62169984000">
+					<a class="game-icon game-id-1481" href="/games/detonator/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/detonator.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Detonator 하기" title="Detonator 하기" width="84" height="63" /><span class="meta">Detonator</span></a>				</li>
+				<li data-order="201" data-rating="4.2362" data-rating-count="199" data-release="1211155200">
+					<a class="game-icon game-id-1851" href="/games/digital-switch/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/digitalswitch.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Digital Switch 하기" title="Digital Switch 하기" width="84" height="63" /><span class="meta">Digital Switch</span></a>				</li>
+				<li data-order="202" data-rating="4.2853" data-rating-count="1241" data-release="-62169984000">
+					<a class="game-icon game-id-1496" href="/games/fruit-smash/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/fruitsmash.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fruit Smash 하기" title="Fruit Smash 하기" width="84" height="63" /><span class="meta">Fruit Smash</span></a>				</li>
+				<li data-order="203" data-rating="4.4269" data-rating-count="171" data-release="1213574400">
+					<a class="game-icon game-id-1764" href="/games/gateway/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/gateway1and2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gateway 하기" title="Gateway 하기" width="84" height="63" /><span class="meta">Gateway</span></a>				</li>
+				<li data-order="204" data-rating="4.41" data-rating-count="5502" data-release="-62169984000">
+					<a class="game-icon game-id-1505" href="/games/hangaroo/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hangaroo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hangaroo 하기" title="Hangaroo 하기" width="84" height="63" /><span class="meta">Hangaroo</span></a>				</li>
+				<li data-order="205" data-rating="4.4475" data-rating-count="2333" data-release="-62169984000">
+					<a class="game-icon game-id-1506" href="/games/hangaroo-2/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/hangaroo2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hangaroo 2 하기" title="Hangaroo 2 하기" width="84" height="63" /><span class="meta">Hangaroo 2</span></a>				</li>
+				<li data-order="206" data-rating="4.2429" data-rating-count="424" data-release="-62169984000">
+					<a class="game-icon game-id-1512" href="/games/hexxagon/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hexxagon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hexxagon 하기" title="Hexxagon 하기" width="84" height="63" /><span class="meta">Hexxagon</span></a>				</li>
+				<li data-order="207" data-rating="3.8199" data-rating-count="622" data-release="-62169984000">
+					<a class="game-icon game-id-1534" href="/games/magic-balls/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/magic.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Magic Balls 하기" title="Magic Balls 하기" width="84" height="63" /><span class="meta">Magic Balls</span></a>				</li>
+				<li data-order="208" data-rating="3.2228" data-rating-count="386" data-release="1246924800">
+					<a class="game-icon game-id-2055" href="/games/pirate-chains/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/piratechains.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pirate Chains 하기" title="Pirate Chains 하기" width="84" height="63" /><span class="meta">Pirate Chains</span></a>				</li>
+				<li data-order="209" data-rating="4.4462" data-rating-count="316" data-release="1212019200">
+					<a class="game-icon game-id-1943" href="/games/red-bugs-puzzle/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/redbugspuzzle.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Red Bugs Puzz 하기" title="Red Bugs Puzzle 하기" width="84" height="63" /><span class="meta">Red Bugs Puzz</span></a>				</li>
+				<li data-order="210" data-rating="4.3427" data-rating-count="143" data-release="-62169984000">
+					<a class="game-icon game-id-1615" href="/games/shove-it/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/shoveit.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Shove It 하기" title="Shove It 하기" width="84" height="63" /><span class="meta">Shove It</span></a>				</li>
+				<li data-order="211" data-rating="4.2946" data-rating-count="129" data-release="-62169984000">
+					<a class="game-icon game-id-1657" href="/games/thunder-plunder/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/thunderplunder.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Thunder Plunde 하기" title="Thunder Plunder 하기" width="84" height="63" /><span class="meta">Thunder Plunde</span></a>				</li>
+				<li data-order="212" data-rating="4.2339" data-rating-count="372" data-release="-62169984000">
+					<a class="game-icon game-id-1667" href="/games/trick-or-treat-smash/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/totsmash.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Trick or Treat 하기" title="T. or Treat Smash 하기" width="84" height="63" /><span class="meta">Trick or Treat</span></a>				</li>
+				<li data-order="213" data-rating="4.1086" data-rating-count="304" data-release="-62169984000">
+					<a class="game-icon game-id-1668" href="/games/trivia-machine/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/triviamachine.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Trivia Machine 하기" title="Trivia Machine 하기" width="84" height="63" /><span class="meta">Trivia Machine</span></a>				</li>
+				<li data-order="214" data-rating="2.6348" data-rating-count="115" data-release="-62169984000">
+					<a class="game-icon game-id-1418" href="/games/all-out/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/allout.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="All Out 하기" title="All Out 하기" width="84" height="63" /><span class="meta">All Out</span></a>				</li>
+				<li data-order="215" data-rating="4.0207" data-rating-count="675" data-release="-62169984000">
+					<a class="game-icon game-id-1422" href="/games/ask-guru-joe/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/askjoe.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ask Guru Joe 하기" title="Ask Guru Joe 하기" width="84" height="63" /><span class="meta">Ask Guru Joe</span></a>				</li>
+				<li data-order="216" data-rating="4.0477" data-rating-count="1257" data-release="-62169984000">
+					<a class="game-icon game-id-1424" href="/games/bad-apple/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/badapple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bad Apple 하기" title="Bad Apple 하기" width="84" height="63" /><span class="meta">Bad Apple</span></a>				</li>
+				<li data-order="217" data-rating="3.9" data-rating-count="100" data-release="-62169984000">
+					<a class="game-icon game-id-1431" href="/games/bears-and-bees/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bear.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bears & Be 하기" title="Bears & Bees 하기" width="84" height="63" /><span class="meta">Bears & Be</span></a>				</li>
+				<li data-order="218" data-rating="3.9247" data-rating-count="146" data-release="-62169984000">
+					<a class="game-icon game-id-1436" href="/games/blackjack-elf/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/blackjackelf.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blackjack Elf 하기" title="Blackjack Elf 하기" width="84" height="63" /><span class="meta">Blackjack Elf</span></a>				</li>
+				<li data-order="219" data-rating="3.8795" data-rating-count="166" data-release="-62169984000">
+					<a class="game-icon game-id-1466" href="/games/click-and-slide/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/click.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Click & Slide 하기" title="Click & Slide 하기" width="84" height="63" /><span class="meta">Click & Slide</span></a>				</li>
+				<li data-order="220" data-rating="4.0343" data-rating-count="321" data-release="-62169984000">
+					<a class="game-icon game-id-1750" href="/games/crossword-daily/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/crossword.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crossword  하기" title="Crossword Daily 하기" width="84" height="63" /><span class="meta">Crossword </span></a>				</li>
+				<li data-order="221" data-rating="4.1059" data-rating-count="85" data-release="-62169984000">
+					<a class="game-icon game-id-1495" href="/games/frendz/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/friendz.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Frendz 하기" title="Frendz 하기" width="84" height="63" /><span class="meta">Frendz</span></a>				</li>
+				<li data-order="222" data-rating="3.8137" data-rating-count="161" data-release="1200960000">
+					<a class="game-icon game-id-1905" href="/games/music-cube/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/musiccube.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Music Cube 하기" title="Music Cube 하기" width="84" height="63" /><span class="meta">Music Cube</span></a>				</li>
+				<li data-order="223" data-rating="4.2805" data-rating-count="385" data-release="-62169984000">
+					<a class="game-icon game-id-1567" href="/games/pipsoh/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/pipsoh.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pipsoh! 하기" title="Pipsoh! 하기" width="84" height="63" /><span class="meta">Pipsoh!</span></a>				</li>
+				<li data-order="224" data-rating="4.2612" data-rating-count="735" data-release="-62169984000">
+					<a class="game-icon game-id-1594" href="/games/rollon/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rollon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RollOn 하기" title="RollOn 하기" width="84" height="63" /><span class="meta">RollOn</span></a>				</li>
+				<li data-order="225" data-rating="3.9029" data-rating-count="515" data-release="-62169984000">
+					<a class="game-icon game-id-1618" href="/games/simon-says/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/simon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Simon Says 하기" title="Simon Says 하기" width="84" height="63" /><span class="meta">Simon Says</span></a>				</li>
+				<li data-order="226" data-rating="4.0716" data-rating-count="405" data-release="1323129600">
+					<a class="game-icon game-id-2911" href="/games/filler/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/filler.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Filler 하기" title="Filler 하기" width="84" height="63" /><span class="meta">Filler</span></a>				</li>
+				<li data-order="227" data-rating="4.2437" data-rating-count="119" data-release="1316649600">
+					<a class="game-icon game-id-2437" href="/games/k-million/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/kmillion.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="K million 하기" title="K million 하기" width="84" height="63" /><span class="meta">K million</span></a>				</li>
+				<li data-order="228" data-rating="4.3631" data-rating-count="515" data-release="1298505600">
+					<a class="game-icon game-id-2688" href="/games/rizk/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/rizk.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rizk 하기" title="Rizk 하기" width="84" height="63" /><span class="meta">Rizk</span></a>				</li>
+				<li data-order="229" data-rating="4.0391" data-rating-count="256" data-release="-62169984000">
+					<a class="game-icon game-id-3726" href="/games/domestos-flush/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/flush.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flush 하기" title="Domestos Flush 하기" width="84" height="63" /><span class="meta">Flush</span></a>				</li>
+				<li data-order="230" data-rating="4.3837" data-rating-count="2580" data-release="1302134400">
+					<a class="game-icon game-id-2627" href="/games/royal-wedding/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/royalwedding.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Royal Wedding 하기" title="Royal Wedding 하기" width="84" height="63" /><span class="meta">Royal Wedding</span></a>				</li>
+				<li data-order="231" data-rating="4.4775" data-rating-count="846" data-release="-62169984000">
+					<a class="game-icon game-id-1968" href="/games/election-special/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/campaigngame.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ElectSpecial 하기" title="Election Special 하기" width="84" height="63" /><span class="meta">ElectSpecial</span></a>				</li>
+				<li data-order="232" data-rating="4.2487" data-rating-count="780" data-release="1207180800">
+					<a class="game-icon game-id-1856" href="/games/movie-munchies/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/MovieMunchiesnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Movie Munchies 하기" title="Movie Munchies 하기" width="84" height="63" /><span class="meta">Movie Munchies</span></a>				</li>
+				<li data-order="233" data-rating="4.1367" data-rating-count="629" data-release="1199232000">
+					<a class="game-icon game-id-1855" href="/games/wacky-ballz/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/WackyBallznew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wacky Ballz 하기" title="Wacky Ballz 하기" width="84" height="63" /><span class="meta">Wacky Ballz</span></a>				</li>
+				<li data-order="234" data-rating="4.2761" data-rating-count="1474" data-release="1187827200">
+					<a class="game-icon game-id-1850" href="/games/hot-air-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/hotair2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air 2 하기" title="Hot Air 2 하기" width="84" height="63" /><span class="meta">Hot Air 2</span></a>				</li>
+				<li data-order="235" data-rating="4.4416" data-rating-count="702" data-release="1272499200">
+					<a class="game-icon game-id-2323" href="/games/chisel/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Chiselnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Chisel  하기" title="Chisel  하기" width="84" height="63" /><span class="meta">Chisel </span></a>				</li>
+				<li data-order="236" data-rating="4.1724" data-rating-count="203" data-release="-62169984000">
+					<a class="game-icon game-id-1763" href="/games/soap-bubble-2/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/soapbubble2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soap Bubble 2 하기" title="Soap Bubble 2 하기" width="84" height="63" /><span class="meta">Soap Bubble 2</span></a>				</li>
+				<li data-order="237" data-rating="4.0041" data-rating-count="242" data-release="-62169984000">
+					<a class="game-icon game-id-1632" href="/games/soap-bubble/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/soapbubble.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soap Bubbl 하기" title="Soap Bubble 하기" width="84" height="63" /><span class="meta">Soap Bubbl</span></a>				</li>
+				<li data-order="238" data-rating="3.4116" data-rating-count="1873" data-release="">
+					<a class="game-icon game-id-4074" href="/games/flappy-bird/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/flappymid.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flappy Bird 하기" title="Flappy Bird 하기" width="84" height="63" /><span class="meta">Flappy Bird</span></a>				</li>
+				<li data-order="239" data-rating="4.4442" data-rating-count="1013" data-release="1267488000">
+					<a class="game-icon game-id-2219" href="/games/rift/kr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/rift.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="R.I.F.T. 하기" title="R.I.F.T. 하기" width="84" height="63" /><span class="meta">R.I.F.T.</span></a>				</li>
+				<li data-order="240" data-rating="4.2166" data-rating-count="471" data-release="">
+					<a class="game-icon game-id-4393" href="/games/bouncy-cannon/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Bouncy-Cannon_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bouncy Cannon 하기" title="Bouncy Cannon 하기" width="84" height="63" /><span class="meta">Bouncy Cannon</span></a>				</li>
+				<li data-order="241" data-rating="4.3607" data-rating-count="987" data-release="">
+					<a class="game-icon game-id-4565" href="/games/infinity-inc/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Infinity-Inc_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Infinity Inc 하기" title="Infinity Inc 하기" width="84" height="63" /><span class="meta">Infinity Inc</span></a>				</li>
+				<li data-order="242" data-rating="3.6809" data-rating-count="47" data-release="">
+					<a class="game-icon game-id-4670" href="/games/gold-mine-strike/kr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Gold_Mine_Strike_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gold Strike 하기" title="Gold Mine Strike 하기" width="84" height="63" /><span class="meta">Gold Strike</span></a>				</li>
+				<li data-order="243" data-rating="4.3333" data-rating-count="15" data-release="">
+					<a class="game-icon game-id-4593" href="/games/potatoman/kr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Potatoman_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Potatoman 하기" title="Potatoman 하기" width="84" height="63" /><span class="meta">Potatoman</span></a>				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="secondary">
+    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            광고            <a href="#" rel="nofollow" class="feedback">의견</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-7 widget-919">
+	<header>
+		<a class="button category greedy cat-7" href="/games/genre-7/latest-games/kr/#t-w-c" title="더 많은 최신
+ 게임">
+			최신
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/kr/#t-w-c" title=""><div class="notification blip offset hot">신규!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io 하기" title="Squadd.io 하기" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4727" href="/games/guns-and-glory-heroes/kr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gunsandglory_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Guns and Glory 하기" title="Guns and Glory Heroes 하기" width="84" height="63" /><span class="meta">Guns and Glory</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4715" href="/games/basket-champs/kr/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/basket_champs_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Basket Champs 하기" title="Basket Champs 하기" width="84" height="63" /><span class="meta">Basket Champs</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4650" href="/games/call-of-war/kr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/COW_MINICLIP_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Call of War 하기" title="Call of War 하기" width="84" height="63" /><span class="meta">Call of War</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4720" href="/games/street-ball-jam/kr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/StreetBall_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Street Ball 하기" title="Street Ball Jam 하기" width="84" height="63" /><span class="meta">Street Ball</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/kr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar 하기" title="Elvenar 하기" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-7/latest-games/kr/#t-w-c">
+			최신
+ 더		</a>
+	</footer>
+</section>
+    <section id="mpu-unit-2" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_btf" id="dfp-mpu-2" class="container-300x250"></div>
+        <p>
+            광고            <a href="#" rel="nofollow" class="feedback">의견</a>
+        </p>
+    </section>
+<section class="widget box widget-top-ten widget-919">
+    <header>
+		<a class="cat-6 button category greedy" href="/games/genre-6/-top-10/kr/">
+			Top 10 Web Games		</a>
+	</header>
+    <ol>
+		<li class="counter-1">
+			<span>1</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" data-tip="Join the Squadd in this frantic, PvP arena shooter!" data-tip-position="top" href="/games/squaddio/kr/#t-w-t" title="Squadd.io 하기">Squadd.io</a>
+					</li>
+		<li class="counter-2">
+			<span>2</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" data-tip="온라인 플레이어들을 상대로 8개의 볼풀을 발사하세요." data-tip-position="top" href="/games/8-ball-pool-multiplayer/kr/#t-w-t" title="8 Ball Pool 하기">8 Ball Pool</a>
+					</li>
+		<li class="counter-3">
+			<span>3</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" data-tip="실시간 온라인 멀티플레이어 게임" data-tip-position="top" href="/games/soccer-stars-mobile/kr/#t-w-t" title="Soccer Stars Mobile 하기">Soccer Stars Mobile</a>
+					</li>
+		<li class="counter-4">
+			<span>4</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/tankionlinev3.jpg" data-tip="Tanki Online은 실시간 1 대 1(PvP) 전투를 하는 무료 MMO(대규모 다중 온라인) 게임입니다." data-tip-position="top" href="/games/tanki-online/kr/#t-w-t" title="Tanki Online 하기">Tanki Online</a>
+					</li>
+		<li class="counter-5">
+			<span>5</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/BasketballStars_150x110.png" data-tip="Show your skills, moves and fakes to juke out your opponent and shoot for the basket! " data-tip-position="top" href="/games/basketball-stars/kr/#t-w-t" title="Basketball Stars 하기">Basketball Stars</a>
+					</li>
+		<li class="counter-6">
+			<span>6</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Happy_wheels_150x110.jpg" data-tip="Choose your inadequately prepared racer, and ignore severe consequences in your desperate search for victory." data-tip-position="top" href="/games/happy-wheels/kr/#t-w-t" title="Happy Wheels 하기">Happy Wheels</a>
+					</li>
+		<li class="counter-7">
+			<span>7</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" data-tip="최고 바이럴 인기! 자기보다 작은 세포를 먹고 더 큰 세포에 먹히지 마세요!" data-tip-position="top" href="/games/agar-io/kr/#t-w-t" title="Agar.io 하기">Agar.io</a>
+					</li>
+		<li class="counter-8">
+			<span>8</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" data-tip="Join International Rescue on an amazing adventure full of action, hi-tech gadgets and the mighty Thunderbirds!" data-tip-position="top" href="/games/flip-diving/kr/#t-w-t" title="Flip Diving 하기">Flip Diving</a>
+					</li>
+		<li class="counter-9">
+			<span>9</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" data-tip="Build your fleet to dominate the space1.io arena. Shoot to grow and take out your opponents." data-tip-position="top" href="/games/space1io/kr/#t-w-t" title="Space1.io 하기">Space1.io</a>
+					</li>
+		<li class="counter-10">
+			<span>10</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" data-tip="Tap the ball carefully trough the matching hues and collect your points along the way. " data-tip-position="top" href="/games/color-switch/kr/#t-w-t" title="Color Switch 하기">Color Switch</a>
+					</li>
+    </ol>
+</section>
+<section class="widget box widget-category widget-category-2 widget-863">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/multiplayer/kr/#t-w-c" title="더 많은 멀티플레이어 게임">
+			멀티플레이어		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/kr/#t-w-c" title=""><div class="notification blip offset hot">신규!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io 하기" title="Squadd.io 하기" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/kr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Empire 하기" title="Empire 하기" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/kr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Forge 하기" title="Forge of Empires 하기" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/kr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar 하기" title="Elvenar 하기" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/kr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soccer Stars  하기" title="Soccer Stars 하기" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/kr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io 하기" title="Space1.io 하기" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/multiplayer/kr/#t-w-c">
+			멀티플레이어 더		</a>
+	</footer>
+</section>
+	</section>
+
+	<script>
+		var category = {
+			language_id: 'en',
+			category_id: 1		};
+
+		$(function(){
+
+			$('.category-sort .button').on('click', function(e) {
+				reorder_games( 'li', '#category-games-list ul', $(this).data('order') );
+				$('.category-sort .button').removeClass('selected');
+				$(this).addClass('selected');
+				e.preventDefault();
+			});
+
+			function reorder_games(items, container, order) {
+
+				var parent = $( container );
+				var elems = parent.find( items );
+
+				elems.sort(function(a, b) {
+					return compare_element( a, b, order );
+				});
+
+				parent.append( elems );
+			}
+
+			function compare_element( a, b, value_order ) {
+
+				var value_a = parseFloat( $( a ).data( value_order ) );
+				var value_b = parseFloat( $( b ).data( value_order ) );
+
+				var direction = 1;
+				if ( value_order === 'rating' || value_order === 'rating-count' ) {
+					direction = -1;
+				}
+
+				if ( value_a > value_b ) {
+					return (1 * direction);
+				} else if ( value_a < value_b ) {
+					return (-1 * direction);
+				}
+
+				// Within the ratings order by rating count
+				if (value_order === 'rating') {
+					return compare_element( a, b, 'rating-count');
+				}
+
+				// prevent an infinite loop
+				if (value_order === 'order') {
+					return 0;
+				}
+
+				return compare_element( a, b, 'order' );
+
+			}
+
+		});
+	</script>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/kr/" rel="nofollow">Miniclip.com에서 게임하기</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">홈</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone 게임</a></li>
+				<li><a href="/games/genre-503/" class="android">Android 게임</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">블로그</a></li>
+				<li><a href="/webmasters/" class="webmasters">여러분의 웹사이트를 위한 게임</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">게임 제출하기</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">광고사</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Miniclip 팀에 연락하기">연락해 주세요</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Miniclip.com 소개">기업</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Miniclip.com 채용 정보">커리어</a></li>
+					<li><a href="/games/page/kr/internet-safety/" title="인터넷 안전">인터넷 안전</a></li>
+					<li><a href="/videos/">동영상 힌트 및 조언</a></li>
+					<li><a href="/games/kr/feed.xml" rel="nofollow">RSS 게임 피드</a></li>
+					<li><a href="/games/page/kr/sitemap/">사이트맵</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/kr/terms-and-conditions/" rel="nofollow">이용약관</a></li>
+				<li><a href="/privacy/" rel="nofollow">개인정보취급방침</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">쿠키</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">도움말</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Miniclip.com에 로그인하기</h2>
+			</header>
+
+			<label>
+				<span>이메일 주소				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>비밀번호</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="로그인" />
+			</label>
+			<label class="col">
+				<span class="inline">나를 기억하기</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/kr/">비밀번호 알림</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2><em>무료</em> 가입</h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">드로어 닫기</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"cat-side-1":[{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"push-small":[{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/genre-1/puzzle/kr/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-04fe402914521703e
+	q's = 0
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGwZQXF0VG1BTTVVTDkYY","queueTime":0,"applicationTime":127,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

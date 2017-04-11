@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+    <meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+    <link rel="dns-prefetch" href="https://static.miniclipcdn.com">
+    <title>Snowfight.io – Бесплатная игра жанра Зима
+</title>
+            <meta name="description" content="Играть в Snowfight.io – Take on players from around the world in a multiplayer snowball fight!">
+        <meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY">
+
+    
+    <link rel="canonical" href="https://www.miniclip.com/games/snowfight-io/ru/">
+    <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/ru/feed.xml">
+    <link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+    <script>
+        WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+        (function() {
+            var wf = document.createElement('script');
+            wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+            wf.async = 'true';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(wf, s);
+        })();
+    </script>
+    <link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/common.css?823">
+    <link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/modal.css?823">
+    <link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/minimal.css?823">
+    <script>
+                var GEO_IP_CODE = 'US';
+        var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+        var static_path = '//static.miniclipcdn.com/';
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/gamepage.js?760" type="text/javascript"></script>
+    <script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/snowfight-io\/","dimension9":"United States","dimension8":"ru","metric1":2,"dimension1":"Guest","dimension17":"Top Titles","dimension2":"3227","dimension3":"4","dimension4":"0","dimension5":"iframe-min","dimension6":"Snowfight.io"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "ru";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "G";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/snowfight-io/ru/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/snowfight-io/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/snowfight-io/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/snowfight-io/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/snowfight-io/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/snowfight-io/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/snowfight-io/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/snowfight-io/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/snowfight-io/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/snowfight-io/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/snowfight-io/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/snowfight-io/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/snowfight-io/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/snowfight-io/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/snowfight-io/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/snowfight-io/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/snowfight-io/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/snowfight-io/tk/" />
+</head>
+<body class="minimal">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script><script>
+    if ('object' == typeof(MC) ) {
+        MC.init({
+            modules: ['Currency', 'Leaderboard', 'Challenge'],
+            app_id: 1
+        });
+    }
+    jQuery(function() {
+        $('.hm-overlay').click(function() {
+            var $moreNavigation = $("#more-navigation");
+            if ($moreNavigation.is(":visible")) {
+                hideExtraNav()
+            }
+        });
+    })
+</script><header id="topbar" class="minimal">
+    <div id="topbar-inner">
+        <h1><a href="https://miniclip.com/">Miniclip</a></h1>
+        	<form class="search-form item" action="/games/search/ru/" target="_top">
+		<label>
+			<span class="screen-reader">Искать...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Поиск игр" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Поиск</span></button>
+	</form>        <div class="login-container item">
+            <nav class="menu login-box logged-out" role="navigation">
+            <ul>
+                <li>
+                    <a href="#" class="signup open-drawer" data-drawer="login-signup">Регистрация / вход</a>
+                </li>
+                <li>
+                    <a href="#" id="third-party-fb-login" data-tip="Регистрация и вход через Facebook" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+                </li>
+            </ul>
+        </nav>
+        </div>
+        <nav id="categories-nav"class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Другие категории</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+    <div class="category-list">
+                    <ul>
+                            <li>
+                    <a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+                        Pool                    </a>
+                </li>
+                            <li>
+                    <a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+                        Agar.io                    </a>
+                </li>
+                            <li>
+                    <a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+                        Tanki Online                    </a>
+                </li>
+                            <li>
+                    <a href="/games/empire/ru/#t-n" class="game-3276 catgory button">
+                        Empire                    </a>
+                </li>
+                            <li>
+                    <a href="/games/genre-13/action/ru/#t-n" class="cat-13 catgory button">
+                        Экшн
+                    </a>
+                </li>
+                            <li>
+                    <a href="/games/genre-2/multiplayer/ru/#t-n" class="cat-2 catgory button">
+                        Мультиплеер
+                    </a>
+                </li>
+                            <li>
+                    <a href="/games/genre-1/puzzle/ru/#t-n" class="cat-1 catgory button">
+                        Головоломки
+                    </a>
+                </li>
+                            <li>
+                    <a href="/games/genre-503/android/ru/#t-n" class="cat-503 catgory button">
+                        Андроид                    </a>
+                </li>
+                        </ul>
+        <h2>Категории игр</h2>
+                        <a href="/games/genre-35/3d/ru/#t-m-c" class="game-link cat-35" title="Сыграй в игры 3D">
+                    3D                </a>
+                            <a href="/games/genre-1194/iphone/ru/#t-m-c" class="game-link cat-1194" title="Сыграй в игры iPhone Games">
+                    Игры для iPhone                </a>
+                            <a href="/games/genre-1209/london-olympics/ru/#t-m-c" class="game-link cat-1209" title="Сыграй в игры London Olympics 2012">
+                    Лондонская олимпиада 2012                </a>
+                            <a href="/games/genre-1133/karto/ru/#t-m-c" class="game-link cat-1133" title="Сыграй в игры Карты
+">
+                    Карты
+                </a>
+                            <a href="/games/genre-1238/holidays/ru/#t-m-c" class="game-link cat-1238" title="Сыграй в игры Праздник
+">
+                    Праздник
+                </a>
+                            <a href="/games/genre-515/prikljutsenija/ru/#t-m-c" class="game-link cat-515" title="Сыграй в игры Приключения
+">
+                    Приключения
+                </a>
+                            <a href="/games/genre-40/platform/ru/#t-m-c" class="game-link cat-40" title="Сыграй в игры Платформеры
+">
+                    Платформеры
+                </a>
+                            <a href="/games/genre-7/latest/ru/#t-m-c" class="game-link cat-7" title="Сыграй в игры Последние
+">
+                    Последние
+                </a>
+                            <a href="/games/genre-14/political/ru/#t-m-c" class="game-link cat-14" title="Сыграй в игры Политические
+">
+                    Политические
+                </a>
+                            <a href="/games/genre-521/flying/ru/#t-m-c" class="game-link cat-521" title="Сыграй в игры Полеты
+">
+                    Полеты
+                </a>
+                            <a href="/games/genre-1201/hot-games/ru/#t-m-c" class="game-link cat-1201" title="Сыграй в игры Популярные игры
+">
+                    Популярные игры
+                </a>
+                            <a href="/games/genre-517/arcade/ru/#t-m-c" class="game-link cat-517" title="Сыграй в игры Аркада
+">
+                    Аркада
+                </a>
+                            <a href="/games/genre-26/avtocport/ru/#t-m-c" class="game-link cat-26" title="Сыграй в игры Автоспорт
+">
+                    Автоспорт
+                </a>
+                            <a href="/games/genre-1001/amerikanckii-futbol/ru/#t-m-c" class="game-link cat-1001" title="Сыграй в игры Американский футбол
+">
+                    Американский футбол
+                </a>
+                            <a href="/games/genre-503/android/ru/#t-m-c" class="game-link cat-503" title="Сыграй в игры Андроид">
+                    Андроид                </a>
+                            <a href="/games/genre-525/award/ru/#t-m-c" class="game-link cat-525" title="Сыграй в игры Награда
+">
+                    Награда
+                </a>
+                            <a href="/games/genre-1143/raruzenie/ru/#t-m-c" class="game-link cat-1143" title="Сыграй в игры Разрушение
+">
+                    Разрушение
+                </a>
+                            <a href="/games/genre-1003/rordectvo/ru/#t-m-c" class="game-link cat-1003" title="Сыграй в игры Рождество
+">
+                    Рождество
+                </a>
+                            <a href="/games/genre-523/strategy/ru/#t-m-c" class="game-link cat-523" title="Сыграй в игры Стратегии">
+                    Стратегии                </a>
+                            <a href="/games/genre-5/shoot-em-up/ru/#t-m-c" class="game-link cat-5" title="Сыграй в игры Стрельба
+">
+                    Стрельба
+                </a>
+                            <a href="/games/genre-1109/clova/ru/#t-m-c" class="game-link cat-1109" title="Сыграй в игры Слова
+">
+                    Слова
+                </a>
+                            <a href="/games/genre-3/sport/ru/#t-m-c" class="game-link cat-3" title="Сыграй в игры Спорт
+">
+                    Спорт
+                </a>
+                            <a href="/games/genre-1151/rjuki/ru/#t-m-c" class="game-link cat-1151" title="Сыграй в игры Трюки
+">
+                    Трюки
+                </a>
+                            <a href="/games/genre-1185/itro/ru/#t-m-c" class="game-link cat-1185" title="Сыграй в игры Титры
+">
+                    Титры
+                </a>
+                            <a href="/games/genre-484/tennis/ru/#t-m-c" class="game-link cat-484" title="Сыграй в игры Теннис">
+                    Теннис                </a>
+                            <a href="/games/genre-18/soccer/ru/#t-m-c" class="game-link cat-18" title="Сыграй в игры Футбол
+">
+                    Футбол
+                </a>
+                            <a href="/games/genre-490/hellouin/ru/#t-m-c" class="game-link cat-490" title="Сыграй в игры Хэллоуин
+">
+                    Хэллоуин
+                </a>
+                            <a href="/games/genre-1155/ekctremalnoi-cport/ru/#t-m-c" class="game-link cat-1155" title="Сыграй в игры Экстремальный спорт
+">
+                    Экстремальный спорт
+                </a>
+                            <a href="/games/genre-13/action/ru/#t-m-c" class="game-link cat-13" title="Сыграй в игры Экшн
+">
+                    Экшн
+                </a>
+                            <a href="/games/genre-2/multiplayer/ru/#t-m-c" class="game-link cat-2" title="Сыграй в игры Мультиплеер
+">
+                    Мультиплеер
+                </a>
+                            <a href="/games/genre-1157/motokrocc/ru/#t-m-c" class="game-link cat-1157" title="Сыграй в игры Мотокросс
+">
+                    Мотокросс
+                </a>
+                            <a href="/games/genre-497/buzz/ru/#t-m-c" class="game-link cat-497" title="Сыграй в игры Интересное
+">
+                    Интересное
+                </a>
+                            <a href="/games/genre-1145/sazita-krepocti/ru/#t-m-c" class="game-link cat-1145" title="Сыграй в игры Защита крепости
+">
+                    Защита крепости
+                </a>
+                            <a href="/games/genre-4/sima/ru/#t-m-c" class="game-link cat-4" title="Сыграй в игры Зима
+">
+                    Зима
+                </a>
+                            <a href="/games/genre-1149/sombi/ru/#t-m-c" class="game-link cat-1149" title="Сыграй в игры Зомби
+">
+                    Зомби
+                </a>
+                            <a href="/games/genre-513/pool/ru/#t-m-c" class="game-link cat-513" title="Сыграй в игры Бильярд
+">
+                    Бильярд
+                </a>
+                            <a href="/games/genre-488/golf/ru/#t-m-c" class="game-link cat-488" title="Сыграй в игры Гольф">
+                    Гольф                </a>
+                            <a href="/games/genre-1/puzzle/ru/#t-m-c" class="game-link cat-1" title="Сыграй в игры Головоломки
+">
+                    Головоломки
+                </a>
+                            <a href="/games/genre-477/racing/ru/#t-m-c" class="game-link cat-477" title="Сыграй в игры Гонки
+">
+                    Гонки
+                </a>
+                            <a href="/games/genre-519/fighting/ru/#t-m-c" class="game-link cat-519" title="Сыграй в игры Драки
+">
+                    Драки
+                </a>
+                            <a href="/games/genre-432/dlja-vebmacterov/ru/#t-m-c" class="game-link cat-432" title="Сыграй в игры Для вебмастеров
+">
+                    Для вебмастеров
+                </a>
+                            <a href="/games/genre-482/kids/ru/#t-m-c" class="game-link cat-482" title="Сыграй в игры Для детей
+">
+                    Для детей
+                </a>
+                            <a href="/games/genre-6/lutszie-10/ru/#t-m-c" class="game-link cat-6" title="Сыграй в игры Лучшие 10
+">
+                    Лучшие 10
+                </a>
+                            <a href="/games/genre-23/top-100/ru/#t-m-c" class="game-link cat-23" title="Сыграй в игры Лучшие 100
+">
+                    Лучшие 100
+                </a>
+                            <a href="/games/genre-511/my-friends-league/ru/#t-m-c" class="game-link cat-511" title="Сыграй в игры Лига моих друзей
+">
+                    Лига моих друзей
+                </a>
+                    <section>
+    <nav class="menu legal">
+        <ul>
+            <li>&copy; 2001 – 2017 Miniclip SA</li>
+            <li><a href="/games/page/ru/terms-and-conditions/" rel="nofollow">Общие условия</a></li>
+            <li><a href="/privacy/" rel="nofollow">Политика конфиденциальности</a></li>
+            <li><a href="/privacy/#cookies" rel="nofollow">Файлы cookie</a></li>
+            <li><a href="https://support.miniclip.com" rel="nofollow">Помощь</a></li>
+        </ul>
+    </nav>
+</section>
+    </div>
+</div>    </div>
+</header>
+<div id="iframe-container">
+
+    <iframe
+        id="iframe-game"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        border="0"
+        scrolling="no"
+        src="//snowfight.io">
+    </iframe>
+
+</div>
+
+    <!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Войти на Miniclip.com</h2>
+			</header>
+
+			<label>
+				<span>Электронная почта				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Пароль</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Вход" />
+			</label>
+			<label class="col">
+				<span class="inline">Запомнить меня</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/ru/">Напомнить пароль</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2>Регистрация <em>бесплатна</em></h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong>Snowfight.io</strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">закрыть вкладку</span></a>
+</div>
+    <script>
+        var fb_app = {
+            id : null
+        };
+        var PushAd = {
+            init : function(ads) {
+
+            }
+        }
+                    var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+            </script>
+    <script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/favorites.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/rating.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/phrases.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/autocomplete.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/share.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/games/game-frame.js?760" ></script>    <script>var translate = {"hide":"\u0421\u043a\u0440\u044b\u0442\u044c","show":"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c","full_categories_list":"\u041f\u043e\u043b\u043d\u044b\u0439 \u043f\u0435\u0440\u0435\u0447\u0435\u043d\u044c \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0439","all_games_and_categories":"\u0412\u0441\u0435 \u0438\u0433\u0440\u044b \u0438 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438","show_more_results":"\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0434\u0440\u0443\u0433\u0438\u0435 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b &rsaquo;","no_comments":"\u041a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0435\u0432 \u043d\u0435\u0442","report":"\u041f\u043e\u0436\u0430\u043b\u043e\u0432\u0430\u0442\u044c\u0441\u044f","comment_like_failed":"\u0423\u0432\u044b, \u043b\u0430\u0439\u043a\u043d\u0443\u0442\u044c \u044d\u0442\u043e\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u043d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c. \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439 \u0435\u0449\u0435 \u0440\u0430\u0437 \u0447\u0443\u0442\u044c \u043f\u043e\u0437\u0436\u0435.","comment_reporting_failed":"\u041a \u0441\u043e\u0436\u0430\u043b\u0435\u043d\u0438\u044e, \u0436\u0430\u043b\u043e\u0431\u0443 \u043d\u0430 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u044c \u043d\u0435 \u0443\u0434\u0430\u043b\u043e\u0441\u044c.","the_word_is_not_allowed":"\u0421\u043b\u043e\u0432\u043e %s \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0432 \u0441\u043f\u0438\u0441\u043a\u0435 \u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u044b\u0445 \u0441\u043b\u043e\u0432 \u043d\u0430\u0448\u0435\u0433\u043e \u0441\u0430\u0439\u0442\u0430.","remove_red_messages":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u0438\u0437\u043c\u0435\u043d\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0435: \u0443\u0431\u0435\u0440\u0438 \u043a\u0440\u0430\u0441\u043d\u044b\u0435 \u0441\u043b\u043e\u0432\u0430. \u0422\u0430\u043a\u0438\u0435 \u0441\u043b\u043e\u0432\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u044c \u043d\u0430 \u0441\u0430\u0439\u0442\u0435 \u043d\u0435\u043b\u044c\u0437\u044f.","enter_the_link":"\u0412\u0432\u0435\u0434\u0438 URL \u0441\u0441\u044b\u043b\u043a\u0438","search_free_games":"\u041d\u0440\u0430\u0432\u044f\u0442\u0441\u044f \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u0433\u0440\u044b? \u041c\u044b <strong>\u041e\u0411\u041e\u0416\u0410\u0415\u041c<\/strong> \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u044b\u0435 \u0438\u0433\u0440\u044b! \u0423 \u0432\u0441\u0435\u0445 \u0438\u0433\u0440 Miniclip \u0438\u043c\u0435\u0435\u0442\u0441\u044f \u0431\u0435\u0441\u043f\u043b\u0430\u0442\u043d\u0430\u044f \u0432\u0435\u0440\u0441\u0438\u044f, \u0432 \u043a\u043e\u0442\u043e\u0440\u0443\u044e \u043c\u043e\u0436\u043d\u043e \u043f\u043e\u0438\u0433\u0440\u0430\u0442\u044c \u043f\u0440\u044f\u043c\u043e \u0437\u0434\u0435\u0441\u044c, \u043d\u0430 \u0441\u0430\u0439\u0442\u0435.","password_reset_error_email":"<strong>\u041e\u0448\u0438\u0431\u043a\u0430!<\/strong> \u0422\u044b \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043b(\u0430) \u0430\u0434\u0440\u0435\u0441 \u044d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u043e\u0439 \u043f\u043e\u0447\u0442\u044b!","password_reset_error_username":"<strong>\u0418\u0437\u0432\u0438\u043d\u0438<\/strong>, \u043d\u043e \u044d\u0442\u043e\u0442 \u043f\u043e\u0447\u0442\u043e\u0432\u044b\u0439 \u0430\u0434\u0440\u0435\u0441, \u043f\u043e\u0445\u043e\u0436\u0435, \u043d\u0435\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"\u041f\u0435\u0440\u0435\u0439\u0434\u0438 \u0432 \u0440\u0435\u0436\u0438\u043c \u0441\u043e\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0435\u043d\u0438\u044f, \u0447\u0442\u043e\u0431\u044b \u0441\u043e\u0441\u0440\u0435\u0434\u043e\u0442\u043e\u0447\u0438\u0442\u044c\u0441\u044f \u043d\u0430 \u0438\u0433\u0440\u0435. \u041f\u0440\u0438 \u044d\u0442\u043e\u043c \u0442\u0435\u043a\u0443\u0449\u0430\u044f \u0438\u0433\u0440\u0430 \u0431\u0443\u0434\u0435\u0442 \u043f\u0435\u0440\u0435\u0437\u0430\u043f\u0443\u0449\u0435\u043d\u0430. \u041f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0442\u044c?","add_to_favorites":"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c \u0432 \u0438\u0437\u0431\u0440\u0430\u043d\u043d\u044b\u0435 \u0438\u0433\u0440\u044b","remove_from_favorites":"\u0423\u0434\u0430\u043b\u0438\u0442\u044c \u0438\u0437 \u0441\u043f\u0438\u0441\u043a\u0430 \u0438\u0437\u0431\u0440\u0430\u043d\u043d\u044b\u0445 \u0438\u0433\u0440","comment_autocomplete_placeholder":"\u041d\u0430\u0447\u043d\u0438 \u0432\u0432\u043e\u0434\u0438\u0442\u044c \u0442\u0435\u043a\u0441\u0442, \u0447\u0442\u043e\u0431\u044b \u043f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043f\u043e\u0434\u0441\u043a\u0430\u0437\u043a\u0438","new":"\u041d\u043e\u0432\u044b\u0435","next":"\u0441\u043b\u0435\u0434.","prev":"\u043f\u0440\u0435\u0434.","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"\u041e\u0448\u0438\u0431\u043a\u0430!","correct_errors":"Please correct errors before proceeding.<br>"}</script>    <div class="left hm-overlay"></div>
+    <div class="center hm-overlay"></div>
+    <div class="right hm-overlay"></div>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGwRcU10CG1RXTQ==","queueTime":0,"applicationTime":51,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

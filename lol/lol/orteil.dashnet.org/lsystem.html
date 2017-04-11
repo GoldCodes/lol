@@ -1,0 +1,502 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Turtle Toy</title>
+
+<!--
+
+This was all made by Orteil, yo. If used, please give proper credit and link to one of my websites. Don't claim as your own !
+
+-->
+
+<script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"d873cd0826c6c4aac80f6fe75822a8ce",petok:"a0e5c63c2a267f806596f739a49541b5c072852a-1491840496-1800",adblock:1,betok:"8c42c8f80b5232b5f7e78699247a006c0ea4babc-1491840496-120",zone:"dashnet.org",rocket:"0",apps:{"ga_key":{"ua":"UA-29324474-2","ga_bs":"2"},"abetterbrowser":{"ie":"8"}}}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=f2befc48d1/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<style>
+body
+{
+font-family:Tahoma,sans serif;
+font-size:10pt;
+color:#fff;
+background:#000;
+text-align:center;
+padding:0px;
+margin:0px;
+}
+
+
+a
+{
+color:#1da6c2;
+outline:none;
+}
+a:hover
+{
+color:#24daff;
+}
+a:active
+{
+color:#fff;
+}
+
+h1
+{
+font-size:11pt;
+font-weight:bold;
+padding:0px;
+margin:8px 0px 4px 0px;
+}
+
+input, .button
+{
+font-family:Calibri,sans serif;
+display:inline-block;
+padding:0px;
+margin:1px 1px 0px 0px;
+color:#000;
+font-size:10pt;
+background-color:#ccc;
+border:1px solid #fff;
+opacity:0.9;
+text-decoration:none;
+
+padding-top:2px;
+padding-bottom:2px;
+}
+
+.button
+{
+cursor:pointer;
+text-align:center;
+color:#000;
+}
+
+input:hover, .button:hover
+{
+opacity:1;
+color:#000;
+}
+
+input:active, .button:active
+{
+background-color:#fff;
+color:#000;
+}
+
+canvas
+{
+background-color:#000;
+border:1px solid #fff;
+margin:0px;
+margin-bottom:-3px;
+}
+
+#canvasbox, #helpbox, #otherbox
+{
+width:402px;
+height:426px;
+overflow-y:auto;
+float:left;
+margin:4px;
+text-align:left;
+position:relative;
+}
+
+#otherbox
+{
+width:96px;
+text-align:center;
+padding-right:3px;
+overflow-x:hidden;
+}
+
+#otherbox div
+{
+padding:4px;
+font-size:8pt;
+}
+
+#helpbox
+{
+color:#ccc;
+//margin-top:-4px;
+margin-left:16px;
+}
+
+#helpbox b
+{
+color:#fff;
+}
+
+#warning
+{
+width:400px;
+position:absolute;
+top:1px;
+left:1px;
+font-size:8pt;
+text-align:center;
+}
+
+#code
+{
+width:349px;
+}
+#codebutton
+{
+width:48px;
+margin-right:0px;
+}
+
+ul
+{
+list-style:none;
+margin:0px;
+padding:0px;
+margin:8px 0px;
+}
+
+li
+{
+font-size:9pt;
+background-color:#222;
+padding:4px 4px;
+}
+
+li:nth-child(odd)
+{
+background-color:#111;
+}
+
+li:hover
+{
+background-color:#333;
+}
+
+#credits
+{
+clear:both;
+width:100%;
+text-align:center;
+padding:4px 0px;
+margin:0px;
+margin-top:128px;
+font-size:8pt;
+opacity:0.5;
+}
+
+#nav
+{
+background-color:#063038;
+font-size:8pt;
+padding:4px;
+width:auto;
+text-align:left;
+margin:0px;
+border-bottom:1px solid #1da6c2;
+}
+
+</style>
+<script type="text/javascript">
+    window.cookieconsent_options = {"message":"This website uses cookies for ads and traffic analysis.","dismiss":"Got it!","learnMore":"Learn more","link":"http://orteil.dashnet.org/cookieconsentpolicy.html","target":"_blank","theme":"http://orteil.dashnet.org/cookieconsent.css","domain":"dashnet.org"};
+</script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.9/cookieconsent.min.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-29324474-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script>
+</head>
+
+<body>
+
+<div id="nav"><a href="index.html">&laquo; back to Orteil's stuff</a></div>
+
+<div id="canvasbox">
+	<canvas id="canvas" width="400" height="400">
+	Your browser does not support the canvas element.
+	</canvas>
+	<div id="warning"></div>
+	<input type="text" id="code" onkeyup="Redraw();" /><a class="button" href="javascript:Redraw();" id="codebutton">Redraw</a>
+</div>
+
+<div id="otherbox">
+	<div>Try these!</div>
+	<script>
+	var Examples=[
+	"Dead tree|a:15;r:0.75;d:20;g:7;stststfldrrd",
+	"Twisted tree|a:25;r:0.75;d:20;g:8;mfsstldrfrfrfrtd",
+	"Winter tree|a:15;g:10;s:180;d:10;r:0.9;fss?d?s?s?b",
+	"Geometree|a:36;d:15;g:8;r:0.75;c:0.3;fffsldrrdlc",
+	"Bubbler|d:20;a:36;g:7;r:0.75;b:3;???nnfrfrfrfrfrfrfrfrfrfllnbbc",
+	"Squiggler|a:18;d:10;g:20;r:0.95;mrsrsrsrsrsrsrsrsrsrsrsrsrsrsrsrsd",
+	"Seaweed|d:15;a:25;r:0.5;sssf?d?sssf?d?sssfbbc",
+	"Roots|a:15;r:1.25;d:5;g:8;s:0;c:0.15;tststsmbmdc",
+	"Hypnoshrub|g:10;a:25;r:0.75;d:20;mfrbrrr?f?fd",
+	"Tuft|d:20;g:10;r:0.9;a:16;mtlfllrdmfrfrfrfc",
+	"Lucky sapling|a:15;r:0.75;d:35;g:7;?s?sbbbbb",
+	"Spiral|a:16;g:350;d:25;r:0.99;cnrd",
+	"Brick spiral|d:20;g:30;r:0.9;flfrflfrfrflflfrfrflfrfrflfrflfd",
+	"Star|a:72;d:50;frrfld",
+	"Sun|a:18;g:10;d:100;r:0.5;b:16;ncrd",
+	"Triskel|a:18;r:0.9;d:20;g:30;b:3;frfrfrfrfrd",
+//	"Brick motif|g:4;d:30;ffffrfffrffffrnnrnnfrfrfrfnnlnnld",
+	"Hierarchy, 1|r:0.5;d:25;g:8;ffsssldrrd",
+	"Hierarchy, 2|r:0.5;d:25;g:5;ffsssldrdrd",
+	"Dementia|a:45;r:0.75;d:20;g:7;mfdrrflflflfrrfb?b",
+	"Bad seed|a:45;r:0.75;d:20;g:7;mfrfllffrrfrdbb",
+	"Lost|d:20;g:30;r:0.75;a:45;?mfnrfnrfnrfnnd",
+	"Mollusca|a:33;r:0.9;d:30;g:35;nldfrfrcfrfrfrfrfrrrrflflflf",
+	"Turtles|a:45;r:0.75;d:10;g:8;s:90;fffflflfflfflfffflfflfflflf---rrrrffrfrfrrnc-llfrfrffrfrffrflflflflflfrrnnrrflflflflfnnnnnllnnnnrrrrsssd"
+	];
+
+	for (var i in Examples)
+	{
+	document.write('<a class="button" style="width:100%;" href="javascript:SetGenome(\''+Examples[i].split('|')[1]+'\');">'+Examples[i].split('|')[0]+'</a><br/>');
+	}
+	document.write('<a class="button" style="width:100%;" href="javascript:RandomGenome();">Random !</a><br/>');
+
+	</script>
+</div>
+
+<div id="helpbox">
+	<h1>What is this ?</h1>
+	This is a fractal toy that generates a picture according to a set of instructions stored in a simple string of characters (the genome).<br>
+	It can be used to generate trees, squiggles and other shapes.<br>
+	The algorithm used is related to <a href="http://en.wikipedia.org/wiki/L-system">L-systems</a> and <a href="http://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics</a>.<br>
+	It is coded in javascript and uses html5 canvas.<br>
+	<h1>How to write a genome</h1>
+	A genome is a chain of operations executed by bots. A bot draws a line as it goes forward. It can also turn and duplicate itself.<br/>
+	A bot executes a specific operation for every character that appears in the genome.<br>
+	<!--If you write a cool genome, send it to me at <i>orteil42@gmail.com</i> and maybe I'll add it to the presets !--><br>
+	<ul>
+	<li><b>f</b> : draw <b>f</b>orward in the direction I'm currently facing.</li>
+	<li><b>n</b> : step forward with <b>n</b>o drawing.</li>
+	<li><b>-</b> : step backward with no drawing.</li>
+	<li><b>c</b> : draws a filled <b>c</b>ircle.</li>
+	<li><b>l</b> : turn <b>l</b>eft.</li>
+	<li><b>r</b> : turn <b>r</b>ight.</li>
+	<li><b>d</b> : <b>d</b>uplicate - create a child in my direction.</li>
+	<li><b>b</b> : <b>b</b>ranch - 50% chance of creating a child in my direction.</li>
+	<li><b>s</b> : <b>s</b>tep - either draw forward or do nothing, at random.</li>
+	<li><b>t</b> : <b>t</b>urn : turn left or right, at random.</li>
+	<li><b>?</b> : turn left or right or not at all, at random.</li>
+	<li><b>m</b> : <b>m</b>irror - 50% chance that turning left and right are inverted.</li>
+	</ul><ul>
+	<li><b>a:*;</b> : defines the <b>a</b>ngle of a turn to * degrees. 90 gives square angles.</li>
+	<li><b>g:*;</b> : defines the maximum amount of <b>g</b>enerations to *. Keep it small or your browser might crash !</li>
+	<li><b>s:*;</b> : defines the <b>s</b>tarting angle to * degrees.</li>
+	<li><b>b:*;</b> : defines the <b>b</b>ranching symmetry to * branches.</li>
+	<li><b>c:*;</b> : defines the size of the <b>c</b>ircles to * (this is affected by the ratio).</li>
+	<li><b>d:*;</b> : defines the <b>d</b>istance travelled by a step forward to * pixels (when the ratio is 1). Basically, this sets the size of the drawing.</li>
+	<li><b>r:*;</b> : defines the <b>r</b>atio to * (a number between 0 and 2). A ratio of 0.5 means that each generation is half the size of its parent.</li>
+	</ul>
+</div>
+
+
+<div id="credits">
+by <a href="index.html">Orteil</a>, 2011
+</div>
+
+
+
+<script>
+
+Col=[];
+Col[0]=[];
+Col[1]=[];
+Col[0]['r']=36;
+Col[0]['g']=218;
+Col[0]['b']=255;
+Col[1]['r']=115;
+Col[1]['g']=97;
+Col[1]['b']=75;
+
+Bots=[];
+
+function Bot(x,y,a,l,d,m)
+{
+	this.x=x;
+	this.y=y;
+	this.a=a;
+	this.l=l;
+	this.d=d;
+	this.m=m;
+
+	Bots.push(this);
+	
+
+	this.Draw=function()
+	{
+		if (this.l<Gen && Steps<MaxSteps)
+		{
+
+			for (var i=0;i<Code.length;i++)
+			{
+				if (Code[i]=="f" || (Code[i]=="s" && Math.round(Math.random())==1))
+				{
+					cxt.strokeStyle="rgb("+
+					(Math.floor(Col[1]['r']*(this.l/Gen)+Col[0]['r']*(1-this.l/Gen)))+","+
+					(Math.floor(Col[1]['g']*(this.l/Gen)+Col[0]['g']*(1-this.l/Gen)))+","+
+					(Math.floor(Col[1]['b']*(this.l/Gen)+Col[0]['b']*(1-this.l/Gen)))+
+					")";
+					cxt.beginPath();
+					cxt.moveTo(Math.floor(this.x),Math.floor(this.y));
+					this.x+=Math.sin((StartA-this.a)/180*Math.PI)*this.d;
+					this.y+=Math.cos((StartA-this.a)/180*Math.PI)*this.d;
+					cxt.lineTo(Math.floor(this.x),Math.floor(this.y));
+					cxt.stroke();
+				}
+				else if (Code[i]=="c")
+				{
+					cxt.fillStyle="rgb("+
+					(Math.floor(Col[1]['r']*(this.l/Gen)+Col[0]['r']*(1-this.l/Gen)))+","+
+					(Math.floor(Col[1]['g']*(this.l/Gen)+Col[0]['g']*(1-this.l/Gen)))+","+
+					(Math.floor(Col[1]['b']*(this.l/Gen)+Col[0]['b']*(1-this.l/Gen)))+
+					")";
+					cxt.beginPath();
+					cxt.arc(Math.floor(this.x),Math.floor(this.y),this.d/2*CircleS,0,Math.PI*2,true);
+					cxt.closePath();
+					cxt.fill();
+				}
+				else if (Code[i]=="n")
+				{
+					this.x+=Math.sin((StartA-this.a)/180*Math.PI)*this.d;
+					this.y+=Math.cos((StartA-this.a)/180*Math.PI)*this.d;
+				}
+				else if (Code[i]=="-")
+				{
+					this.x-=Math.sin((StartA-this.a)/180*Math.PI)*this.d;
+					this.y-=Math.cos((StartA-this.a)/180*Math.PI)*this.d;
+				}
+				else if (Code[i]=="l")
+				{this.a-=Ang*this.m;}
+				else if (Code[i]=="r")
+				{this.a+=Ang*this.m;}
+				else if (Code[i]=="t") {this.a+=Choose([-Ang,Ang]);}
+				else if (Code[i]=="?") {this.a+=Choose([-Ang,0,Ang]);}
+				else if (Code[i]=="m") {this.m=Choose([-1,1]);}
+				else if (Code[i]=="d")
+				{
+					var Child=new Bot(this.x,this.y,this.a,this.l+1,this.d*Ratio,this.m);
+					Child.Draw();
+				}
+				else if (Code[i]=="b")
+				{
+					if (Choose([0,1])==0)
+					{
+						var Child=new Bot(this.x,this.y,this.a,this.l+1,this.d*Ratio,this.m);
+						Child.Draw();
+					}
+				}
+				
+				if (Steps>=MaxSteps) break;
+				Steps++;
+
+			}
+
+		}
+	}
+}
+
+
+
+var c=document.getElementById("canvas");
+var cxt=c.getContext("2d");
+
+function Choose(arr)
+{
+return arr[Math.floor(Math.random()*arr.length)];
+}
+
+function SetGenome(what)
+{
+	document.getElementById('code').value=what;
+	Redraw();
+}
+
+function Redraw()
+{
+	Len=10;
+	Ratio=1;
+	Gen=5;
+	Ang=90;
+	StartA=180;
+	Sym=1;
+	CircleS=1;
+	Code=document.getElementById('code').value;
+
+	Code=Code.split(";");
+	var ActualCode="";
+	for (i in Code)
+	{
+		ThisBit=Code[i].split(":");
+		if (!ThisBit[1]) ActualCode+=ThisBit[0];
+		else if (ThisBit[0]=="a") Ang=parseInt(ThisBit[1]);
+		else if (ThisBit[0]=="g") Gen=parseInt(ThisBit[1]);
+		else if (ThisBit[0]=="s") StartA=parseInt(ThisBit[1]);
+		else if (ThisBit[0]=="d") Len=parseInt(ThisBit[1]);
+		else if (ThisBit[0]=="r") Ratio=parseFloat(ThisBit[1]);
+		else if (ThisBit[0]=="b") Sym=parseInt(ThisBit[1]);
+		else if (ThisBit[0]=="c") CircleS=parseFloat(ThisBit[1]);
+	}
+	Ratio=Math.min(Math.max(0,Ratio),2);
+	Len=Math.min(Math.max(1,Len),100);
+	Sym=Math.min(Math.max(1,Sym),32);
+	CircleS=Math.min(Math.max(0.05,CircleS),4);
+	Code=ActualCode;
+
+	var New=0;
+	var Bots=[];
+	cxt.clearRect(0,0,400,400);
+	
+	Steps=0;
+	MaxSteps=10000;
+
+	for (i=0;i<Sym;i++)
+	{
+	New=new Bot(200,200,Math.floor((i/Sym)*360),0,Len,1);
+	New.Draw();
+	}
+	
+	Warning="";
+	if (Steps>=MaxSteps-1)
+	{
+	Warning="The algorithm has been halted to prevent a javascript crash; try lowering the amount of generations or duplications.";
+	}
+	document.getElementById('warning').innerHTML=Warning;
+}
+
+function RandomGenome()
+{
+	var NewCode="";
+	for (var i=0;i<Math.floor(Math.random()*15)+2;i++)
+	{
+	NewCode+=Choose("ffffn-llrrdbssstt??mc");
+	}
+	NewCode+=Choose("dbn");
+	SetGenome('a:'+Choose(["135","45","90","36","18","12","10","8","6"])+';'+'g:'+(Math.floor(Math.random()*10)+4)+';'+'s:'+Choose(["0","90","180","270"])+';'+'d:'+(Math.floor(Math.random()*20)+10)+';'+'r:'+(Math.floor(Math.random()*10)/10+0.5)+';'+'c:'+(Math.floor(Math.random()*10)/10+0.1)+';'+NewCode);
+}
+
+
+Redraw();
+
+
+</script>
+
+</body>
+</html>
+

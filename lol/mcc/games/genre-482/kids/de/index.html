@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="de" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json', forcePath: '/rosHP'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Kinder-Spiele bei Miniclip.com</title>
+		<meta name="description" content="Spiele Kinder-Spiele bei Miniclip. Unsere beliebtesten Kinder-Spiele sind Thunderbirds Are Go: Team Rush, Berry Rush und Jewel Academy - und wir haben mehr als 157 weitere Kinder-Spiele, die du genießen kannst!" />
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/genre-482/kids/de/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/de/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/games.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Kinder-Spiele bei Miniclip.com"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/genre-482/kids/de/" />
+		<meta property="og:image" content="https://static.miniclip.com/content/category/icons/kids-games.png" />
+		<meta property="og:description" content="" />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/genre-482\/kids\/","dimension9":"United States","dimension8":"de","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "de";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "C";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/genre-482/kids/de/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/genre-482/kids/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/genre-482/kids/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/genre-482/kids/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/genre-482/kids/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/genre-482/kids/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/genre-482/kids/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/genre-482/kids/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/genre-482/kids/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/genre-482/kids/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/genre-482/kids/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/genre-482/kids/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/genre-482/kids/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/genre-482/kids/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/genre-482/kids/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/genre-482/kids/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/genre-482/kids/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/genre-482/kids/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Ausblenden","show":"Zeigen","full_categories_list":"Vollst\u00e4ndige Kategorienliste","all_games_and_categories":"Alle Spiele und Kategorien","show_more_results":"Weitere Resultate zeigen &rsaquo;","no_comments":"Keine Kommentare","report":"Melden","comment_like_failed":"Das M\u00f6gen des Kommentars ist leider fehlgeschlagen. Bitte versuche es sp\u00e4ter noch einmal.","comment_reporting_failed":"Das Melden des Kommentars ist leider fehlgeschlagen.","the_word_is_not_allowed":"Das Wort \"%s\" befindet sich nicht in unserer Liste zul\u00e4ssiger W\u00f6rter.","remove_red_messages":"Bitte bearbeite deine Nachricht, um die rot hinterlegten Worte zu l\u00f6schen. Die sind nicht erlaubt.","enter_the_link":"Gib die Link-URL ein","search_free_games":"Magst du kostenlose Spiele? Wir <strong>LIEBEN<\/strong> kostenlose Spiele! Zu allen Miniclip-Spielen gibt es eine kostenlose Version, die du direkt hier auf der Website spielen kannst.","password_reset_error_email":"<strong>Hoppla!<\/strong> Du hast keine E-Mail-Adresse eingegeben!","password_reset_error_username":"<strong>Es tut uns leid<\/strong> - Das scheint keine g\u00fcltige E-Mail-Adresse zu sein.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Wechsle in den Fokusmodus, um dich auf das Spiel zu konzentrieren. Dadurch wird dein aktuelles Spiel neu gestartet. M\u00f6chtest du fortfahren?","add_to_favorites":"Zu deinen Spielefavoriten hinzuf\u00fcgen","remove_from_favorites":"Aus deinen Spielefavoriten entfernen","comment_autocomplete_placeholder":"Fange an zu tippen, um Vorschl\u00e4ge zu erhalten","new":"Neu","next":"N\u00e4chstes","prev":"Vorheriges","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Fehler!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-games category-id-482 locale-us lang-de browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="de" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/de/" rel="nofollow">Spiele bei Miniclip.com</a>
+			</h1>
+	<form class="search-form item" action="/games/search/de/" target="_top">
+		<label>
+			<span class="screen-reader">Suchen nach ...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Spiele suchen" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Suchen</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Registrieren / Anmelden</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Über Facebook registrieren und anmelden" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" width="44" height="32" alt="de" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>In deiner Sprache</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/genre-482/kids/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/fr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/tr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/hu/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/kr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/genre-482/kids/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/genre-482/kids&return_post=" class="button small greedy">
+		Mehr	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/de/#t-n" class="button category home" title="Miniclip-Startseite">
+				<span>Miniclip-Startseite</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/de/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/ttigkeit-spiele/de/#t-n" class="cat-13 catgory button">
+				Action
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/mehrspiele/de/#t-n" class="cat-2 catgory button">
+				Multiplayer			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzlespiel/de/#t-n" class="cat-1 catgory button">
+				Denkspiele
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/de/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1194/iphone/de/#t-n" class="cat-1194 catgory button">
+				iPhone			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Weitere Kategorien</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Spielekategorien</h2>
+	<div class="category-list">
+		<a href="/games/genre-35/3d/de/#t-m-c" class="cat-35" title="3D-Spiele spielen">3D</a>
+		<a href="/games/genre-515/adventure/de/#t-m-c" class="cat-515" title="Abenteuer-Spiele spielen">Abenteuer</a>
+		<a href="/games/genre-13/ttigkeit-spiele/de/#t-m-c" class="cat-13" title="Action
+-Spiele spielen">Action
+</a>
+		<a href="/games/genre-1001/american-football/de/#t-m-c" class="cat-1001" title="American Football
+-Spiele spielen">American Football
+</a>
+		<a href="/games/genre-503/android/de/#t-m-c" class="cat-503" title="Android-Spiele spielen">Android</a>
+		<a href="/games/genre-517/arcade/de/#t-m-c" class="cat-517" title="Arcade-Spiele spielen">Arcade</a>
+		<a href="/games/genre-5/schiespiele/de/#t-m-c" class="cat-5" title="Ballerspiele
+-Spiele spielen">Ballerspiele
+</a>
+		<a href="/games/genre-513/pool/de/#t-m-c" class="cat-513" title="Billiard
+-Spiele spielen">Billiard
+</a>
+		<a href="/games/genre-7/neueste-spiele/de/#t-m-c" class="cat-7" title="Brandneu
+-Spiele spielen">Brandneu
+</a>
+		<a href="/games/genre-497/buzz/de/#t-m-c" class="cat-497" title="Buzz-Spiele spielen">Furore</a>
+		<a href="/games/genre-1185/mitwirkende/de/#t-m-c" class="cat-1185" title="Credits
+-Spiele spielen">Credits
+</a>
+		<a href="/games/genre-1/puzzlespiel/de/#t-m-c" class="cat-1" title="Denkspiele
+-Spiele spielen">Denkspiele
+</a>
+		<a href="/games/genre-1155/extremsport-/de/#t-m-c" class="cat-1155" title="Extremsport 
+-Spiele spielen">Extremsport 
+</a>
+		<a href="/games/genre-521/flying/de/#t-m-c" class="cat-521" title="Fliegen
+-Spiele spielen">Fliegen
+</a>
+		<a href="/games/genre-18/fuball/de/#t-m-c" class="cat-18" title="Fußball-Spiele spielen">Fußball</a>
+		<a href="/games/genre-488/golf/de/#t-m-c" class="cat-488" title="Golf-Spiele spielen">Golf</a>
+		<a href="/games/genre-490/halloween/de/#t-m-c" class="cat-490" title="Halloween-Spiele spielen">Halloween</a>
+		<a href="/games/genre-1201/hot-games/de/#t-m-c" class="cat-1201" title="Heiße Spiele
+-Spiele spielen">Heiße Spiele
+</a>
+		<a href="/games/genre-1194/iphone/de/#t-m-c" class="cat-1194" title="iPhone-Spiele spielen">iPhone</a>
+		<a href="/games/genre-519/fighting/de/#t-m-c" class="cat-519" title="Kampf-Spiele spielen">Kampf</a>
+		<a href="/games/genre-1133/karte/de/#t-m-c" class="cat-1133" title="Kartenspiele
+-Spiele spielen">Kartenspiele
+</a>
+		<a href="/games/genre-482/kids/de/#t-m-c" class="cat-482" title="Kinder-Spiele spielen">Kinder</a>
+		<a href="/games/genre-1143/zerstorung/de/#t-m-c" class="cat-1143" title="Kriegsspiele
+-Spiele spielen">Kriegsspiele
+</a>
+		<a href="/games/genre-1209//de/#t-m-c" class="cat-1209" title="London Olympics 2012-Spiele spielen">Olympische Spiele 2012 in London</a>
+		<a href="/games/genre-511/my-friends-league/de/#t-m-c" class="cat-511" title="Meine Freunde-Liga-Spiele spielen">Meine Freunde-Liga</a>
+		<a href="/games/genre-1210//de/#t-m-c" class="cat-1210" title="Monster-Spiele spielen">Monster</a>
+		<a href="/games/genre-1157/motocross/de/#t-m-c" class="cat-1157" title="Motocross-Spiele spielen">Motocross</a>
+		<a href="/games/genre-26/motorsport/de/#t-m-c" class="cat-26" title="Motorsport-Spiele spielen">Motorsport</a>
+		<a href="/games/genre-2/mehrspiele/de/#t-m-c" class="cat-2" title="Multiplayer-Spiele spielen">Multiplayer</a>
+		<a href="/games/genre-40/plattform/de/#t-m-c" class="cat-40" title="Plattform-Spiele spielen">Plattform</a>
+		<a href="/games/genre-14/politische/de/#t-m-c" class="cat-14" title="Politisch
+-Spiele spielen">Politisch
+</a>
+		<a href="/games/genre-525/award/de/#t-m-c" class="cat-525" title="Preise
+-Spiele spielen">Preise
+</a>
+		<a href="/games/genre-3/sport-spiele/de/#t-m-c" class="cat-3" title="Sport-Spiele spielen">Sport</a>
+		<a href="/games/genre-523/strategy/de/#t-m-c" class="cat-523" title="Strategy-Spiele spielen">Strategie</a>
+		<a href="/games/genre-1151/stunts/de/#t-m-c" class="cat-1151" title="Stunts-Spiele spielen">Stunts</a>
+		<a href="/games/genre-484/tennis/de/#t-m-c" class="cat-484" title="Tennis
+-Spiele spielen">Tennis
+</a>
+		<a href="/games/genre-6/-10-besten/de/#t-m-c" class="cat-6" title="Top 10
+-Spiele spielen">Top 10
+</a>
+		<a href="/games/genre-23/die-besten-100/de/#t-m-c" class="cat-23" title="Top 100
+-Spiele spielen">Top 100
+</a>
+		<a href="/games/genre-1145/turmverteidigung/de/#t-m-c" class="cat-1145" title="Turmverteidigung
+-Spiele spielen">Turmverteidigung
+</a>
+		<a href="/games/genre-432/webmaster-games/de/#t-m-c" class="cat-432" title="Webmaster-Spiele-Spiele spielen">Webmaster-Spiele</a>
+		<a href="/games/genre-1238/holidays/de/#t-m-c" class="cat-1238" title="Weihnachten
+-Spiele spielen">Weihnachten
+</a>
+		<a href="/games/genre-1003/weihnachten/de/#t-m-c" class="cat-1003" title="Weihnachten-Spiele spielen">Weihnachten</a>
+		<a href="/games/genre-477/racing/de/#t-m-c" class="cat-477" title="Wettrennen
+-Spiele spielen">Wettrennen
+</a>
+		<a href="/games/genre-1207/windows-phone/de/#t-m-c" class="cat-1207" title="Windows Phone-Spiele spielen">Windows Phone</a>
+		<a href="/games/genre-4/weihnachten/de/#t-m-c" class="cat-4" title="Winter-Spiele spielen">Winter</a>
+		<a href="/games/genre-1109/worte/de/#t-m-c" class="cat-1109" title="Wortspiele
+-Spiele spielen">Wortspiele
+</a>
+		<a href="/games/genre-1149/zombie/de/#t-m-c" class="cat-1149" title="Zombie-Spiele spielen">Zombie</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Mehr coole Sachen</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip-Blog" class="feed">
+					Miniclip-Blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/de/downloadable-games/#t-m-s" title="Lade Spiele herunter und spiele sie auf deinem Desktop" class="download">
+					Spiele herunterladen				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Hole dir kostenlose Miniclip-Spiele für DEINE Website!" class="webmasters">
+					Kostenlose Website-Spiele				</a>
+			</li>
+			<li>
+				<a href="/videos/de/#t-m-s" class="videos">
+					Videotipps und -tricks				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Hilfe				</a>
+			</li>
+			<li >
+				<a href="/games/page/de/internet-safety/" rel="nofollow">
+					Internet-Sicherheit				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Privatsphäre				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Verbinde dich mit Miniclip</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Möge Miniclip auf Facebook" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Folge Miniclip auf Twitter" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Miniclip auf Google+" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="Miniclip-Videos auf YouTube anschauen" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+                    <div data-pw-desk="leaderboard_atf"></div>
+                	<div class="box greedy">
+		<header class="pretty juicy">
+			<h1 class="cat-482">Kinder</h1>
+		</header>
+	</div>
+		<section class="primary">
+		<section id="category-intro">
+<div class="widget widget-size-2 box widget-game-scroller widget-891">
+	<article>
+		<a href="/games/thunderbirds/de/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/TB-Push-Ad_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Thunderbirds Are Go: Team Rush" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/berry-rush/de/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/Berry-Rush_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Berry Rush" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/jewel-academy/de/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/jewel_academy_4_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Jewel Academy" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/headless-zombie/de/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/headless_zombie_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Headless Zombie" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/scrappy-dog/de/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/scrappy_dog_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Scrappy Dog" />
+		</a>
+	</article>
+	<nav>
+<a data-tip="Thunderbirds Are Go: Team Rush" data-slide="#slide_1" class="tooltip game-icon game-id-4514" href="/games/thunderbirds/de/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/Thunderbirds_150x110_20160606.jpg" alt="Thunderbirds spielen" title="Thunderbirds Are Go: Team Rush spielen" width="84" height="63" /></a><a data-tip="Berry Rush" data-slide="#slide_2" class="tooltip game-icon game-id-4187" href="/games/berry-rush/de/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/SS_icon_web_squared.jpg" alt="Berry Rush spielen" title="Berry Rush spielen" width="84" height="63" /></a><a data-tip="Jewel Academy" data-slide="#slide_3" class="tooltip game-icon game-id-4249" href="/games/jewel-academy/de/#t-l-gs1" title=""><div class="notification blip offset positive">Aktualisiert</div><img src="//static2.miniclipcdn.com/content/game-icons/medium/jewel_academy_2_150x110.jpg" alt="Jewel Academy spielen" title="Jewel Academy spielen" width="84" height="63" /></a><a data-tip="Headless Zombie" data-slide="#slide_4" class="tooltip game-icon game-id-4240" href="/games/headless-zombie/de/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/headless_1_150x110.jpg" alt="Headless Zombi spielen" title="Headless Zombie spielen" width="84" height="63" /></a><a data-tip="Scrappy Dog" data-slide="#slide_5" class="tooltip game-icon game-id-4343" href="/games/scrappy-dog/de/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/scrappy_dog_150x110.jpg" alt="Scrappy Dog spielen" title="Scrappy Dog spielen" width="84" height="63" /></a>	</nav>
+</div><section class="widget box widget-hot-games widget-hot-games-482 widget-893">
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4343" href="/games/scrappy-dog/de/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/scrappy_dog_150x110.jpg" alt="Scrappy Dog spielen" title="Scrappy Dog spielen" width="84" height="63" /><span class="meta">Scrappy Dog</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4134" href="/games/i-eat-bananas/de/#t-w-c" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/eatBananas-M.png" alt="I Eat Bananas spielen" title="I Eat Bananas spielen" width="84" height="63" /><span class="meta">I Eat Bananas</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3770" href="/games/ninja-miner/de/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/ninjaminer-medium.jpg" alt="Ninja Miner spielen" title="Ninja Miner spielen" width="84" height="63" /><span class="meta">Ninja Miner</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4210" href="/games/herotopia/de/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/herotopia.jpg" alt="Herotopia spielen" title="Herotopia spielen" width="84" height="63" /><span class="meta">Herotopia</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3736" href="/games/rocket-pets/de/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/rocket-pets_icon_large.jpg" alt="Rocket Pets spielen" title="Rocket Pets spielen" width="84" height="63" /><span class="meta">Rocket Pets</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4383" href="/games/pilot-heroes/de/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/Pilot-Heroes_150x110.jpg" alt="Pilot Heroes spielen" title="Pilot Heroes spielen" width="84" height="63" /><span class="meta">Pilot Heroes</span></a>		</li>
+	</ul>
+</section>
+		</section>
+
+		<nav class="tab-bar category-sort">
+			<ul>
+				<li><a class="button cool selected top" id="tab-top" data-order="order" href="">Beste Spiele</a></li>
+				<li><a class="button cool calendar" id="tab-recent" data-order="release" href="">Kürzliche Spiele</a></li>
+				<li><a class="button cool top-rated" id="tab-top-rated" data-order="rating" href="">Spiele mit den besten Bewertungen</a></li>
+			</ul>
+		</nav>
+		<div class="box greedy tab-content selected" id="category-games-list">
+			<ul class="games-list inner">
+				<li data-order="1" data-rating="4,4069" data-rating-count="3111" data-release="">
+					<a class="game-icon game-id-4514" href="/games/thunderbirds/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Thunderbirds_150x110_20160606.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Thunderbirds spielen" title="Thunderbirds Are Go: Team Rush spielen" width="84" height="63" /><span class="meta">Thunderbirds</span></a>				</li>
+				<li data-order="2" data-rating="4,3364" data-rating-count="9554" data-release="">
+					<a class="game-icon game-id-4187" href="/games/berry-rush/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SS_icon_web_squared.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Berry Rush spielen" title="Berry Rush spielen" width="84" height="63" /><span class="meta">Berry Rush</span></a>				</li>
+				<li data-order="3" data-rating="4,1195" data-rating-count="2560" data-release="">
+					<a class="game-icon game-id-4249" href="/games/jewel-academy/de/#t-c-f" title=""><div class="notification blip offset positive">Aktualisiert</div><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jewel_academy_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jewel Academy spielen" title="Jewel Academy spielen" width="84" height="63" /><span class="meta">Jewel Academy</span></a>				</li>
+				<li data-order="4" data-rating="4,4527" data-rating-count="3333" data-release="1426809600">
+					<a class="game-icon game-id-4240" href="/games/headless-zombie/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/headless_1_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Headless Zombi spielen" title="Headless Zombie spielen" width="84" height="63" /><span class="meta">Headless Zombi</span></a>				</li>
+				<li data-order="5" data-rating="4,0657" data-rating-count="989" data-release="">
+					<a class="game-icon game-id-4343" href="/games/scrappy-dog/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/scrappy_dog_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Scrappy Dog spielen" title="Scrappy Dog spielen" width="84" height="63" /><span class="meta">Scrappy Dog</span></a>				</li>
+				<li data-order="6" data-rating="4,1077" data-rating-count="1904" data-release="">
+					<a class="game-icon game-id-4134" href="/games/i-eat-bananas/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/eatBananas-M.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="I Eat Bananas spielen" title="I Eat Bananas spielen" width="84" height="63" /><span class="meta">I Eat Bananas</span></a>				</li>
+				<li data-order="7" data-rating="4,4231" data-rating-count="2843" data-release="">
+					<a class="game-icon game-id-3770" href="/games/ninja-miner/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ninjaminer-medium.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ninja Miner spielen" title="Ninja Miner spielen" width="84" height="63" /><span class="meta">Ninja Miner</span></a>				</li>
+				<li data-order="8" data-rating="4,5" data-rating-count="2" data-release="">
+					<a class="game-icon game-id-4210" href="/games/herotopia/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/herotopia.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Herotopia spielen" title="Herotopia spielen" width="84" height="63" /><span class="meta">Herotopia</span></a>				</li>
+				<li data-order="9" data-rating="4,4441" data-rating-count="3664" data-release="1369872000">
+					<a class="game-icon game-id-3736" href="/games/rocket-pets/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/rocket-pets_icon_large.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rocket Pets spielen" title="Rocket Pets spielen" width="84" height="63" /><span class="meta">Rocket Pets</span></a>				</li>
+				<li data-order="10" data-rating="4,0488" data-rating-count="615" data-release="">
+					<a class="game-icon game-id-4383" href="/games/pilot-heroes/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Pilot-Heroes_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pilot Heroes spielen" title="Pilot Heroes spielen" width="84" height="63" /><span class="meta">Pilot Heroes</span></a>				</li>
+				<li data-order="11" data-rating="4,4295" data-rating-count="14090" data-release="-62169984000">
+					<a class="game-icon game-id-3746" href="/games/slime-laboratory-2/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelab2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab 2 spielen" title="Slime Laboratory 2 spielen" width="84" height="63" /><span class="meta">Slime Lab 2</span></a>				</li>
+				<li data-order="12" data-rating="4,073" data-rating-count="699" data-release="">
+					<a class="game-icon game-id-4153" href="/games/amazing-world/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/amazingworldhalloween.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="AmazingWorld spielen" title="Amazing World spielen" width="84" height="63" /><span class="meta">AmazingWorld</span></a>				</li>
+				<li data-order="13" data-rating="2,5" data-rating-count="0" data-release="">
+					<a class="game-icon game-id-4036" href="/games/moshi-monsters/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Moshimonsters.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="MoshiMonsters spielen" title="Moshi Monsters spielen" width="84" height="63" /><span class="meta">MoshiMonsters</span></a>				</li>
+				<li data-order="14" data-rating="4,13" data-rating-count="777" data-release="-62169984000">
+					<a class="game-icon game-id-3740" href="/games/super-stocktake/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/superstocktake.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Super Stock spielen" title="Super Stocktake spielen" width="84" height="63" /><span class="meta">Super Stock</span></a>				</li>
+				<li data-order="15" data-rating="4,2448" data-rating-count="3296" data-release="">
+					<a class="game-icon game-id-4238" href="/games/a-stroll-in-space/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/strollinspacev2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stroll In  spielen" title="A Stroll In Space spielen" width="84" height="63" /><span class="meta">Stroll In </span></a>				</li>
+				<li data-order="16" data-rating="4,4137" data-rating-count="2695" data-release="-62169984000">
+					<a class="game-icon game-id-3738" href="/games/plunger/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/plunger.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Plunger spielen" title="Plunger spielen" width="84" height="63" /><span class="meta">Plunger</span></a>				</li>
+				<li data-order="17" data-rating="4,4884" data-rating-count="3487" data-release="1363564800">
+					<a class="game-icon game-id-3662" href="/games/transmorpher/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/transmorphermedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Transmorpher spielen" title="Transmorpher spielen" width="84" height="63" /><span class="meta">Transmorpher</span></a>				</li>
+				<li data-order="18" data-rating="4,4735" data-rating-count="7803" data-release="1353283200">
+					<a class="game-icon game-id-3503" href="/games/minecart-madness/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/minecartmadnessv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cart Madness spielen" title="Minecart Madness spielen" width="84" height="63" /><span class="meta">Cart Madness</span></a>				</li>
+				<li data-order="19" data-rating="4,1983" data-rating-count="2219" data-release="1359590400">
+					<a class="game-icon game-id-3548" href="/games/60-seconds-burger-run/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/burgerrun.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="60s BurgerRun spielen" title="60 Seconds Burger Run spielen" width="84" height="63" /><span class="meta">60s BurgerRun</span></a>				</li>
+				<li data-order="20" data-rating="4,2529" data-rating-count="87" data-release="-62169984000">
+					<a class="game-icon game-id-3366" href="/games/super-hero-squad/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/supersherosquadonlinev2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Super Hero spielen" title="Super Hero Squad spielen" width="84" height="63" /><span class="meta">Super Hero</span></a>				</li>
+				<li data-order="21" data-rating="2,5" data-rating-count="0" data-release="1362009600">
+					<a class="game-icon game-id-3670" href="/games/star-stable/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/starstable.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Star Stable spielen" title="Star Stable spielen" width="84" height="63" /><span class="meta">Star Stable</span></a>				</li>
+				<li data-order="22" data-rating="4,4588" data-rating-count="4773" data-release="1357516800">
+					<a class="game-icon game-id-3408" href="/games/turbo-kids/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/turbokids.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Turbo Kids spielen" title="Turbo Kids spielen" width="84" height="63" /><span class="meta">Turbo Kids</span></a>				</li>
+				<li data-order="23" data-rating="4,1722" data-rating-count="970" data-release="1347840000">
+					<a class="game-icon game-id-3479" href="/games/hot-air-jr/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/hotairjr.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air Jr spielen" title="Hot Air Jr spielen" width="84" height="63" /><span class="meta">Hot Air Jr</span></a>				</li>
+				<li data-order="24" data-rating="4,4896" data-rating-count="1389" data-release="1288828800">
+					<a class="game-icon game-id-2433" href="/games/dream-tower/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/DreamTowernew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dream Tower spielen" title="Dream Tower spielen" width="84" height="63" /><span class="meta">Dream Tower</span></a>				</li>
+				<li data-order="25" data-rating="4,5028" data-rating-count="2689" data-release="1300665600">
+					<a class="game-icon game-id-2469" href="/games/mimelet/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mimelet.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mimelet spielen" title="Mimelet spielen" width="84" height="63" /><span class="meta">Mimelet</span></a>				</li>
+				<li data-order="26" data-rating="4,3913" data-rating-count="5326" data-release="1352678400">
+					<a class="game-icon game-id-3524" href="/games/ninja-painter-2/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/ninjapainter2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="NinjaPainter2 spielen" title="Ninja Painter 2 spielen" width="84" height="63" /><span class="meta">NinjaPainter2</span></a>				</li>
+				<li data-order="27" data-rating="4,5011" data-rating-count="6743" data-release="-62169984000">
+					<a class="game-icon game-id-3786" href="/games/zombality/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zombality.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombality spielen" title="Zombality spielen" width="84" height="63" /><span class="meta">Zombality</span></a>				</li>
+				<li data-order="28" data-rating="4,4856" data-rating-count="4160" data-release="1349308800">
+					<a class="game-icon game-id-3352" href="/games/gokartgo-nitro/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gokartgonitrov2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="GoKart Nitro spielen" title="GoKartGo! Nitro! spielen" width="84" height="63" /><span class="meta">GoKart Nitro</span></a>				</li>
+				<li data-order="29" data-rating="4,3998" data-rating-count="1831" data-release="1351123200">
+					<a class="game-icon game-id-3536" href="/games/zombie-karts/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/zombiekarts.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombie Karts spielen" title="Zombie Karts spielen" width="84" height="63" /><span class="meta">Zombie Karts</span></a>				</li>
+				<li data-order="30" data-rating="4,2432" data-rating-count="148" data-release="1350259200">
+					<a class="game-icon game-id-2315" href="/games/kiwi-tiki/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/kiwitiki.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Kiwi Tiki spielen" title="Kiwi Tiki spielen" width="84" height="63" /><span class="meta">Kiwi Tiki</span></a>				</li>
+				<li data-order="31" data-rating="4,2791" data-rating-count="6280" data-release="1352073600">
+					<a class="game-icon game-id-3418" href="/games/300-miles-to-pigsland/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/300milestopigsland.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="300 Miles spielen" title="300 Miles to Pigsland spielen" width="84" height="63" /><span class="meta">300 Miles</span></a>				</li>
+				<li data-order="32" data-rating="4,4175" data-rating-count="891" data-release="1351468800">
+					<a class="game-icon game-id-3582" href="/games/knight-age-nightmare/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/knightagehalloween.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="KA Nightmare spielen" title="Knight Age Nightmare spielen" width="84" height="63" /><span class="meta">KA Nightmare</span></a>				</li>
+				<li data-order="33" data-rating="4,3229" data-rating-count="542" data-release="1336953600">
+					<a class="game-icon game-id-3294" href="/games/gemaica/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/gemaicav2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gemaica spielen" title="Gemaica spielen" width="84" height="63" /><span class="meta">Gemaica</span></a>				</li>
+				<li data-order="34" data-rating="4,4547" data-rating-count="1082" data-release="1329782400">
+					<a class="game-icon game-id-3268" href="/games/snow-tale/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/snowtale.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snow Tale spielen" title="Snow Tale spielen" width="84" height="63" /><span class="meta">Snow Tale</span></a>				</li>
+				<li data-order="35" data-rating="4,3641" data-rating-count="835" data-release="1350518400">
+					<a class="game-icon game-id-3318" href="/games/bimmin-2/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/bimmin2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bimmin 2 spielen" title="Bimmin 2 spielen" width="84" height="63" /><span class="meta">Bimmin 2</span></a>				</li>
+				<li data-order="36" data-rating="4,3154" data-rating-count="615" data-release="1350000000">
+					<a class="game-icon game-id-3316" href="/games/bimmin/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bimmin.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bimmin spielen" title="Bimmin spielen" width="84" height="63" /><span class="meta">Bimmin</span></a>				</li>
+				<li data-order="37" data-rating="4,3987" data-rating-count="158" data-release="1345680000">
+					<a class="game-icon game-id-2983" href="/games/dillo-hills/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/dillohills.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dillo Hills spielen" title="Dillo Hills spielen" width="84" height="63" /><span class="meta">Dillo Hills</span></a>				</li>
+				<li data-order="38" data-rating="4,4811" data-rating-count="10691" data-release="1277942400">
+					<a class="game-icon game-id-2229" href="/games/stunt-dive/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/StuntDivenew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stunt Dive spielen" title="Stunt Dive spielen" width="84" height="63" /><span class="meta">Stunt Dive</span></a>				</li>
+				<li data-order="39" data-rating="4,4407" data-rating-count="177" data-release="1336435200">
+					<a class="game-icon game-id-2965" href="/games/ninja-pig/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ninjapigv3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ninja Pig spielen" title="Ninja Pig spielen" width="84" height="63" /><span class="meta">Ninja Pig</span></a>				</li>
+				<li data-order="40" data-rating="3,7778" data-rating-count="3249" data-release="1328745600">
+					<a class="game-icon game-id-3173" href="/games/mushroom-madness-3/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/mushroommadness3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mushroom 3 spielen" title="Mushroom Madness 3 spielen" width="84" height="63" /><span class="meta">Mushroom 3</span></a>				</li>
+				<li data-order="41" data-rating="4,2324" data-rating-count="413" data-release="1303344000">
+					<a class="game-icon game-id-2733" href="/games/egg-blast/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/eggblast20.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Egg Blast spielen" title="Egg Blast spielen" width="84" height="63" /><span class="meta">Egg Blast</span></a>				</li>
+				<li data-order="42" data-rating="4,3514" data-rating-count="2760" data-release="1345075200">
+					<a class="game-icon game-id-3358" href="/games/knight-age-2/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/knightage2v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="KnightAge2 spielen" title="Knight Age 2 spielen" width="84" height="63" /><span class="meta">KnightAge2</span></a>				</li>
+				<li data-order="43" data-rating="4,3756" data-rating-count="410" data-release="-62169984000">
+					<a class="game-icon game-id-1865" href="/games/mister-easter/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/mistereaster.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mister Easter spielen" title="Mister Easter spielen" width="84" height="63" /><span class="meta">Mister Easter</span></a>				</li>
+				<li data-order="44" data-rating="4,33" data-rating-count="68550" data-release="-62169984000">
+					<a class="game-icon game-id-1445" href="/games/bubble-trouble/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bubbletroublemedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BubbleTrouble spielen" title="Bubble Trouble spielen" width="84" height="63" /><span class="meta">BubbleTrouble</span></a>				</li>
+				<li data-order="45" data-rating="4,2335" data-rating-count="4283" data-release="-62169984000">
+					<a class="game-icon game-id-1666" href="/games/trials-mountain-heights/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/TrialsMountainHeightsnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="TrialsMountain spielen" title="Trials Mountain spielen" width="84" height="63" /><span class="meta">TrialsMountain</span></a>				</li>
+				<li data-order="46" data-rating="4,2758" data-rating-count="1472" data-release="1187827200">
+					<a class="game-icon game-id-1850" href="/games/hot-air-2/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/hotair2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air 2 spielen" title="Hot Air 2 spielen" width="84" height="63" /><span class="meta">Hot Air 2</span></a>				</li>
+				<li data-order="47" data-rating="4,464" data-rating-count="50793" data-release="1299628800">
+					<a class="game-icon game-id-2613" href="/games/istunt-2/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/istunt2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="iStunt 2 spielen" title="iStunt 2 spielen" width="84" height="63" /><span class="meta">iStunt 2</span></a>				</li>
+				<li data-order="48" data-rating="4,2672" data-rating-count="3769" data-release="-62169984000">
+					<a class="game-icon game-id-1520" href="/games/jet-ski/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/JetSkiChallengenew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jet Ski spielen" title="Jet Ski spielen" width="84" height="63" /><span class="meta">Jet Ski</span></a>				</li>
+				<li data-order="49" data-rating="4,3281" data-rating-count="11184" data-release="1264723200">
+					<a class="game-icon game-id-2181" href="/games/rubble-trouble/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rubbletrouble.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RubbleTrouble spielen" title="Rubble Trouble spielen" width="84" height="63" /><span class="meta">RubbleTrouble</span></a>				</li>
+				<li data-order="50" data-rating="4,0632" data-rating-count="95" data-release="1352937600">
+					<a class="game-icon game-id-2997" href="/games/be-jumper/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bejumper.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Be Jumper spielen" title="Be Jumper spielen" width="84" height="63" /><span class="meta">Be Jumper</span></a>				</li>
+				<li data-order="51" data-rating="4,2964" data-rating-count="7031" data-release="1311811200">
+					<a class="game-icon game-id-2933" href="/games/rubble-trouble-tokyo/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rubbletroubletokyo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RT Tokyo spielen" title="Rubble Trouble Tokyo spielen" width="84" height="63" /><span class="meta">RT Tokyo</span></a>				</li>
+				<li data-order="52" data-rating="4,359" data-rating-count="3749" data-release="-62169984000">
+					<a class="game-icon game-id-1759" href="/games/skateboard-jam/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/skateboardjam.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Skateboard spielen" title="Skateboard Jam spielen" width="84" height="63" /><span class="meta">Skateboard</span></a>				</li>
+				<li data-order="53" data-rating="4,3652" data-rating-count="2933" data-release="-62169984000">
+					<a class="game-icon game-id-1765" href="/games/snowboard-madness/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SnowboardMadnessnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowboard spielen" title="Snowboard Madness spielen" width="84" height="63" /><span class="meta">Snowboard</span></a>				</li>
+				<li data-order="54" data-rating="4,2888" data-rating-count="4574" data-release="-62169984000">
+					<a class="game-icon game-id-1664" href="/games/trial-bike-pro/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/trialbikepronew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Trial PRO spielen" title="Trial Bike PRO spielen" width="84" height="63" /><span class="meta">Trial PRO</span></a>				</li>
+				<li data-order="55" data-rating="3,9547" data-rating-count="3132" data-release="-62169984000">
+					<a class="game-icon game-id-1440" href="/games/bloomin-gardens/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bloomingardens.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gardens spielen" title="Bloomin' Gardens spielen" width="84" height="63" /><span class="meta">Gardens</span></a>				</li>
+				<li data-order="56" data-rating="4,3336" data-rating-count="12660" data-release="1180396800">
+					<a class="game-icon game-id-1812" href="/games/candy-and-clyde/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/candyandclyde.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Candy n Clyde spielen" title="Candy and Clyde spielen" width="84" height="63" /><span class="meta">Candy n Clyde</span></a>				</li>
+				<li data-order="57" data-rating="4,2843" data-rating-count="788" data-release="1259884800">
+					<a class="game-icon game-id-2223" href="/games/cold-storage/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/coldstorage.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cold Stora spielen" title="Cold Storage spielen" width="84" height="63" /><span class="meta">Cold Stora</span></a>				</li>
+				<li data-order="58" data-rating="4,4228" data-rating-count="19422" data-release="-62169984000">
+					<a class="game-icon game-id-1769" href="/games/deep-freeze/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/DeepFreezenew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Deep Freeze spielen" title="Deep Freeze spielen" width="84" height="63" /><span class="meta">Deep Freeze</span></a>				</li>
+				<li data-order="59" data-rating="4,1013" data-rating-count="1333" data-release="-62169984000">
+					<a class="game-icon game-id-1542" href="/games/miniclip-rally/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/minicliprally.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Miniclip Rally spielen" title="Miniclip Rally spielen" width="84" height="63" /><span class="meta">Miniclip Rally</span></a>				</li>
+				<li data-order="60" data-rating="4,2454" data-rating-count="4743" data-release="-62169984000">
+					<a class="game-icon game-id-1794" href="/games/monkey-kick-off/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/monkeykickoff.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Monkey Kick spielen" title="Monkey Kick Off spielen" width="84" height="63" /><span class="meta">Monkey Kick</span></a>				</li>
+				<li data-order="61" data-rating="4,4684" data-rating-count="4349" data-release="1194480000">
+					<a class="game-icon game-id-1839" href="/games/motocross-urban-fever/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/MotocrossUrbanfevernew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Motox Urban spielen" title="Motocross Urban spielen" width="84" height="63" /><span class="meta">Motox Urban</span></a>				</li>
+				<li data-order="62" data-rating="3,8277" data-rating-count="2113" data-release="1322179200">
+					<a class="game-icon game-id-3001" href="/games/mushroom-madness/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/mushroommadness.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mushroom spielen" title="Mushroom Madness spielen" width="84" height="63" /><span class="meta">Mushroom</span></a>				</li>
+				<li data-order="63" data-rating="4,4925" data-rating-count="46368" data-release="1194307200">
+					<a class="game-icon game-id-1877" href="/games/raft-wars/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/raftwars.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Raft Wars spielen" title="Raft Wars spielen" width="84" height="63" /><span class="meta">Raft Wars</span></a>				</li>
+				<li data-order="64" data-rating="4,4501" data-rating-count="13406" data-release="-62169984000">
+					<a class="game-icon game-id-1775" href="/games/snow-line/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/snowline.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snow Line spielen" title="Snow Line spielen" width="84" height="63" /><span class="meta">Snow Line</span></a>				</li>
+				<li data-order="65" data-rating="4,3098" data-rating-count="4567" data-release="-62169984000">
+					<a class="game-icon game-id-1665" href="/games/trials-construction-yard/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/trialsconstructionnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Construction spielen" title="Trials Constructio spielen" width="84" height="63" /><span class="meta">Construction</span></a>				</li>
+				<li data-order="66" data-rating="4,2745" data-rating-count="2062" data-release="1307404800">
+					<a class="game-icon game-id-2639" href="/games/zoo-racer/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/zooracer2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zoo Racer spielen" title="Zoo Racer spielen" width="84" height="63" /><span class="meta">Zoo Racer</span></a>				</li>
+				<li data-order="67" data-rating="4,4808" data-rating-count="3488" data-release="-62169984000">
+					<a class="game-icon game-id-1752" href="/games/acid-factory/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/AcidFactorynew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Acid Factory spielen" title="Acid Factory spielen" width="84" height="63" /><span class="meta">Acid Factory</span></a>				</li>
+				<li data-order="68" data-rating="4,451" data-rating-count="2492" data-release="-62169984000">
+					<a class="game-icon game-id-1421" href="/games/aqua-energizer/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/aquaenergizer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Aqua Energ spielen" title="Aqua Energizer spielen" width="84" height="63" /><span class="meta">Aqua Energ</span></a>				</li>
+				<li data-order="69" data-rating="4,2359" data-rating-count="835" data-release="-62169984000">
+					<a class="game-icon game-id-1804" href="/games/balance/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/balance.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Balance spielen" title="Balance spielen" width="84" height="63" /><span class="meta">Balance</span></a>				</li>
+				<li data-order="70" data-rating="4,4638" data-rating-count="1738" data-release="1295308800">
+					<a class="game-icon game-id-2233" href="/games/buck-ride/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/BuckRidenew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Buck Ride spielen" title="Buck Ride spielen" width="84" height="63" /><span class="meta">Buck Ride</span></a>				</li>
+				<li data-order="71" data-rating="4,4115" data-rating-count="2700" data-release="-62169984000">
+					<a class="game-icon game-id-1446" href="/games/bug-on-a-wire/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/bug.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bug On A W spielen" title="Bug On A Wire spielen" width="84" height="63" /><span class="meta">Bug On A W</span></a>				</li>
+				<li data-order="72" data-rating="4,2423" data-rating-count="615" data-release="-62169984000">
+					<a class="game-icon game-id-1455" href="/games/canyon-glider/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/canyonglider.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Canyon Glide spielen" title="Canyon Glider spielen" width="84" height="63" /><span class="meta">Canyon Glide</span></a>				</li>
+				<li data-order="73" data-rating="4,4194" data-rating-count="1800" data-release="-62169984000">
+					<a class="game-icon game-id-1464" href="/games/chick-flick/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/chickflick.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Chick Flick spielen" title="Chick Flick spielen" width="84" height="63" /><span class="meta">Chick Flick</span></a>				</li>
+				<li data-order="74" data-rating="4,3362" data-rating-count="580" data-release="1193961600">
+					<a class="game-icon game-id-1820" href="/games/crazy-karts/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/crazykarts.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crazy Karts spielen" title="Crazy Karts spielen" width="84" height="63" /><span class="meta">Crazy Karts</span></a>				</li>
+				<li data-order="75" data-rating="4,3967" data-rating-count="5951" data-release="-62169984000">
+					<a class="game-icon game-id-1470" href="/games/crypt-raider/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/crypt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crypt Raider spielen" title="Crypt Raider spielen" width="84" height="63" /><span class="meta">Crypt Raider</span></a>				</li>
+				<li data-order="76" data-rating="4,4715" data-rating-count="50635" data-release="1358985600">
+					<a class="game-icon game-id-3590" href="/games/mini-pets/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/minipets.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mini Pets spielen" title="Mini Pets spielen" width="84" height="63" /><span class="meta">Mini Pets</span></a>				</li>
+				<li data-order="77" data-rating="4,3222" data-rating-count="1021" data-release="-62169984000">
+					<a class="game-icon game-id-1478" href="/games/david/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/david.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="David spielen" title="David spielen" width="84" height="63" /><span class="meta">David</span></a>				</li>
+				<li data-order="78" data-rating="4,2769" data-rating-count="65" data-release="1229904000">
+					<a class="game-icon game-id-2024" href="/games/elfquilibrium/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/elfquilibrium.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elfquilibrium spielen" title="Elfquilibrium spielen" width="84" height="63" /><span class="meta">Elfquilibrium</span></a>				</li>
+				<li data-order="79" data-rating="4,3839" data-rating-count="508" data-release="1205193600">
+					<a class="game-icon game-id-1816" href="/games/golf-ace-hawaii/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/golfacehawaiinew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Golf Hawaii spielen" title="Golf Ace Hawaii spielen" width="84" height="63" /><span class="meta">Golf Hawaii</span></a>				</li>
+				<li data-order="80" data-rating="4,209" data-rating-count="689" data-release="-62169984000">
+					<a class="game-icon game-id-1503" href="/games/gyroball/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/gyroball.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gyroball spielen" title="Gyroball spielen" width="84" height="63" /><span class="meta">Gyroball</span></a>				</li>
+				<li data-order="81" data-rating="4,404" data-rating-count="1906" data-release="-62169984000">
+					<a class="game-icon game-id-1514" href="/games/hockey-showdown/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hockeyshowdown.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hockey spielen" title="Hockey Showdown spielen" width="84" height="63" /><span class="meta">Hockey</span></a>				</li>
+				<li data-order="82" data-rating="4,1938" data-rating-count="1166" data-release="-62169984000">
+					<a class="game-icon game-id-1516" href="/games/hot-air/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/hotair.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air spielen" title="Hot Air spielen" width="84" height="63" /><span class="meta">Hot Air</span></a>				</li>
+				<li data-order="83" data-rating="4,1376" data-rating-count="654" data-release="1227830400">
+					<a class="game-icon game-id-1971" href="/games/icy-slicy/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/icyslicy.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Icy Slicy spielen" title="Icy Slicy spielen" width="84" height="63" /><span class="meta">Icy Slicy</span></a>				</li>
+				<li data-order="84" data-rating="4,4051" data-rating-count="1718" data-release="-62169984000">
+					<a class="game-icon game-id-1530" href="/games/leo-steel/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/leosteel.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Leo Steel spielen" title="Leo Steel spielen" width="84" height="63" /><span class="meta">Leo Steel</span></a>				</li>
+				<li data-order="85" data-rating="4,0881" data-rating-count="454" data-release="1187049600">
+					<a class="game-icon game-id-1848" href="/games/mr-men-pinball/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/mrmenpinball.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mr Men Pinball spielen" title="Mr Men Pinball spielen" width="84" height="63" /><span class="meta">Mr Men Pinball</span></a>				</li>
+				<li data-order="86" data-rating="4,4257" data-rating-count="4315" data-release="-62169984000">
+					<a class="game-icon game-id-1585" href="/games/red-beard/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/RedBeardnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Red Beard spielen" title="Red Beard spielen" width="84" height="63" /><span class="meta">Red Beard</span></a>				</li>
+				<li data-order="87" data-rating="4,2644" data-rating-count="87" data-release="1257206400">
+					<a class="game-icon game-id-2123" href="/games/rolley/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/rolley.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rolley spielen" title="Rolley spielen" width="84" height="63" /><span class="meta">Rolley</span></a>				</li>
+				<li data-order="88" data-rating="4,1494" data-rating-count="415" data-release="1261440000">
+					<a class="game-icon game-id-2217" href="/games/santas-gift-jump/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/santasgiftjump.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Santa's Gi spielen" title="Santa's Gift Jump spielen" width="84" height="63" /><span class="meta">Santa's Gi</span></a>				</li>
+				<li data-order="89" data-rating="4,2854" data-rating-count="1023" data-release="-62169984000">
+					<a class="game-icon game-id-1779" href="/games/silversphere/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/silversphere.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Silversphere spielen" title="Silversphere spielen" width="84" height="63" /><span class="meta">Silversphere</span></a>				</li>
+				<li data-order="90" data-rating="4,4493" data-rating-count="6474" data-release="1310083200">
+					<a class="game-icon game-id-2682" href="/games/slime-laboratory/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelaboratory.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab spielen" title="Slime Laboratory spielen" width="84" height="63" /><span class="meta">Slime Lab</span></a>				</li>
+				<li data-order="91" data-rating="3,9647" data-rating-count="453" data-release="-62169984000">
+					<a class="game-icon game-id-1772" href="/games/snow-day/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/snowday.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snow Day spielen" title="Snow Day spielen" width="84" height="63" /><span class="meta">Snow Day</span></a>				</li>
+				<li data-order="92" data-rating="4,165" data-rating-count="200" data-release="-62169984000">
+					<a class="game-icon game-id-1763" href="/games/soap-bubble-2/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/soapbubble2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soap Bubble 2 spielen" title="Soap Bubble 2 spielen" width="84" height="63" /><span class="meta">Soap Bubble 2</span></a>				</li>
+				<li data-order="93" data-rating="4,4738" data-rating-count="3869" data-release="1185753600">
+					<a class="game-icon game-id-1807" href="/games/square-meal/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/squaremeal.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Square Meal spielen" title="Square Meal spielen" width="84" height="63" /><span class="meta">Square Meal</span></a>				</li>
+				<li data-order="94" data-rating="4,2499" data-rating-count="3550" data-release="-62169984000">
+					<a class="game-icon game-id-1649" href="/games/superbike-gp/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/superbike.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Superbike GP spielen" title="Superbike GP spielen" width="84" height="63" /><span class="meta">Superbike GP</span></a>				</li>
+				<li data-order="95" data-rating="4,457" data-rating-count="27608" data-release="-62169984000">
+					<a class="game-icon game-id-1766" href="/games/the-ashes/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/theashes.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="The Ashes spielen" title="The Ashes spielen" width="84" height="63" /><span class="meta">The Ashes</span></a>				</li>
+				<li data-order="96" data-rating="4,385" data-rating-count="2722" data-release="1196121600">
+					<a class="game-icon game-id-1880" href="/games/thin-ice/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/thinice.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Thin Ice spielen" title="Thin Ice spielen" width="84" height="63" /><span class="meta">Thin Ice</span></a>				</li>
+				<li data-order="97" data-rating="4,1445" data-rating-count="436" data-release="1196294400">
+					<a class="game-icon game-id-1823" href="/games/toboggan-run/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/tobogganrun.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Toboggan Run spielen" title="Toboggan Run spielen" width="84" height="63" /><span class="meta">Toboggan Run</span></a>				</li>
+				<li data-order="98" data-rating="4,459" data-rating-count="743" data-release="1314835200">
+					<a class="game-icon game-id-2885" href="/games/tooth-n-claw/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/toothnclaw2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tooth N Claw spielen" title="Tooth N Claw spielen" width="84" height="63" /><span class="meta">Tooth N Claw</span></a>				</li>
+				<li data-order="99" data-rating="4,0537" data-rating-count="614" data-release="1277337600">
+					<a class="game-icon game-id-2409" href="/games/vuvuzela-shoot-out/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/VuvuzelaShootout_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Vuvuzela spielen" title="Vuvuzela spielen" width="84" height="63" /><span class="meta">Vuvuzela</span></a>				</li>
+				<li data-order="100" data-rating="4,4194" data-rating-count="751" data-release="1236211200">
+					<a class="game-icon game-id-2021" href="/games/waffle-mania/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wafflemania.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Waffle Mania spielen" title="Waffle Mania spielen" width="84" height="63" /><span class="meta">Waffle Mania</span></a>				</li>
+				<li data-order="101" data-rating="4,3171" data-rating-count="246" data-release="-62169984000">
+					<a class="game-icon game-id-1681" href="/games/wheels-of-salvation/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wheelsofsalvation.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wheels of Salv spielen" title="Wheels of Salvatio spielen" width="84" height="63" /><span class="meta">Wheels of Salv</span></a>				</li>
+				<li data-order="102" data-rating="4,4018" data-rating-count="5174" data-release="-62169984000">
+					<a class="game-icon game-id-1692" href="/games/world-soccer/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/worldsoccer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="World Soccer spielen" title="World Soccer spielen" width="84" height="63" /><span class="meta">World Soccer</span></a>				</li>
+				<li data-order="103" data-rating="4,3636" data-rating-count="759" data-release="-62169984000">
+					<a class="game-icon game-id-1414" href="/games/alex-in-danger/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/alexindanger.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Alex in Danger spielen" title="Alex in Danger spielen" width="84" height="63" /><span class="meta">Alex in Danger</span></a>				</li>
+				<li data-order="104" data-rating="4,3591" data-rating-count="2350" data-release="-62169984000">
+					<a class="game-icon game-id-1698" href="/games/base-jumping/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/basejumping.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BaseJumping spielen" title="Base Jumping spielen" width="84" height="63" /><span class="meta">BaseJumping</span></a>				</li>
+				<li data-order="105" data-rating="4,2286" data-rating-count="350" data-release="-62169984000">
+					<a class="game-icon game-id-1441" href="/games/blox-forever/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bloxforever.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blox Forever spielen" title="Blox Forever spielen" width="84" height="63" /><span class="meta">Blox Forever</span></a>				</li>
+				<li data-order="106" data-rating="3,8636" data-rating-count="528" data-release="-62169984000">
+					<a class="game-icon game-id-1471" href="/games/cube-buster/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cube.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cube Buster spielen" title="Cube Buster spielen" width="84" height="63" /><span class="meta">Cube Buster</span></a>				</li>
+				<li data-order="107" data-rating="4,4186" data-rating-count="430" data-release="-62169984000">
+					<a class="game-icon game-id-1472" href="/games/cyber-mice-party/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/cybermice.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cyber Mice spielen" title="Cyber Mice Party spielen" width="84" height="63" /><span class="meta">Cyber Mice</span></a>				</li>
+				<li data-order="108" data-rating="4,4221" data-rating-count="398" data-release="-62169984000">
+					<a class="game-icon game-id-2275" href="/games/dance-planet/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/danceplanet.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dance Planet spielen" title="Dance Planet spielen" width="84" height="63" /><span class="meta">Dance Planet</span></a>				</li>
+				<li data-order="109" data-rating="4,3049" data-rating-count="679" data-release="-62169984000">
+					<a class="game-icon game-id-1476" href="/games/dancing-bush/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/dancingbush.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dancing Bush spielen" title="Dancing Bush spielen" width="84" height="63" /><span class="meta">Dancing Bush</span></a>				</li>
+				<li data-order="110" data-rating="4,0859" data-rating-count="745" data-release="-62169984000">
+					<a class="game-icon game-id-1756" href="/games/deluxe-pool/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/deluxepool.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Deluxe Pool spielen" title="Deluxe Pool spielen" width="84" height="63" /><span class="meta">Deluxe Pool</span></a>				</li>
+				<li data-order="111" data-rating="4,1815" data-rating-count="562" data-release="-62169984000">
+					<a class="game-icon game-id-1482" href="/games/disc-golf/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/discgolf.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Disc Golf spielen" title="Disc Golf spielen" width="84" height="63" /><span class="meta">Disc Golf</span></a>				</li>
+				<li data-order="112" data-rating="4,1956" data-rating-count="1457" data-release="-62169984000">
+					<a class="game-icon game-id-1486" href="/games/field-goal/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/field.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Field Goal spielen" title="Field Goal spielen" width="84" height="63" /><span class="meta">Field Goal</span></a>				</li>
+				<li data-order="113" data-rating="4,2974" data-rating-count="2498" data-release="-62169984000">
+					<a class="game-icon game-id-1490" href="/games/formula-g1/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/FormulaG1new.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Formula G1 spielen" title="Formula G1 spielen" width="84" height="63" /><span class="meta">Formula G1</span></a>				</li>
+				<li data-order="114" data-rating="4,3695" data-rating-count="4961" data-release="-62169984000">
+					<a class="game-icon game-id-1494" href="/games/free-kick-challenge/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/freekick.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Free Kick C spielen" title="Free Kick Challenge spielen" width="84" height="63" /><span class="meta">Free Kick C</span></a>				</li>
+				<li data-order="115" data-rating="3,5289" data-rating-count="346" data-release="-62169984000">
+					<a class="game-icon game-id-1498" href="/games/galactic-warrior/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/warrior.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="GalaWarrior spielen" title="Galactic Warrior spielen" width="84" height="63" /><span class="meta">GalaWarrior</span></a>				</li>
+				<li data-order="116" data-rating="3,9142" data-rating-count="804" data-release="1268352000">
+					<a class="game-icon game-id-1745" href="/games/horsey-racing/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/horseyracing.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Horsey Raci spielen" title="Horsey Racing spielen" width="84" height="63" /><span class="meta">Horsey Raci</span></a>				</li>
+				<li data-order="117" data-rating="4,2957" data-rating-count="717" data-release="1314748800">
+					<a class="game-icon game-id-2985" href="/games/little-fins/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/littlefins.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Little Fins spielen" title="Little Fins spielen" width="84" height="63" /><span class="meta">Little Fins</span></a>				</li>
+				<li data-order="118" data-rating="4,3519" data-rating-count="378" data-release="1323820800">
+					<a class="game-icon game-id-3108" href="/games/penguin-pusher/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/penguinpusher.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Penguin Push spielen" title="Penguin Pusher spielen" width="84" height="63" /><span class="meta">Penguin Push</span></a>				</li>
+				<li data-order="119" data-rating="4,1978" data-rating-count="3402" data-release="1259107200">
+					<a class="game-icon game-id-2072" href="/games/snowmen-parade/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/snowmenparade.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowmen Parade spielen" title="Snowmen Parade spielen" width="84" height="63" /><span class="meta">Snowmen Parade</span></a>				</li>
+				<li data-order="120" data-rating="4,1417" data-rating-count="480" data-release="1240444800">
+					<a class="game-icon game-id-2064" href="/games/spider-game/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/spidergame.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Spider Game spielen" title="Spider Game spielen" width="84" height="63" /><span class="meta">Spider Game</span></a>				</li>
+				<li data-order="121" data-rating="4,2989" data-rating-count="281" data-release="-62169984000">
+					<a class="game-icon game-id-1691" href="/games/stuntman/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/stuntman.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stuntman spielen" title="Stuntman spielen" width="84" height="63" /><span class="meta">Stuntman</span></a>				</li>
+				<li data-order="122" data-rating="4,062" data-rating-count="129" data-release="-62169984000">
+					<a class="game-icon game-id-1438" href="/games/blobs/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/blobs.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blobs spielen" title="Blobs spielen" width="84" height="63" /><span class="meta">Blobs</span></a>				</li>
+				<li data-order="123" data-rating="4,1691" data-rating-count="207" data-release="-62169984000">
+					<a class="game-icon game-id-1481" href="/games/detonator/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/detonator.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Detonator spielen" title="Detonator spielen" width="84" height="63" /><span class="meta">Detonator</span></a>				</li>
+				<li data-order="124" data-rating="3,9887" data-rating-count="1417" data-release="-62169984000">
+					<a class="game-icon game-id-1693" href="/games/elastic-soccer/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/elasticsoccer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elastic Socc spielen" title="Elastic Soccer spielen" width="84" height="63" /><span class="meta">Elastic Socc</span></a>				</li>
+				<li data-order="125" data-rating="4,124" data-rating-count="1847" data-release="-62169984000">
+					<a class="game-icon game-id-1489" href="/games/flip-words/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/flipwords.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip Words spielen" title="Flip Words spielen" width="84" height="63" /><span class="meta">Flip Words</span></a>				</li>
+				<li data-order="126" data-rating="4,2879" data-rating-count="1240" data-release="-62169984000">
+					<a class="game-icon game-id-1496" href="/games/fruit-smash/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/fruitsmash.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fruit Smash spielen" title="Fruit Smash spielen" width="84" height="63" /><span class="meta">Fruit Smash</span></a>				</li>
+				<li data-order="127" data-rating="4,103" data-rating-count="602" data-release="-62169984000">
+					<a class="game-icon game-id-1500" href="/games/gravity/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/gravity.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gravity spielen" title="Gravity spielen" width="84" height="63" /><span class="meta">Gravity</span></a>				</li>
+				<li data-order="128" data-rating="4,2429" data-rating-count="424" data-release="-62169984000">
+					<a class="game-icon game-id-1512" href="/games/hexxagon/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hexxagon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hexxagon spielen" title="Hexxagon spielen" width="84" height="63" /><span class="meta">Hexxagon</span></a>				</li>
+				<li data-order="129" data-rating="2,5" data-rating-count="0" data-release="1346112000">
+					<a class="game-icon game-id-3326" href="/games/math-blaster/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/mathblasterv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Math Blaster spielen" title="Math Blaster spielen" width="84" height="63" /><span class="meta">Math Blaster</span></a>				</li>
+				<li data-order="130" data-rating="4,4005" data-rating-count="7274" data-release="1184803200">
+					<a class="game-icon game-id-1818" href="/games/table-tennis-tournament/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/tabletennistrmt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Table Tennis spielen" title="Table Tennis spielen" width="84" height="63" /><span class="meta">Table Tennis</span></a>				</li>
+				<li data-order="131" data-rating="4,3172" data-rating-count="227" data-release="-62169984000">
+					<a class="game-icon game-id-1415" href="/games/alien-abduction/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/abduction.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Alien Abductio spielen" title="Alien Abduction spielen" width="84" height="63" /><span class="meta">Alien Abductio</span></a>				</li>
+				<li data-order="132" data-rating="4,0207" data-rating-count="675" data-release="-62169984000">
+					<a class="game-icon game-id-1422" href="/games/ask-guru-joe/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/askjoe.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ask Guru Joe spielen" title="Ask Guru Joe spielen" width="84" height="63" /><span class="meta">Ask Guru Joe</span></a>				</li>
+				<li data-order="133" data-rating="4,0477" data-rating-count="1257" data-release="-62169984000">
+					<a class="game-icon game-id-1424" href="/games/bad-apple/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/badapple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bad Apple spielen" title="Bad Apple spielen" width="84" height="63" /><span class="meta">Bad Apple</span></a>				</li>
+				<li data-order="134" data-rating="4,2795" data-rating-count="2519" data-release="-62169984000">
+					<a class="game-icon game-id-1689" href="/games/beat-the-wall/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/beat.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Beat The W spielen" title="Beat The Wall spielen" width="84" height="63" /><span class="meta">Beat The W</span></a>				</li>
+				<li data-order="135" data-rating="3,9779" data-rating-count="1130" data-release="-62169984000">
+					<a class="game-icon game-id-1447" href="/games/bullseye/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bull.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bullseye spielen" title="Bullseye spielen" width="84" height="63" /><span class="meta">Bullseye</span></a>				</li>
+				<li data-order="136" data-rating="4,2785" data-rating-count="219" data-release="-62169984000">
+					<a class="game-icon game-id-1449" href="/games/bush-aerobics/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bushaerobics.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bush Aerob spielen" title="Bush Aerobics spielen" width="84" height="63" /><span class="meta">Bush Aerob</span></a>				</li>
+				<li data-order="137" data-rating="4,366" data-rating-count="265" data-release="-62169984000">
+					<a class="game-icon game-id-1453" href="/games/cable-capers-2/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cablecapers2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cable Cape spielen" title="Cable Capers 2 spielen" width="84" height="63" /><span class="meta">Cable Cape</span></a>				</li>
+				<li data-order="138" data-rating="4,3074" data-rating-count="1630" data-release="-62169984000">
+					<a class="game-icon game-id-1456" href="/games/caravan-racers/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/caravanracers.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="CaravanRaers spielen" title="Caravan Racers spielen" width="84" height="63" /><span class="meta">CaravanRaers</span></a>				</li>
+				<li data-order="139" data-rating="3,8727" data-rating-count="165" data-release="-62169984000">
+					<a class="game-icon game-id-1466" href="/games/click-and-slide/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/click.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Click & Slide spielen" title="Click & Slide spielen" width="84" height="63" /><span class="meta">Click & Slide</span></a>				</li>
+				<li data-order="140" data-rating="4,1283" data-rating-count="226" data-release="-62169984000">
+					<a class="game-icon game-id-1474" href="/games/dance-2-the-beat/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/dance2beat.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dance 2 th spielen" title="Dance 2 the Beat spielen" width="84" height="63" /><span class="meta">Dance 2 th</span></a>				</li>
+				<li data-order="141" data-rating="4,1059" data-rating-count="85" data-release="-62169984000">
+					<a class="game-icon game-id-1495" href="/games/frendz/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/friendz.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Frendz spielen" title="Frendz spielen" width="84" height="63" /><span class="meta">Frendz</span></a>				</li>
+				<li data-order="142" data-rating="3,6698" data-rating-count="321" data-release="-62169984000">
+					<a class="game-icon game-id-1497" href="/games/galactic-goobers/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/galacticgoobers.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Galactic G spielen" title="Galactic Goobers spielen" width="84" height="63" /><span class="meta">Galactic G</span></a>				</li>
+				<li data-order="143" data-rating="3,8128" data-rating-count="187" data-release="-62169984000">
+					<a class="game-icon game-id-1521" href="/games/jigsaw-car/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jig1.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jigsaw-Car spielen" title="Jigsaw - Car spielen" width="84" height="63" /><span class="meta">Jigsaw-Car</span></a>				</li>
+				<li data-order="144" data-rating="3,8258" data-rating-count="155" data-release="-62169984000">
+					<a class="game-icon game-id-1522" href="/games/jigsaw-ocean/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/jig2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jigsaw-Ocean spielen" title="Jigsaw - Ocean spielen" width="84" height="63" /><span class="meta">Jigsaw-Ocean</span></a>				</li>
+				<li data-order="145" data-rating="4,3546" data-rating-count="502" data-release="1348185600">
+					<a class="game-icon game-id-3554" href="/games/cinderella-midnight-dash/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cinderellamidnightdashv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Midnight Dash spielen" title="Cinderella Midnight Dash spielen" width="84" height="63" /><span class="meta">Midnight Dash</span></a>				</li>
+				<li data-order="146" data-rating="4,5065" data-rating-count="697" data-release="1306195200">
+					<a class="game-icon game-id-2711" href="/games/decajump/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/decajump.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="DecaJump spielen" title="DecaJump spielen" width="84" height="63" /><span class="meta">DecaJump</span></a>				</li>
+				<li data-order="147" data-rating="4,49" data-rating-count="800" data-release="1318204800">
+					<a class="game-icon game-id-2941" href="/games/dino-quake/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/dinoquake.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dino Quake spielen" title="Dino Quake spielen" width="84" height="63" /><span class="meta">Dino Quake</span></a>				</li>
+				<li data-order="148" data-rating="2,5" data-rating-count="0" data-release="1317081600">
+					<a class="game-icon game-id-2777" href="/games/jump-start/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/jumpstartv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jump Start spielen" title="Jump Start spielen" width="84" height="63" /><span class="meta">Jump Start</span></a>				</li>
+				<li data-order="149" data-rating="4,2437" data-rating-count="119" data-release="1316649600">
+					<a class="game-icon game-id-2437" href="/games/k-million/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/kmillion.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="K million spielen" title="K million spielen" width="84" height="63" /><span class="meta">K million</span></a>				</li>
+				<li data-order="150" data-rating="4,462" data-rating-count="645" data-release="1314921600">
+					<a class="game-icon game-id-2745" href="/games/nat-geo-animal-jam/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/animaljam8.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Animal Jam spielen" title="Nat Geo Animal Jam spielen" width="84" height="63" /><span class="meta">Animal Jam</span></a>				</li>
+				<li data-order="151" data-rating="4,3462" data-rating-count="650" data-release="1343692800">
+					<a class="game-icon game-id-3396" href="/games/owl-spin/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/owlspin.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Owl Spin spielen" title="Owl Spin spielen" width="84" height="63" /><span class="meta">Owl Spin</span></a>				</li>
+				<li data-order="152" data-rating="4,4736" data-rating-count="3906" data-release="1305676800">
+					<a class="game-icon game-id-2723" href="/games/power-rangers-samurai-defense/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/powerrangers2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Power Rang spielen" title="Samurai Defense spielen" width="84" height="63" /><span class="meta">Power Rang</span></a>				</li>
+				<li data-order="153" data-rating="4,3729" data-rating-count="4441" data-release="1327449600">
+					<a class="game-icon game-id-3225" href="/games/rubble-trouble-moscow/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/rubbletroublemoscow2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="RT Moscow spielen" title="Rubble Trouble Moscow spielen" width="84" height="63" /><span class="meta">RT Moscow</span></a>				</li>
+				<li data-order="154" data-rating="4,317" data-rating-count="306" data-release="1328572800">
+					<a class="game-icon game-id-3110" href="/games/snowmans-hat/de/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/snowmanshatv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowman's Hat spielen" title="Snowman's Hat spielen" width="84" height="63" /><span class="meta">Snowman's Hat</span></a>				</li>
+				<li data-order="155" data-rating="4" data-rating-count="3" data-release="">
+					<a class="game-icon game-id-3862" href="/games/mech-mice/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Turner_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mech Mice spielen" title="Mech Mice spielen" width="84" height="63" /><span class="meta">Mech Mice</span></a>				</li>
+				<li data-order="156" data-rating="3,9316" data-rating-count="16462" data-release="">
+					<a class="game-icon game-id-4159" href="/games/zumas-revenge/de/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zuma.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zuma spielen" title="Zuma's Revenge spielen" width="84" height="63" /><span class="meta">Zuma</span></a>				</li>
+				<li data-order="157" data-rating="4,2843" data-rating-count="30230" data-release="">
+					<a class="game-icon game-id-4606" href="/games/flip-diving/de/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip Diving spielen" title="Flip Diving spielen" width="84" height="63" /><span class="meta">Flip Diving</span></a>				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="secondary">
+    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Werbung            <a href="#" rel="nofollow" class="feedback">Feedback</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-7 widget-919">
+	<header>
+		<a class="button category greedy cat-7" href="/games/genre-7/neueste-spiele/de/#t-w-c" title="Mehr Brandneu
+-Spiele">
+			Brandneu
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/de/#t-w-c" title=""><div class="notification blip offset hot">Neu!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io spielen" title="Squadd.io spielen" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4727" href="/games/guns-and-glory-heroes/de/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gunsandglory_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Guns and Glory spielen" title="Guns and Glory Heroes spielen" width="84" height="63" /><span class="meta">Guns and Glory</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4715" href="/games/basket-champs/de/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/basket_champs_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Basket Champs spielen" title="Basket Champs spielen" width="84" height="63" /><span class="meta">Basket Champs</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4650" href="/games/call-of-war/de/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/COW_MINICLIP_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Call of War spielen" title="Call of War spielen" width="84" height="63" /><span class="meta">Call of War</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4720" href="/games/street-ball-jam/de/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/StreetBall_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Street Ball spielen" title="Street Ball Jam spielen" width="84" height="63" /><span class="meta">Street Ball</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/de/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar spielen" title="Elvenar spielen" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-7/neueste-spiele/de/#t-w-c">
+			Mehr Brandneu
+		</a>
+	</footer>
+</section>
+    <section id="mpu-unit-2" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_btf" id="dfp-mpu-2" class="container-300x250"></div>
+        <p>
+            Werbung            <a href="#" rel="nofollow" class="feedback">Feedback</a>
+        </p>
+    </section>
+<section class="widget box widget-top-ten widget-919">
+    <header>
+		<a class="cat-6 button category greedy" href="/games/genre-6/-10-besten/de/">
+			Top 10 Web Games		</a>
+	</header>
+    <ol>
+		<li class="counter-1">
+			<span>1</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" data-tip="Join the Squadd in this frantic, PvP arena shooter!" data-tip-position="top" href="/games/squaddio/de/#t-w-t" title="Squadd.io spielen">Squadd.io</a>
+					</li>
+		<li class="counter-2">
+			<span>2</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" data-tip="Spiele Acht-Ball-Billard gegen Live-Spieler." data-tip-position="top" href="/games/8-ball-pool-multiplayer/de/#t-w-t" title="8 Ball Pool spielen">8 Ball Pool</a>
+					</li>
+		<li class="counter-3">
+			<span>3</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" data-tip="Online-Mehrspielerspiel in Echtzeit" data-tip-position="top" href="/games/soccer-stars-mobile/de/#t-w-t" title="Soccer Stars Mobile spielen">Soccer Stars Mobile</a>
+					</li>
+		<li class="counter-4">
+			<span>4</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/tankionlinev3.jpg" data-tip="Tanki Online ist ein kostenloses MMO-Spiel mit PvP-Schlachten in Echtzeit." data-tip-position="top" href="/games/tanki-online/de/#t-w-t" title="Tanki Online spielen">Tanki Online</a>
+					</li>
+		<li class="counter-5">
+			<span>5</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/BasketballStars_150x110.png" data-tip="Show your skills, moves and fakes to juke out your opponent and shoot for the basket! " data-tip-position="top" href="/games/basketball-stars/de/#t-w-t" title="Basketball Stars spielen">Basketball Stars</a>
+					</li>
+		<li class="counter-6">
+			<span>6</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Happy_wheels_150x110.jpg" data-tip="Choose your inadequately prepared racer, and ignore severe consequences in your desperate search for victory." data-tip-position="top" href="/games/happy-wheels/de/#t-w-t" title="Happy Wheels spielen">Happy Wheels</a>
+					</li>
+		<li class="counter-7">
+			<span>7</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" data-tip="Die Internet-Sensation! Iss kleinere Zellen und lass dich nicht von den größeren fressen!" data-tip-position="top" href="/games/agar-io/de/#t-w-t" title="Agar.io spielen">Agar.io</a>
+					</li>
+		<li class="counter-8">
+			<span>8</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" data-tip="Join International Rescue on an amazing adventure full of action, hi-tech gadgets and the mighty Thunderbirds!" data-tip-position="top" href="/games/flip-diving/de/#t-w-t" title="Flip Diving spielen">Flip Diving</a>
+					</li>
+		<li class="counter-9">
+			<span>9</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" data-tip="Build your fleet to dominate the space1.io arena. Shoot to grow and take out your opponents." data-tip-position="top" href="/games/space1io/de/#t-w-t" title="Space1.io spielen">Space1.io</a>
+					</li>
+		<li class="counter-10">
+			<span>10</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" data-tip="Tap the ball carefully trough the matching hues and collect your points along the way. " data-tip-position="top" href="/games/color-switch/de/#t-w-t" title="Color Switch spielen">Color Switch</a>
+					</li>
+    </ol>
+</section>
+<section class="widget box widget-category widget-category-2 widget-863">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/mehrspiele/de/#t-w-c" title="Mehr Multiplayer-Spiele">
+			Multiplayer		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/de/#t-w-c" title=""><div class="notification blip offset hot">Neu!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io spielen" title="Squadd.io spielen" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/de/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Empire spielen" title="Empire spielen" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/de/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Forge spielen" title="Forge of Empires spielen" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/de/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar spielen" title="Elvenar spielen" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/de/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soccer Stars  spielen" title="Soccer Stars spielen" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/de/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io spielen" title="Space1.io spielen" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/mehrspiele/de/#t-w-c">
+			Mehr Multiplayer		</a>
+	</footer>
+</section>
+	</section>
+
+	<script>
+		var category = {
+			language_id: 'en',
+			category_id: 482		};
+
+		$(function(){
+
+			$('.category-sort .button').on('click', function(e) {
+				reorder_games( 'li', '#category-games-list ul', $(this).data('order') );
+				$('.category-sort .button').removeClass('selected');
+				$(this).addClass('selected');
+				e.preventDefault();
+			});
+
+			function reorder_games(items, container, order) {
+
+				var parent = $( container );
+				var elems = parent.find( items );
+
+				elems.sort(function(a, b) {
+					return compare_element( a, b, order );
+				});
+
+				parent.append( elems );
+			}
+
+			function compare_element( a, b, value_order ) {
+
+				var value_a = parseFloat( $( a ).data( value_order ) );
+				var value_b = parseFloat( $( b ).data( value_order ) );
+
+				var direction = 1;
+				if ( value_order === 'rating' || value_order === 'rating-count' ) {
+					direction = -1;
+				}
+
+				if ( value_a > value_b ) {
+					return (1 * direction);
+				} else if ( value_a < value_b ) {
+					return (-1 * direction);
+				}
+
+				// Within the ratings order by rating count
+				if (value_order === 'rating') {
+					return compare_element( a, b, 'rating-count');
+				}
+
+				// prevent an infinite loop
+				if (value_order === 'order') {
+					return 0;
+				}
+
+				return compare_element( a, b, 'order' );
+
+			}
+
+		});
+	</script>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/de/" rel="nofollow">Spiele bei Miniclip.com</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Startseite</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone-Spiele</a></li>
+				<li><a href="/games/genre-503/" class="android">Android-Spiele</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">Spiele für deine Website</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Spiel einreichen</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Werber</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Mit dem Miniclip-Team Kontakt aufnehmen">Kontakt</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Alles über Miniclip.com">Firmenintern</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Aktuelle freie Stellen bei Miniclip.com">Karriere</a></li>
+					<li><a href="/games/page/de/internet-safety/" title="Internet-Sicherheit">Internet-Sicherheit</a></li>
+					<li><a href="/videos/">Videotipps und -tricks</a></li>
+					<li><a href="/games/de/feed.xml" rel="nofollow">RSS-Spielenachrichten</a></li>
+					<li><a href="/games/page/de/sitemap/">Websiteübersicht</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/de/terms-and-conditions/" rel="nofollow">Allgemeine Geschäftsbedingungen</a></li>
+				<li><a href="/privacy/" rel="nofollow">Privatsphäre</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Cookies</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Hilfe</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Bei Miniclip.com anmelden</h2>
+			</header>
+
+			<label>
+				<span>E-Mail-Adresse				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Passwort</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Anmelden" />
+			</label>
+			<label class="col">
+				<span class="inline">Erinnere dich an mich</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/de/">Passwort-Erinnerung</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2><em>Kostenlos</em> registrieren</h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">Schublade schließen</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/genre-482/kids/de/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-08212ccadce252e38
+	q's = 1
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGwZQXF0VG1BTTVVTDkYY","queueTime":0,"applicationTime":99,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

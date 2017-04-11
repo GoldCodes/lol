@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="hu" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json', forcePath: '/homepage'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Játékok a Miniclip.com-on - Játssz ingyenes online játékokkal</title>
+<script> 
+	_udn = ".miniclip.com"; 
+</script> 
+<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='76839421-28',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->		<meta name="description" content="Játssz ingyenes online játékokat, vicces játékokat, kirakós játékokat, akció játékokat, sportjátékokat, flash játékokat, kalandjátékokat, többrésztvevős játékokat és még többfélét" />
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/hu/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/hu/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Játékok a Miniclip.com-on - Játssz ingyenes online játékokkal"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com" />
+		<meta property="og:image" content="https://www.miniclip.com/images/bg_h1.png" />
+		<meta property="og:description" content="A Miniclip a világ legnagyobb független online játék oldala több mint 600 játékkal. Az oldalt legalább hetente kétszer frissítjük... így játszhatsz, amikor csak akarsz." />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/","dimension9":"United States","dimension8":"hu","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "hu";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "H";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/hu/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {"header_height":"3","background_color":["#FFFFFF"],"background_image":["https:\/\/static.miniclipcdn.com\/images\/takeovers\/SQD-MIN-Takeover_1600x768-2.jpg"],"internal":true,"agency":"Miniclip","client":"Miniclip","campaign":"Squadd.io - homepage","click_url":"\/\/www.miniclip.com\/games\/squaddio\/","hide_leaderboard":true,"award_marathon":false};
+            var mcto = {};
+        </script>
+        <script>var translate = {"hide":"Elrejt","show":"Mutat","full_categories_list":"Teljes kateg\u00f3ria lista","all_games_and_categories":"\u00d6sszes j\u00e1t\u00e9k \u00e9s kateg\u00f3ria","show_more_results":"T\u00f6bb eredm\u00e9nyt mutat &rsaquo;","no_comments":"Nincs hozz\u00e1sz\u00f3l\u00e1s","report":"Jelent\u00e9s","comment_like_failed":"Bocs, a hozz\u00e1sz\u00f3l\u00e1s kedvel\u00e9se nem siker\u00fclt. Pr\u00f3b\u00e1ld meg k\u00e9s\u0151bb.","comment_reporting_failed":"Bocs, a hozz\u00e1sz\u00f3l\u00e1s jelent\u00e9se nem siker\u00fclt.","the_word_is_not_allowed":"A(z) %s sz\u00f3 nincs az enged\u00e9lyezett szavak list\u00e1j\u00e1ban.","remove_red_messages":"M\u00f3dos\u00edtsd \u00fczeneted a v\u00f6r\u00f6ssel kiemelt szavak elt\u00e1vol\u00edt\u00e1s\u00e1val, ezek nem megengedettek.","enter_the_link":"Add meg a hivatkoz\u00e1s url-t","search_free_games":"Szereted az ingyenes j\u00e1t\u00e9kokat? Mi <strong>IM\u00c1DJUK<\/strong> az ingyenes j\u00e1t\u00e9kokat! Minden Miniclip j\u00e1t\u00e9knak van egy ingyenes verzi\u00f3ja, amivel j\u00e1tszhatsz itt a honlapon.","password_reset_error_email":"<strong>Hopszi!<\/strong> Nem adt\u00e1l meg e-mail c\u00edmet!","password_reset_error_username":"<strong>Bocs<\/strong> - Ez nem \u00e9rv\u00e9nyes e-mail c\u00edm.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Kapcsolj F\u00f3kusz m\u00f3dra, hogy a j\u00e1t\u00e9kra koncentr\u00e1lhass. Ezzel az aktu\u00e1lis j\u00e1t\u00e9k \u00fajraindul. Folytatod?","add_to_favorites":"Add hozz\u00e1 kedvenc j\u00e1t\u00e9kaidhoz","remove_from_favorites":"Kapd ki kedvenc j\u00e1t\u00e9kaid k\u00f6z\u00fcl","comment_autocomplete_placeholder":"Kezdj el \u00edrni \u00e9s javaslatokat adunk","new":"\u00daj","next":"k\u00f6vetkez\u0151","prev":"el\u0151z\u0151","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Hiba!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-page locale-us lang-hu browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="hu" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/hu/" rel="nofollow">Játssz a Miniclip.com-on!</a>
+			</h1>
+	<form class="search-form item" action="/games/search/hu/" target="_top">
+		<label>
+			<span class="screen-reader">Ezt keressük...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Játék keresés" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Keresés</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Regisztráció / Bejelentkezés</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Regisztrálj és jelentkezz be a Facebookkal!" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" width="44" height="32" alt="hu" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>Saját nyelveden</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/games/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/fr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/de/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/tr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/games/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/kr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games&return_post=" class="button small greedy">
+		Több	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/hu/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/hu/#t-n" class="cat-13 catgory button">
+				Akció			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/hu/#t-n" class="cat-2 catgory button">
+				Többrésztvevős			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/hu/#t-n" class="cat-1 catgory button">
+				Fejtörő			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/hu/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1194/iphone/hu/#t-n" class="cat-1194 catgory button">
+				iPhone játékok			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Több kategória</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Játék kategóriák</h2>
+	<div class="category-list">
+		<a href="/games/genre-35/3d/hu/#t-m-c" class="cat-35" title="Játssz 3D játékokat">3D</a>
+		<a href="/games/genre-13/action/hu/#t-m-c" class="cat-13" title="Játssz Akció játékokat">Akció</a>
+		<a href="/games/genre-503/android/hu/#t-m-c" class="cat-503" title="Játssz Android játékokat">Android</a>
+		<a href="/games/genre-517/arcade/hu/#t-m-c" class="cat-517" title="Játssz Arcade játékokat">Arcade</a>
+		<a href="/games/genre-1238/holidays/hu/#t-m-c" class="cat-1238" title="Játssz Ünnep
+ játékokat">Ünnep
+</a>
+		<a href="/games/genre-511/my-friends-league/hu/#t-m-c" class="cat-511" title="Játssz Barátaim ligája játékokat">Barátaim ligája</a>
+		<a href="/games/genre-525/award/hu/#t-m-c" class="cat-525" title="Játssz Díj játékokat">Díj</a>
+		<a href="/games/genre-497/buzz/hu/#t-m-c" class="cat-497" title="Játssz Dongás játékokat">Dongás</a>
+		<a href="/games/genre-1155/extrem-sportok/hu/#t-m-c" class="cat-1155" title="Játssz Extrém sportok játékokat">Extrém sportok</a>
+		<a href="/games/genre-1/puzzle/hu/#t-m-c" class="cat-1" title="Játssz Fejtörő játékokat">Fejtörő</a>
+		<a href="/games/genre-18/soccer/hu/#t-m-c" class="cat-18" title="Játssz Foci játékokat">Foci</a>
+		<a href="/games/genre-488/golf/hu/#t-m-c" class="cat-488" title="Játssz Golf játékokat">Golf</a>
+		<a href="/games/genre-490/halloween/hu/#t-m-c" class="cat-490" title="Játssz Halloween játékokat">Halloween</a>
+		<a href="/games/genre-519/fighting/hu/#t-m-c" class="cat-519" title="Játssz Harc játékokat">Harc</a>
+		<a href="/games/genre-1194/iphone/hu/#t-m-c" class="cat-1194" title="Játssz iPhone Games játékokat">iPhone játékok</a>
+		<a href="/games/genre-515/adventure/hu/#t-m-c" class="cat-515" title="Játssz Kaland játékokat">Kaland</a>
+		<a href="/games/genre-1003/karacsony/hu/#t-m-c" class="cat-1003" title="Játssz Karácsony játékokat">Karácsony</a>
+		<a href="/games/genre-1133/kartya/hu/#t-m-c" class="cat-1133" title="Játssz Kártya játékokat">Kártya</a>
+		<a href="/games/genre-1185/kreditek/hu/#t-m-c" class="cat-1185" title="Játssz Kreditek játékokat">Kreditek</a>
+		<a href="/games/genre-7/latest/hu/#t-m-c" class="cat-7" title="Játssz Legfrissebb játékokat">Legfrissebb</a>
+		<a href="/games/genre-23/top-100/hu/#t-m-c" class="cat-23" title="Játssz Legjobb 10 játékokat">Legjobb 10</a>
+		<a href="/games/genre-6/-top-10/hu/#t-m-c" class="cat-6" title="Játssz Legjobb 10 játékokat">Legjobb 10</a>
+		<a href="/games/genre-1209/london-olympics/hu/#t-m-c" class="cat-1209" title="Játssz London Olympics 2012 játékokat">2012-es londoni olimpia</a>
+		<a href="/games/genre-1201/hot-games/hu/#t-m-c" class="cat-1201" title="Játssz Menő játékok
+ játékokat">Menő játékok
+</a>
+		<a href="/games/genre-1157/motocross/hu/#t-m-c" class="cat-1157" title="Játssz Motocross játékokat">Motocross</a>
+		<a href="/games/genre-26/motorsports/hu/#t-m-c" class="cat-26" title="Játssz Motorsportok játékokat">Motorsportok</a>
+		<a href="/games/genre-1151/mutatvany/hu/#t-m-c" class="cat-1151" title="Játssz Mutatvány játékokat">Mutatvány</a>
+		<a href="/games/genre-40/platform/hu/#t-m-c" class="cat-40" title="Játssz Platform játékokat">Platform</a>
+		<a href="/games/genre-14/political/hu/#t-m-c" class="cat-14" title="Játssz Politikai játékokat">Politikai</a>
+		<a href="/games/genre-513/pool/hu/#t-m-c" class="cat-513" title="Játssz Pool játékokat">Pool</a>
+		<a href="/games/genre-5/shoot-em-up/hu/#t-m-c" class="cat-5" title="Játssz Puffantsd le mind játékokat">Puffantsd le mind</a>
+		<a href="/games/genre-1143/puszttas/hu/#t-m-c" class="cat-1143" title="Játssz Pusztítás
+ játékokat">Pusztítás
+</a>
+		<a href="/games/genre-1001/rogbi/hu/#t-m-c" class="cat-1001" title="Játssz Rögbi játékokat">Rögbi</a>
+		<a href="/games/genre-521/flying/hu/#t-m-c" class="cat-521" title="Játssz Repülés játékokat">Repülés</a>
+		<a href="/games/genre-3/sport/hu/#t-m-c" class="cat-3" title="Játssz Sportok játékokat">Sportok</a>
+		<a href="/games/genre-482/kids/hu/#t-m-c" class="cat-482" title="Játssz Srácok játékokat">Srácok</a>
+		<a href="/games/genre-523/strategy/hu/#t-m-c" class="cat-523" title="Játssz Stratégia játékokat">Stratégia</a>
+		<a href="/games/genre-1109/szo/hu/#t-m-c" class="cat-1109" title="Játssz Szó
+ játékokat">Szó
+</a>
+		<a href="/games/genre-4/tl/hu/#t-m-c" class="cat-4" title="Játssz Tél játékokat">Tél</a>
+		<a href="/games/genre-2/multiplayer/hu/#t-m-c" class="cat-2" title="Játssz Többrésztvevős játékokat">Többrésztvevős</a>
+		<a href="/games/genre-484/tennis/hu/#t-m-c" class="cat-484" title="Játssz Tenisz játékokat">Tenisz</a>
+		<a href="/games/genre-1145/torony-vedelem/hu/#t-m-c" class="cat-1145" title="Játssz Torony védelem játékokat">Torony védelem</a>
+		<a href="/games/genre-477/racing/hu/#t-m-c" class="cat-477" title="Játssz Verseny játékokat">Verseny</a>
+		<a href="/games/genre-432/webmaster-games/hu/#t-m-c" class="cat-432" title="Játssz Webmester játékok játékokat">Webmester játékok</a>
+		<a href="/games/genre-1149/zombi/hu/#t-m-c" class="cat-1149" title="Játssz Zombi játékokat">Zombi</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Több menő cucc</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip blog" class="feed">
+					Miniclip blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/hu/downloadable-games/#t-m-s" title="Tölts le játékokat, hogy az asztalodon játszhass!" class="download">
+					Játékok letöltése				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Szerezz ingyenes Miniclip játékokat SAJÁT honlapodra!" class="webmasters">
+					Ingyenes honlap játékok				</a>
+			</li>
+			<li>
+				<a href="/videos/hu/#t-m-s" class="videos">
+					Videó tippek és trükkök				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Súgó				</a>
+			</li>
+			<li >
+				<a href="/games/page/hu/internet-safety/" rel="nofollow">
+					Internet biztonság				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Titoktartási nyilatkozat				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Csatlakozz a Minicliphez!</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Kedveld a Miniclipet a Facebookon" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Kövesd a Miniclipet a Twitteren" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Miniclip a Google+-on" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="Nézz Miniclip videókat a YouTube-on" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div data-pw-desk="leaderboard_atf"></div>
+				<div class="container">
+<section class="primary">
+<div class="widget widget-size-2 box widget-game-scroller widget-921">
+	<article>
+		<a href="/games/squaddio/hu/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/SQD-MIN-Carousel_444x287_20170320.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Squadd.io" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/guns-and-glory-heroes/hu/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/gunsandglory_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Guns and Glory Heroes" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/basket-champs/hu/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/basket_champs_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Basket Champs" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/call-of-war/hu/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/COW_MINICLIP3_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Call of War" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/street-ball-jam/hu/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/StreetBall_444X287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Street Ball Jam" />
+		</a>
+	</article>
+	<nav>
+<a data-tip="Squadd.io" data-slide="#slide_1" class="tooltip game-icon game-id-4718" href="/games/squaddio/hu/#t-l-gs1" title=""><div class="notification blip offset hot">Új!</div><img src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" alt="Squadd.io játék" title="Squadd.io játék" width="84" height="63" /></a><a data-tip="Guns and Glory Heroes" data-slide="#slide_2" class="tooltip game-icon game-id-4727" href="/games/guns-and-glory-heroes/hu/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/gunsandglory_150x110.jpg" alt="Guns and Glory játék" title="Guns and Glory Heroes játék" width="84" height="63" /></a><a data-tip="Basket Champs" data-slide="#slide_3" class="tooltip game-icon game-id-4715" href="/games/basket-champs/hu/#t-l-gs1" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/basket_champs_150x110.jpg" alt="Basket Champs játék" title="Basket Champs játék" width="84" height="63" /></a><a data-tip="Call of War" data-slide="#slide_4" class="tooltip game-icon game-id-4650" href="/games/call-of-war/hu/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/COW_MINICLIP_150x110.jpg" alt="Call of War játék" title="Call of War játék" width="84" height="63" /></a><a data-tip="Street Ball Jam" data-slide="#slide_5" class="tooltip game-icon game-id-4720" href="/games/street-ball-jam/hu/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/StreetBall_150x110.jpg" alt="Street Ball játék" title="Street Ball Jam játék" width="84" height="63" /></a>	</nav>
+</div><section class="widget box widget-category widget-category-1201 widget-818">
+	<header>
+		<a class="button category greedy cat-1201" href="/games/genre-1201/hot-games/hu/#t-w-c" title="Több Menő játékok
+ játék">
+			Menő játékok
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-2471" href="/games/8-ball-pool-multiplayer/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="8 Ball Pool játék" title="8 Ball Pool játék" width="84" height="63" /><span class="meta">8 Ball Pool</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4400" href="/games/happy-wheels/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Happy_wheels_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Happy Wheels játék" title="Happy Wheels játék" width="84" height="63" /><span class="meta">Happy Wheels</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4606" href="/games/flip-diving/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip Diving játék" title="Flip Diving játék" width="84" height="63" /><span class="meta">Flip Diving</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4660" href="/games/mx-nitro/hu/#t-w-c" title=""><div class="notification blip offset positive">Frissített</div><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/mx_nitro_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="MX Nitro játék" title="MX Nitro játék" width="84" height="63" /><span class="meta">MX Nitro</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-1201/hot-games/hu/#t-w-c">
+			Több Menő játékok
+		</a>
+	</footer>
+</section>
+<section class="widget box widget-top-ten widget-818">
+    <header>
+		<a class="cat-6 button category greedy" href="/games/genre-6/-top-10/hu/">
+			Top 10 Web Games		</a>
+	</header>
+    <ol>
+		<li class="counter-1">
+			<span>1</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" data-tip="Join the Squadd in this frantic, PvP arena shooter!" data-tip-position="top" href="/games/squaddio/hu/#t-w-t" title="Squadd.io játék">Squadd.io</a>
+					</li>
+		<li class="counter-2">
+			<span>2</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" data-tip="Lődd be a nyolc biliárdgolyót valódi játékosok ellen!" data-tip-position="top" href="/games/8-ball-pool-multiplayer/hu/#t-w-t" title="8 Ball Pool játék">8 Ball Pool</a>
+					</li>
+		<li class="counter-3">
+			<span>3</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" data-tip="Valós idejű online többszereplős játék" data-tip-position="top" href="/games/soccer-stars-mobile/hu/#t-w-t" title="Soccer Stars Mobile játék">Soccer Stars Mobile</a>
+					</li>
+		<li class="counter-4">
+			<span>4</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/tankionlinev3.jpg" data-tip="A Tanki Online egy ingyenes MMO-játék valós idejű PvP-csatákkal." data-tip-position="top" href="/games/tanki-online/hu/#t-w-t" title="Tanki Online játék">Tanki Online</a>
+					</li>
+		<li class="counter-5">
+			<span>5</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/BasketballStars_150x110.png" data-tip="Show your skills, moves and fakes to juke out your opponent and shoot for the basket! " data-tip-position="top" href="/games/basketball-stars/hu/#t-w-t" title="Basketball Stars játék">Basketball Stars</a>
+					</li>
+		<li class="counter-6">
+			<span>6</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Happy_wheels_150x110.jpg" data-tip="Choose your inadequately prepared racer, and ignore severe consequences in your desperate search for victory." data-tip-position="top" href="/games/happy-wheels/hu/#t-w-t" title="Happy Wheels játék">Happy Wheels</a>
+					</li>
+		<li class="counter-7">
+			<span>7</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" data-tip="Itt a gyorsan terjedő szenzáció! Fald be a nálad kisebb sejteket és ne hagyd, hogy a nagyobbak megegyenek!" data-tip-position="top" href="/games/agar-io/hu/#t-w-t" title="Agar.io játék">Agar.io</a>
+					</li>
+		<li class="counter-8">
+			<span>8</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" data-tip="Join International Rescue on an amazing adventure full of action, hi-tech gadgets and the mighty Thunderbirds!" data-tip-position="top" href="/games/flip-diving/hu/#t-w-t" title="Flip Diving játék">Flip Diving</a>
+					</li>
+		<li class="counter-9">
+			<span>9</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" data-tip="Build your fleet to dominate the space1.io arena. Shoot to grow and take out your opponents." data-tip-position="top" href="/games/space1io/hu/#t-w-t" title="Space1.io játék">Space1.io</a>
+					</li>
+		<li class="counter-10">
+			<span>10</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" data-tip="Tap the ball carefully trough the matching hues and collect your points along the way. " data-tip-position="top" href="/games/color-switch/hu/#t-w-t" title="Color Switch játék">Color Switch</a>
+					</li>
+    </ol>
+</section>
+<section class="widget box widget-category widget-category-1320 widget-812">
+	<header>
+		<a class="button category greedy cat-1320" href="/games/genre-1320/io/hu/#t-w-c" title="Több IO játék">
+			IO		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/hu/#t-w-c" title=""><div class="notification blip offset hot">Új!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io játék" title="Squadd.io játék" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io játék" title="Space1.io játék" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4349" href="/games/agar-io/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Agar.io játék" title="Agar.io játék" width="84" height="63" /><span class="meta">Agar.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3227" href="/games/snowfight-io/hu/#t-w-c" title=""><div class="notification blip offset positive">Frissített</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/snowfight_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowfight.io játék" title="Snowfight.io játék" width="84" height="63" /><span class="meta">Snowfight.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-1320/io/hu/#t-w-c">
+			Több IO játék		</a>
+	</footer>
+</section>
+	<div class="widget box widget-push-ads hp-single-1 widget-812" data-type="hp-single-1" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Játék</a>
+		</footer>
+
+
+	</div>	<div class="widget box widget-push-ads hp-double widget-812 widget-size-2" data-type="hp-double" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Játék</a>
+		</footer>
+
+
+	</div><section class="widget box widget-category widget-category-4 widget-959">
+	<header>
+		<a class="button category greedy cat-4" href="/games/genre-4/tl/hu/#t-w-c" title="Több Tél játék">
+			Tél		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4038" href="/games/ski-safari/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/skisafari2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ski Safari játék" title="Ski Safari játék" width="84" height="63" /><span class="meta">Ski Safari</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3195" href="/games/ice-temple/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/icetemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ice Temple játék" title="Ice Temple játék" width="84" height="63" /><span class="meta">Ice Temple</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4237" href="/games/fancy-snowboarding/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/fancysnowboarding_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowboard játék" title="Fancy Snowboarding játék" width="84" height="63" /><span class="meta">Snowboard</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3798" href="/games/free-running-2/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/freerunning2christmas.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Free Running2 játék" title="Free Running 2 játék" width="84" height="63" /><span class="meta">Free Running2</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-4/tl/hu/#t-w-c">
+			Több Tél játék		</a>
+	</footer>
+</section>
+<section class="widget box widget-category widget-category-3 widget-958">
+	<header>
+		<a class="button category greedy cat-3" href="/games/genre-3/sport/hu/#t-w-c" title="Több Sportok játék">
+			Sportok		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4683" href="/games/archery-king/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ARK-MIN-Icons-Icons_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Archery King játék" title="Archery King játék" width="84" height="63" /><span class="meta">Archery King</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4486" href="/games/basketball-stars/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/BasketballStars_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Basketball játék" title="Basketball Stars játék" width="84" height="63" /><span class="meta">Basketball</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4606" href="/games/flip-diving/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip Diving játék" title="Flip Diving játék" width="84" height="63" /><span class="meta">Flip Diving</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4135" href="/games/minisoccer/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/MiniSoccer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="MiniSoccer játék" title="MiniSoccer játék" width="84" height="63" /><span class="meta">MiniSoccer</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-3/sport/hu/#t-w-c">
+			Több Sportok		</a>
+	</footer>
+</section>
+<section class="widget box widget-category widget-category-519 widget-828">
+	<header>
+		<a class="button category greedy cat-519" href="/games/genre-519/fighting/hu/#t-w-c" title="Több Harc játék">
+			Harc		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4474" href="/games/fist-of-awesome/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Fist-of-Awesome_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Fist of Awesom játék" title="Fist of Awesome játék" width="84" height="63" /><span class="meta">Fist of Awesom</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4537" href="/games/wrassling/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wrassling_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wrassling játék" title="Wrassling játék" width="84" height="63" /><span class="meta">Wrassling</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-2459" href="/games/hong-kong-ninja/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hongkongninja2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hong Kong játék" title="Hong Kong Ninja játék" width="84" height="63" /><span class="meta">Hong Kong</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3824" href="/games/saloon-brawl-2/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/saloonbrawl2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="SaloonBrawl2 játék" title="Saloon Brawl 2 játék" width="84" height="63" /><span class="meta">SaloonBrawl2</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-519/fighting/hu/#t-w-c">
+			Több Harc játék		</a>
+	</footer>
+</section>
+<section class="widget box widget-category widget-category-13 widget-813">
+	<header>
+		<a class="button category greedy cat-13" href="/games/genre-13/action/hu/#t-w-c" title="Több Akció játék">
+			Akció		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-3944" href="/games/raft-wars-2/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/raftwars2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Raft Wars 2 játék" title="Raft Wars 2 játék" width="84" height="63" /><span class="meta">Raft Wars 2</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4062" href="/games/man-or-monster/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/MoM.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ManOrMonster játék" title="Man or Monster játék" width="84" height="63" /><span class="meta">ManOrMonster</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4470" href="/games/wild-wastelands/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/wild_waste_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wild Wasteland játék" title="Wild Wastelands játék" width="84" height="63" /><span class="meta">Wild Wasteland</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4431" href="/games/stealth-sniper-2/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/StealthSniper2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Sniper 2 játék" title="Stealth Sniper 2 játék" width="84" height="63" /><span class="meta">Sniper 2</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-13/action/hu/#t-w-c">
+			Több Akció		</a>
+	</footer>
+</section>
+	<div class="widget box widget-push-ads hp-single-2 widget-813" data-type="hp-single-2" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Játék</a>
+		</footer>
+
+
+	</div><section class="widget box widget-category widget-category-5 widget-821">
+	<header>
+		<a class="button category greedy cat-5" href="/games/genre-5/shoot-em-up/hu/#t-w-c" title="Több Puffantsd le mind játék">
+			Puffantsd le mind		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-2140" href="/games/commando-assault/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/CommandoAssaultnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="CD Assault játék" title="Commando Assault játék" width="84" height="63" /><span class="meta">CD Assault</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4563" href="/games/strike-force-heroes/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/strikeforceheroes_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Strike Force játék" title="Strike Force Heroes játék" width="84" height="63" /><span class="meta">Strike Force</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4390" href="/games/rot/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ROT_150x110_3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rot játék" title="Rot játék" width="84" height="63" /><span class="meta">Rot</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4508" href="/games/wingsio/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/wingsio150_110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wings.io játék" title="Wings.io játék" width="84" height="63" /><span class="meta">Wings.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-5/shoot-em-up/hu/#t-w-c">
+			Puffantsd le mind		</a>
+	</footer>
+</section>
+<section class="widget box widget-category widget-category-1 widget-820">
+	<header>
+		<a class="button category greedy cat-1" href="/games/genre-1/puzzle/hu/#t-w-c" title="Több Fejtörő játék">
+			Fejtörő		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-1445" href="/games/bubble-trouble/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bubbletroublemedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BubbleTrouble játék" title="Bubble Trouble játék" width="84" height="63" /><span class="meta">BubbleTrouble</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-1843" href="/games/bloxorz/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bloxorz20.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bloxorz játék" title="Bloxorz játék" width="84" height="63" /><span class="meta">Bloxorz</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4555" href="/games/color-switch/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Color Switch játék" title="Color Switch játék" width="84" height="63" /><span class="meta">Color Switch</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4249" href="/games/jewel-academy/hu/#t-w-c" title=""><div class="notification blip offset positive">Frissített</div><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jewel_academy_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jewel Academy játék" title="Jewel Academy játék" width="84" height="63" /><span class="meta">Jewel Academy</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-1/puzzle/hu/#t-w-c">
+			Több Fejtörő		</a>
+	</footer>
+</section>
+</section>
+
+<section class="secondary">
+    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Reklám            <a href="#" rel="nofollow" class="feedback">Vélemény</a>
+        </p>
+    </section>
+<div class="widget box no-chrome widget-top-smartphone-games tab-wrapper widget-822" data-current-tab="appleiphone" data-cookie="top-smartphone">
+	<nav class="tab-bar greedy">
+		<ul>
+			<li><a class="button cool appleiphone selected" href="#" data-panel="appleiphone" rel="nofollow">iPhone</a></li>
+			<li><a class="button cool android" href="#" data-panel="android" rel="nofollow">Android</a></li>
+		</ul>
+	</nav>
+	<div class="inner panel panel-appleiphone">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Menő!</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/basketball-stars" class="game-icon game-smartphone" target="_blank" title="Basketball Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/BasketballStars512.png" />
+					<span class="meta">Basketball Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-1194/iphone/hu/#t-w-c">
+				Több iOS játék			</a>
+		</footer>
+	</div>
+	<div class="inner panel panel-android">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Menő!</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/bowmasters" class="game-icon game-smartphone" target="_blank" title="Bowmasters">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/artwork.png" />
+					<span class="meta">Bowmasters</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-503/android/hu/#t-w-c">
+				Több Android játék			</a>
+		</footer>
+	</div>
+</div><section class="widget box widget-category widget-category-2 widget-815">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/multiplayer/hu/#t-w-c" title="Több Többrésztvevős játék">
+			Többrésztvevős		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/hu/#t-w-c" title=""><div class="notification blip offset hot">Új!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io játék" title="Squadd.io játék" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Empire játék" title="Empire játék" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Forge játék" title="Forge of Empires játék" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar játék" title="Elvenar játék" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soccer Stars  játék" title="Soccer Stars játék" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io játék" title="Space1.io játék" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/multiplayer/hu/#t-w-c">
+			Többrésztvevős		</a>
+	</footer>
+</section>
+	<div class="widget box widget-push-ads hp-sidebar widget-815" data-type="hp-sidebar" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Játék</a>
+		</footer>
+
+
+	</div><section class="widget box widget-category widget-category-477 widget-960">
+	<header>
+		<a class="button category greedy cat-477" href="/games/genre-477/racing/hu/#t-w-c" title="Több Verseny játék">
+			Verseny		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4099" href="/games/supercar-showdown/hu/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/supercarshowdown.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Supercar játék" title="Supercar Showdown játék" width="84" height="63" /><span class="meta">Supercar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3830" href="/games/turbo-racing-3/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/turboracing3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="TurboRacing3 játék" title="Turbo Racing 3 játék" width="84" height="63" /><span class="meta">TurboRacing3</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4468" href="/games/street-race-fury/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Street-Race-Fury_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Street Race játék" title="Street Race Fury játék" width="84" height="63" /><span class="meta">Street Race</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4402" href="/games/no-brakes/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/no_brakes_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="No Brakes játék" title="No Brakes játék" width="84" height="63" /><span class="meta">No Brakes</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4492" href="/games/drift-raiders/hu/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Drift-Riders_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Drift Raiders játék" title="Drift Raiders játék" width="84" height="63" /><span class="meta">Drift Raiders</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4183" href="/games/on-the-run/hu/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/OnTheRun_150x110_2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="On The Run játék" title="On The Run játék" width="84" height="63" /><span class="meta">On The Run</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-477/racing/hu/#t-w-c">
+			Több Verseny		</a>
+	</footer>
+</section>
+</section>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/hu/" rel="nofollow">Játssz a Miniclip.com-on!</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Kezdőlap</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone játékok</a></li>
+				<li><a href="/games/genre-503/" class="android">Android játékok</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">Játékok honlapodra</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Játék beküldés</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Hirdetők</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Lépj kapcsolatba a Miniclip csapattal">Lépj velünk kapcsolatba</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Minden, amit a Miniclip.com-ról tudni kell">Vállalat</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Aktuális munkalehetőségek a Miniclip.com-nál">Karrier</a></li>
+					<li><a href="/games/page/hu/internet-safety/" title="Internet biztonság">Internet biztonság</a></li>
+					<li><a href="/videos/">Videó tippek és trükkök</a></li>
+					<li><a href="/games/hu/feed.xml" rel="nofollow">RSS játék információk</a></li>
+					<li><a href="/games/page/hu/sitemap/">Oldaltérkép</a></li>
+				</ul>
+			</nav>
+		</section>
+		<section class="description">
+			<div class="column">
+				<h3>Játékok a Miniclipen</h3>
+				<p>Üdvözlünk a Miniclip.com-on, a vezető online játékoldalon, ahol elképesztő mennyiségű ingyenes online játékkal játszhatsz, beleértve akciójátékokat, sportjátékokat, fejtörő játékokat, lányoknak szóló játékokat, mobil játékokat, iPhone játékokat, Android játékokat, Windows telefon játékokat, gyerekeknek szóló játékokat, flash játékokat és még sok mást.</p>
+				<h3>A játékos játékai és eredményei</h3>
+				<p>A Miniclipen a játékban olyan játék statisztikákat vezethetsz, mint a legjobb eredmény, rangsorolás saját játékos oldaladon, és díjakat kaphatsz, ha játszol. Létrehozhatod saját Miniclip avatarod is ruhákkal és kiegészítőkkel, hogy képviseld magad vicces Miniclip játékainkban. Játszhatsz egyszemélyes játékokat vagy masszív többrésztvevős játékokat más játékosokkal a világ bármely tájáról.</p>
+			</div>
+
+			<div class="column">
+				<h3>Szórakozz a többiekkel</h3>
+				<p>Regisztrálj ingyenesen, hogy a regisztrált játékosok minden olyan előnyét kihasználhasd, mint például a legjobb eredmények, saját avatar, statisztikák, díjak és még sok minden más.</p>
+				<h3>Játssz mobil játékokkal ingyen online menet közben!</h3>
+				<p>Játszhatsz mobil játék verziókkal ingyenesen online közvetlenül a Miniclip.com-on anélkül, hogy lenne mobil telefonod. Ha van mobilod, ingyenesen kipróbálhatod a játékokat a Miniclipen, majd letöltheted őket iPhone, Android vagy Windows telefonodra, hogy út közben is játszhass!</p>
+			</div>
+		</section>
+            
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/hu/terms-and-conditions/" rel="nofollow">Felhasználási feltételek</a></li>
+				<li><a href="/privacy/" rel="nofollow">Titoktartási nyilatkozat</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Sütik</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Súgó</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Jelentkezz be a Miniclip.com-hoz</h2>
+			</header>
+
+			<label>
+				<span>E-mail cím				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Jelszó</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Bejelentkezés" />
+			</label>
+			<label class="col">
+				<span class="inline">Emlékezz rám!</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/hu/">Jelszó emlékeztető</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2>Regisztráció <em>ingyen</em></h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">bezáró csúszka</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/hu/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-08212ccadce252e38
+	q's = 0
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGxFQVl1JXFxfXEBVBlE=","queueTime":0,"applicationTime":54,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

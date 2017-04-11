@@ -1,0 +1,376 @@
+/* reset CSS */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+html,body
+{
+	width:100%;
+	height:100%;
+	box-sizing:content-box;
+	-moz-box-sizing:content-box;
+}
+
+body
+{
+	color:#222;
+	background:#fff;
+	font-family:'Oswald',Tahoma,sans-serif;
+	font-size:13px;
+	line-height:130%;
+}
+
+.button
+{
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: -moz-none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+small{font-size:80%;}
+big{font-size:120%;}
+b{font-weight:bold;}
+i{font-style:italic;}
+center{display:block;width:100%;text-align:center;}
+q{font-style:italic;opacity:0.75;position:relative;display:inline-block;margin:0px 12px 0px 8px;}
+q:before,q:after{content:'"';font-size:200%;opacity:0.5;position:absolute;top:6px;width:8px;height:8px;}
+q:before{left:-16px;}
+q:after{right:-6px;}
+
+h1,h2,h3{font-weight:bold;font-variant:small-caps;margin:6px 0px;}
+/*h1:first-letter,h2:first-letter,h3:first-letter{font-size:125%;}*/
+h1{font-size:200%;background:#222;color:#fff;padding:11px 6px 11px 6px;}
+h2{font-size:150%;border-top:2px solid #222;border-bottom:2px solid #222;padding:7px 0px 7px 0px;}
+h3{font-size:125%;}
+p{text-indent:16px;margin:6px 0px;}
+
+a,a:visited
+{
+	text-decoration:underline;
+	cursor:pointer;
+	color:#222;
+	text-shadow:0px 0px 3px rgba(0,0,0,0.2);
+}
+a:hover
+{
+	text-shadow:0px 0px 3px rgba(0,0,0,0.5);
+	color:#000;
+}
+a:active
+{
+	opacity:0.8;
+	background:transparent;
+}
+
+ul
+{
+	list-style-type:disc;
+	margin:4px;
+	margin-left:16px;
+}
+
+pre
+{
+	display:inline-block;
+	font-family:Courier,monospace;
+}
+
+#wrapper
+{
+	overflow:hidden;
+	height:100%;
+}
+
+#topBar
+{
+	background:#222;
+	color:#ccc;
+	font-size:12px;
+	text-shadow:0px 1px 1px #000;
+	height:32px;
+	text-align:center;
+}
+#topBar>div
+{
+	display:inline-block;
+	position:relative;
+	/*box-shadow:0px 0px 1px rgba(255,255,255,0.4) inset,0px -2px 4px rgba(255,255,255,0.1) inset;*/
+	border-left:2px dotted #fff;
+	padding:7px 12px;
+	z-index:1000;
+	padding-bottom:16px;
+}
+#topBar>div:first-child {border-left:none;}
+#topBar a.neat{color:#99f;}
+#topBar a{color:#fff;text-shadow:0px 0px 3px rgba(255,255,255,0.5);}
+#topBar a,#topBar .hoverer {cursor:pointer;}
+#topBar a:hover,#topBar .hoverer:hover>a{color:#fff;text-shadow:0px 0px 3px rgba(255,255,255,1);}
+#topBar a:active>a{color:#fff;text-shadow:none;}
+
+.hoverable
+{
+	text-align:left;
+	opacity:0;
+	transition:max-height 0.25s ease-out,opacity 0.25s ease-out;
+	position:absolute;
+	left:-8px;
+	top:40px;
+	max-height:0px;
+	min-width:200px;
+	background:#222;
+	overflow:hidden;
+	color:#fff;
+	border:2px solid #fff;
+	box-shadow:0px 2px 4px rgba(0,0,0,0.5);
+}
+div:hover>.hoverable
+{
+	opacity:1;
+	max-height:400px;
+}
+.hoverable>div
+{
+	padding:8px 12px;
+}
+.hoverable a
+{
+	text-shadow:none;
+	display:block;
+	text-decoration:none;
+	padding:2px 8px;
+}
+.hoverable a:nth-child(odd)
+{
+	background:rgba(255,255,255,0.05);
+}
+.hoverable a:hover
+{
+	text-shadow:none;
+	background:rgba(255,255,255,0.2);
+}
+
+
+.button
+{
+	display:inline-block;
+	cursor:pointer;
+	margin:4px;
+	border:2px solid #222;
+	box-shadow:0px 1px 0px #fff inset,0px -1px 0px rgba(0,0,0,0.25) inset,0px 0px 6px rgba(255,255,255,0.2) inset,0px 0px 6px rgba(0,0,0,0.2);
+	padding:6px 10px;
+	font-variant:small-caps;
+	background:#eee;
+}
+.button:hover
+{
+	background:#fff;
+}
+.button:active
+{
+	background:#ddd;
+	box-shadow:0px 0px 6px rgba(0,0,0,0.2) inset,0px 0px 0px 1px rgba(255,255,255,0.5),0px 0px 6px rgba(0,0,0,0.2);
+}
+
+#gameWrapper
+{
+	/*height:100%;
+	width:100%;
+	position:relative;*/
+	position:absolute;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	top:32px;
+}
+#game
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+	right:0px;
+	bottom:0px;
+	text-shadow:0px 1px 0px rgba(255,255,255,0.2),0px 0px 2px rgba(0,0,0,0.2);
+	font-size:16px;
+}
+
+.middle
+{
+	width:auto;
+	max-width:650px;
+	margin:auto;
+	position:relative;
+	padding:16px;
+}
+
+#home,#create
+{
+	line-height:125%;
+}
+#home {display:none;}
+.homeLoaded #home {display:block;}
+#create {display:none;}
+.createLoaded #create {display:block;}
+#starter {background:#222;height:8px;padding:0px;}
+#loading {text-align:center;display:none;}
+#edit {display:none;}
+#content {display:none;padding-top:8px;}
+.generatorLoading #loading {display:block;}
+.generatorLoaded #content {display:block;}
+#header
+{
+	/*background:rgba(0,0,0,0.1);*/
+	margin-bottom:32px;
+	/*border-bottom:1px solid rgba(0,0,0,0.25);*/
+}
+#info
+{
+	overflow:hidden;
+	padding-top:8px;
+}
+#gameNameAndAuthor
+{
+	/*border-bottom:1px solid rgba(0,0,0,0.25);*/
+	background:#222;color:#fff;
+	padding:6px 4px 4px 4px;
+}
+#gameName
+{
+	font-size:120%;
+	font-weight:bold;
+}
+#gameAuthor
+{
+	opacity:0.5;
+	font-size:80%;
+}
+#gameDesc
+{
+	float:left;
+	width:70%;
+	font-size:90%;
+	opacity:0.75;
+	line-height:110%;
+	padding:6px 0px;
+	/*margin-left:4px;
+	padding:8px;
+	border-left:1px solid rgba(0,0,0,0.25);*/
+}
+#settings
+{
+	float:right;
+	width:30%;
+	text-align:center;
+	border-right:8px solid #222;
+	border-bottom:4px solid #222;
+	margin-left:-24px;
+	padding:8px;
+}
+#generateButton
+{
+	display:inline-block;
+	font-size:20px;
+	margin:2px;
+}
+#settings label
+{
+	display:block;
+	text-align:right;
+	margin:4px 0px;
+}
+#settings label input
+{
+	border:1px solid #222;
+}
+
+#text
+{
+}
+#pic
+{
+	width:128px;
+	height:128px;
+	background:#fff no-repeat center center;
+	display:none;
+	position:absolute;
+	left:-128px;
+}
+
+.generation
+{
+	margin:4px 0px;
+}
+
+
+
+#host
+{
+	position:fixed;
+	right:0px;
+	bottom:0px;
+	padding:3px 6px;
+	font-size:12px;
+	z-index:1000;
+}
+
+#support
+{
+	width:160px;
+	height:600px;
+	position:absolute;
+	right:-160px;
+	top:24px;
+}
+
+/* speed things up by stripping off fancy stuff */
+#body.nofancy
+{
+	text-shadow:none !important;
+	box-shadow:none !important;
+	border-radius:0;
+	animation:none;
+}

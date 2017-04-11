@@ -1,0 +1,1735 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json', forcePath: '/pool'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>8 Ball Pool - Ücretsiz Spor
+ Oyun</title>
+<script> 
+	_udn = ".miniclip.com"; 
+</script> 
+<!-- Google Analytics Content Experiment code -->
+<script>function utmx_section(){}function utmx(){}(function(){var
+k='76839421-19',d=document,l=d.location,c=d.cookie;
+if(l.search.indexOf('utm_expid='+k)>0)return;
+function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+</script><script>utmx('url','A/B');</script>
+<!-- End of Google Analytics Content Experiment code -->		<meta name="description" content="Oyna 8 Ball Pool - Canlı oyuncularla sekiz toplu bilardo oynayın." />
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/tr/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/tr/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/games.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/credits.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="8 Ball Pool - Ücretsiz Spor
+ Oyun"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/8-ball-pool-multiplayer/tr/" />
+		<meta property="og:image" content="https://www.miniclip.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" />
+		<meta property="og:description" content="Canlı oyuncularla sekiz toplu bilardo oynayın." />
+		<meta property="og:type" content="game" />
+
+		<meta name="twitter:description" content="Canlı oyuncularla sekiz toplu bilardo oynayın.">
+		<meta name="twitter:card" content="app">
+		<meta name="twitter:app:name:iphone" content="8 Ball Pool">
+		<meta name="twitter:app:id:iphone" content="543186831">
+		<meta name="twitter:app:name:ipad" content="8 Ball Pool">
+		<meta name="twitter:app:id:ipad" content="543186831">
+		<meta name="twitter:app:name:googleplay" content="8 Ball Pool">
+		<meta name="twitter:app:id:googleplay" content="com.miniclip.eightballpool">
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style><style type="text/css">.smartphone-panel-game .action-button.big.grey a {
+width:500px;
+background-position:right center;
+}</style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/gamepage.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/8-ball-pool-multiplayer\/","dimension9":"United States","dimension8":"tr","metric1":2,"dimension1":"Guest","dimension17":"Top Titles","dimension2":"2471","dimension3":"3","dimension4":"67","dimension5":"flash11","dimension6":"8 Ball Pool"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "tr";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "G";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="tr" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/tr/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/8-ball-pool-multiplayer/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Gizle","show":"G\u00f6ster","full_categories_list":"Tam Kategori Listesi","all_games_and_categories":"T\u00fcm Oyunlar ve Kategoriler","show_more_results":"Daha fazla sonu\u00e7 g\u00f6ster &rsaquo;","no_comments":"Yorum yok","report":"Raporla","comment_like_failed":"\u00dczg\u00fcn\u00fcz, yorumu be\u011fenme ba\u015far\u0131s\u0131z oldu. L\u00fctfen biraz sonra tekrar dene.","comment_reporting_failed":"\u00dczg\u00fcn\u00fcz, yorum raporlama ba\u015far\u0131s\u0131z oldu.","the_word_is_not_allowed":"%s kelimesi kullan\u0131lmas\u0131na izin verilen kelimeler aras\u0131nda de\u011fil.","remove_red_messages":"L\u00fctfen mesaj\u0131n\u0131z\u0131 yeniden d\u00fczenleyin, k\u0131rm\u0131z\u0131 vurgulu kelimeleri kullan\u0131m\u0131na izin verilmedi\u011fi i\u00e7in \u00e7\u0131kart.","enter_the_link":"URL ba\u011flant\u0131s\u0131n\u0131 gir","search_free_games":"\u00dccretsiz oyunlar ho\u015funa m\u0131 gidiyor? \u00dccretsiz oyunlara <strong>BAYILIRIZ<\/strong>! T\u00fcm Miniclip oyunlar\u0131n\u0131n \u0130nternet sitesi \u00fczerinden oynayabilece\u011fin \u00fccretsiz s\u00fcr\u00fcmleri bulunmaktad\u0131r.","password_reset_error_email":"<strong>O-Oo!<\/strong> Bir e-posta adresi girmedin!","password_reset_error_username":"<strong>\u00dczg\u00fcn\u00fcz<\/strong> - Bu ge\u00e7erli bir e-posta gibi g\u00f6z\u00fckm\u00fcyor.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Odaklanma moduna ge\u00e7erek oyun \u00fczerine odaklan. Bu i\u015flem \u015fu anda oynad\u0131\u011f\u0131n oyunu yeniden ba\u015flatacak. Devam etmek istiyor musun?","add_to_favorites":"S\u0131k kullan\u0131lan oyunlara ekle","remove_from_favorites":"Oyununu s\u0131k kullan\u0131lanlardan kald\u0131r","comment_autocomplete_placeholder":"Yazmaya ba\u015flayarak \u00f6nerileri g\u00f6r","new":"Yeni","next":"sonraki","prev":"\u00f6nceki","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Hata!","correct_errors":"Please correct errors before proceeding.<br>"}</script><!-- Start Cooladata -->
+<script type="text/javascript">
+    (function(d,a){if(!a.__SV){var b,c,g,e;window.cooladata=a;a._i=[];a.init=function(b,c,f){function d(a,b){var c=b.split(".");2==c.length&&(a=a[c[0]],b=c[1]);a[b]=function(){a.push([b].concat(Array.prototype.slice.call(arguments,0)))}}var h=a;"undefined"!==typeof f?h=a[f]=[]:f="cooladata";g=["trackEvent","trackEventLater","trackPageload","flush","setConfig"];for(e=0;e<g.length;e++)d(h,g[e]);a._i.push([b,c,f])};a.__SV=1.2;b=d.createElement("script");b.type="text/javascript";b.async=!0;b.src="//cdn.cooladata.com/tracking/cooladata-2.1.12.min.js";c=d.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c)}})(document,window.cooladata||[]);
+    cooladata.init({
+        "app_key": "vkwzmcq3mqyc3lifuidh828ccsvtzk7c",
+        "track_pageload": true,
+        "img_src_get_request": true,
+        "user_id": false    });
+</script>
+<!-- End Cooladata -->		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "8-ball-pool-multiplayer";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-games game-id-2471 game-template-2 game-embed-19 locale-us lang-tr browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="tr" data-env="production" data-script-version="760" data-facebook-game-app-id="165073083517174">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/tr/" rel="nofollow">Miniclip.com'da Oyun Oyna</a>
+			</h1>
+	<form class="search-form item" action="/games/search/tr/" target="_top">
+		<label>
+			<span class="screen-reader">Şunu ara...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Oyunları Ara" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Ara</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Kaydol / Oturum aç</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Facebook'la Kaydol ve Oturum Aç" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" width="44" height="32" alt="tr" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>Dilinde</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/fr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/de/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/hu/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/kr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/8-ball-pool-multiplayer&return_post=" class="button small greedy">
+		Daha fazla	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/tr/#t-n" class="button category home" title="Miniclip Ana Sayfası">
+				<span>Miniclip Ana Sayfası</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/tr/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/tr/#t-n" class="cat-13 catgory button">
+				Aksiyon
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/tr/#t-n" class="cat-2 catgory button">
+				Çok Oyunculu
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/tr/#t-n" class="cat-1 catgory button">
+				Bulmaca
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/tr/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Daha Fazla Kategori</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Oyun Kategorileri</h2>
+	<div class="category-list">
+		<a href="/games/genre-35/3b/tr/#t-m-c" class="cat-35" title="3B
+ Oyunları Oyna">3B
+</a>
+		<a href="/games/genre-13/action/tr/#t-m-c" class="cat-13" title="Aksiyon
+ Oyunları Oyna">Aksiyon
+</a>
+		<a href="/games/genre-1001/amerikan-futbolu/tr/#t-m-c" class="cat-1001" title="Amerikan Futbolu
+ Oyunları Oyna">Amerikan Futbolu
+</a>
+		<a href="/games/genre-503/android/tr/#t-m-c" class="cat-503" title="Android Oyunları Oyna">Android</a>
+		<a href="/games/genre-511/my-friends-league/tr/#t-m-c" class="cat-511" title="Arkadaşlarım Ligi
+ Oyunları Oyna">Arkadaşlarım Ligi
+</a>
+		<a href="/games/genre-525/award/tr/#t-m-c" class="cat-525" title="Ödül
+ Oyunları Oyna">Ödül
+</a>
+		<a href="/games/genre-482/kids/tr/#t-m-c" class="cat-482" title="Çocuklar
+ Oyunları Oyna">Çocuklar
+</a>
+		<a href="/games/genre-2/multiplayer/tr/#t-m-c" class="cat-2" title="Çok Oyunculu
+ Oyunları Oyna">Çok Oyunculu
+</a>
+		<a href="/games/genre-1/puzzle/tr/#t-m-c" class="cat-1" title="Bulmaca
+ Oyunları Oyna">Bulmaca
+</a>
+		<a href="/games/genre-490/cadilar-bayrami/tr/#t-m-c" class="cat-490" title="Cadılar Bayramı
+ Oyunları Oyna">Cadılar Bayramı
+</a>
+		<a href="/games/genre-519/fighting/tr/#t-m-c" class="cat-519" title="Dövüş
+ Oyunları Oyna">Dövüş
+</a>
+		<a href="/games/genre-6/-top-10/tr/#t-m-c" class="cat-6" title="En İyi 10
+ Oyunları Oyna">En İyi 10
+</a>
+		<a href="/games/genre-23/top-100/tr/#t-m-c" class="cat-23" title="En İyi 100
+ Oyunları Oyna">En İyi 100
+</a>
+		<a href="/games/genre-7/latest/tr/#t-m-c" class="cat-7" title="En Son
+ Oyunları Oyna">En Son
+</a>
+		<a href="/games/genre-18/soccer/tr/#t-m-c" class="cat-18" title="Futbol
+
+ Oyunları Oyna">Futbol
+
+</a>
+		<a href="/games/genre-488/golf/tr/#t-m-c" class="cat-488" title="Golf Oyunları Oyna">Golf</a>
+		<a href="/games/genre-513/pool/tr/#t-m-c" class="cat-513" title="Havuz
+ Oyunları Oyna">Havuz
+</a>
+		<a href="/games/genre-5/shoot-em-up/tr/#t-m-c" class="cat-5" title="Hepsini Vur
+ Oyunları Oyna">Hepsini Vur
+</a>
+		<a href="/games/genre-1194/iphone/tr/#t-m-c" class="cat-1194" title="iPhone Games Oyunları Oyna">iPhone Oyunları</a>
+		<a href="/games/genre-1133/kart/tr/#t-m-c" class="cat-1133" title="Kart
+ Oyunları Oyna">Kart
+</a>
+		<a href="/games/genre-4/kis/tr/#t-m-c" class="cat-4" title="Kış Oyunları Oyna">Kış</a>
+		<a href="/games/genre-1185/krediler/tr/#t-m-c" class="cat-1185" title="Krediler
+ Oyunları Oyna">Krediler
+</a>
+		<a href="/games/genre-1145/kule-savunmasi/tr/#t-m-c" class="cat-1145" title="Kule Savunması
+ Oyunları Oyna">Kule Savunması
+</a>
+		<a href="/games/genre-1209/london-olympics/tr/#t-m-c" class="cat-1209" title="London Olympics 2012 Oyunları Oyna">2012 Londra Olimpiyatları</a>
+		<a href="/games/genre-515/macera/tr/#t-m-c" class="cat-515" title="Macera
+ Oyunları Oyna">Macera
+</a>
+		<a href="/games/genre-1157/moto-kros/tr/#t-m-c" class="cat-1157" title="Moto-kros
+ Oyunları Oyna">Moto-kros
+</a>
+		<a href="/games/genre-26/motorsports/tr/#t-m-c" class="cat-26" title="Motosiklet sporları
+ Oyunları Oyna">Motosiklet sporları
+</a>
+		<a href="/games/genre-1003/noel/tr/#t-m-c" class="cat-1003" title="Noel Oyunları Oyna">Noel</a>
+		<a href="/games/genre-517/arcade/tr/#t-m-c" class="cat-517" title="Oyun Salonu
+ Oyunları Oyna">Oyun Salonu
+</a>
+		<a href="/games/genre-40/platform/tr/#t-m-c" class="cat-40" title="Platform Oyunları Oyna">Platform</a>
+		<a href="/games/genre-14/political/tr/#t-m-c" class="cat-14" title="Politik Oyunları Oyna">Politik</a>
+		<a href="/games/genre-1201/hot-games/tr/#t-m-c" class="cat-1201" title="Sıcak Oyunlar
+ Oyunları Oyna">Sıcak Oyunlar
+</a>
+		<a href="/games/genre-1109/sozcuk/tr/#t-m-c" class="cat-1109" title="Sözcük
+ Oyunları Oyna">Sözcük
+</a>
+		<a href="/games/genre-3/sport/tr/#t-m-c" class="cat-3" title="Spor
+ Oyunları Oyna">Spor
+</a>
+		<a href="/games/genre-523/strategy/tr/#t-m-c" class="cat-523" title="Strateji
+ Oyunları Oyna">Strateji
+</a>
+		<a href="/games/genre-1238/holidays/tr/#t-m-c" class="cat-1238" title="TATİL
+ Oyunları Oyna">TATİL
+</a>
+		<a href="/games/genre-1151/tehlikeli-sahne/tr/#t-m-c" class="cat-1151" title="Tehlikeli Sahne
+ Oyunları Oyna">Tehlikeli Sahne
+</a>
+		<a href="/games/genre-1155/tehlikeli-sporlar/tr/#t-m-c" class="cat-1155" title="Tehlikeli Sporlar
+ Oyunları Oyna">Tehlikeli Sporlar
+</a>
+		<a href="/games/genre-484/tennis/tr/#t-m-c" class="cat-484" title="Tenis
+ Oyunları Oyna">Tenis
+</a>
+		<a href="/games/genre-521/flying/tr/#t-m-c" class="cat-521" title="Uçuş
+ Oyunları Oyna">Uçuş
+</a>
+		<a href="/games/genre-497/buzz/tr/#t-m-c" class="cat-497" title="Vızıltı
+ Oyunları Oyna">Vızıltı
+</a>
+		<a href="/games/genre-432/web-yoneticisi-oyunlari/tr/#t-m-c" class="cat-432" title="Web Yöneticisi Oyunları
+ Oyunları Oyna">Web Yöneticisi Oyunları
+</a>
+		<a href="/games/genre-477/racing/tr/#t-m-c" class="cat-477" title="Yarış
+ Oyunları Oyna">Yarış
+</a>
+		<a href="/games/genre-1143/yikim/tr/#t-m-c" class="cat-1143" title="Yıkım
+ Oyunları Oyna">Yıkım
+</a>
+		<a href="/games/genre-1149/zombi/tr/#t-m-c" class="cat-1149" title="Zombi
+ Oyunları Oyna">Zombi
+</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Daha Fazla İlginç Şeyler</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip Blog" class="feed">
+					Miniclip Blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/tr/downloadable-games/#t-m-s" title="Masaüstünde oynamak için oyunları indir" class="download">
+					Oyunları İndir				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Miniclip Oyunlarını İnternet Sitene için Ücretsiz Al!" class="webmasters">
+					Ücretsiz İnternet Sitesi Oyunları				</a>
+			</li>
+			<li>
+				<a href="/videos/tr/#t-m-s" class="videos">
+					Video Önerileri ve Hileler				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Yardım				</a>
+			</li>
+			<li >
+				<a href="/games/page/tr/internet-safety/" rel="nofollow">
+					İnternet Güvenliği				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Gizlilik Politikası				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Miniclip ile Bağlan</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Facebook'ta Miniclip'i beğen" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Miniclip'i Twitter'da Takip Et" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Google+'da Minclip" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="YouTube'da Miniclip Videoları izle" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+<script type="text/javascript">
+	/* disable default browser scroll down when pressing spacebar */
+	(function() {
+		jQuery(document).ready(function() {
+			if (jQuery("#game-embed").length > 0) {
+				jQuery(document).on("keydown", function (e) {
+					/* space and arrow keys */
+					var keys_to_disable = [32, 37, 38, 39, 40];
+					if (jQuery.inArray(e.which, keys_to_disable) > -1 && e.target == document.body) {
+						e.preventDefault();
+					}
+				});
+			}
+
+            /* if the sidebar was hidden by custom css, the game container width should be adjusted */
+            if (jQuery('.secondary').is(":hidden")) {
+                var minimum_witdh = 1010;
+                var sidebar_width = 337;
+                var new_width = minimum_witdh;
+
+                var current_width = jQuery('#game-content').width();
+
+                if (current_width - sidebar_width > minimum_witdh) {
+                    new_width = current_width - sidebar_width;
+                }
+
+                jQuery('#game-content').width(new_width);
+            }
+        });
+	})();
+
+	var object_id = 2471;
+	var user_id = 0;
+	var game_data = new Object();
+	game_data.game_id = 2471;
+		game_data.is_visible = 1;
+	game_data.is_internal = 0;
+
+</script>
+
+<iframe src="/games/fbshare/165073083517174/" name="fb-game-share" id="fb-game-share" frameborder="0" width="0" height="0"></iframe>
+<div class="box neutral" id="smartphone-promo">
+	<a href="http://www.miniclip.com/iphone/appstore.php?id=com.miniclip.eightballpool&platform=android&src=web&app_name=8-Ball-Pool&store_type=G" target="_blank" class="button-appstore android">
+		Android karşılığında al	</a>
+	<a href="http://www.miniclip.com/iphone/appstore.php?id=543186831&src=web&app_name=8-Ball-Pool&store_type=G" target="_blank" class="button-appstore apple">
+		iOS karşılığında al	</a>
+	<a href="http://www.miniclip.com/iphone/appstore.php?id=543186831&src=web&app_name=8-Ball-Pool&store_type=G" class="link">
+		<img src="//static.miniclipcdn.com/content/images/smartphone/icons/homepage_small/8BallPool_Icon_512x512.png" width="48" height="48" alt="8 Ball Pool" />
+		<h3>Mobil ile <strong>8 Ball Pool</strong> al</h3>
+	</a>
+</div>
+<script>
+	jQuery(function(){
+		$('.leaderboard-modal').on('click', '.tab-bar a', function(e){
+			var nav = $(this).data('nav');
+
+			if (nav != '') {
+				$('.tab-bar a.button').removeClass( 'selected' );
+				$(this).addClass( 'selected' );
+
+				if (nav === 'custom') {
+					MC.Leaderboard.changeSelection(nav, 'default', $(this).data('leaderboard-id'));
+				} else {
+					MC.Leaderboard.changeSelection(nav);
+				}
+			}
+			e.preventDefault();
+		});
+		$('#leaderboard_period').change(function(){
+			MC.Leaderboard.changeSelection(null, $(this).val());
+		});
+		// show tooltips
+		$('.highscores').on('mouseenter', '.friend-ajax-button', function(){
+			if ($(this).find('button').hasClass('remove-friend')){
+				var text = 'Remove Friend';
+			} else if ($(this).find('button').hasClass('unblock')) {
+				var text = 'Unblock';
+			} else {
+				var text = 'Add Friend';
+			}
+			$(this).parent().parent().find('.toolbox').html(text).fadeIn(200);
+		});
+		$('.highscores').on('mouseleave', '.friend-ajax-button', function(){
+			$(this).parent().parent().find('.toolbox').fadeOut(200);
+		});
+	});
+</script>
+
+<div class="body-overlay" style="display:none;"></div>
+<div class="leaderboard-modal" style="display:none;">
+	<a href="#" class="button-close" onclick="MC.Leaderboard.hide();"><span class="screen-reader">Oyuna Geri Dön</span></a>
+
+    <header>
+		<a class="game-icon game-id-2471" href="/games/8-ball-pool-multiplayer/tr/#t-u-h" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" alt="8 Ball Pool Oyna" title="8 Ball Pool Oyna" width="84" height="63" /></a>		<h2><a href="#">8 Ball Pool Leaderboard</a></h2>
+		<select id="leaderboard_period">
+			<option value="month">Aylık</option>
+			<option value="week">Haftalık</option>
+		</select>
+    </header>
+	<section>
+		<nav class="tab-bar greedy">
+			<ul>
+				<li><a class="button cool selected" data-nav="global" href="#">Dünya</a></li>
+				<li><a class="button cool" data-nav="top" href="#">All Time Top 25</a></li>
+							</ul>
+		</nav>
+
+		<!-- leaderboards content -->
+		<div class="highscores loader" id="highscores-tab-content">
+			<div class="loader"></div>
+		</div>
+
+		<a href="#" class="button hot greedy" onclick="MC.Leaderboard.hide();">Oyuna Geri Dön</a>
+
+		<div class="countdown footnote">Puan sıfırlanmasına kalan süre: <span id="leaderboard-clearing-time"></span></div>
+
+		<!-- hidden loader div -->
+		<div id="loader-holder">
+			<div class="loader"></div>
+		</div>
+	</section>
+</div>
+</div>
+
+
+<div id="game-content" style="width:1087px; margin-left:auto; margin-right:auto">
+
+
+    
+            <section id="game-container" class="box">
+		<!-- Game Mode: visible -->
+<header class="pretty game">
+	<nav class="breadcrumbs">
+		<a href="/games/tr/#t-bc-2471">Oyunlar</a> &rsaquo;
+		<a href="/games/genre-3/sport/tr/#t-bc-2471">Spor
+</a> &rsaquo;
+		<h1>8 Ball Pool</h1>
+		<div class="to-video-player-container video-walkthrough">
+			<a class="button orange small to-video-player video-player" href="#game-tabs" rel="nofollow">Oyun Videoları</a>
+		</div>
+			</nav>
+
+	<!-- <span class="users-online tooltip" data-tip="Çevrimiçi oyuncular 8 Ball Pool oynuyor" data-online="6751"></span> -->
+
+</header>
+
+<header class="pretty social">
+	<div id="like-button" class="like-facebook">
+		<fb:like href="http://www.miniclip.com/games/8-ball-pool-multiplayer/tr/" show_faces="false"  layout="button_count"  width="100"></fb:like>
+	</div>
+
+	<div id="plus-one-button" class="like-google">
+		<g:plusone size="medium"></g:plusone>
+	</div>
+</header>
+
+
+<header id="zoom-message" class="notification success greedy" style="display:none">For ideal experince, you need to zoom in to 100% or more</header><script type="text/javascript" src="//static.miniclipcdn.com/js/games/2471.js"></script>
+<!--
+<div class="maintenance-notification notification information">
+	<strong>Please Note:</strong> 8 Ball Pool will be unavailable from 02:00 GMT on Wednesday 20th February due to scheduled maintenance. We apologise for any inconvenience caused.
+</div>
+--><div id="pool-menu-before">
+	<a href="#" class="button credits-popup credits action">Bilardo Paraları Satın Al</a>
+	<a href="/credits/en/offers/?currency_id=4" class="button credits-earn credits action" target="_blank">Bilardo Paraları Kazan</a>
+</div>
+<div id="no-flash-notification" style="display: none;">
+	<div class="game-error">
+		<img src="//static.miniclipcdn.com/layout/icons/error-flash.png" width="128" height="125" border="0"/>
+		<p>Oyun oynamak için <strong>Adobe Flash Player</strong> yazılımını kurman gerekiyor <strong>8 Ball Pool</strong>. <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash Player'ı şimdi indir</a>.</p>
+		<a href="http://get.adobe.com/flashplayer/" target="_blank" class="button greedy negative">Adobe Flash Player İndir</a>
+	</div>
+</div>
+
+<div id="old-flash-notification" style="display: none;">
+	<div class="notification-bar error">
+		<p>
+			Oyun oynamak için <strong>Adobe Flash Player</strong> yazılımının güncellenmiş sürümünü kurman gerekiyor <strong>8 Ball Pool</strong>. <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash Player'ı şimdi indir</a>.		</p>
+	</div>
+    <div class="game-error-mask" style="width: 750px;">
+        <div class="game-error flash" style="height: 520px;">
+            <div class="game-error-content" style="margin-top: 170px;">
+                <span class="game-error-icon-wrap"><img src="//static.miniclipcdn.com/layout/icons/error-flash.png" width="128" height="125" border="0"/></span>
+                <div class="game-error-message">
+                    Adobe Flash Player İndirmek için Buraya Tıkla                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- proxy -->
+<div style="position:absolute;top:0px;left:-1px;" id="flashCommsWrapper">
+	<div id="flashCommsWrapperInner"></div>
+</div>
+<script type="text/javascript">
+	var flashvars				= {};
+	var params					= {};
+	params.menu					= "false";
+	params.allowScriptAccess	= "always";
+	params.id					= "flashComms";
+	var attributes				= {};
+
+		swfobject.embedSWF("https://static.miniclipcdn.com/swfcontent/components/fblbproxy.swf?forceErrorTracking=1&flags=2176&mc_gamename=8+Ball+Pool&mc_hsname=2471&mc_iconBig=8-Ball-Pool_26-02-2015medicon.jpg&mc_icon=8ballpoolmultiplayerv7smallicon.jpg&mc_negativescore=0&mc_players_site=1&mc_scoreistime=0&mc_lowscore=0&mc_width=750&mc_height=520&mc_lang=tr&mc_webmaster=0&mc_playerbutton=0&mc_v2=0&loggedin=0&mc_loggedin=0&mc_uid=0&mc_sessid=5tr8hkaacu3qn7k5lf4mrok0u2&mc_shockwave=0&mc_gameUrl=https%3A%2F%2Fstatic.miniclipcdn.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F&mc_ua=e597b99&mc_geo=us-west-2&mc_geoCode=US&vid=1&vtype=ima&m_vid=1&mc_preroll_check=1&channel=miniclip.preroll&m_channel=miniclip.midroll&s_content=0&mc_plat_id=2&mc_extra=&mc_image_cdn_path=https%3A%2F%2Favatars.miniclip.com%2F&login_allowed=1&dfp_video_url=https%253A%252F%252Fpubads.g.doubleclick.net%252Fgampad%252Fads%253Fsz%253D600x400%2526iu%253D%252F53945695%252FMiniclip_Website%252Fpreroll%2526ciu_szs%2526impl%253Ds%2526gdfp_req%253D1%2526env%253Dvp%2526output%253Dxml_vast2%2526unviewed_position_start%253D1%2526cust_params%253DgCat%25253Dcategory_3%252526gName%25253Dgame_2471%252526width%25253D750%252526height%25253D520%252526gAATF%25253Dgaatf_N%252526gDemo1%25253Ddemo1_3%252526gDemo2%25253Ddemo2_4%252526gDemo3%25253Ddemo3_U%252526gLanguage%25253Dlanguage_tr%252526gPageType%25253Dpagetype_gamepage%252526gPageUrl%25253Dhttps%25253A%25252F%25252Fwww.miniclip.com%25252Fgames%25252F8-ball-pool-multiplayer%25252Ftr%25252F%252526page_domain%25253Dgames%2526url%253D&amfhost=amf-us-west-2&host=public.new.splash2.f.us-west-2.minicliptech.com%2Cpublic.new.splash2.f.us-west-2.minicliptech.com%2Cpublic.new.splash1.f.us-west-2.minicliptech.com%2Cpublic.new.splash1.f.us-west-2.minicliptech.com%2Cpublic.new.splash3.f.us-west-2.minicliptech.com%2Cpublic.new.splash3.f.us-west-2.minicliptech.com%2Cpublic.new.splash4.f.us-west-2.minicliptech.com%2Cpublic.new.splash4.f.us-west-2.minicliptech.com&port=4000%2C80%2C4000%2C80%2C4000%2C80%2C4000%2C80&env=production&platform=miniclip&newShopItems=false&mc_promointro=1&fn=game_v3.3.37_285.swf", "flashCommsWrapperInner", "1", "1", "10.0.0", false, flashvars, params, attributes);
+	
+$(document).ready(function () {
+	$('#no-flash-notification .game-error-mask').hover(function () {
+		$(this).css('cursor','pointer');
+	});
+
+	$('#no-flash-notification .game-error-mask').click(function () {
+		getFlash();
+	});
+});
+</script><script type="text/javascript">
+
+	if ( typeof adMiniclip == 'undefined' ) {
+		var adMiniclip = null;
+	}
+
+	if (typeof quantSegs == 'undefined' ) {
+		var quantSegs = null;
+	}
+
+	var game_flashvars = {"forceErrorTracking":"1","flags":"2176","mc_gamename":"8 Ball Pool","mc_hsname":"2471","mc_iconBig":"8-Ball-Pool_26-02-2015medicon.jpg","mc_icon":"8ballpoolmultiplayerv7smallicon.jpg","mc_negativescore":"0","mc_players_site":"1","mc_scoreistime":"0","mc_lowscore":"0","mc_width":"750","mc_height":"520","mc_lang":"tr","mc_webmaster":"0","mc_playerbutton":"0","mc_v2":"0","loggedin":"0","mc_loggedin":"0","mc_uid":"0","mc_sessid":"5tr8hkaacu3qn7k5lf4mrok0u2","mc_shockwave":"0","mc_gameUrl":"https:\/\/static.miniclipcdn.com\/games\/8-ball-pool-multiplayer\/tr\/","mc_ua":"e597b99","mc_geo":"us-west-2","mc_geoCode":"US","vid":"1","vtype":"ima","m_vid":"1","mc_preroll_check":"1","channel":"miniclip.preroll","m_channel":"miniclip.midroll","s_content":"0","mc_plat_id":"2","mc_extra":"","mc_image_cdn_path":"https:\/\/avatars.miniclip.com\/","login_allowed":"1","dfp_video_url":"https%3A%2F%2Fpubads.g.doubleclick.net%2Fgampad%2Fads%3Fsz%3D600x400%26iu%3D%2F53945695%2FMiniclip_Website%2Fpreroll%26ciu_szs%26impl%3Ds%26gdfp_req%3D1%26env%3Dvp%26output%3Dxml_vast2%26unviewed_position_start%3D1%26cust_params%3DgCat%253Dcategory_3%2526gName%253Dgame_2471%2526width%253D750%2526height%253D520%2526gAATF%253Dgaatf_N%2526gDemo1%253Ddemo1_3%2526gDemo2%253Ddemo2_4%2526gDemo3%253Ddemo3_U%2526gLanguage%253Dlanguage_tr%2526gPageType%253Dpagetype_gamepage%2526gPageUrl%253Dhttps%253A%252F%252Fwww.miniclip.com%252Fgames%252F8-ball-pool-multiplayer%252Ftr%252F%2526page_domain%253Dgames%26url%3D","amfhost":"amf-us-west-2","host":"public.new.splash2.f.us-west-2.minicliptech.com,public.new.splash2.f.us-west-2.minicliptech.com,public.new.splash1.f.us-west-2.minicliptech.com,public.new.splash1.f.us-west-2.minicliptech.com,public.new.splash3.f.us-west-2.minicliptech.com,public.new.splash3.f.us-west-2.minicliptech.com,public.new.splash4.f.us-west-2.minicliptech.com,public.new.splash4.f.us-west-2.minicliptech.com","port":"4000,80,4000,80,4000,80,4000,80","env":"production","platform":"miniclip","newShopItems":"false","mc_promointro":"1","fn":"game_v3.3.37_285.swf"};
+	game_flashvars.adMiniclipVideo = adMiniclip;
+	game_flashvars.quantSegs = quantSegs;
+
+	var params = {"menu":"false","allowScriptAccess":"always","id":"test","base":"https:\/\/static.miniclipcdn.com\/games\/8-ball-pool-multiplayer\/tr\/","test":true,"allowFullScreen":"true","allowFullScreenInteractive":"true","wmode":"direct"};
+
+	var attributes = {};
+
+	var playerVersion = swfobject.getFlashPlayerVersion();
+	// if flash is not installed
+	if (playerVersion.major == 0) {
+
+		// set plugin url
+		attributes.codebase = "https://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0";
+		params.pluginurl	= "http://www.adobe.com/go/getflashplayer";
+		params.pluginspage	= "http://www.adobe.com/go/getflashplayer";
+
+		// display flash plugin required error
+		showFlashError(750,520);
+
+	} else {
+		var version = "11.5.0";
+		var width = "750";
+		var height = "520";
+		var file_name = "https://static.miniclipcdn.com/games/8-ball-pool-multiplayer/tr/gameloader.swf?v=6";
+
+		if ((playerVersion.major == 11 && playerVersion.minor < 5) || (playerVersion.major < 11)){
+			params = {
+				"menu" : "false",
+				"allowScriptAccess" : "always",
+				"id" : "test"
+			};
+		}
+
+		swfobject.embedSWF(
+            file_name,
+			"game-embed",
+			width,
+			height,
+			version,
+			"/swfcontent/expressInstall.swf",
+			game_flashvars,
+			params,
+			attributes
+		);
+	}
+</script>
+
+<div id="gm-wrap" > <div id="game-embed" style="width:750px"></div> </div>
+<nav class="menu alt" id="pool-menu-after">
+	<ul>
+		<li>
+			<a href="http://blog.miniclip.com/2014/07/11/an-8-ball-pool-starter-guide/" class="game-guide" target="_blank">
+				Oyun Kılavuzu			</a>
+		</li>
+		<li>
+			<a href="/social/8-ball-pool/forum/en/" class="comments" target="_blank">
+				Forum			</a>
+		</li>
+		<li>
+			<a href="https://miniclip.zendesk.com/forums/21566043-pool-by-miniclip" class="help" target="_blank">
+				Yardım			</a>
+		</li>
+		<li>
+			<a href="https://www.facebook.com/pages/8-Ball-Multiplayer-Pool/343669132319719" class="facebook" target="_blank">
+				8 Top Bilardo Fan Sayfası			</a>
+		</li>
+		<li>
+			<a href="/videos/watch-423/the-best-8-ball-multiplayer-pool-trickshots---part-4/en/" class="videos" target="_blank">
+				Oyun Videoları			</a>
+		</li>
+	</ul>
+</nav>
+<nav class="menu" role="navigation">
+	<ul>
+		<li>	<a href="#" id="favorite-toggle" class="tooltip drawer-open-login heart-empty" data-tip="8 Ball Pool oyununu sık kullanılanlar arasına eklemek için oturum aç" data-is-fav="no" data-game-id="2471" data-user-id="" style="z-index: 20;" rel="nofollow">Sık Kullanılanlar</a>
+    <div id="share-favorites" class="toolbox toolbox-share-favorites">
+		<a class="button-close" rel="nofollow" href="#"></a>
+		<p>Sevdiğin oyunları arkadaşlarınla paylaş!</p>
+			<ul class="social-sites">
+		<li class="share-title">Paylaş!</li><!--
+		--><li>
+			<a class="tooltip twitter" href="https://twitter.com/intent/tweet?text=Benim+Miniclip%27te+en+sevdi%C4%9Fim+%5BTHE_TINYTITLE%5D.+%C4%B0nan%C4%B1lmaz%21+%40miniclip&amp;url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-favorite-twitter%26utm_campaign%3Dsocial-favorite-share&amp;related=miniclip" target="_blank" data-tip="Twitter'da Paylaş" rel="nofollow"><span class="screen-reader">Twitter'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip facebook" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-favorite-facebook%26utm_campaign%3Dsocial-favorite-share&amp;t=8 Ball Pool" target="_blank" data-tip="Facebook'ta Paylaş" rel="nofollow"><span class="screen-reader">Facebook'ta Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip google-plus" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-favorite-google-plus%26utm_campaign%3Dsocial-favorite-share" target="_blank" data-tip="Google+'da Paylaş" rel="nofollow"><span class="screen-reader">Google+'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip email" href="mailto:?subject=I%20just%20favorited%208 Ball Pool%20on%20Miniclip.com!&body=Hey!%20I%20love%20playing%208 Ball Pool%20on%20Miniclip.com and just added it as one of my favorite games!%20Check%20it%20out:%20http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-favorite-email%26utm_campaign%3Dsocial-favorite-share" target="_blank" data-tip="E-posta ile Paylaş" rel="nofollow"><span class="screen-reader">E-posta ile Paylaş</span></a>
+		</li><!--
+		--></ul>
+    </div></li>
+		<li><div class="game-rating">
+	<div class="rate-item">
+		<span class="title">Derecelendir:</span>
+		<ul class="star-rating active-rating" data-product-type-id="2" data-product-id="2471" data-initial-rating="4">
+			<li class="star-0" data-rate="0.5"></li>
+			<li class="star-1 half-star" data-rate="1"></li>
+			<li class="star-1-5" data-rate="1.5"></li>
+			<li class="star-2 half-star" data-rate="2"></li>
+			<li class="star-2-5" data-rate="2.5"></li>
+			<li class="star-3 half-star" data-rate="3"></li>
+			<li class="star-3-5" data-rate="3.5"></li>
+			<li class="star-4 half-star" data-rate="4"></li>
+			<li class="star-4-5" data-rate="4.5"></li>
+			<li class="star-5 half-star" data-rate="5"></li>
+		</ul>
+		<div class="rated-feedback">
+			<div class="rating-message"></div>
+		</div>
+	</div>
+	<div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating" class="toolbox game-rating-toolbox" id="game-rating-id">
+		<span itemprop="itemreviewed" class="helper">8 Ball Pool</span>
+		<div>
+			<span itemprop="worstRating" class="hidden">0</span>
+			<span itemprop="ratingValue">4</span>/<span itemprop="bestRating">5</span> based on <span itemprop="reviewCount">1463116</span> değerlendirmeler		</div>
+	</div>
+
+    <div class="toolbox">
+		<a class="button-close" rel="nofollow" href="#"></a>
+		<p>Derecelendirmeni arkadaşlarınla paylaş!</p>
+			<ul class="social-sites">
+		<li class="share-title">Paylaş!</li><!--
+		--><li>
+			<a class="tooltip twitter" href="https://twitter.com/intent/tweet?text=Miniclip.com%27da+%C5%9Fimdi+%5BTHE_TINYTITLE%5D+oyununu+derecelendirdim%21+%40miniclip&amp;url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-ratings-twitter%26utm_campaign%3Dsocial-ratings-share&amp;related=miniclip" target="_blank" data-tip="Twitter'da Paylaş" rel="nofollow"><span class="screen-reader">Twitter'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip facebook" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-ratings-facebook%26utm_campaign%3Dsocial-ratings-share&amp;t=8 Ball Pool" target="_blank" data-tip="Facebook'ta Paylaş" rel="nofollow"><span class="screen-reader">Facebook'ta Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip google-plus" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-ratings-google-plus%26utm_campaign%3Dsocial-ratings-share" target="_blank" data-tip="Google+'da Paylaş" rel="nofollow"><span class="screen-reader">Google+'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip email" href="mailto:?subject=Miniclip.com%27da%20%C5%9Fimdi%20%5BTHE_TITLE%5D%20oyununu%20derecelendirdim%21&body=Hey%21%20Miniclip.com%27da%20%C5%9Fimdi%20%5BTHE_TITLE%5D%20oyununu%20derecelendirdim%21%20Sen%20de%20bir%20bak%3A%20%5BTHE%20PERMALINK%5D" target="_blank" data-tip="E-posta ile Paylaş" rel="nofollow"><span class="screen-reader">E-posta ile Paylaş</span></a>
+		</li><!--
+		--></ul>
+    </div></div></li>
+		<li>	<ul class="social-sites">
+		<li class="share-title">Paylaş!</li><!--
+		--><li>
+			<a class="tooltip twitter" href="https://twitter.com/intent/tweet?text=8+Ball+Pool+oyununda+benim+puan%C4%B1m%C4%B1+ge%C3%A7%20@miniclip&amp;url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-twitter%26utm_campaign%3Dsocial--game-share&amp;related=miniclip" target="_blank" data-tip="Twitter'da Paylaş" rel="nofollow"><span class="screen-reader">Twitter'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip facebook" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-facebook%26utm_campaign%3Dsocial--game-share&t=8 Ball Pool" target="_blank" data-tip="Facebook'ta Paylaş" rel="nofollow"><span class="screen-reader">Facebook'ta Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip google-plus" href="https://plus.google.com/share?url=http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-google-plus%26utm_campaign%3Dsocial--game-share" target="_blank" data-tip="Google+'da Paylaş" rel="nofollow"><span class="screen-reader">Google+'da Paylaş</span></a>
+		</li><!--
+		--><li>
+			<a class="tooltip email" href="mailto:?subject=I'm%20playing%208 Ball Pool%20on%20Miniclip.com!&body=8%20Ball%20Pool%20oyununda%20benim%20puan%C4%B1m%C4%B1%20ge%C3%A7.%20Check%20it%20out:%20http%3A%2F%2Fwww.miniclip.com%2Fgames%2F8-ball-pool-multiplayer%2Ftr%2F%3Futm_source%3Dgame-page%26utm_medium%3Dshare-button-email%26utm_campaign%3Dsocial--game-share" target="_blank" data-tip="E-posta ile Paylaş" rel="nofollow"><span class="screen-reader">E-posta ile Paylaş</span></a>
+		</li><!--
+		--></ul>
+</li>
+				<li><a href="/games/8-ball-pool-multiplayer/tr/focus/" class="tooltip fullscreen" data-tip="Dikkat dağıtıcıları kaldır - Odaklan modunda oyna"><span>ODAKLANMA MODU</span></a></li>
+			</ul>
+</nav>	</section>
+
+    
+	<section class="secondary">
+    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Reklam            <a href="#" rel="nofollow" class="feedback">Geri bildirim</a>
+        </p>
+    </section>
+
+<div class="widget box widget-forum widget-size-2">
+	<header class="pretty">
+		<h2>
+			<a href="/social/8-ball-pool/forum/" target="forum">
+				8 Ball Pool Forum			</a>
+		</h2>
+	</header>
+
+	<div class="forum-posts">
+			<div class="forum-post">
+				<h4><a href="http://www.miniclip.com/social/8-ball-pool/forum/en/#/discussion/24805/8-ball-pool-in-html-5-beta-signup" target="forum">Sign up for the Pool Web beta!</a></h4>
+				<img src="//avatars.miniclip.com/avatars/1100068382-200.png" /><span class="meta-data">Benjo</span>
+			</div>
+			<div class="forum-post">
+				<h4><a href="http://www.miniclip.com/social/8-ball-pool/forum/en/#/discussion/24747/post-your-current-total-winnings-and-level" target="forum">Post your winnings and level!</a></h4>
+				<img src="//graph.facebook.com/104930096601484/picture?width=200&amp;height=200" /><span class="meta-data">Poony Tung</span>
+			</div>
+			<div class="forum-post">
+				<h4><a href="http://www.miniclip.com/social/8-ball-pool/forum/en/#/discussion/14896/most-achievements-account" target="forum">The most achievements?</a></h4>
+				<img src="//avatars.miniclip.com/avatars/1493662724-200.png" /><span class="meta-data">N O O R</span>
+			</div>
+			<div class="forum-post">
+				<h4><a href="http://www.miniclip.com/social/8-ball-pool/forum/en/#/discussion/24754/new-la-championship-and-holiday-quests" target="forum">NEW Holiday Quests!</a></h4>
+				<img src="//avatars.miniclip.com/avatars/1100068382-200.png" /><span class="meta-data">Benjo</span>
+			</div>
+	</div>
+
+	<a class="button positive greedy offset action" target="forum" href="/social/8-ball-pool/forum/">Katıl</a>
+</div><div class="widget box widget-recommended-games widget-935">
+    <header class="pretty">
+        <h2>
+            Recommended        </h2>
+    </header>
+
+    <div class="inner">
+                    <ul class="games-list">
+                                    <li><a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/tr/#t-w-r-sb" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" alt="Soccer Stars  Oyna" title="Soccer Stars Oyna" width="84" height="63" /><span class="meta">Soccer Stars </span></a></li>
+                                    <li><a class="game-icon game-id-4349" href="/games/agar-io/tr/#t-w-r-sb" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" alt="Agar.io Oyna" title="Agar.io Oyna" width="84" height="63" /><span class="meta">Agar.io</span></a></li>
+                                    <li><a class="game-icon game-id-3169" href="/games/tanki-online/tr/#t-w-r-sb" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/tankionlinev3.jpg" alt="Tanki Online Oyna" title="Tanki Online Oyna" width="84" height="63" /><span class="meta">Tanki Online</span></a></li>
+                            </ul>
+            </div>
+</div>	</section>
+</div>
+
+
+<div class="container">
+<div class="more-games">	<div class="box featured-game cool">
+		<div class="inner">
+			<a class="game-icon game-id-4718" href="/games/squaddio/tr/#t-g-f" title=""><div class="notification blip offset hot">Yeni!</div><img src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" alt="Squadd.io Oyna" title="Squadd.io Oyna" width="84" height="63" /></a>			<h3><a href="/games/squaddio/tr/#t-g-f">Squadd.io</a></h3>
+			<p>Join the Squadd in this frantic, PvP arena shooter!</p>
+		</div>
+	</div>
+	<div class="box recommended-games">
+		<header class="pretty small positive">
+			<h2>Önerilen Oyunlar</h2>
+		</header>
+
+		<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4349" href="/games/agar-io/tr/#t-g-rg" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" alt="Agar.io Oyna" title="Agar.io Oyna" width="84" height="63" /><span class="meta">Agar.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4613" href="/games/8-ball-pool-millionaire-marathon/tr/#t-g-rg" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/PoolMillMarathon_OPT_150x110.png" alt="MillMarathon Oyna" title="Millionaire Marathon Oyna" width="84" height="63" /><span class="meta">MillMarathon</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4683" href="/games/archery-king/tr/#t-g-rg" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/ARK-MIN-Icons-Icons_150x110.png" alt="Archery King Oyna" title="Archery King Oyna" width="84" height="63" /><span class="meta">Archery King</span></a>		</li>
+		</ul>
+	</div>	<div class="box latest-games">
+		<header class="pretty small cool">
+			<h2>Son Oyunlar</h2>
+		</header>
+
+		<ul class="games-list inner">
+			<li>
+				<a class="game-icon game-id-4727" href="/games/guns-and-glory-heroes/tr/#t-g-rg" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/gunsandglory_150x110.jpg" alt="Guns and Glory Oyna" title="Guns and Glory Heroes Oyna" width="84" height="63" /><span class="meta">Guns and Glory</span></a>			</li>
+			<li>
+				<a class="game-icon game-id-4715" href="/games/basket-champs/tr/#t-g-rg" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/basket_champs_150x110.jpg" alt="Basket Champs Oyna" title="Basket Champs Oyna" width="84" height="63" /><span class="meta">Basket Champs</span></a>			</li>
+			<li>
+				<a class="game-icon game-id-4650" href="/games/call-of-war/tr/#t-g-rg" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/COW_MINICLIP_150x110.jpg" alt="Call of War Oyna" title="Call of War Oyna" width="84" height="63" /><span class="meta">Call of War</span></a>			</li>
+		</ul>
+	</div></div>                <section id="promo-mast" class="promo-mast">
+                    <div data-pw-desk="leaderboard_btf"></div>
+                    <div class="promo-text">
+                <span class="promo-tag">Reklam</span>
+                <span class="feedback"><a href="#" rel="nofollow" class="feedback">Geri bildirim</a></span>
+            </div>
+        </section>
+                
+	<section class="primary">
+		<div class="tab-wrapper">
+	<nav class="tab-bar" id="game-tabs">
+		<ul>
+			<li class="video-walkthrough"><a href="#" class="button cool video-player" data-panel="video-walkthrough">Video</a></li>
+
+			<li><a href="#" class="button cool info" data-panel="info" rel="nofollow">Bilgi</a></li>
+			
+					</ul>
+	</nav>
+	<div class="box tab-content panel greedy roomy panel-video-walkthrough video-walkthrough">
+		<div class="tab-stuff" id="walkthrough-player-container">
+			<h3>Video Walkthrough</h3>
+			<a class="button cool small back-to-game video-player" href="#site-header" rel="nofollow">Back to Game</a>
+			<script type="text/javascript" id="veediInit" defer="defer">
+    jQuery(document).ready(function() {
+        var _v,settings = {
+            game : "8 Ball Pool",
+            lang: jQuery('body').data('language-code'),
+            publisherId : 74653728,
+            onVideoFound :  function() {
+                jQuery('.tab-content.panel').hide();
+                jQuery('#game-tabs a.button.selected').removeClass('selected');
+                jQuery('li.video-walkthrough a.button').addClass('selected');
+                jQuery('.video-walkthrough').show();
+            },
+            onVideoNotFound : function() {
+                jQuery('.video-walkthrough').hide();
+                jQuery('#game-tabs a.button.info:first').addClass('selected');
+                jQuery('.tab-content.panel.panel-info:first').show();
+            },
+            width: 650
+        };
+        (function(settings)  {
+            var vScript = document.createElement('script');
+            vScript.type = 'text/javascript'; vScript.async = true;
+            vScript.src = 'https://www.veedi.com/player/embed/veediEmbed.js';
+            vScript.onload = function(){_v = new VeediEmbed(settings);};
+            var veedi = document.getElementById('veediInit'); veedi.parentNode.insertBefore(vScript, veedi);
+        })(settings);
+    });
+</script>		</div>
+				<div class="more-videos">
+			<a class="button cool small video-player" href="/videos/watch-423/the-best-8-ball-multiplayer-pool-trickshots---part-4/en/">More Game Videos</a>
+		</div>
+			</div>
+	<div class="box tab-content panel greedy roomy panel-info">
+			<div class="tab-stuff tab-content-controls">
+			<ul class="game-controls">
+							<li><img src="//static.miniclipcdn.com/layout/icons/game-controls/icon_c_mousemove.png" alt="fareyi hareket ettir"/> Nişan al</li>
+							<li><img src="//static.miniclipcdn.com/layout/icons/game-controls/icon_c_mouseleft.png" alt="sol fare düğmesi"/> Güç</li>
+						</ul>
+		</div>
+	
+			<div class="tab-stuff tab-content-awards">
+			<p>
+				There are <strong>119</strong> awards in <strong>8 Ball Pool</strong>.								<a class="button cool small" href="/user/all-awards/tr/" rel="nofollow">Tüm Ödülleri Görüntüle</a>
+			</p>
+			<ul class="game-awards">
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/446_50.png" width="50" height="50" alt="8 Ball Win" data-tip="<strong>8 Ball Win</strong> - Win a game of 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/447_50.png" width="50" height="50" alt="8 Ball Veteran" data-tip="<strong>8 Ball Veteran</strong> - Win 10 games of 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/448_50.png" width="50" height="50" alt="8 Ball Pro" data-tip="<strong>8 Ball Pro</strong> - Win 100 games of 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/449_50.png" width="50" height="50" alt="8 Ball Master" data-tip="<strong>8 Ball Master</strong> - Win 1000 games of 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/450_50.png" width="50" height="50" alt="Denial" data-tip="<strong>Denial</strong> - Win a game of 8 Ball Pool without your opponent getting a shot" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/451_50.png" width="50" height="50" alt="Perfect Win" data-tip="<strong>Perfect Win</strong> - Win a game of 8 Ball Pool without your opponent potting any of their balls" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/452_50.png" width="50" height="50" alt="Lightning Play" data-tip="<strong>Lightning Play</strong> - Win a game of 8 Ball Pool by potting all your balls in less than 2 minutes" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/453_50.png" width="50" height="50" alt="Max Power" data-tip="<strong>Max Power</strong> - Win a game of 8 Ball Pool while only applying maximum power to your shots!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/454_50.png" width="50" height="50" alt="Hot Streak" data-tip="<strong>Hot Streak</strong> - Win 5 games of 8 Ball Pool in a row" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/455_50.png" width="50" height="50" alt="Hotter Streak" data-tip="<strong>Hotter Streak</strong> - Win 10 games of 8 Ball Pool in a row" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/456_50.png" width="50" height="50" alt="Hottest Streak" data-tip="<strong>Hottest Streak</strong> - Win 20 games of 8 Ball Pool in a row" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/458_50.png" width="50" height="50" alt="Combination Shot" data-tip="<strong>Combination Shot</strong> - Pot one of your object balls without hitting it with the cue ball" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/459_50.png" width="50" height="50" alt="Combo Shot" data-tip="<strong>Combo Shot</strong> - Pot 3 or more of your object balls in a single shot" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/460_50.png" width="50" height="50" alt="Power Combo Shot" data-tip="<strong>Power Combo Shot</strong> - Pot 5 or more of your object balls in a single shot" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/461_50.png" width="50" height="50" alt="Veteran Potter" data-tip="<strong>Veteran Potter</strong> - Pot 100 legal balls in 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/462_50.png" width="50" height="50" alt="Pro Potter" data-tip="<strong>Pro Potter</strong> - Pot 1000 legal balls in 8 Ball Pool" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/463_50.png" width="50" height="50" alt="Master Potter" data-tip="<strong>Master Potter</strong> - Pot 10000 balls in 8 Ball Pool legally" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/464_50.png" width="50" height="50" alt="8 Ball Legend" data-tip="<strong>8 Ball Legend</strong> - Win 10,000 games" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/471_50.png" width="50" height="50" alt="Double Dip" data-tip="<strong>Double Dip</strong> - Pot 2 balls object balls in same pocket" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/472_50.png" width="50" height="50" alt="Pot 8 ball off break" data-tip="<strong>Pot 8 ball off break</strong> - Pot 8 ball off break" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/473_50.png" width="50" height="50" alt="Snooker" data-tip="<strong>Snooker</strong> - Successfully getting out of a “snooker”" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/474_50.png" width="50" height="50" alt="Half Power" data-tip="<strong>Half Power</strong> - Win while never going above half power on the cue" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/596_50.png" width="50" height="50" alt="Tournament Finalist" data-tip="<strong>Tournament Finalist</strong> - The road to the finals isn't easy, but if you make it, then this medal is yours!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/597_50.png" width="50" height="50" alt="Tournament 2nd Round" data-tip="<strong>Tournament 2nd Round</strong> - If you make it through the competition, then this award is yours!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/598_50.png" width="50" height="50" alt="1 Tournament Win" data-tip="<strong>1 Tournament Win</strong> - Win a tournament and this glorious trophy is yours!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/599_50.png" width="50" height="50" alt="5 Tournament Wins " data-tip="<strong>5 Tournament Wins </strong> - Win a tournament 5 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/600_50.png" width="50" height="50" alt="25 Tournament Wins" data-tip="<strong>25 Tournament Wins</strong> - Win a tournament 25 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/601_50.png" width="50" height="50" alt="50 Tournament Wins" data-tip="<strong>50 Tournament Wins</strong> - Win a tournament 50 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/602_50.png" width="50" height="50" alt="100 Tournament Wins" data-tip="<strong>100 Tournament Wins</strong> - Win a tournament 100 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/603_50.png" width="50" height="50" alt="200 Tournament Wins" data-tip="<strong>200 Tournament Wins</strong> - Win a tournament 200 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/604_50.png" width="50" height="50" alt="500 Tournament Wins" data-tip="<strong>500 Tournament Wins</strong> - Win a tournament 500 times for this award!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/607_50.png" width="50" height="50" alt="Underdog" data-tip="<strong>Underdog</strong> - Beat a player who is three ranks or more above you to achieve this award." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3252_50.png" width="50" height="50" alt="London Cup" data-tip="<strong>London Cup</strong> - Win the London tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3254_50.png" width="50" height="50" alt="Sydney Cup" data-tip="<strong>Sydney Cup</strong> - Win the Sydney tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3256_50.png" width="50" height="50" alt="Moscow Cup" data-tip="<strong>Moscow Cup</strong> - Win the Moscow tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3258_50.png" width="50" height="50" alt="Tokyo Cup" data-tip="<strong>Tokyo Cup</strong> - Win Tokyo Tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3262_50.png" width="50" height="50" alt="Way of Life" data-tip="<strong>Way of Life</strong> - Get to Level 100" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3264_50.png" width="50" height="50" alt="Top of the Class" data-tip="<strong>Top of the Class</strong> - Finish tutorial" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3266_50.png" width="50" height="50" alt="Sydney Mates" data-tip="<strong>Sydney Mates</strong> - Unlocking 1 vs 1 in Sydney." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3268_50.png" width="50" height="50" alt="Moscow Comrades " data-tip="<strong>Moscow Comrades </strong> - Unlocking 1 vs 1 in Moscow." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3270_50.png" width="50" height="50" alt="Tokyo Nakama" data-tip="<strong>Tokyo Nakama</strong> - Unlocking 1 on 1 in Tokyo." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3272_50.png" width="50" height="50" alt="Vegas Friends" data-tip="<strong>Vegas Friends</strong> - Unlocking 1 on 1 in Vegas" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3274_50.png" width="50" height="50" alt="London Whisper" data-tip="<strong>London Whisper</strong> - London Whisper. Play the tournament in London." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3276_50.png" width="50" height="50" alt="Sydney Rumor" data-tip="<strong>Sydney Rumor</strong> - Unlock the Sydney tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3278_50.png" width="50" height="50" alt="Moscow Story" data-tip="<strong>Moscow Story</strong> - Unlock the tournament in Moscow." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3280_50.png" width="50" height="50" alt="Tokyo Legend" data-tip="<strong>Tokyo Legend</strong> - Unlock the Tokyo Tournament." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3284_50.png" width="50" height="50" alt="Right on Cue" data-tip="<strong>Right on Cue</strong> - Buy your first cue" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3286_50.png" width="50" height="50" alt="Filthy Rich" data-tip="<strong>Filthy Rich</strong> - Buy the Millionaire cue" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3288_50.png" width="50" height="50" alt="Got the Power" data-tip="<strong>Got the Power</strong> - Buy your first power-up" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3290_50.png" width="50" height="50" alt="Third’s the Charm" data-tip="<strong>Third’s the Charm</strong> - Own all three power-ups at once" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3536_50.png" width="50" height="50" alt="Jakarta Kawan" data-tip="<strong>Jakarta Kawan</strong> - Unlocking 1 vs 1 in Jakarta." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3634_50.png" width="50" height="50" alt="Toronto Friends" data-tip="<strong>Toronto Friends</strong> - 
+Toronto Friends - Unlock 1 vs 1 in Toronto." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3644_50.png" width="50" height="50" alt="Cairo Pals" data-tip="<strong>Cairo Pals</strong> - Unlocking 1 vs 1 in Cairo
+" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3858_50.png" width="50" height="50" alt="Lucky Break" data-tip="<strong>Lucky Break</strong> - Win the Lucky 8 Cue" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3860_50.png" width="50" height="50" alt="Power of 3" data-tip="<strong>Power of 3</strong> - Win 3 free spins in a row" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/3862_50.png" width="50" height="50" alt="Better Luck next time" data-tip="<strong>Better Luck next time</strong> - Win the 1 pool coin prize" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4749_50.png" width="50" height="50" alt="Beat The Boss" data-tip="<strong>Beat The Boss</strong> - Win a game against Big Rob during a Beat The Boss event" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4773_50.png" width="50" height="50" alt="Winner Keeps It All" data-tip="<strong>Winner Keeps It All</strong> - Win an All In match" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4775_50.png" width="50" height="50" alt="Go for Broke" data-tip="<strong>Go for Broke</strong> - Lose an All In match" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4923_50.png" width="50" height="50" alt="All Mine!" data-tip="<strong>All Mine!</strong> - Take the money and run, cash out on Hi Lo." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4924_50.png" width="50" height="50" alt="Dry Run" data-tip="<strong>Dry Run</strong> - Lost on Hi Lo, bravery has a price and this it it!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4925_50.png" width="50" height="50" alt="Close Call" data-tip="<strong>Close Call</strong> - So close, so far. Lose on the last call and this award is yours!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4927_50.png" width="50" height="50" alt="Run to the Top" data-tip="<strong>Run to the Top</strong> - Win the top prize on Hi-Lo!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4928_50.png" width="50" height="50" alt="Best of Friends" data-tip="<strong>Best of Friends</strong> - Win the Friends leaderboard" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4929_50.png" width="50" height="50" alt="National Hero" data-tip="<strong>National Hero</strong> - Win the Country leaderboard" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/4930_50.png" width="50" height="50" alt="Top of the World" data-tip="<strong>Top of the World</strong> - Win the Global leaderboard" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5113_50.png" width="50" height="50" alt="Bronze Challenger" data-tip="<strong>Bronze Challenger</strong> - Promoted to the Bronze League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5114_50.png" width="50" height="50" alt="Silver Hotshot" data-tip="<strong>Silver Hotshot</strong> - Promoted to the Silver League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5115_50.png" width="50" height="50" alt="Golden Ace" data-tip="<strong>Golden Ace</strong> - Promoted to the Golden League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5116_50.png" width="50" height="50" alt="Platinum Genius" data-tip="<strong>Platinum Genius</strong> - Promoted to the Platinum League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5117_50.png" width="50" height="50" alt="Amethyst Prodigy" data-tip="<strong>Amethyst Prodigy</strong> - Promoted to the Amethyst League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5118_50.png" width="50" height="50" alt="Sapphire Wizard" data-tip="<strong>Sapphire Wizard</strong> - Promoted to the Sapphire League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5119_50.png" width="50" height="50" alt="Emerald Superstar" data-tip="<strong>Emerald Superstar</strong> - Promoted to the Emerald League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5120_50.png" width="50" height="50" alt="Ruby Master" data-tip="<strong>Ruby Master</strong> - Promoted to the Ruby League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5121_50.png" width="50" height="50" alt="Diamond Pro" data-tip="<strong>Diamond Pro</strong> - Promoted to the Diamond League" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5123_50.png" width="50" height="50" alt="London Fellows" data-tip="<strong>London Fellows</strong> - Play 1 vs 1 in London" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5124_50.png" width="50" height="50" alt="Dubai Partners" data-tip="<strong>Dubai Partners</strong> - Play 1 vs 1 in Dubai" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5125_50.png" width="50" height="50" alt="Shanghai Challengers" data-tip="<strong>Shanghai Challengers</strong> - Play 1 vs 1 in Shanghai" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5212_50.png" width="50" height="50" alt="Paris Copains" data-tip="<strong>Paris Copains</strong> - Play 1 vs 1 in Paris" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5261_50.png" width="50" height="50" alt="Rome Famiglia" data-tip="<strong>Rome Famiglia</strong> - Play 1 vs 1 in Rome" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5337_50.png" width="50" height="50" alt="Bangkok Explorers" data-tip="<strong>Bangkok Explorers</strong> - Play 1vs1 in Bangkok" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5453_50.png" width="50" height="50" alt="8 Ball Pool Forum Cup Winner" data-tip="<strong>8 Ball Pool Forum Cup Winner</strong> - Won the Official 8 Ball Pool Forum Cup!" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5520_50.png" width="50" height="50" alt="Amesterdam Party" data-tip="<strong>Amesterdam Party</strong> - Play the Amesterdam Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5521_50.png" width="50" height="50" alt="Amesterdam Cup" data-tip="<strong>Amesterdam Cup</strong> - Win the Amesterdam Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5522_50.png" width="50" height="50" alt="Barcelona Dancers" data-tip="<strong>Barcelona Dancers</strong> - Play the Barcelona Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5523_50.png" width="50" height="50" alt="Barcelona Cup" data-tip="<strong>Barcelona Cup</strong> - Win the Barcelona Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5524_50.png" width="50" height="50" alt="Rio Samba" data-tip="<strong>Rio Samba</strong> - Play the Rio Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5525_50.png" width="50" height="50" alt="Rio Cup" data-tip="<strong>Rio Cup</strong> - Win the Rio Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5526_50.png" width="50" height="50" alt="Singapore Spirit" data-tip="<strong>Singapore Spirit</strong> - Play the Singapore Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5527_50.png" width="50" height="50" alt="Singapore Cup" data-tip="<strong>Singapore Cup</strong> - Win the Singapore Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5606_50.png" width="50" height="50" alt="Seoul Crew" data-tip="<strong>Seoul Crew</strong> - Play 1 vs 1 in Seoul" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5607_50.png" width="50" height="50" alt="Mumbai Peers" data-tip="<strong>Mumbai Peers</strong> - Play 1 vs 1 in Mumbai" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5608_50.png" width="50" height="50" alt="Berlin Stars" data-tip="<strong>Berlin Stars</strong> - Play 1 vs 1 in Berlin" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5609_50.png" width="50" height="50" alt="New York Unlock" data-tip="<strong>New York Unlock</strong> - New York Unlock" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5610_50.png" width="50" height="50" alt="New York Cup" data-tip="<strong>New York Cup</strong> - New York Cup" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5659_50.png" width="50" height="50" alt="WWE Finisher" data-tip="<strong>WWE Finisher</strong> - WWE Finisher" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5660_50.png" width="50" height="50" alt="WWE Ring the Bell" data-tip="<strong>WWE Ring the Bell</strong> - WWE Ring the Bell" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5689_50.png" width="50" height="50" alt="Hong Kong Rush" data-tip="<strong>Hong Kong Rush</strong> - Play the Hong Kong Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5690_50.png" width="50" height="50" alt="Hong Kong Cup" data-tip="<strong>Hong Kong Cup</strong> - Win the Hong Kong Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5691_50.png" width="50" height="50" alt="LA Top 100" data-tip="<strong>LA Top 100</strong> - Finish in the top 100." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5692_50.png" width="50" height="50" alt="LA Top 100K" data-tip="<strong>LA Top 100K</strong> - Finish in the top 100K" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5710_50.png" width="50" height="50" alt="Chicago Jazz Party" data-tip="<strong>Chicago Jazz Party</strong> - Play the Chicago Jazz Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5711_50.png" width="50" height="50" alt="Chicago Jazz Cup" data-tip="<strong>Chicago Jazz Cup</strong> - Win the Chicago Jazz Tournament" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5727_50.png" width="50" height="50" alt="Halloween Party" data-tip="<strong>Halloween Party</strong> - Play the Halloween Challenge" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5728_50.png" width="50" height="50" alt="Halloween Cup" data-tip="<strong>Halloween Cup</strong> - Win the Halloween Challenge" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5729_50.png" width="50" height="50" alt="Happy Holidays Top 100" data-tip="<strong>Happy Holidays Top 100</strong> - Finish in the top 100" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5730_50.png" width="50" height="50" alt="Happy Holidays Top 100K" data-tip="<strong>Happy Holidays Top 100K</strong> - Finish in the top 100K" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5759_50.png" width="50" height="50" alt="Happy Holidays - Top 100" data-tip="<strong>Happy Holidays - Top 100</strong> - Awarded for ending in the Top 100 at the end of the event." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5760_50.png" width="50" height="50" alt="Happy Holidays - Top 100K" data-tip="<strong>Happy Holidays - Top 100K</strong> - Awarded for ending in the Top 100K at the end of the event." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5761_50.png" width="50" height="50" alt="Miami Rivals" data-tip="<strong>Miami Rivals</strong> - Play in Miami Beach 9-Ball" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5762_50.png" width="50" height="50" alt="9-Ball Win" data-tip="<strong>9-Ball Win</strong> - Win a 9-Ball game" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5763_50.png" width="50" height="50" alt="Golden Break" data-tip="<strong>Golden Break</strong> - Win a 9-Ball game with the breaking shot" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5764_50.png" width="50" height="50" alt="9-Ball Denial" data-tip="<strong>9-Ball Denial</strong> - Win a 9-Ball game without your opponent getting a shot" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5765_50.png" width="50" height="50" alt="New Year Special 2017 Party" data-tip="<strong>New Year Special 2017 Party</strong> - Play the New Year Special 2017" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5766_50.png" width="50" height="50" alt="New Year Special 2017 Cup" data-tip="<strong>New Year Special 2017 Cup</strong> - Win the New Year Special 2017" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5767_50.png" width="50" height="50" alt="San Francisco Golden Gate Party" data-tip="<strong>San Francisco Golden Gate Party</strong> - Play the San Francisco Golden Gate" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5768_50.png" width="50" height="50" alt="San Francisco Golden Gate Cup" data-tip="<strong>San Francisco Golden Gate Cup</strong> - Win the San Francisco Golden Gate" />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5769_50.png" width="50" height="50" alt="Havana Classic - Top 100" data-tip="<strong>Havana Classic - Top 100</strong> - Awarded for ending in the Top 100 at the end of the event." />
+				</li>
+								<li class="disabled">
+					<img class="tooltip" src="//static.miniclipcdn.com/images/awards/store/5770_50.png" width="50" height="50" alt="Havana Classic - Top 100k" data-tip="<strong>Havana Classic - Top 100k</strong> - Awarded for ending in the Top 100K at the end of the event." />
+				</li>
+							</ul>
+		</div>
+		
+				<ul class="video-icons">
+			<li>	<a href="/videos/watch-510/best-trickshots-17/tr/">
+		<img src="https://img.youtube.com/vi/lKHE6KLzviA/hqdefault.jpg" alt="Best trickshots #17! Thumbnail" title="Play Best trickshots #17!" width="208" />
+		<h3>Best trickshots #17!</h3>
+	</a>
+</li>		</ul>
+		
+				<p class="game-description">** NEW - Join the <a href="http://www.miniclip.com/social/8-ball-pool/forum/en/" target="_blank" title="8 Ball Pool Forum" > <strong> Official 8 Ball Pool Forum!</a></strong> Talk about the game, organize tournaments and 1v1 matches, make new friends, compare stats and get the latest news on the game straight from the people who make it.
+<a href="http://www.miniclip.com/social/8-ball-pool/forum/en/" target="_blank" title="8 Ball Pool Forum" > <strong> Join now!</a></strong> ** 
+<br/><br/>
+
+GÜNCELLEME: Istekalar artık güce sahip. Tüm istekalar statistik değerlerle beraber gelmekte ve yeni bir oyun deneyimi sunmakta. Daha iyi Hedef istekası ile uzatılmış kılavuz çizgiler, daha çok Güç istekası ile daha fazla atış gücü, daha fazla Faso ile ek faso etkisi veya daha fazla Zaman ile o mükemmel vuruşu yapmak için ek süre kazanabilirsiniz.
+<br/><br/>
+Canlı oyuncularla sekiz toplu bilardo oynayın.  Kazanmak için diğer toplarınızı ceplere soktuktan sonra 8 NUMARALI TOPU CEPLERE EN SON SOKUN.</p>
+		
+		
+				<a href="/webmasters/8-ball-pool-multiplayer/tr/" class="button cool webmasters">İnternet sitene ekle: 8 Ball Pool</a>
+		
+		<a href="http://support.miniclip.com" target="_blank" class="button help">Yardım</a>
+	</div>
+
+	</div>
+	</section>
+	<section class="secondary">
+		    <section id="mpu-unit-2" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_btf" id="dfp-mpu-2" class="container-300x250"></div>
+        <p>
+            Reklam            <a href="#" rel="nofollow" class="feedback">Geri bildirim</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-2 widget-895">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/multiplayer/tr/#t-w-c" title="Daha Fazla Çok Oyunculu
+ Oyunları">
+			Çok Oyunculu
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/tr/#t-w-c" title=""><div class="notification blip offset hot">Yeni!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io Oyna" title="Squadd.io Oyna" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Empire Oyna" title="Empire Oyna" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Forge Oyna" title="Forge of Empires Oyna" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar Oyna" title="Elvenar Oyna" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soccer Stars  Oyna" title="Soccer Stars Oyna" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io Oyna" title="Space1.io Oyna" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/multiplayer/tr/#t-w-c">
+			Çok Oyunculu
+		</a>
+	</footer>
+</section>
+	</section>
+<script type="text/javascript">
+    if ( typeof( credits.GetGameId() ) == 'undefined' ) {
+		credits.__init(2471, 750, 520);
+    }
+</script>
+
+
+
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/tr/" rel="nofollow">Miniclip.com'da Oyun Oyna</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Ana Sayfa</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone Oyunları</a></li>
+				<li><a href="/games/genre-503/" class="android">Android Oyunları</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">İnternet siten için Ücretsiz Oyunlar</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Bir Oyun Gönder</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Reklam verenler</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Miniclip Ekibi ile irtibata geç">Bize Ulaş</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Miniclip.com Hakkında">Kurumsal</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Miniclip.com'da Mevcut İş Olanakları">Kariyerler</a></li>
+					<li><a href="/games/page/tr/internet-safety/" title="İnternet Güvenliği">İnternet Güvenliği</a></li>
+					<li><a href="/videos/">Video Önerileri ve Hileler</a></li>
+					<li><a href="/games/tr/feed.xml" rel="nofollow">RSS Canlı Oyun Yayını</a></li>
+					<li><a href="/games/page/tr/sitemap/">Site haritası</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/tr/terms-and-conditions/" rel="nofollow">Şartlar ve Koşullar</a></li>
+				<li><a href="/privacy/" rel="nofollow">Gizlilik Politikası</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Tanımlama Bilgileri</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Yardım</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Miniclip.com'da oturum aç</h2>
+			</header>
+
+			<label>
+				<span>E-posta Adresi				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Parola</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Giriş" />
+			</label>
+			<label class="col">
+				<span class="inline">Beni Anımsa</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/tr/">Parola Anımsatıcısı</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2><em>Ücretsiz</em> Kaydol</h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong>8 Ball Pool</strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">çekmeceyi kapa</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/favorites.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/rating.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/phrases.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/autocomplete.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/share.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency/offers.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/8-ball-pool-multiplayer/tr/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-0aab09474b25a22e5
+	q's = 1
+	c's = 2
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGwRcU10CG1RXTQ==","queueTime":0,"applicationTime":133,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

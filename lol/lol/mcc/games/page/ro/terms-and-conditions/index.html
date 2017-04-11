@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Terms &amp; Conditions - Miniclip, Play Games</title>
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/en/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/page.css?823" rel="stylesheet" type="text/css" rel="stylesheet/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Terms &amp; Conditions - Miniclip, Play Games"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<meta property="og:image" content="https://www.miniclip.com/images/bg_h1.png" />
+		<meta property="og:description" content="Miniclip is the world's largest independent online games site with over 600 games. The site is updated at least twice a week...so you can get your gaming fix whenever you want it." />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/js_head.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/js.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/page\/terms-and-conditions\/","dimension9":"United States","dimension8":"en","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "P";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/page/ro/terms-and-conditions/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Hide","show":"Show","full_categories_list":"Full Categories List","all_games_and_categories":"All Games and Categories","show_more_results":"Show More Results &rsaquo;","no_comments":"No comments","report":"Report","comment_like_failed":"Sorry, the comment like failed. Please try again later.","comment_reporting_failed":"Sorry, the comment reporting failed.","the_word_is_not_allowed":"The word %s is not in our list of allowed words.","remove_red_messages":"Please edit your message to remove the words highlighted in red, these are not allowed.","enter_the_link":"Enter the link url","search_free_games":"You love free games? We <strong>LOVE<\/strong> free games! All Miniclip games have a free version you can play right here on the website.","password_reset_error_email":"<strong>Oops!<\/strong> You haven't entered an email address!","password_reset_error_username":"<strong>Sorry<\/strong> - That doesn't appear to be a valid email address.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Switch to Focus mode to concentrate on the game. This will restart your current game. Do you want to continue?","add_to_favorites":"Add to your favorite games","remove_from_favorites":"Remove from your favorite games","comment_autocomplete_placeholder":"Start typing to get suggestions","new":"New","next":"next","prev":"previous","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Error!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-page locale-us lang-en browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="en" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/en/" rel="nofollow">Play Games at Miniclip.com</a>
+			</h1>
+	<form class="search-form item" action="/games/search/en/" target="_top">
+		<label>
+			<span class="screen-reader">Search for...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Search Games" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Search</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Signup / Login</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Signup and Login With Facebook" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/US.png" width="44" height="32" alt="us" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>In Your Language</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/page/es/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/page/fr/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/page/in/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/page/de/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/page/ro/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/page/br/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/page/tr/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" class="flag" /> Türkçe				</a>
+			</li>
+			<li>
+				<a href="/games/page/pl/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/page/pt/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/page/ru/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/page/jp/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/page/it/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/page/hu/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/page/se/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/page/kr/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/page/cs/terms-and-conditions/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/page&return_post=terms-and-conditions/" class="button small greedy">
+		More	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/en/#t-n" class="button category home" title="Miniclip Homepage">
+				<span>Miniclip Home</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/en/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/en/#t-n" class="cat-13 catgory button">
+				Action			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/en/#t-n" class="cat-2 catgory button">
+				Multiplayer			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/en/#t-n" class="cat-1 catgory button">
+				Puzzle			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/en/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1194/iphone/en/#t-n" class="cat-1194 catgory button">
+				iPhone			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>More Categories</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Game Categories</h2>
+	<div class="category-list">
+		<a href="/games/genre-1301/2-player/en/#t-m-c" class="cat-1301" title="Play 2 Player Games">2 Player</a>
+		<a href="/games/genre-35/3d/en/#t-m-c" class="cat-35" title="Play 3D Games">3D</a>
+		<a href="/games/genre-1318/8-ball-pool-millionaire-marathon/en/#t-m-c" class="cat-1318" title="Play 8 Ball Pool Millionaire Marathon Games">8 Ball Pool Millionaire Marathon</a>
+		<a href="/games/genre-13/action/en/#t-m-c" class="cat-13" title="Play Action Games">Action</a>
+		<a href="/games/genre-515/adventure/en/#t-m-c" class="cat-515" title="Play Adventure Games">Adventure</a>
+		<a href="/games/genre-1278/alien/en/#t-m-c" class="cat-1278" title="Play Alien Games">Alien</a>
+		<a href="/games/genre-1001/american-football/en/#t-m-c" class="cat-1001" title="Play American Football Games">American Football</a>
+		<a href="/games/genre-503/android/en/#t-m-c" class="cat-503" title="Play Android Games">Android</a>
+		<a href="/games/genre-517/arcade/en/#t-m-c" class="cat-517" title="Play Arcade Games">Arcade</a>
+		<a href="/games/genre-525/award/en/#t-m-c" class="cat-525" title="Play Award Games">Award</a>
+		<a href="/games/genre-1305/award-series/en/#t-m-c" class="cat-1305" title="Play Award Series Games">Award Series</a>
+		<a href="/games/genre-1262/awesome/en/#t-m-c" class="cat-1262" title="Play Awesome Games">Awesome</a>
+		<a href="/games/genre-1293/basketball/en/#t-m-c" class="cat-1293" title="Play Basketball Games">Basketball</a>
+		<a href="/games/genre-497/buzz/en/#t-m-c" class="cat-497" title="Play Buzz Games">Buzz</a>
+		<a href="/games/genre-1133/card/en/#t-m-c" class="cat-1133" title="Play Card Games">Card</a>
+		<a href="/games/genre-1003/christmas/en/#t-m-c" class="cat-1003" title="Play Christmas Games">Christmas</a>
+		<a href="/games/genre-1185/credits/en/#t-m-c" class="cat-1185" title="Play Credits Games">Credits</a>
+		<a href="/games/genre-1268/cricket/en/#t-m-c" class="cat-1268" title="Play Cricket Games">Cricket</a>
+		<a href="/games/genre-1143/destruction/en/#t-m-c" class="cat-1143" title="Play Destruction Games">Destruction</a>
+		<a href="/games/genre-1315/dress-up/en/#t-m-c" class="cat-1315" title="Play Dress Up Games">Dress Up</a>
+		<a href="/games/genre-1155/extreme-sports/en/#t-m-c" class="cat-1155" title="Play Extreme Sports Games">Extreme Sports</a>
+		<a href="/games/genre-1309/fantasy/en/#t-m-c" class="cat-1309" title="Play Fantasy Games">Fantasy</a>
+		<a href="/games/genre-519/fighting/en/#t-m-c" class="cat-519" title="Play Fighting Games">Fighting</a>
+		<a href="/games/genre-1280/fireboy-and-watergirl/en/#t-m-c" class="cat-1280" title="Play Fireboy and Watergirl Games">Fireboy and Watergirl</a>
+		<a href="/games/genre-521/flying/en/#t-m-c" class="cat-521" title="Play Flying Games">Flying</a>
+		<a href="/games/genre-1296/football/en/#t-m-c" class="cat-1296" title="Play Football Games">Football</a>
+		<a href="/games/genre-488/golf/en/#t-m-c" class="cat-488" title="Play Golf Games">Golf</a>
+		<a href="/games/genre-490/halloween/en/#t-m-c" class="cat-490" title="Play Halloween Games">Halloween</a>
+		<a href="/games/genre-1238/holidays/en/#t-m-c" class="cat-1238" title="Play Holidays Games">Holidays</a>
+		<a href="/games/genre-1201/hot-games/en/#t-m-c" class="cat-1201" title="Play Hot Games Games">Hot Games</a>
+		<a href="/games/genre-1320/io/en/#t-m-c" class="cat-1320" title="Play IO Games">IO</a>
+		<a href="/games/genre-1194/iphone/en/#t-m-c" class="cat-1194" title="Play iPhone Games">iPhone</a>
+		<a href="/games/genre-482/kids/en/#t-m-c" class="cat-482" title="Play Kids Games">Kids</a>
+		<a href="/games/genre-7/latest/en/#t-m-c" class="cat-7" title="Play Latest Games">Latest</a>
+		<a href="/games/genre-1304/made-in-the-usa/en/#t-m-c" class="cat-1304" title="Play Made in the USA Games">Made in the USA</a>
+		<a href="/games/genre-1210//en/#t-m-c" class="cat-1210" title="Play Monster Games">Monster</a>
+		<a href="/games/genre-1157/motocross/en/#t-m-c" class="cat-1157" title="Play Motocross Games">Motocross</a>
+		<a href="/games/genre-26/motorsports/en/#t-m-c" class="cat-26" title="Play Motorsports Games">Motorsports</a>
+		<a href="/games/genre-2/multiplayer/en/#t-m-c" class="cat-2" title="Play Multiplayer Games">Multiplayer</a>
+		<a href="/games/genre-511/my-friends-league/en/#t-m-c" class="cat-511" title="Play My Friends League Games">My Friends League</a>
+		<a href="/games/genre-40/platform/en/#t-m-c" class="cat-40" title="Play Platform Games">Platform</a>
+		<a href="/games/genre-1299/platinum/en/#t-m-c" class="cat-1299" title="Play Platinum Games">Platinum</a>
+		<a href="/games/genre-14/political/en/#t-m-c" class="cat-14" title="Play Political Games">Political</a>
+		<a href="/games/genre-513/pool/en/#t-m-c" class="cat-513" title="Play Pool Games">Pool</a>
+		<a href="/games/genre-1/puzzle/en/#t-m-c" class="cat-1" title="Play Puzzle Games">Puzzle</a>
+		<a href="/games/genre-477/racing/en/#t-m-c" class="cat-477" title="Play Racing Games">Racing</a>
+		<a href="/games/genre-1209//en/#t-m-c" class="cat-1209" title="Play Rio 2016 Olympic Games Games">Rio 2016 Olympic Games</a>
+		<a href="/games/genre-1272/robot/en/#t-m-c" class="cat-1272" title="Play Robot Games">Robot</a>
+		<a href="/games/genre-5/shoot-em-up/en/#t-m-c" class="cat-5" title="Play Shoot 'Em Up Games">Shoot 'Em Up</a>
+		<a href="/games/genre-1307/simulation/en/#t-m-c" class="cat-1307" title="Play Simulation Games">Simulation</a>
+		<a href="/games/genre-18/soccer/en/#t-m-c" class="cat-18" title="Play Soccer Games">Soccer</a>
+		<a href="/games/genre-3/sports/en/#t-m-c" class="cat-3" title="Play Sports Games">Sports</a>
+		<a href="/games/genre-1244/staff-picks/en/#t-m-c" class="cat-1244" title="Play Staff Picks Games">Staff Picks</a>
+		<a href="/games/genre-523/strategy/en/#t-m-c" class="cat-523" title="Play Strategy Games">Strategy</a>
+		<a href="/games/genre-1151/stunt/en/#t-m-c" class="cat-1151" title="Play Stunt Games">Stunt</a>
+		<a href="/games/genre-1316/super-worlds/en/#t-m-c" class="cat-1316" title="Play Super Worlds Games">Super Worlds</a>
+		<a href="/games/genre-484/tennis/en/#t-m-c" class="cat-484" title="Play Tennis Games">Tennis</a>
+		<a href="/games/genre-1256/tips--tricks/en/#t-m-c" class="cat-1256" title="Play Tips & Tricks Games">Tips & Tricks</a>
+		<a href="/games/genre-6/top-10/en/#t-m-c" class="cat-6" title="Play Top 10 Games">Top 10</a>
+		<a href="/games/genre-23/top-100/en/#t-m-c" class="cat-23" title="Play Top 100 Games">Top 100</a>
+		<a href="/games/genre-1270/top-rated/en/#t-m-c" class="cat-1270" title="Play Top Rated Games">Top Rated</a>
+		<a href="/games/genre-1145/tower-defense/en/#t-m-c" class="cat-1145" title="Play Tower Defense Games">Tower Defense</a>
+		<a href="/games/genre-1290/videos/en/#t-m-c" class="cat-1290" title="Play Videos Games">Videos</a>
+		<a href="/games/genre-1317/webgl/en/#t-m-c" class="cat-1317" title="Play WebGL Games">WebGL</a>
+		<a href="/games/genre-432/webmaster-games/en/#t-m-c" class="cat-432" title="Play Webmaster Games Games">Webmaster Games</a>
+		<a href="/games/genre-1207/windows-phone/en/#t-m-c" class="cat-1207" title="Play Windows Phone Games">Windows Phone</a>
+		<a href="/games/genre-4/winter/en/#t-m-c" class="cat-4" title="Play Winter Games">Winter</a>
+		<a href="/games/genre-1292/winter-sports/en/#t-m-c" class="cat-1292" title="Play Winter Sports Games">Winter Sports</a>
+		<a href="/games/genre-1109/word/en/#t-m-c" class="cat-1109" title="Play Word Games">Word</a>
+		<a href="/games/genre-1311/xplore/en/#t-m-c" class="cat-1311" title="Play Xplore Games">Xplore</a>
+		<a href="/games/genre-1149/zombie/en/#t-m-c" class="cat-1149" title="Play Zombie Games">Zombie</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>More Cool Stuff</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip Blog" class="feed">
+					Miniclip Blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/en/downloadable-games/#t-m-s" title="Download games to play on your desktop" class="download">
+					Download Games				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Get Free Miniclip Games for YOUR website!" class="webmasters">
+					Free Website Games				</a>
+			</li>
+			<li>
+				<a href="/videos/en/#t-m-s" class="videos">
+					Video Tips and Tricks				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Help				</a>
+			</li>
+			<li >
+				<a href="/games/page/en/internet-safety/" rel="nofollow">
+					Internet Safety				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Privacy Policy				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Connect With Miniclip</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Like Miniclip on Facebook" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Follow Miniclip on Twitter" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Miniclip on Google+" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="Watch Miniclip Videos on YouTube" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+<section class="primary">
+	<div class="box greedy roomy">
+			<style type="text/css">
+		#sidebar {     padding: 5px 10px 5px 5px; }	</style>
+<h2>Terms &amp; Conditions</h2>
+<p>By viewing or accessing Miniclip SA's Miniclip.com website, and/or using Miniclip SA games, software, applications, products or services you expressly agree to the following Terms and Conditions detailed below. Miniclip.com is a product of Miniclip SA.</p>
+<p>The Privacy Policy, newsletter policy, game license agreement, and toolbar agreement agreement below are all part of this Miniclip SA Terms and Conditions and are only visually separated to make it easier for you to read.</p>
+<p>Your use of the Miniclip SA's Miniclip.com website and/or use of Miniclip SA games, software, applications, products or services signifies your acceptance of these Terms and Conditions and constitutes a legally binding acceptance of this agreement. If you do not agree to these conditions you are not allowed to access or use Miniclip SA's websites, games. Software, applications, products or services. Miniclip SA reserves the right to modify, alter and update the content of these Terms and Conditions at anytime. The current terms and conditions will be posted here: http://www.miniclip.com/games/en/terms-and-conditions.php</p>
+<p>Although Miniclip SA attempts to ensure that all information contained on this website is error-free, we accept no liability for omissions, and reserve the right to change or alter the content of the site at anytime. Miniclip SA does not make any warranty that the website is free from infection from viruses; nor does any provider of content to the site or their respective agents make any warranty as to the results to be obtained from use of the site.</p>
+<p>UNDER NO CIRCUMSTANCES INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE, SHALL MINICLIP SA OR ANY THIRD PARTY CONTENT PROVIDER OR THEIR RESPECTIVE AGENTS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF OR INABILITY TO USE MINICLIP SA'S MINICLIP.COM WEB SITE, SOFTWARE AND/OR SERVICES, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<p>YOU AGREE TO ASSUME ALL RISK RELATED TO YOUR USE OF MINICLIP SA WEBITES AND SERVICES, INLCUDING BUT NOT LIMITED TO, THE RISK OF COMMUNICATIONS WITH OTHER PEOPLE OR DAMAGE TO YOUR COMPUTER.</p>
+<h3>Newsletter / Unsubscribe</h3>
+<p>Click on the Unsubscribe link at the bottom of the newsletter or enter the email address you joined our Newsletter with on this page http://i.mb00.net/remove?Miniclip, or send an email to helpme@miniclip.com with the email address you would like removed and 'REMOVE' in the subject line.</p>
+<h3>Age restrictions</h3>
+<p>Miniclip SA does not target the Miniclip.com website or its services to users under 13 of age. There may be certain access restrictions placed on any under 13 year old users. You agree that if you assist users under 13 years old to access the Miniclip.com website or services, with your computer, internet enabled device, internet connection and/or facilities (whether owned, leased or borrowed) that you will assume full liability for any consequences and that UNDER NO CIRCUMSTANCES INCLUDING, BUT NOT LIMITED TO, NEGLIGENCE NEITHER MINICLIP SA, ANY THIRD PARTY CONTENT PROVIDER NOR THEIR RESPECTIVE AGENTS SHALL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF OR INABILITY TO USE THE SITE BY USERS UNDER 13 YEARS OF AGE, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<h3>Links</h3>
+<p>Miniclip SA accepts no responsibility for the links to or from its website and the inclusion of these links does not mean that Miniclip SA endorses the material or content of these sites.</p>
+<h3>Advertisements</h3>
+<p>Miniclip SA accepts no responsibility for any third party advertisements that may appear on Miniclip SA websites.</p>
+<h3>Online Purchases</h3>
+<p>We are not liable for errors in pricing at our online products. If a product was not priced properly as determined by Miniclip SA, Miniclip SA has the right to correct the price on any previously placed orders and re-price the product or refund any purchases on the product.</p>
+<p>Your debit/credit card account will be billed as 'Miniclip Games'.</p>
+<p>A payment is authorized immediately and collected in 3 working days.</p>
+<p>Online support: http://support.miniclip.com</p>
+<p>Purchases support email address: support@miniclip.com</p>
+<p>Purchases mailing address: Miniclip SA, Case Postale 2671, 2001 Neuch&acirc;tel, Switzerland</p>
+<h3>Disclaimer Regarding Third Party Games, Applications or services</h3>
+<p>YOU HEREBY ACKNOWLEDGE AND AGREE THAT ANY THIRD PARTY GAME, APPLICATION OR SERVICE THAT MAY BE ACCESED VIA MINICLIP.COM, SUCH AS BUT NOT LIMITED TO RUNESCAPE, CLUB PENGUIN AND PUZZLE PIRATES IS BEING PROVIDED TO YOU BY A THIRD PARTY PROVIDER AND NOT BY MINICLIP SA. YOU HEREBY ACKNOWLEDGE AND AGREE THAT YOUR USE OF ANY SUCH THIRD PARTY GAME, APPLICATION OR SERVICE MAY ALSO BE GOVERNED BY SUCH THIRD PARTY GAME, APPLICATION OR SERVICE PROVIDER'S TERMS OF USE, LICENSE AGREEMENT, PRIVACY POLICY, OR OTHER SUCH AGREEMENT. LICENSOR EXPRESSLY DISCLAIMS ANY LIABILITY IN CONNECTION WITH ANY SUCH THIRD PARTY GAMES, APPLICATIONS OR SERVICES OR YOUR USE THEREOF.</p>
+<p>RuneScape is owned and operated by Jagex Inc. from Jagex Inc. servers. Club Penguin is owned and operated by Disney Online Studios. Puzzle Pirates is owned and operated by Three Rings Design Inc. from Three Rings Design Inc. servers. Third party product, games or services may have additional terms and conditions associated with them.</p>
+<h2 id="credits_terms">Terms &amp; Conditions for the Sale of Credits</h2>
+<!-- 6-28-11 -->
+<p>Please read these Terms carefully before purchasing Credits. By ordering any Credits, you agree to be bound by these Terms.</p>
+<h3>INTRODUCTION</h3>
+<p>These Terms and Conditions for the Sale of Credits (the "<strong>Terms</strong>") govern the purchase or allocation to you, and use by you, of virtual credits ("<strong>Credits</strong>") which are made available for purchase by Miniclip SA on or via www.miniclip.com and certain related sub or affiliate sites (the "<strong>Site</strong>") and/or certain third party websites.</p>
+<p>By clicking "I CONFIRM" in connection with a purchase of Credits:-</p>
+<ul>
+<li>you agree to be bound by these Terms;</li>
+<li>you represent that you are an adult 18 years of age or older or, if under 18 years of age, that you have the consent of a parent or guardian and will provide their details if requested by Miniclip SA;</li>
+<li>you agree to pay for the Credits at the indicated price, and you confirm that you are permitted to use the payment source that you have provided; and</li>
+<li>you authorise Miniclip SA, or its designated payment processor, to charge the full amount to the payment source you have designated for the transaction.</li>
+</ul>
+<p>These Terms form part of, and incorporate, the general Terms and Conditions of Miniclip SA. However, in the event of any inconsistency between these Terms and the general Terms and Conditions of Miniclip SA, these Terms shall prevail.</p>
+<h3>PURCHASE AND USE OF CREDITS</h3>
+<p>Miniclip SA will from time to time offer to sell packages of Credits on or via the Miniclip.com website. Miniclip SA is entitled to change the purchase price for Credits at any time. At the time of purchase of Credits, you may be offered additional Credits free-of-charge. You may also, from time to time, be invited to participate in online marketing, surveys or campaigns on or via the Site in connection with which you may be offered additional Credits without additional charge. However, for the purposes of these Terms no distinction is made between paid-for and free-of-charge Credits.</p>
+<p>Credits are limited licences to digital goods and do not constitute personal property and are not legal tender or currency of any kind. All Credits purchased by you are non-refundable. No interest is paid or earned on any Credits balance. Credits are not redeemable for any sum of money or monetary value from Miniclip SA unless otherwise expressly agreed in writing by Miniclip SA.</p>
+<p>Unexpired Credits may be redeemed by you in order to acquire additional features, items, or benefits (collectively "<strong>Premium Items</strong>") within or in connection with certain games or applications made available to you on or via the Site ("<strong>Miniclip Games</strong>"). When you use Credits to acquire a Premium Item within a Miniclip Game, the relevant amount of Credits will automatically be deducted from your account.</p>
+<p>The nature and duration of Premium Items varies between and within Miniclip Games. Some Premium Items may only be used for a limited number of uses or time within the relevant Miniclip Game(s). Credits will not in any circumstances be refunded to you in respect of any unused uses or unused time for use-limited or time-limited Premium Items. Miniclip SA may, without notifying you, vary the scope, variety and type of Premium Items. Miniclip SA has no obligation to make, or continue to make, any specific Premium Item that may or may not have been acquired by you available in or in connection with any Miniclip Game. Miniclip may in its sole discretion restrict or vary the type of Premium Items available to you based on your country of residence.</p>
+<p>All Credits will, upon purchase or allocation, be allocated to the associated Miniclip account through which the purchase or allocation is made. Credits allocated to an account shall not in any circumstances be transferred between accounts, or between you and any other person save for Miniclip SA authorized and enabled transfers between Games. It is strictly prohibited to transfer or attempt to transfer Credits between two or more accounts in any way. You shall not transfer Credits between accounts by any means that attempts to bypass normal playing rules or that is contrary to the general purpose of a Miniclip Game (for example: by using one account to intentionally loose a Miniclip Game to another account for the purpose of transferring credits between the accounts). It is strictly prohibited to use multiple accounts to hold and use Credits in any manner that is contrary to the general purpose of a Miniclip Game. It is strictly prohibited to sell an account or any Credits to any person.</p>
+<p>Miniclip SA may from time to time limit the use of Credits, including applying limits to the number of Credits allocated to your account at any time, and/or the number of Credits redeemable within a given time period.</p>
+<h3>AUTOMATIC EXPIRY OF CREDITS</h3>
+<p>The balance of unused Credits on your account will automatically expire, and be deleted from your account, if there has been no Credit-related activity on your account for a 12 month period. Credit-related activity means the purchase of new Credits or acquisition of Premium Items using Credits.</p>
+<h3>SUSPENSION OR TERMINATION OF YOUR ACCOUNT</h3>
+<p>Miniclip SA reserves the right to suspend or terminate your account if Miniclip SA or its designated payment processor is unable to verify or authenticate any information (including payment information) you provide in connection with the purchase or use of the relevant Credits, or is notified of or reasonably suspects fraudulent, abusive or other unlawful activity whatsoever in relation to your account or Credits balance, or if you are otherwise in breach of these Terms or any other applicable Terms and Conditions of Miniclip SA.</p>
+<p>If your account has been suspended or terminated, you will (temporarily or permanently, as applicable) loose some or all of the balance of Credits on your account. In such an event you agree that you are not entitled to any reimbursement or refund of any payment for Credits, or any other compensation, except at the sole discretion of Miniclip SA.</p>
+Please notify Miniclip SA immediately if you dispute a transaction for Credits or believe that any transaction occurring on your account is unauthorized.
+<h3>LIABILITY</h3>
+<p>You accept that your purchase or attempted purchase of Credits and use of credits within Miniclip Games is entirely at your own risk. Your only remedy for a technical failure or interruption of service in connection with a purchase of Credits is to request that your transaction be completed at a later time. To the fullest extent permissible by applicable law, Credits are provided on an "as is" and "as available" and without warranties of any kind either expressed or implied.</p>
+<p>You are responsible for and agree to reimburse Miniclip SA for all reversals, charge-backs, claims, fees, fines, penalties and other liability incurred by it (including costs and related expenses) that were caused by or arising out of payments that you authorized or accepted, or which otherwise relate to any misuse of Credits by you.</p>
+<p>Notwithstanding the foregoing, nothing in these terms shall exclude or restrict the liability of Miniclip SA for death or personal injury caused by its negligence or for any other liability which cannot be excluded or restricted under applicable law.</p>
+<h3>PROVISION OF INFORMATION</h3>
+<p>The following information is provided to you in accordance with the Consumer (Distance Selling) Regulations 2000 (as amended) and the Electronic Commerce (EC Directive) Regulations 2002 (collectively the "<strong>Regulations</strong>"):</p>
+<ul>
+<li>The name and address of the provider of this website is Miniclip SA, Case Postale 2671, 2001 Neuch&acirc;tel, Switzerland. Miniclip SA's company registration number is CH-645-4103964-1 and its VAT number is 723697. Your contract for the purchase and use of Credits is with Miniclip SA. The language of the contract is English.</li>
+<li>The main characteristics relating to the Credits are described in these Terms and on the Site. The technical means for concluding the contract to buy the Credits are explained at the top of these Terms. If you have made a mistake in inputting information and BEFORE YOU AGREE TO COMPLETE THE TRANSACTION, please delete the relevant field or click on the back arrow (as relevant) in order to change or re-input that information.</li>
+<li>The price of Credits are as stated at the time of purchase on the Miniclip.com website. The price includes value added tax (where applicable).</li>
+<li>The email address for assistance and complaints is support@miniclip.com.</li>
+<li>If you wish to obtain a copy of the contract between Miniclip SA and you, please print off a copy of this page. It may be updated by Miniclip SA from time to time, so you should print it now.</li>
+<li>The provision of Credits is a service provided by Miniclip SA and by agreeing to these terms and placing an order for Credits, you confirm that you would like this service to be provided by Miniclip SA. The Credits are delivered "unsealed" automatically upon receipt of the relevant price paid by you for the Credits and therefore you will have no cancellation rights in respect of the Credits under the Regulations. The above information is all the information that we are required to give you by the Regulations.</li>
+</ul>
+<h3>GENERAL</h3>
+<p>The copyright and all other intellectual property rights in the Credits and all text, artwork, graphics or images associated with the Credits are and shall at all times remain the exclusive property of Miniclip SA or its licensors (as applicable).</p>
+<p>A failure or delay by Miniclip SA in enforcing compliance with these Terms shall not be a waiver of that or any other provision of these Terms. None of these Terms shall be enforceable under the Contracts (Rights of Third Parties) Act 1999 by any third party. If any provisions of these Terms shall be unlawful, void or for any reason unenforceable then that provision shall be deemed severable and shall not affect the validity and enforceability of the remaining provisions.</p>
+<p>These Terms and any dispute or claim arising out of or in connection with them (including any non-contractual claims or disputes) shall be governed by and construed in accordance with the laws of England and Wales and you and Miniclip SA irrevocably submit to the non-exclusive jurisdiction of the English courts.</p>
+<h2 id="credits_faq">Purchasing Your First Credits</h2>
+<p>Purchasing credits with Miniclip.com is easy. You will need to create a Miniclip Players account and be logged in to that account to purchase credits. Don't worry if you do not already have one, you will be prompted to create one when you place your order. If you experience any difficulties when purchasing credits please email us at: support@miniclip.com.</p>
+<p>Here are the steps that you need to follow to purchase credits:</p>
+<ol>
+<li>
+<h3>Browse the "shop" in any relevant Miniclip game</h3>
+<p>First you will need to be playing a Miniclip game in which you can use credits to purchase supplemental products or items. A clickable 'Shop' button will be available on the game-play page where you can browse and purchase products with your credits. After clicking on the 'Shop' page you will be able to click on an option to purchase credits.</p>
+</li>
+<li>
+<h3>Login and/or Create a Miniclip players account</h3>
+<p>In order to purchase any credits, you must have a Miniclip Players account and be logged in to this account. You will be prompted to login or to create a Miniclip Players account if you have not already done so. Please follow the on-screen instructions to create a Miniclip Players account &ndash; creation of any account should occur almost instantly. You will receive an email to the email address you submitted confirming the creation of your account and containing your password.</p>
+</li>
+<li>
+<h3>Select a bundle of credits and proceed to checkout</h3>
+<p>You will be presented with credit bundles of varying prices to choose from. Please select a bundle that you wish to purchase, review this selection and, if you are happy, please proceed to check out. You will automatically be redirected to a third party payment provider website.</p>
+</li>
+<li>
+<h3>Provide payment information</h3>
+<p>Now let us know how you would like to pay for your credits. We accept Visa, Mastercard, American Express and Discover as well as PayPal or similar online means. Please select the payment method that you wish to use by clicking on the icon at the top of the screen and then submitting all required information to purchase the credits. If you are paying by credit card please enter the number in full, without spaces or dashes.</p>
+</li>
+<li>
+<h3>Submit your order</h3>
+<p>Check the accuracy of the payment information that you have provided and correct any mistakes. When you are ready, click the 'purchase' button to submit your order. Once you place your order you will see a message stating "Thank you for your order". You will receive two confirmation emails: one from Miniclip confirming that your Miniclip Players account has been credited with the credit bundle you selected and second from the third party payment provider confirming that your credit card or other payment method has been debited the relevant amount.</p>
+</li>
+</ol>
+<p>Now, go and have fun on Miniclip.com!</p>
+<h3>User Rules</h3>
+<p>Users may be banned or accounts suspended or terminated on the entire Miniclip.com website or any game available on Miniclip.com if users use inappropriate language or inappropriate behavior as determined by Miniclip SA. Inappropriate language and/or inappropriate behavior is not allowed on Miniclip SA websites. Miniclip SA is not responsible for user content, postings, chat, and/or communications. Users are responsible for their own actions.</p>
+<h3>You agree not to do any of the following:</h3>
+<ol>
+<li>Post, distribute, or otherwise make available or transmit any data, text, message, or computer file that we deem to be: (a) defamatory, abusive, harassing, insulting, threatening, or that could be deemed to be stalking; (b) bigoted, hateful, or racially offensive; (c) vulgar, obscene, or sexually explicit (language or images); or that (d) encourages or advocates illegal activity or the discussion of illegal activities with the intent to commit them;</li>
+<li>Post, distribute, or otherwise make available or transmit any data, text, message, computer file, or other material that infringes and/or violates any right of a third party or any domestic or international law, rule, or regulation, including but not limited to: (a) copyright, patent, trademark, or other proprietary rights; (b) right of privacy (specifically, you must not distribute another person's personal information of any kind without their express permission) or publicity; (c) any confidentiality obligation;</li>
+<li>Advertise or sell any products, services or otherwise (whether or not for profit), or solicit others or use any Forum for commercial purposes of any kind,</li>
+<li>Post, distribute, or otherwise make available or transmit any software or other computer files that contain a virus or other harmful component;</li>
+<li>Impersonate any person or entity or misrepresent your identity or affiliation with any person or entity;</li>
+<li>Engage in antisocial, disruptive, or destructive acts, including "flaming," "spamming," "flooding," "trolling," and "griefing" as those terms are commonly understood and used on the Internet;</li>
+<li>Delete any legal notices, disclaimers, or proprietary notices such as copyright or trademark symbols, or modify any logos that you do not own or have express permission to modify;</li>
+<li>Post, distribute, or otherwise make available or transmit material or make statements that do not generally pertain to the designated topic or theme of any Forum.</li>
+</ol>
+<p>We reserve the right to remove any material, and if we deem appropriate, to turn over to law enforcement officials, any material, including message, e-mail, or posting, that is in violation of these Rules. We also reserve the right to remove messages, e-mails, or postings that do not pertain to the designated topic or theme of the service as determined by Miniclip SA.</p>
+<p>We also reserve the right to comply with any order or otherwise cooperate with law enforcement officials regarding the identification of any user alleged to be using a Miniclip SA website or service in violation of the law.</p>
+<h3>Jurisdiction</h3>
+<p>The laws of England and Wales govern this agreement, without giving effect to conflict of laws provisions. The courts of England and Wales have exclusive jurisdiction over all disputes relating to or arising from the execution or performance of this agreement unless Miniclip SA wishes to initiate legal proceedings in your home legal district. In all judicial actions, arbitrations, or disputes resolution methods, the parties waive any punitive damages.</p>
+<h2 id="webmaster-terms">Webmaster Site Terms &amp; Conditions</h2>
+<!-- 7-22-11 -->
+<h3>Please read these terms and conditions carefully as they contain important information on your rights and obligations, including limitations on Miniclip's liability to you.</h3>
+<h3>Service Provider</h3>
+<p>This website and related sub-sites (the "<strong>Site</strong>") are owned and operated by Miniclip SA a Swiss company registered under number CH-645-4103964-1("<strong>Miniclip</strong>").  The content and services on the Site are provided by Miniclip.</p>
+<p>You can contact Miniclip by any of the following means:</p>
+<ul>
+<li>e-mail to: <a href="mailto:support@miniclip.com">support@miniclip.com</a> </li>
+<li>phone: +41 32 722 59 19</li>
+<li>letter to: Miniclip SA, Case Postale 2671, 2001 Neuch&acirc;tel, Switzerland. </li>
+</ul>
+<h3>Your Agreement</h3>
+<p>These Terms and Conditions govern your use of the Site and the content in or on the Site and the resulting service that Miniclip may provide to you. A minor should seek consent from his or her legal guardian before using this Site.</p>
+<h3>By using this Site or any content or Service on the Site, you agree toand accept these Terms and Conditions as amended or updated from time to time.</h3>
+<p>If you do not agree with any of these Terms and Conditions you must not use this Site. Occasionally, these Terms and Conditions may change (any changes will be highlighted) &ndash; it is your responsibility to check these Terms and Conditions regularly so that you are aware of any such changes. Your continuing use of the Site constitutes your agreement to the changes.</p>
+<h3>Your use of the Site</h3>
+<p>The Site brings people together to enjoy online games and entertainment.	 For it to remain a safe and pleasant environment, you must treat all users with respect and comply with all Site policies.</p>
+<p>The majority of games and services on the Site are free (except where specified) and to be played over the internet.</p>
+<p>The Webmaster Games are for use as described in the <a href="#license">Game Licence Agreement</a>.  They may not be used in any circumstances for any other purpose or in any other manner whatsoever.</p>
+<p>You may not use any of the Webmaster Games, other games and services on this Site for any commercial purposes of any nature whatsoever. In addition, you may not link to any of the Webmaster Games from Facebook (<a href="http://www.facebook.com" target="_blank">www.facebook.com</a>) without Miniclip's express agreement in writing.</p>
+<p>You may link to the Webmaster Games on the Site, only after you have accepted the <a href="#license">Game Licence Agreement</a> and provided that you link to the Webmaster Games in a way that does not damage the reputation of Miniclip and does not suggest any form of association with Miniclip.</p>
+<h3>Availability</h3>
+<p>Miniclip aims to provide a stable and reliable website.	However, there may be times when Webmaster Games, or other games and services, are unavailable due to maintenance of the system or technical problems.	Miniclip may also suspend or permanently remove any Webmaster Game, or other game or service for any reason without needing your consent or giving prior notice.</p>
+<p>Miniclip will not be liable for any loss, damage or upset that you suffer as a consequence of a Webmaster Game, or other game or service becoming temporarily or permanently unavailable.<br /><br />Further, you acknowledge that Miniclip has embedded a link back to the Site in each of the Webmaster Games. &nbsp;You agree to keep the link intact at all times. &nbsp;If you remove the link or prevent it functioning in any way, Miniclip reserves the right to revoke this licence or to request that you immediately re-instate such link.&nbsp;</p>
+<h3>Other users</h3>
+<p>If you feel that the behaviour of another user breaches these Terms and Conditions (or any of the Site policies), then please let Miniclip know by sending an email to <a href="mailto:support@miniclip.com">support@miniclip.com</a>.  Miniclip will take reasonable steps to deal with the breach.</p>
+<p>Miniclip will not be liable for any loss, damage or upset that you suffer as a consequence of the actions of another user.  Any such claim should be directed against the user responsible.</p>
+<h3>Viruses</h3>
+<p>In using the Internet to access the Site, you are responsible for ensuring that your computer has suitable anti-virus software that is up to date.  Miniclip will take reasonable steps to ensure that the content on the Site is free from viruses and other malicious software.</p>
+<p>Miniclip will not be liable for any loss or corruption of data that you suffer as a consequence of receiving a virus or other malicious software through use of the Site.</p>
+<p>Further, if you do not have appropriate anti-virus software, Miniclip will not be liable for any loss, damage or upset that you suffer as a consequence of receiving a virus or other malicious software through use of the Site.</p>
+<p>Miniclip will not be liable for any loss, damage or upset that you suffer as a consequence of using the Webmaster Games, other games and services of another company through this Site.	Any such claim should be directed against the external company responsible for such game.</p>
+<h3>Adverts</h3>
+<p>Miniclip does not control the advertisements that are placed on this Site (if any), but advertisers are required to comply with Miniclip's advertising policy.  Please report any advert that you find offensive or inappropriate to <a href="mailto:advertise@miniclip.com">advertise@miniclip.com</a>. If Miniclip finds that such advertisement breaches the advertising policy, then Miniclip will take appropriate action.</p>
+<p>If you click on any advert, you will be dealing with external companies responsible for that advert.	 Miniclip does not control the actions of these companies or the content of their websites.</p>
+<p>Miniclip will not be liable for any loss, damage or upset which you suffer as a result of viewing or clicking on advertisements in any circumstance.	 Any claim for loss should be directed against the external company responsible for the advert.</p>
+<h3>Intellectual property</h3>
+<p>All content on the Site is the copyright of Miniclip or other providers.	 You may not use any of this content for any purpose or in any mannerwhatsoever that is not authorised by the copyright owner.</p>
+<p>The trademarks MINICLIP, SKETCH STAR and YOME and the layout of Miniclip's website (<a href="http://www.miniclip.com">www.miniclip.com</a>) are registered trademarks owned by Miniclip and its group companies. You may not:</p>
+<ul>
+<li>use the words MINICLIP, SKETCH STAR, YOME, or any similar words on your website without the prior written consent of Miniclip;</li>
+<li>use the words MINICLIP, SKETCH STAR, YOME, or any similar words in the domain name for your website;</li>
+<li>use the layout of Miniclip's website (<a href="http://www.miniclip.com">www.miniclip.com</a>) on your website; </li>
+</ul>
+<p>All other trademarks used in this website are owned by their respective owners.	You may not use any of these trademarks for any purpose or in any manner that is not authorised by its owner.</p>
+<h3>Copyright Infringement</h3>
+<p>If you believe that your copyrightable work is being displayed on this Site and is violating copyright regulations, please advise Miniclip immediately at <a href="mailto:biz@miniclip.com">biz@miniclip.com</a> in order that Miniclip may investigate the matter.</p>
+<p>For copyright infringements based in North America please contact Carl Ronald at The Ronald Law Group, LLC, 4960 William Flynn Hwy, Suite 6, PMB 308, Allison Park, PA 15101 or by email: <a href="mailto:carl@ronaldiplaw.com">carl@ronaldiplaw.com</a>.</p>
+<p>Contact Information: <a href="http://corporate.miniclip.com/contact">http://corporate.miniclip.com/contact</a></p>
+<p>Miniclip SA: Case Postale 2671, 2001 Neuch&acirc;tel, Switzerland</p>
+<h3>Applicable law</h3>
+<p>These Terms and Conditions shall be interpreted in accordance with Swiss law.</p>
+<h2 id="content-submissions">Content Posting/Submissions</h2>
+<!-- 9-21-06 -->
+<p>By submitting/posting any Content, such as but not limited to audition, messages, text, files, images, photos, video, sounds, profiles, works of authorship, or any other materials, you hereby grant to Miniclip SA, a non-exclusive, royalty-free, worldwide license (with the right to sublicense through unlimited levels of sublicenses) to use, copy, modify, adapt, translate, publicly perform, publicly display, store, reproduce, transmit, and distribute such Content on and through Miniclip SA services and the Miniclip.com website or any other medium.</p>
+<h2 id="newsletter">Miniclip.com Email Newsletter Policy</h2>
+<!-- 6-5-06 -->
+<p>"Setting the Standard for Newsletter policies on the web since 2001."</p>
+<p>We strive to keep our customers happy by providing them with an easy to use system for joining and unjoining our lists.</p>
+<p>Our newsletters have an easy to use system with alternative methods of unjoining to ensure that you can easily be removed from our lists. This is done automatically or if need be, manually by our help department.</p>
+<p>Included in our Newsletter emails are:</p>
+<ol>
+<li>An easy option to unjoin the list you are subscribed to.</li>
+<li>A second option to unjoin manually through our help department. This ensures that anyone can unsubscribe even if the automated system fails. We are one of the first to implement this added safety feature in every email.</li>
+<li>The email address you subscribed with is shown in case you have forgotten it, or you are using mail forwarding or a catch all address.</li>
+<li>A link to our Newsletter/Email Policy on every email. Again we are one of the first to implement this policy back in 2001</li>
+</ol>
+<p>We strive to make our newsletter a great experience for users:</p>
+<ol>
+<li>We do not buy email addresses from other sources.</li>
+<li>We do not borrow email addresses from other sources.</li>
+<li>We do not spam.</li>
+<li>We log IP addresses to prevent abuse.</li>
+<li>We do not sell our email addresses.</li>
+<li>How we help to shield our members from spamming and protect their privacy.</li>
+<li>We don't sell our email lists.</li>
+<li>We don't loan our email lists.</li>
+<li>We don't let other companies use our email lists.</li>
+<li>As you can see Miniclip.com strives to ensure the very best experience for our users by being very stringent in regard to our Newsletter/Email Policy and our system that ensures every member the ability to unjoin from our lists</li>
+</ol>
+<p>If you would like to be removed from any Miniclip list send an email to newsletter@miniclip.com with the email address you would like removed and if you can also forward us the last newsletter you received to newsletter@miniclip.com.</p>
+<p>If you feel someone is trying to abuse the system you may report it here: newsletter@miniclip.com</p>
+<h3>Acceptable Use Policy</h3>
+<p>Miniclip SA has no tolerance for any misuse of our website for any immoral, illegal or other activity deemed to be inappropriate by Miniclip SA We hold any user of our website responsible for any misappropriate behavior which includes any attempt to use our system for spamming or any other type of abuse. If we get a complaint we can investigate and if necessary track down the person or persons responsible the activity to take any necessary actions such as prosecution.</p>
+<h2 id="game-license-agreement">Miniclip.com Game License Agreement</h2>
+<!-- 6-5-06 -->
+<p>Use or Distribution of Miniclip Games or other content.</p>
+<p>Miniclip SA Software License Agreement (Games, movies and content)</p>
+<p>Definitions: Games, movies, and content produced by Miniclip SA shall be known as the SOFTWARE.</p>
+<p>The only SOFTWARE licensed by this agreement is posted here: http://www.miniclip.com/Downloads.htm</p>
+<p>You should carefully read the following terms and conditions before using this SOFTWARE. Unless you have a different license agreement signed by Miniclip SA, your use or distribution of this SOFTWARE indicates your acceptance of this license agreement and warranty.</p>
+<p>Use of the SOFTWARE is contingent on your agreement to the following terms:</p>
+<h3>GRANT OF LICENSE</h3>
+<p>Miniclip SA grants you a limited non-exclusive license to use the SOFTWARE only on websites according to this agreement. The license fee is a flexible pricing schedule that may be imposed and altered at any time. At this moment the license fee is free. You agree to pay any such licensing fee that may be imposed in the future or to remove the SOFTWARE from your site immediately. Miniclip SA is not obligated to supply any support whatsoever. Miniclip SA reserves the right to revoke this License and or restrict the use of the SOFTWARE on a website or its distribution at any time, for any reason.</p>
+<p>The SOFTWARE may not be used on sites that are pornographic, hate related, racist, or sites that install adware or other types of sites that Miniclip SA in it's sole discretion sees as being unsuitable. Miniclip SA may also at its sole discretion exclude websites or companies from software licenses. If you are using the SOFTWARE on a website and you are notified by Miniclip SA to remove it you agree to do so immediately. YOU ARE NOT ALLOWED TO PACKAGE THE SOFTWARE WITH YOUR SOFTWARE OR OTHER 3RD PARTY SOFTWARE, OR REQUIRE OR ENCOURAGE USERS TO DOWNLOAD OTHER SOFTWARE IN ORDER TO ACCESS MINICLIP SOFTWARE SUCH AS ADWARE, TOOLBARS, DESKTOP APPLICATIONS OR ANY OTHER TYPE OF SOFTWARE. YOU ARE NOT ALLOWED TO REQUIRE USERS TO DIAL PREMIUM NUMBERS TO ACCESS MINICLIP SOFTWARE OR PROMISE THEM ACCESS TO OUR MINICLIP SOFTWARE VIA PREMIUM TELEPHONE NUMBERS OR OFFER OTHER PREMIUM SERVICES WITHOUT THE EXPRESS WRITTEN CONSENT OF MINICLIP SA. The license terms may be changed at any time and are available to see on the Miniclip.com website at www.miniclip.com/TermsandConditions.htm.</p>
+<h3>DISCLAIMER OF WARRANTY</h3>
+<p>THE SOFTWARE IS PROVIDED AS IS WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, MINICLIP SA FURTHER DISCLAIMS ALL WARRANTIES, INCLUDING WITHOUT LIMITATION ANY IMPLIED WARRANTIES OF MERCHANT ABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND ON INFRINGEMENT. THE ENTIRE RISK ARISING OUT OF THE USE OR PERFORMANCE OF THE PRODUCT AND DOCUMENTATION REMAINS WITH THE RECIPIENT. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL MINICLIP SA BE LIABLE FOR ANY CONSEQUENTIAL, INCIDENTAL, DIRECT, INDIRECT, SPECIAL, PUNITIVE, OR OTHER DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF BUSINESS INFORMATION, OR OTHER PECUNIARY LOSS) ARISING OUT OF THIS AGREEMENT OR THE USE OF OR INABILITY TO USE THE PRODUCT, EVEN IF MINICLIP SA HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. THIS SOFTWARE AND THE ACCOMPANYING FILES ARE SOLD "AS IS" AND WITHOUT WARRANTIES AS TO PERFORMANCE OR MERCHANT ABILITY OR ANY OTHER WARRANTIES WHETHER EXPRESSED OR IMPLIED. Because of the various hardware and software environments into which the Software may be put, NO WARRANTY OF FITNESS FOR A PARTICULAR PURPOSE IS OFFERED. The user must assume the entire risk of using the Software. ANY LIABILITY OF THE SELLER WILL BE LIMITED EXCLUSIVELY TO PRODUCT REPLACEMENT OR REFUND OF PURCHASE PRICE.</p>
+<h3>SCOPE OF GRANT</h3>
+<p>You may not reverse engineer, decompile, disassemble or modify the SOFTWARE in any way. Miniclip SA shall retain title and all ownership rights to the SOFTWARE.</p>
+<h3>COPYRIGHT</h3>
+<p>This SOFTWARE is protected by copyright laws and international copyright treaties, as well as other intellectual property laws and treaties.</p>
+<h3>MAINTENANCE</h3>
+<p>Miniclip SA is not obligated to provide maintenance or updates for the SOFTWARE. However, any maintenance or updates provided by Miniclip SA shall be covered by this Agreement.</p>
+<h3>DISTRIBUTION</h3>
+<p>You are hereby licensed to make as many copies of this SOFTWARE as you wish and distribute the software in its unmodified form via a website You are specifically prohibited from charging for use of or access to, or requesting donations, or bundling with any other software or hardware the SOFTWARE unless you obtain a custom license agreement from Miniclip SA. You are not allowed to distribute the SOFTWARE on CD.</p>
+<h3>CUSTOM LICENSE AGREEMENTS</h3>
+<p>If you wish to use the SOFTWARE for any other purpose such as CD distribution you may apply for a custom licensing agreement at biz@miniclip.com</p>
+<h2 id="toolbar-agreement">Miniclip.com Toolbar License Agreement</h2>
+<!-- 6-5-06 -->
+<p>YOUR USE, DOWNLOAD OR INSTALLATION OF THE MINICLIP TOOLBAR INDICATES YOUR ACCEPTANCE OF THESE TERMS AND CONDITIONS.</p>
+<p>PLEASE READ THE FOLLOWING MINICLIP TOOLBAR LICENSE AGREEMENT CAREFULLY.</p>
+<p>The "Miniclip Toolbar" may also be referred to as the "Miniclip Game Bar" or the "Miniclip Game Toolbar".</p>
+<h3>1. YOU ARE GRANTED THE FOLLOWING LIMITED RIGHTS:</h3>
+<p>A. You may use Miniclip Toolbar for personal purposes. For commercial use, you need an express written permission of Miniclip SA.</p>
+<p>B. You may not reproduce, distribute, transmit, print or transfer information related to Miniclip Toolbar.</p>
+<p>C. The statistical information collected by the Miniclip Toolbar is strictly anonymous in order to respect users' privacy.</p>
+<h3>2. IT IS STRICTLY PROHIBITED TO:</h3>
+<p>A. Modify the software in part or in its entirety.</p>
+<p>B. Decompile or reverse engineer the Miniclip Toolbar.</p>
+<p>SHOULD YOU FAIL TO COMPLY WITH ANY OF THE ABOVE, YOUR USER RIGHTS ARE AUTOMATICALLY TERMINATED. THIS TERMINATION WILL BE IN ADDITION TO ANY CRIMINAL, CIVIL OR OTHER REMEDIES WHICH MINICLIP SA MAY SEEK.</p>
+<h3>3. LIMITED WARRANTY:</h3>
+<p>LIMITATION OF LIABILITY FOR INDIRECT DAMAGES: Miniclip SA cannot be held responsible under any circumstances for damages of any character (including, but not limited to, direct or indirect damages resulting from the loss of business profits, business interruption, loss of business information, or other pecuniary loss) arising out of the use or inability to use this product.</p>
+The Miniclip Toolbar is provided under license on an "AS IS" basis, without warranty of any kind, expressed or implied, including without limitation, implied warranties of merchantability and fitness for a particular purpose. In no event shall Miniclip SA, or any third party involved in the creation, production, or delivery of the Miniclip Toolbar be liable under any circumstances for any direct or indirect damages including, but not limited to, damages for loss of business profits, business interruption, incurred by the user even if Miniclip SA has been advised of such damages.
+<p>&nbsp;</p>
+<p>The entire risk as to the results and performance of the Miniclip Toolbar is borne by the user. Miniclip SA may, at any time, revoke this license by notifying the user of the software. The user may cancel his license to use the product by destroying or erasing all copies of the toolbar.</p>
+<p>By downloading, installing or using the Miniclip Toolbar, you expressly agree to the term and conditions detailed here and any modifications and or updates posted here: http://www.miniclip.com/TermsandConditions.htm . Miniclip Toolbar is a product of Miniclip SA.</p>
+<p>NEITHER MINICLIP SA, ANY THIRD PARTY CONTENT PROVIDER NOR THEIR RESPECTIVE AGENTS SHALL BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OF OR INABILITY TO USE THE MINICLIP TOOLBAR, EVEN IF SUCH PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+<h3>4. PROPERTY:</h3>
+<p>Use of the product's name is strictly forbidden unless it's used with the express written permission of Miniclip SA.</p>
+<p>This Miniclip Toolbar, including its code, documentation, appearance, structure, and organization is an exclusive product of Miniclip SA., who retains the property rights to the Miniclip Toolbar, its copies, modifications, or merged parts.</p>
+<p>5. Miniclip SA requires users to be 14 years or older to use the Miniclip Toolbar service.</p>
+<h3>6. Miniclip Toolbar Services.</h3>
+<p>The Miniclip Toolbar may give you access to services of Miniclip SA and third party suppliers, such as Ask Jeeves and Price Grabber search bars, who may provide content and services in addition to those of Miniclip SA through or in the Miniclip Toolbar or in conjunction with it. The toolbar services may be within the toolbar, within your browser or within separate browser windows displayed over or under your main browser window or by other means. The Miniclip Toolbar services are subject to change. The Miniclip Toolbar services may be delivered to you based on several factors including, without limitation, your internet use, your computer use, the type of machine you are using or its configuration, your operating system, or other factors. You allow us to bring you services based on these factors. The Miniclip Toolbar works in conjunction with your browser and may modify or enhance the functionality of your browser or other software. By downloading, installing or using the Miniclip Toolbar, you consent to such modifications and/or enhancements.</p>
+<h3>7. Limited License To Use The Miniclip Toolbar</h3>
+<p>We may make Miniclip Toolbar services changes, patches, fixes (collectively, "Updates") to the Miniclip Toolbar. The Miniclip Toolbar includes updates and these terms and conditions will apply to the updated Miniclip Toolbar. You agree that we may automatically provide such updates to you at our discretion without any further consent from you or notification to you.</p>
+<p>We may revoke your license to use the Miniclip Toolbar at any time for any reason.</p>
+<p>You may uninstall the Miniclip Toolbar at any time.</p>
+<h3>8. Restrictions</h3>
+<p>You are prohibited from (i) decompiling, reverse engineering, or disassembling the Miniclip Toolbar or the Miniclip Toolbar Services, or otherwise attempting to derive their source code; (ii) tampering or interfering with the functionality, delivery or operation of the Toolbar while using or installing it, (iii) selling, renting, transferring, reselling, or distributing the Miniclip Toolbar to any third party; (iv) duplicating, reproducing, copying (except for reasonable backup purposes), modifying, or otherwise creating derivative works of the Miniclip Toolbar or the Miniclip Toolbar Services, or (v) exporting or re-exporting the Miniclip Toolbar, directly or indirectly, into any country prohibited by law.</p>
+<h3>9. Disclaimer Regarding Third Party Applications</h3>
+<p>YOU HEREBY ACKNOWLEDGE AND AGREE THAT ANY THIRD PARTY APPLICATION THAT MAY BE BUNDLED WITH THE TOOLBAR, IS BEING PROVIDED TO YOU BY A THIRD PARTY PROVIDER AND NOT BY LICENSOR. YOU HEREBY ACKNOWLEDGE AND AGREE THAT YOUR DOWNLOAD, INSTALLATION AND USE OF ANY SUCH THIRD PARTY APPLICATION IS NOT GOVERNED BY THIS EULA, BUT MAY BE GOVERNED BY SUCH THIRD PARTY APPLICATION PROVIDER'S TERMS OF USE, LICENSE AGREEMENT, PRIVACY POLICY, OR OTHER SUCH AGREEMENT. LICENSOR EXPRESSLY DISCLAIMS ANY LIABILITY IN CONNECTION WITH ANY SUCH THIRD PARTY APPLICATIONS OR YOUR USE THEREOF.</p>
+<h3>10. Indemnification</h3>
+<p>BY DOWNLOADING, INSTALLING, USING OR UNINSTALLING THE TOOLBAR, OR USING THE MINICLIP TOOLBAR SERVICES, YOU HEREBY AGREE TO, AT YOUR OWN EXPENSE, INDEMNIFY, DEFEND AND HOLD HARMLESS LICENSOR, ITS PARENTS, SUBSIDIARIES AND AFFILIATES, ITS BUSINESS PARTNERS, THE THIRD PARTY MINICLIP TOOLBAR SUPPLIERS, AND ITS AND THEIR RESPECTIVE DIRECTORS, OFFICERS, EMPLOYEES AND AGENTS (THE "INDEMNIFIED PARTIES"), FROM AND AGAINST ANY AND ALL LOSSES, DAMAGES, INJURIES, CAUSES OF ACTION, CLAIMS, DEMANDS AND EXPENSES, INCLUDING LEGAL FEES AND EXPENSES, OF WHATEVER KIND OR NATURE ARISING OUT OF, RELATING TO OR RESULTING FROM ANY CLAIM AGAINST SUCH INDEMNIFIED PARTIES OR ANY ONE OF THEM, ARISING FROM OR RELATING TO (I) ANY BREACH BY YOU OF THIS EULA; OR (II) YOUR DOWNLOAD, INSTALLATION, USE OR UNINSTALLATION OF THE MINICLIP TOOLBAR OR THE MINICLIP TOOLBAR SERVICES, INCLUDING, WITHOUT LIMITATION, ANY CLAIM OF PERSONAL INJURY (INCLUDING DEATH), INJURY TO REPUTATION, VIOLATION OF PRIVACY, OR DAMAGE TO TANGIBLE PROPERTY OR DATA (INCLUDING LOSS OF PROPERTY OR LOSS OF USE OF TANGIBLE PROPERTY OR DATA).</p>
+<h3>11. Changes to these Terms and Conditions</h3>
+<p>You agree that Miniclip SA may change these terms and conditions at any time. The current terms and conditions for this agreement will be posted at: http://www.miniclip.com/TermsandConditions.htm</p>
+<p>You will be able to check and read the current terms and conditions and if you do not agree with them you may uninstall your toolbar. Instructions to help you uninstall your toolbar will be posted here: http://www.miniclip.com/toolbar/faqs.htm You are allowed to cancel your license by uninstalling the Miniclip Toolbar at any time.</p>
+<p><strong>12. Miniclip Toolbar Service</strong></p>
+<h3>No Personally Identifiable Information Collected.</h3>
+<p>No personally identifiable information is requested by the Miniclip Toolbar. This means the Miniclip Toolbar doesn't seek any information related to your name, telephone number, address, or your email address. At this time the Miniclip Toolbar is intended to be a completely anonymous service.</p>
+<h3>Information Collection</h3>
+<p>In order to improve the Miniclip Toolbar, and our other services, we may collect certain information from you via the Miniclip Toolbar. This information includes information about how you interact with the Miniclip Toolbar, such as your queries and your use of Miniclip Toolbar functionality, such as clicks on specific Miniclip Toolbar buttons. The Miniclip Toolbar does not collect information regarding your internet activity and computer use, such as the URLs of the websites that you visit. Miniclip SA will post any such information here: http://www.miniclip.com/TermsandConditions.htm.</p>
+<p>We may collect the normal type of information that is already available to the Web sites you visit, such as your operating system and IP address. None of this data contains personally identifiable information; it merely allows us to improve the Miniclip Toolbar and any other services to better serve you.</p>
+<p>From time to time, the Miniclip Toolbar will contact our servers to provide us with the above information. The Miniclip Toolbar will also contact our servers to see if you are running the most current version. If we have updates or patches to the Miniclip Toolbar we may automatically provide you with these at this time.</p>
+<p>If you are a user of the Miniclip Toolbar or some of our other services, such as the Miniclip.com website, we may have set a cookie () on your computer to help us remember some of your preferences. The Miniclip Toolbar may read the cookie while you are using our services in order for us to customize these services for you. These cookies are completely anonymous and do not contain or transmit any personally identifiable information.</p>
+<p>You may choose to set your browser software to refuse these cookies, however doing so may prevent us from optimizing our services to better serve you.</p>
+<h3>Using Collected Information</h3>
+<p>We use the information collected from you to improve the Miniclip Toolbar and our other services, including the services that are made available to you through the Miniclip Toolbar. We may also share the anonymous information that we collect from you with our business partners or clients so that they may improve their services, which may be made available to you through the Miniclip Toolbar.</p>
+<h3>13. Jurisdiction</h3>
+<p>The laws of England and Wales govern this agreement, without giving effect to conflict of laws provisions. The courts of England and Wales have exclusive jurisdiction over all disputes relating to or arising from the execution or performance of this agreement unless Miniclip SA wishes to initiate legal proceedings in your home legal district. In all judicial actions, arbitrations, or disputes resolution methods, the parties waive any punitive damages.</p>
+<h3>Copyright</h3>
+<p>If you believe that your copyrightable work is being displayed on this site and is violating copyright regulations - please advise us immediately at biz@miniclip.com and we will remove it.</p>
+<p>Contact Information: <a target="_blank" href="http://corporate.miniclip.com/page/view/contact/">http://corporate.miniclip.com/page/view/contact/</a></p>
+<p>Miniclip SA, Case Postale 2671, 2001 Neuch&acirc;tel, Switzerland</p>	<script type="text/javascript">
+			</script>
+	</div>
+</section>
+<section class="secondary">
+	    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Advertisement            <a href="#" rel="nofollow" class="feedback">Feedback</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-2 widget-883">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/multiplayer/en/#t-w-c" title="More Multiplayer Games">
+			Multiplayer		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/en/#t-w-c" title=""><div class="notification blip offset hot">New!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Squadd.io" title="Play Squadd.io" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/en/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Empire" title="Play Empire" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/en/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Forge" title="Play Forge of Empires" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/en/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Elvenar" title="Play Elvenar" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/en/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Soccer Stars " title="Play Soccer Stars" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/en/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Play Space1.io" title="Play Space1.io" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/multiplayer/en/#t-w-c">
+			More Multiplayer		</a>
+	</footer>
+</section>
+<div class="widget box no-chrome widget-top-smartphone-games tab-wrapper widget-885" data-current-tab="appleiphone" data-cookie="top-smartphone">
+	<nav class="tab-bar greedy">
+		<ul>
+			<li><a class="button cool appleiphone selected" href="#" data-panel="appleiphone" rel="nofollow">iPhone</a></li>
+			<li><a class="button cool android" href="#" data-panel="android" rel="nofollow">Android</a></li>
+		</ul>
+	</nav>
+	<div class="inner panel panel-appleiphone">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Hot!</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/basketball-stars" class="game-icon game-smartphone" target="_blank" title="Basketball Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/BasketballStars512.png" />
+					<span class="meta">Basketball Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-1194/iphone/en/#t-w-c">
+				More iOS Games			</a>
+		</footer>
+	</div>
+	<div class="inner panel panel-android">
+		<ol class="games-list">
+			<li>
+				<a href="/games/archery-king" class="game-icon game-smartphone" target="_blank" title="Archery King">
+					<span class="notification blip offset hot">Hot!</span>					<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/archery_icon.png" />
+					<span class="meta">Archery King</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/8-ball-pool-multiplayer" class="game-icon game-smartphone" target="_blank" title="8 Ball Pool">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/8BallPool_Icon_512x512.png" />
+					<span class="meta">8 Ball Pool</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/bowmasters" class="game-icon game-smartphone" target="_blank" title="Bowmasters">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/artwork.png" />
+					<span class="meta">Bowmasters</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/flip-diving" class="game-icon game-smartphone" target="_blank" title="Flip Diving">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/flipdiving_512x512.png" />
+					<span class="meta">Flip Diving</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/agar-io" class="game-icon game-smartphone" target="_blank" title="Agar.io">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/Agar.io_icon_512x512.png" />
+					<span class="meta">Agar.io</span>
+				</a>
+			</li>
+			<li>
+				<a href="/games/soccer-stars-mobile" class="game-icon game-smartphone" target="_blank" title="Soccer Stars">
+										<img src="//static.miniclipcdn.com/images/smartphone/icons/mobile/SoccerStars_Icon_512x512.png" />
+					<span class="meta">Soccer Stars</span>
+				</a>
+			</li>
+		</ol>
+
+		<footer class="overhang">
+			<a class="button fun greedy action" href="/games/genre-503/android/en/#t-w-c">
+				More Android Games			</a>
+		</footer>
+	</div>
+</div>	<div class="widget box widget-push-ads hp-sidebar widget-885" data-type="hp-sidebar" data-refresh="10000">
+		<a href="">
+			<img src="" />
+		</a>
+		<footer class="overhang">
+			<a href="" class="button hot action">Play</a>
+		</footer>
+
+
+	</div></section>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/en/" rel="nofollow">Play Games at Miniclip.com</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Home</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone Games</a></li>
+				<li><a href="/games/genre-503/" class="android">Android Games</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">Games for Your Website</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Submit a Game</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Advertisers</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Get in touch with the Miniclip Team">Contact Us</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="All About Miniclip.com">Corporate</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Current Vacancies at Miniclip.com">Careers</a></li>
+					<li><a href="/games/page/en/internet-safety/" title="Internet Safety">Internet Safety</a></li>
+					<li><a href="/videos/">Video Tips and Tricks</a></li>
+					<li><a href="/games/en/feed.xml" rel="nofollow">RSS Game Feed</a></li>
+					<li><a href="/games/page/en/sitemap/">Sitemap</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/en/terms-and-conditions/" rel="nofollow">Terms and Conditions</a></li>
+				<li><a href="/privacy/" rel="nofollow">Privacy Policy</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Cookies</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Help</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Login to Miniclip.com</h2>
+			</header>
+
+			<label>
+				<span>Email Address				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Password</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Login" />
+			</label>
+			<label class="col">
+				<span class="inline">Remember Me</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/en/">Password Reminder</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2>Signup <em>Free</em></h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">close drawer</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/js_head.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/page/ro/terms-and-conditions/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-0aab09474b25a22e5
+	q's = 1
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGxFQVl1JQlpXTg==","queueTime":0,"applicationTime":37,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>

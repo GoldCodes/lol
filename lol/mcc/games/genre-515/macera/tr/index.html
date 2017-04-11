@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<meta charset="utf-8"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+		<link rel="dns-prefetch" href="https://static.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static2.miniclipcdn.com" />
+		<link rel="dns-prefetch" href="https://static3.miniclipcdn.com" />
+        <link rel="dns-prefetch" href="//config.playwire.com/">
+<link rel="dns-prefetch" href="//cdn.intergi.com/">
+<script type="text/javascript">
+    var tyche = {isMobile: false, mode: 'tyche', config: '//config.playwire.com/1017860/v2/websites/64767/banner.json', forcePath: '/rosHP'};
+</script>
+<script id="tyche" src="//cdn.intergi.com/hera/tyche.js" type="text/javascript"></script>
+
+		
+		<title>Macera
+ Miniclip.com'da</title>
+		<meta name="description" content="Macera
+ Miniclip'de Oyunlar Oyna. En çok sevilen Macera
+ oyunlarımız Deep Underground, DynaBoy, ve Zombotron 2 - ve 121 üzerinde diğer Macera
+ keyfini çıkartacak oyun var!" />
+		<meta name="google-site-verification" content="NMuJU--WAcA9_LIhC7cW4JEtcL8wpDfpiFJKqLqoaiY" />
+		<link rel="canonical" href="https://www.miniclip.com/games/genre-515/macera/tr/" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href=https"://www.miniclip.com/games/tr/feed.xml" />
+		<link rel="search" type="application/opensearchdescription+xml" href="//static.miniclipcdn.com/opensearch.xml" title="Miniclip Search">
+<link href="//static.miniclipcdn.com/styles/css/common.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/modal.css?823" rel="stylesheet" type="text/css" />
+<link href="//static.miniclipcdn.com/styles/css/games.css?823" rel="stylesheet" type="text/css" />
+		<meta property="og:site_name" content="Miniclip"/>
+		<meta property="fb:admins" content="786690137" />
+		<meta property="og:title" content="Macera
+ Miniclip.com'da"/>
+
+		<meta name="twitter:site" content="@miniclip">
+		<meta property="og:url" content="https://www.miniclip.com/games/genre-515/macera/tr/" />
+		<meta property="og:image" content="https://static.miniclip.com/content/category/icons/adventure.png" />
+		<meta property="og:description" content="" />
+		<meta property="og:type" content="website" />
+
+		<link href="https://plus.google.com/118375337016817078846/" rel="publisher" />
+<style type="text/css"></style>		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="fb:app_id" content="111411968896241">
+		<meta name="msapplication-TileColor" content="#0099ff">
+		<meta name="msapplication-TileImage" content="images/msapplication-tile-image.png">
+		<meta name="application-name" content="Miniclip">
+
+		<!--[if IE]><link rel="stylesheet" type="text/css" href="//static.miniclipcdn.com/styles/css/ie.css"><![endif]-->
+		<script>
+			WebFontConfig = {google:{families:['Open+Sans:400,600:latin']}};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = '//ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+
+			var GEO_IP_CODE = 'US';
+		</script>
+		<script>
+						var GEO_IP_CODE = 'US';
+			var KILLSWITCH_ENABLED = ["awards","challenges","ads","ads-mpu","ads-mpu2","ads-leaderboard","ads-takeover","ads-skyscraper-left","ads-skyscraper-right","ads-video","dfp","dfp-mpu","dfp-mpu2","dfp-leaderboard","dfp-takeover","dfp-skyscraper-left","dfp-skyscraper-right","dfp-video","friends","leaderboards","login","notifications","npapi","offers","online-friends-backend","online-friends-ui","push-ads","recaptcha","search","sweepstakes","tracking-manager","xplore","payments"];
+			var static_path = '//static.miniclipcdn.com/';
+		</script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="//static.miniclipcdn.com/js/jquery-1.11.1.min.js"%3E%3C/script%3E'))</script>
+<script src="//static.miniclipcdn.com/js/stats-manager.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/swfobject.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/head-core.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/takeover.js?760" type="text/javascript"></script>
+<script src="//static.miniclipcdn.com/js/socket.io.js?760" type="text/javascript"></script>
+<script type="text/javascript">
+	// init and send page view
+	var stats_manager = new StatsManager();
+	stats_manager.init({"ua_account_number":"UA-44159587-1","disabled_trackers":false,"pageview_data":{"dimension7":"\/games\/genre-515\/macera\/","dimension9":"United States","dimension8":"tr","metric1":2,"dimension1":"Guest","dimension17":"Top Titles"},"page_prefix":""});
+			stats_manager.trackerPageview();
+	
+</script>		<script type="text/javascript">
+			var site_language = "tr";
+			var site_abc = "2";
+			var site_country = "US";
+			var site_tag_location = "C";
+		</script><!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','//connect.facebook.com/en_US/fbevents.js');
+
+    fbq('init', '1451566791782906');
+    fbq('track', "PageView");</script>
+<noscript>
+    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1451566791782906&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->		<link rel="alternate" hreflang="tr" href="https://www.miniclip.com/games/genre-515/macera/tr/" />
+		<link rel="alternate" hreflang="en" href="https://www.miniclip.com/games/genre-515/macera/en/" />
+		<link rel="alternate" hreflang="de" href="https://www.miniclip.com/games/genre-515/macera/de/" />
+		<link rel="alternate" hreflang="fr" href="https://www.miniclip.com/games/genre-515/macera/fr/" />
+		<link rel="alternate" hreflang="es" href="https://www.miniclip.com/games/genre-515/macera/es/" />
+		<link rel="alternate" hreflang="pt" href="https://www.miniclip.com/games/genre-515/macera/pt/" />
+		<link rel="alternate" hreflang="it" href="https://www.miniclip.com/games/genre-515/macera/it/" />
+		<link rel="alternate" hreflang="ko" href="https://www.miniclip.com/games/genre-515/macera/ko/" />
+		<link rel="alternate" hreflang="ja" href="https://www.miniclip.com/games/genre-515/macera/ja/" />
+		<link rel="alternate" hreflang="pt-br" href="https://www.miniclip.com/games/genre-515/macera/pt-br/" />
+		<link rel="alternate" hreflang="pl" href="https://www.miniclip.com/games/genre-515/macera/pl/" />
+		<link rel="alternate" hreflang="hu" href="https://www.miniclip.com/games/genre-515/macera/hu/" />
+		<link rel="alternate" hreflang="ro" href="https://www.miniclip.com/games/genre-515/macera/ro/" />
+		<link rel="alternate" hreflang="zh" href="https://www.miniclip.com/games/genre-515/macera/zh/" />
+		<link rel="alternate" hreflang="ru" href="https://www.miniclip.com/games/genre-515/macera/ru/" />
+		<link rel="alternate" hreflang="hi" href="https://www.miniclip.com/games/genre-515/macera/hi/" />
+		<link rel="alternate" hreflang="sv" href="https://www.miniclip.com/games/genre-515/macera/sv/" />
+		<link rel="alternate" hreflang="tk" href="https://www.miniclip.com/games/genre-515/macera/tk/" />
+        <script type="text/javascript">
+            var takeover_heights = [0,90,136,170];
+            var takeover = {};
+            var mcto = {};
+        </script>
+
+        <script>var translate = {"hide":"Gizle","show":"G\u00f6ster","full_categories_list":"Tam Kategori Listesi","all_games_and_categories":"T\u00fcm Oyunlar ve Kategoriler","show_more_results":"Daha fazla sonu\u00e7 g\u00f6ster &rsaquo;","no_comments":"Yorum yok","report":"Raporla","comment_like_failed":"\u00dczg\u00fcn\u00fcz, yorumu be\u011fenme ba\u015far\u0131s\u0131z oldu. L\u00fctfen biraz sonra tekrar dene.","comment_reporting_failed":"\u00dczg\u00fcn\u00fcz, yorum raporlama ba\u015far\u0131s\u0131z oldu.","the_word_is_not_allowed":"%s kelimesi kullan\u0131lmas\u0131na izin verilen kelimeler aras\u0131nda de\u011fil.","remove_red_messages":"L\u00fctfen mesaj\u0131n\u0131z\u0131 yeniden d\u00fczenleyin, k\u0131rm\u0131z\u0131 vurgulu kelimeleri kullan\u0131m\u0131na izin verilmedi\u011fi i\u00e7in \u00e7\u0131kart.","enter_the_link":"URL ba\u011flant\u0131s\u0131n\u0131 gir","search_free_games":"\u00dccretsiz oyunlar ho\u015funa m\u0131 gidiyor? \u00dccretsiz oyunlara <strong>BAYILIRIZ<\/strong>! T\u00fcm Miniclip oyunlar\u0131n\u0131n \u0130nternet sitesi \u00fczerinden oynayabilece\u011fin \u00fccretsiz s\u00fcr\u00fcmleri bulunmaktad\u0131r.","password_reset_error_email":"<strong>O-Oo!<\/strong> Bir e-posta adresi girmedin!","password_reset_error_username":"<strong>\u00dczg\u00fcn\u00fcz<\/strong> - Bu ge\u00e7erli bir e-posta gibi g\u00f6z\u00fckm\u00fcyor.","password_reset_success":"We've got your reset request. If the email address you provided exists you should be getting an email with instructions on what to do next.","confirm_focus_mode":"Odaklanma moduna ge\u00e7erek oyun \u00fczerine odaklan. Bu i\u015flem \u015fu anda oynad\u0131\u011f\u0131n oyunu yeniden ba\u015flatacak. Devam etmek istiyor musun?","add_to_favorites":"S\u0131k kullan\u0131lan oyunlara ekle","remove_from_favorites":"Oyununu s\u0131k kullan\u0131lanlardan kald\u0131r","comment_autocomplete_placeholder":"Yazmaya ba\u015flayarak \u00f6nerileri g\u00f6r","new":"Yeni","next":"sonraki","prev":"\u00f6nceki","warning":"Warning!","facebook_popup_warning":"The Facebook login dialog window may get blocked by your browser.<br>If it does, please allow pop-ups and then retry.<br><br>","retry":"Retry","cancel":"Cancel","email_registered":"This email is already registered, enter password to sign in.","email_not_registered":"This email is not registered yet, enter password to continue to registration.","caps_lock_on":"Warning: Caps lock is on.","password_min_length":"Password must be at least %s characters long.","password_confirmation_match":"Confirmation password must match your entered password.","nickname_length_limits":"Nickname length should be between %s and %s characters.","nickname_not_registered":"This nickname is not registered yet.","dob_day_numeric":"The day of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_day_digits":"The day of your date of birth cannot contain more than two digits.<br>","dob_day_limits":"The day of your date of birth must be between 1 and 31.<br>","dob_month_invalid":"The month of your date of birth is not valid.<br>","dob_year_numeric":"The year of your date of birth cannot contain alpha characters, only numeric (0-9).<br>","dob_year_contain_4digits":"The year of your date of birth must contain four digits (%s).<br>","dob_year_lower":"The year of your date of birth cannot be lower than %s.<br>","dob_year_higher":"The year of your date of birth cannot be higher than %s.<br>","error":"Hata!","correct_errors":"Please correct errors before proceeding.<br>"}</script>		<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<script type="text/javascript">
+			var fb_app = {
+				id: 111411968896241,
+				namespace: 'miniclipapp',
+			};
+		
+			var https_root = 'https://www.miniclip.com';
+			var app_env = 'production';
+			var GEO_IP_CODE = 'US';
+
+
+			window.addEventListener('load', function () {
+				if (document.body.dataset.userId) {
+					$("iframe[src^='https://ad.doubleclick'], iframe[id^='google_ads_iframe']").each(function (i, el) {
+						if ($(el).width() > 1) {
+							var gameName = "miniclip";
+							MC.sendUserEvent('interstitial_ads', {
+								userId: document.body.dataset.userId,
+								game: gameName,
+								provider: 'google'
+							});
+						}
+					});
+				}
+			});
+
+		</script>
+
+		
+			</head>
+
+	<body class="ks-active-awards ks-active-challenges ks-active-ads ks-active-ads-mpu ks-active-ads-mpu2 ks-active-ads-leaderboard ks-active-ads-takeover ks-active-ads-skyscraper-left ks-active-ads-skyscraper-right ks-active-ads-video ks-active-dfp ks-active-dfp-mpu ks-active-dfp-mpu2 ks-active-dfp-leaderboard ks-active-dfp-takeover ks-active-dfp-skyscraper-left ks-active-dfp-skyscraper-right ks-active-dfp-video ks-active-friends ks-active-leaderboards ks-active-login ks-active-notifications ks-active-npapi ks-active-offers ks-active-online-friends-backend ks-active-online-friends-ui ks-active-push-ads ks-active-recaptcha ks-active-search ks-active-sweepstakes ks-active-tracking-manager ks-active-xplore ks-active-payments ks-disabled-activity-feed ks-disabled-cooladata-tracking ks-disabled-friend-invites ks-disabled-online-users-per-game-backend ks-disabled-online-users-per-game-ui ks-disabled-player-search ks-disabled-point_system ks-disabled-random-game ks-disabled-teams ks-disabled-one-signal control-games category-id-515 locale-us lang-tr browser-unknown os-linux"  data-platform="miniclip" data-platformappid="111411968896241" data-facebook-app-id="111411968896241" data-language-code="tr" data-env="production" data-script-version="760">
+<script type="text/javascript" src="//static.miniclipcdn.com/js/mc.js?760" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/currency.js?760" ></script>		<script>
+			if ( 'object' == typeof( MC ) ) {
+				MC.init({
+					modules: ['Currency', 'Leaderboard', 'Challenge'],
+					app_id: 1
+				});
+			}
+		</script>
+	<header id="site-header">
+		<div class="container">
+			<h1 class="logo item">
+				<a href="/games/tr/" rel="nofollow">Miniclip.com'da Oyun Oyna</a>
+			</h1>
+	<form class="search-form item" action="/games/search/tr/" target="_top">
+		<label>
+			<span class="screen-reader">Şunu ara...</span>
+			<input class="search-query greedy" type="text" name="query" autocomplete="off"  placeholder="Oyunları Ara" />
+		</label>
+		<button class="search-submit" type="submit" name="submit" ><span>Ara</span></button>
+	</form>	<div class="login-container item">
+		<nav class="menu login-box logged-out" role="navigation">
+			<ul>
+				<li>
+					<a href="#" class="signup open-drawer" data-drawer="login-signup">Kaydol / Oturum aç</a>
+				</li>
+				<li>
+					<a href="#" id="third-party-fb-login" data-tip="Facebook'la Kaydol ve Oturum Aç" class="tooltip facebook"><span class="screen-reader">Login With Facebook</span></a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<a href="#" class="item language toolbox-trigger" id="language-selector" rel="nofollow" data-toolbox-type="language">
+	<img src="//static.miniclipcdn.com/layout/flags/46x32/TR.png" width="44" height="32" alt="tr" class="flag" />
+</a>
+
+<div class="toolbox language-list toolbox-language">
+	<h2>Dilinde</h2>
+	<nav class="menu stacked">
+		<ul>
+			<li>
+				<a href="/games/genre-515/macera/en/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/EN.png" class="flag" /> English				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/es/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/ES.png" class="flag" /> Español				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/fr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/FR.png" class="flag" /> Français				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/in/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IN.png" class="flag" /> हिन्दी				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/de/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/DE.png" class="flag" /> Deutsch				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/ro/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RO.png" class="flag" /> Română				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/br/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/BR.png" class="flag" /> Brasil				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/pl/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PL.png" class="flag" /> Polski				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/pt/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/PT.png" class="flag" /> Português				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/ru/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/RU.png" class="flag" /> Русский				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/jp/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/JP.png" class="flag" /> 日本語				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/it/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/IT.png" class="flag" /> Italiano				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/hu/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/HU.png" class="flag" /> Magyar				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/se/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/SE.png" class="flag" /> Svenska				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/kr/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/KR.png" class="flag" /> 한국어				</a>
+			</li>
+			<li>
+				<a href="/games/genre-515/macera/cs/?force_language" rel="nofollow">
+					<img data-src="//static.miniclipcdn.com/layout/flags/46x32/CS.png" class="flag" /> 中文				</a>
+			</li>
+		</ul>
+	</nav>
+	<a href="/games/choose-your-language/?return_pre=/games/genre-515/macera&return_post=" class="button small greedy">
+		Daha fazla	</a>
+</div>
+<nav class="menu rich greedy main-menu" role="navigation">
+    <ul>
+		<li>
+			<a href="/games/tr/#t-n" class="button category home" title="Miniclip Ana Sayfası">
+				<span>Miniclip Ana Sayfası</span>
+			</a>
+		</li>
+		<li>
+			<a href="/games/8-ball-pool-multiplayer/#t-n" class="link-104 link-pool catgory button">
+				Pool			</a>
+		</li>
+		<li>
+			<a href="/games/agar-io/#t-n" class="link-151 link-agar-io catgory button">
+				Agar.io			</a>
+		</li>
+		<li>
+			<a href="/games/tanki-online/#t-n" class="link-150 link-tanki-online catgory button">
+				Tanki Online			</a>
+		</li>
+		<li>
+			<a href="/games/empire/tr/#t-n" class="game-3276 catgory button">
+				Empire			</a>
+		</li>
+		<li>
+			<a href="/games/genre-13/action/tr/#t-n" class="cat-13 catgory button">
+				Aksiyon
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-2/multiplayer/tr/#t-n" class="cat-2 catgory button">
+				Çok Oyunculu
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-1/puzzle/tr/#t-n" class="cat-1 catgory button">
+				Bulmaca
+			</a>
+		</li>
+		<li>
+			<a href="/games/genre-503/android/tr/#t-n" class="cat-503 catgory button">
+				Android			</a>
+		</li>
+		<li class="expendables">
+			<a href="#" rel="nofollow" class="button category more more-menu" data-target="#more-navigation">
+				<span>Daha Fazla Kategori</span>
+			</a>
+		</li>
+	</ul>
+</nav>
+<div id="more-navigation" class="box roomy extras">
+	<h2>Oyun Kategorileri</h2>
+	<div class="category-list">
+		<a href="/games/genre-35/3b/tr/#t-m-c" class="cat-35" title="3B
+ Oyunları Oyna">3B
+</a>
+		<a href="/games/genre-13/action/tr/#t-m-c" class="cat-13" title="Aksiyon
+ Oyunları Oyna">Aksiyon
+</a>
+		<a href="/games/genre-1001/amerikan-futbolu/tr/#t-m-c" class="cat-1001" title="Amerikan Futbolu
+ Oyunları Oyna">Amerikan Futbolu
+</a>
+		<a href="/games/genre-503/android/tr/#t-m-c" class="cat-503" title="Android Oyunları Oyna">Android</a>
+		<a href="/games/genre-511/my-friends-league/tr/#t-m-c" class="cat-511" title="Arkadaşlarım Ligi
+ Oyunları Oyna">Arkadaşlarım Ligi
+</a>
+		<a href="/games/genre-525/award/tr/#t-m-c" class="cat-525" title="Ödül
+ Oyunları Oyna">Ödül
+</a>
+		<a href="/games/genre-482/kids/tr/#t-m-c" class="cat-482" title="Çocuklar
+ Oyunları Oyna">Çocuklar
+</a>
+		<a href="/games/genre-2/multiplayer/tr/#t-m-c" class="cat-2" title="Çok Oyunculu
+ Oyunları Oyna">Çok Oyunculu
+</a>
+		<a href="/games/genre-1/puzzle/tr/#t-m-c" class="cat-1" title="Bulmaca
+ Oyunları Oyna">Bulmaca
+</a>
+		<a href="/games/genre-490/cadilar-bayrami/tr/#t-m-c" class="cat-490" title="Cadılar Bayramı
+ Oyunları Oyna">Cadılar Bayramı
+</a>
+		<a href="/games/genre-519/fighting/tr/#t-m-c" class="cat-519" title="Dövüş
+ Oyunları Oyna">Dövüş
+</a>
+		<a href="/games/genre-6/-top-10/tr/#t-m-c" class="cat-6" title="En İyi 10
+ Oyunları Oyna">En İyi 10
+</a>
+		<a href="/games/genre-23/top-100/tr/#t-m-c" class="cat-23" title="En İyi 100
+ Oyunları Oyna">En İyi 100
+</a>
+		<a href="/games/genre-7/latest/tr/#t-m-c" class="cat-7" title="En Son
+ Oyunları Oyna">En Son
+</a>
+		<a href="/games/genre-18/soccer/tr/#t-m-c" class="cat-18" title="Futbol
+
+ Oyunları Oyna">Futbol
+
+</a>
+		<a href="/games/genre-488/golf/tr/#t-m-c" class="cat-488" title="Golf Oyunları Oyna">Golf</a>
+		<a href="/games/genre-513/pool/tr/#t-m-c" class="cat-513" title="Havuz
+ Oyunları Oyna">Havuz
+</a>
+		<a href="/games/genre-5/shoot-em-up/tr/#t-m-c" class="cat-5" title="Hepsini Vur
+ Oyunları Oyna">Hepsini Vur
+</a>
+		<a href="/games/genre-1194/iphone/tr/#t-m-c" class="cat-1194" title="iPhone Games Oyunları Oyna">iPhone Oyunları</a>
+		<a href="/games/genre-1133/kart/tr/#t-m-c" class="cat-1133" title="Kart
+ Oyunları Oyna">Kart
+</a>
+		<a href="/games/genre-4/kis/tr/#t-m-c" class="cat-4" title="Kış Oyunları Oyna">Kış</a>
+		<a href="/games/genre-1185/krediler/tr/#t-m-c" class="cat-1185" title="Krediler
+ Oyunları Oyna">Krediler
+</a>
+		<a href="/games/genre-1145/kule-savunmasi/tr/#t-m-c" class="cat-1145" title="Kule Savunması
+ Oyunları Oyna">Kule Savunması
+</a>
+		<a href="/games/genre-1209/london-olympics/tr/#t-m-c" class="cat-1209" title="London Olympics 2012 Oyunları Oyna">2012 Londra Olimpiyatları</a>
+		<a href="/games/genre-515/macera/tr/#t-m-c" class="cat-515" title="Macera
+ Oyunları Oyna">Macera
+</a>
+		<a href="/games/genre-1157/moto-kros/tr/#t-m-c" class="cat-1157" title="Moto-kros
+ Oyunları Oyna">Moto-kros
+</a>
+		<a href="/games/genre-26/motorsports/tr/#t-m-c" class="cat-26" title="Motosiklet sporları
+ Oyunları Oyna">Motosiklet sporları
+</a>
+		<a href="/games/genre-1003/noel/tr/#t-m-c" class="cat-1003" title="Noel Oyunları Oyna">Noel</a>
+		<a href="/games/genre-517/arcade/tr/#t-m-c" class="cat-517" title="Oyun Salonu
+ Oyunları Oyna">Oyun Salonu
+</a>
+		<a href="/games/genre-40/platform/tr/#t-m-c" class="cat-40" title="Platform Oyunları Oyna">Platform</a>
+		<a href="/games/genre-14/political/tr/#t-m-c" class="cat-14" title="Politik Oyunları Oyna">Politik</a>
+		<a href="/games/genre-1201/hot-games/tr/#t-m-c" class="cat-1201" title="Sıcak Oyunlar
+ Oyunları Oyna">Sıcak Oyunlar
+</a>
+		<a href="/games/genre-1109/sozcuk/tr/#t-m-c" class="cat-1109" title="Sözcük
+ Oyunları Oyna">Sözcük
+</a>
+		<a href="/games/genre-3/sport/tr/#t-m-c" class="cat-3" title="Spor
+ Oyunları Oyna">Spor
+</a>
+		<a href="/games/genre-523/strategy/tr/#t-m-c" class="cat-523" title="Strateji
+ Oyunları Oyna">Strateji
+</a>
+		<a href="/games/genre-1238/holidays/tr/#t-m-c" class="cat-1238" title="TATİL
+ Oyunları Oyna">TATİL
+</a>
+		<a href="/games/genre-1151/tehlikeli-sahne/tr/#t-m-c" class="cat-1151" title="Tehlikeli Sahne
+ Oyunları Oyna">Tehlikeli Sahne
+</a>
+		<a href="/games/genre-1155/tehlikeli-sporlar/tr/#t-m-c" class="cat-1155" title="Tehlikeli Sporlar
+ Oyunları Oyna">Tehlikeli Sporlar
+</a>
+		<a href="/games/genre-484/tennis/tr/#t-m-c" class="cat-484" title="Tenis
+ Oyunları Oyna">Tenis
+</a>
+		<a href="/games/genre-521/flying/tr/#t-m-c" class="cat-521" title="Uçuş
+ Oyunları Oyna">Uçuş
+</a>
+		<a href="/games/genre-497/buzz/tr/#t-m-c" class="cat-497" title="Vızıltı
+ Oyunları Oyna">Vızıltı
+</a>
+		<a href="/games/genre-432/web-yoneticisi-oyunlari/tr/#t-m-c" class="cat-432" title="Web Yöneticisi Oyunları
+ Oyunları Oyna">Web Yöneticisi Oyunları
+</a>
+		<a href="/games/genre-477/racing/tr/#t-m-c" class="cat-477" title="Yarış
+ Oyunları Oyna">Yarış
+</a>
+		<a href="/games/genre-1143/yikim/tr/#t-m-c" class="cat-1143" title="Yıkım
+ Oyunları Oyna">Yıkım
+</a>
+		<a href="/games/genre-1149/zombi/tr/#t-m-c" class="cat-1149" title="Zombi
+ Oyunları Oyna">Zombi
+</a>
+	</div>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Daha Fazla İlginç Şeyler</h2>
+			</li>
+			<li>
+				<a href="http://blog.miniclip.com/" title="Miniclip Blog" class="feed">
+					Miniclip Blog				</a>
+			</li>
+			<li>
+				<a href="/games/page/tr/downloadable-games/#t-m-s" title="Masaüstünde oynamak için oyunları indir" class="download">
+					Oyunları İndir				</a>
+			</li>
+			<li>
+				<a href="/webmasters/" title="Miniclip Oyunlarını İnternet Sitene için Ücretsiz Al!" class="webmasters">
+					Ücretsiz İnternet Sitesi Oyunları				</a>
+			</li>
+			<li>
+				<a href="/videos/tr/#t-m-s" class="videos">
+					Video Önerileri ve Hileler				</a>
+			</li>
+			<li>
+				<a href="https://support.miniclip.com/" class="help" rel="nofollow">
+					Yardım				</a>
+			</li>
+			<li >
+				<a href="/games/page/tr/internet-safety/" rel="nofollow">
+					İnternet Güvenliği				</a>
+			</li>
+			<li>
+				<a href="/privacy/" rel="nofollow">
+					Gizlilik Politikası				</a>
+			</li>
+		</ul>
+	</nav>
+	<nav class="menu" role="navigation">
+		<ul>
+			<li>
+				<h2>Miniclip ile Bağlan</h2>
+			</li>
+			<li id="social-facebook">
+				<a href="https://www.facebook.com/miniclip" class="facebook" title="Facebook'ta Miniclip'i beğen" rel="nofollow">
+					Facebook
+				</a>
+			</li>
+			<li id="social-twitter">
+				<a href="https://twitter.com/miniclip" class="twitter" title="Miniclip'i Twitter'da Takip Et" rel="nofollow">
+					Twitter
+				</a>
+			</li>
+			<li id="social-google-plus">
+				<a href="https://plus.google.com/118375337016817078846/?prsrc=3" class="google" title="Google+'da Minclip" rel="nofollow">
+					Google+
+				</a>
+			</li>
+			<li id="social-youtube">
+				<a href="https://www.youtube.com/Miniclip" class="youtube" title="YouTube'da Miniclip Videoları izle" rel="nofollow">
+					YouTube
+				</a>
+			</li>
+		</ul>
+	</nav>
+</div>		</div>
+	</header>
+
+	<div id="site-container">
+				<div class="container">
+                    <div data-pw-desk="leaderboard_atf"></div>
+                	<div class="box greedy">
+		<header class="pretty juicy">
+			<h1 class="cat-515">Macera
+</h1>
+		</header>
+	</div>
+		<section class="primary">
+		<section id="category-intro">
+<div class="widget widget-size-2 box widget-game-scroller widget-891">
+	<article>
+		<a href="/games/deep-underground/tr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/deep_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Deep Underground" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/dynaboy/tr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com//content/game-icons/medium/dyna-boy_150x110.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="DynaBoy" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/zombotron-2-time-machine/tr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com//content/game-icons/medium/zombotron2.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Zombotron 2 Time Machine" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/curse-of-the-mushroom-king/tr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/COTMK_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Curse of the Mushroom King" />
+		</a>
+	</article>
+	<article>
+		<a href="/games/last-samurai/tr/#t-l-gs1">
+			<img data-src="//static.miniclipcdn.com/images/big-images/last_sam_444x287.jpg" class="lazy" src="//static.miniclipcdn.com/layout/icons/default-444x287.png" alt="Last Samurai" />
+		</a>
+	</article>
+	<nav>
+<a data-tip="Deep Underground" data-slide="#slide_1" class="tooltip game-icon game-id-4458" href="/games/deep-underground/tr/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/deep_150x110v2.jpg" alt="Underground Oyna" title="Deep Underground Oyna" width="84" height="63" /></a><a data-tip="DynaBoy" data-slide="#slide_2" class="tooltip game-icon game-id-3866" href="/games/dynaboy/tr/#t-l-gs1" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/dyna-boy_150x110.jpg" alt="DynaBoy Oyna" title="DynaBoy Oyna" width="84" height="63" /></a><a data-tip="Zombotron 2" data-slide="#slide_3" class="tooltip game-icon game-id-3750" href="/games/zombotron-2-time-machine/tr/#t-l-gs1" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/zombotron2.jpg" alt="Zombotron 2 Oyna" title="Zombotron 2 Oyna" width="84" height="63" /></a><a data-tip="Curse of the shroom King" data-slide="#slide_4" class="tooltip game-icon game-id-4429" href="/games/curse-of-the-mushroom-king/tr/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/COTMK_150x110.jpg" alt="Mushroom King Oyna" title="Curse of the shroom King Oyna" width="84" height="63" /></a><a data-tip="Last Samurai" data-slide="#slide_5" class="tooltip game-icon game-id-4609" href="/games/last-samurai/tr/#t-l-gs1" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/last_sam_150x110.jpg" alt="Last Samurai Oyna" title="Last Samurai Oyna" width="84" height="63" /></a>	</nav>
+</div><section class="widget box widget-hot-games widget-hot-games-515 widget-893">
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4456" href="/games/infectonator-survivors/tr/#t-w-c" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/Infectonator-Survivor_150x110.jpg" alt="Infectonator Oyna" title="Infectonator: Survivors Oyna" width="84" height="63" /><span class="meta">Infectonator</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4394" href="/games/bear-in-super-action-adventure/tr/#t-w-c" title=""><img src="//static3.miniclipcdn.com/content/game-icons/medium/Bear-in-Super_150x110.jpg" alt="Bear Adventure Oyna" title="Bear Adventure Oyna" width="84" height="63" /><span class="meta">Bear Adventure</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4391" href="/games/key-and-shield/tr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/key_150x110.jpg" alt="Key and Shield Oyna" title="Key and Shield Oyna" width="84" height="63" /><span class="meta">Key and Shield</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4376" href="/games/knight-slider/tr/#t-w-c" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/Knight-Slider_150x110.jpg" alt="Knight Slider Oyna" title="Knight Slider Oyna" width="84" height="63" /><span class="meta">Knight Slider</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4375" href="/games/bobby-da-arrow/tr/#t-w-c" title=""><img src="//static2.miniclipcdn.com/content/game-icons/medium/Bobby-da-Arrow_150x110.jpg" alt="Bobby Da Arrow Oyna" title="Bobby Da Arrow Oyna" width="84" height="63" /><span class="meta">Bobby Da Arrow</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4374" href="/games/age-of-wonder-2-the-lost-scrolls/tr/#t-w-c" title=""><img src="//static.miniclipcdn.com/content/game-icons/medium/Age-of-W_scrolls_2_150x110.jpg" alt="The Lost Scrol Oyna" title="The Lost Scrolls Oyna" width="84" height="63" /><span class="meta">The Lost Scrol</span></a>		</li>
+	</ul>
+</section>
+		</section>
+
+		<nav class="tab-bar category-sort">
+			<ul>
+				<li><a class="button cool selected top" id="tab-top" data-order="order" href="">En İyi Oyunlar</a></li>
+				<li><a class="button cool calendar" id="tab-recent" data-order="release" href="">Son Oyunlar</a></li>
+				<li><a class="button cool top-rated" id="tab-top-rated" data-order="rating" href="">En İyi Derece Alan Oyunlar</a></li>
+			</ul>
+		</nav>
+		<div class="box greedy tab-content selected" id="category-games-list">
+			<ul class="games-list inner">
+				<li data-order="1" data-rating="4,1432" data-rating-count="2199" data-release="">
+					<a class="game-icon game-id-4458" href="/games/deep-underground/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/deep_150x110v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Underground Oyna" title="Deep Underground Oyna" width="84" height="63" /><span class="meta">Underground</span></a>				</li>
+				<li data-order="2" data-rating="4,3819" data-rating-count="14804" data-release="-62169984000">
+					<a class="game-icon game-id-3866" href="/games/dynaboy/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/dyna-boy_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="DynaBoy Oyna" title="DynaBoy Oyna" width="84" height="63" /><span class="meta">DynaBoy</span></a>				</li>
+				<li data-order="3" data-rating="4,4963" data-rating-count="37710" data-release="">
+					<a class="game-icon game-id-3750" href="/games/zombotron-2-time-machine/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/zombotron2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombotron 2 Oyna" title="Zombotron 2 Oyna" width="84" height="63" /><span class="meta">Zombotron 2</span></a>				</li>
+				<li data-order="4" data-rating="4,036" data-rating-count="917" data-release="">
+					<a class="game-icon game-id-4429" href="/games/curse-of-the-mushroom-king/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/COTMK_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mushroom King Oyna" title="Curse of the shroom King Oyna" width="84" height="63" /><span class="meta">Mushroom King</span></a>				</li>
+				<li data-order="5" data-rating="4,2591" data-rating-count="984" data-release="">
+					<a class="game-icon game-id-4609" href="/games/last-samurai/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/last_sam_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Last Samurai Oyna" title="Last Samurai Oyna" width="84" height="63" /><span class="meta">Last Samurai</span></a>				</li>
+				<li data-order="6" data-rating="4,3283" data-rating-count="1115" data-release="">
+					<a class="game-icon game-id-4456" href="/games/infectonator-survivors/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Infectonator-Survivor_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Infectonator Oyna" title="Infectonator: Survivors Oyna" width="84" height="63" /><span class="meta">Infectonator</span></a>				</li>
+				<li data-order="7" data-rating="4,38" data-rating-count="1358" data-release="">
+					<a class="game-icon game-id-4394" href="/games/bear-in-super-action-adventure/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Bear-in-Super_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bear Adventure Oyna" title="Bear Adventure Oyna" width="84" height="63" /><span class="meta">Bear Adventure</span></a>				</li>
+				<li data-order="8" data-rating="4,1957" data-rating-count="889" data-release="">
+					<a class="game-icon game-id-4391" href="/games/key-and-shield/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/key_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Key and Shield Oyna" title="Key and Shield Oyna" width="84" height="63" /><span class="meta">Key and Shield</span></a>				</li>
+				<li data-order="9" data-rating="4,2041" data-rating-count="490" data-release="">
+					<a class="game-icon game-id-4376" href="/games/knight-slider/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Knight-Slider_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Knight Slider Oyna" title="Knight Slider Oyna" width="84" height="63" /><span class="meta">Knight Slider</span></a>				</li>
+				<li data-order="10" data-rating="4,3477" data-rating-count="834" data-release="">
+					<a class="game-icon game-id-4375" href="/games/bobby-da-arrow/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Bobby-da-Arrow_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bobby Da Arrow Oyna" title="Bobby Da Arrow Oyna" width="84" height="63" /><span class="meta">Bobby Da Arrow</span></a>				</li>
+				<li data-order="11" data-rating="4,3848" data-rating-count="551" data-release="">
+					<a class="game-icon game-id-4374" href="/games/age-of-wonder-2-the-lost-scrolls/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Age-of-W_scrolls_2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="The Lost Scrol Oyna" title="The Lost Scrolls Oyna" width="84" height="63" /><span class="meta">The Lost Scrol</span></a>				</li>
+				<li data-order="12" data-rating="4,3202" data-rating-count="1293" data-release="">
+					<a class="game-icon game-id-4439" href="/games/scrappy-cat/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/scrappy_cat_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Scrappy Cat Oyna" title="Scrappy Cat Oyna" width="84" height="63" /><span class="meta">Scrappy Cat</span></a>				</li>
+				<li data-order="13" data-rating="3,9256" data-rating-count="2795" data-release="">
+					<a class="game-icon game-id-4364" href="/games/escape-to-hell/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Escape-to-Hell_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Escape to Hell Oyna" title="Escape to Hell Oyna" width="84" height="63" /><span class="meta">Escape to Hell</span></a>				</li>
+				<li data-order="14" data-rating="4,3908" data-rating-count="1932" data-release="">
+					<a class="game-icon game-id-4241" href="/games/headless-zombie-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/HZ2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Headless 2 Oyna" title="Headless Zombie 2 Oyna" width="84" height="63" /><span class="meta">Headless 2</span></a>				</li>
+				<li data-order="15" data-rating="4,2262" data-rating-count="2149" data-release="">
+					<a class="game-icon game-id-4295" href="/games/tap-heroes/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Tap-Heroes_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tap Heroes Oyna" title="Tap Heroes Oyna" width="84" height="63" /><span class="meta">Tap Heroes</span></a>				</li>
+				<li data-order="16" data-rating="4,5229" data-rating-count="306" data-release="">
+					<a class="game-icon game-id-4162" href="/games/shadow-kings/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/shadowkings_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Shadow Kings Oyna" title="Shadow Kings Oyna" width="84" height="63" /><span class="meta">Shadow Kings</span></a>				</li>
+				<li data-order="17" data-rating="4,2448" data-rating-count="3296" data-release="">
+					<a class="game-icon game-id-4238" href="/games/a-stroll-in-space/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/strollinspacev2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stroll In  Oyna" title="A Stroll In Space Oyna" width="84" height="63" /><span class="meta">Stroll In </span></a>				</li>
+				<li data-order="18" data-rating="3,9042" data-rating-count="4593" data-release="">
+					<a class="game-icon game-id-4263" href="/games/knightmare-tower/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/KnightmareTower_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Knightmare Oyna" title="Knightmare Tower Oyna" width="84" height="63" /><span class="meta">Knightmare</span></a>				</li>
+				<li data-order="19" data-rating="4,2652" data-rating-count="328" data-release="">
+					<a class="game-icon game-id-4366" href="/games/qubey/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Qubey_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Qubey Oyna" title="Qubey Oyna" width="84" height="63" /><span class="meta">Qubey</span></a>				</li>
+				<li data-order="20" data-rating="4,3048" data-rating-count="12651" data-release="">
+					<a class="game-icon game-id-4237" href="/games/fancy-snowboarding/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/fancysnowboarding_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snowboard Oyna" title="Fancy Snowboarding Oyna" width="84" height="63" /><span class="meta">Snowboard</span></a>				</li>
+				<li data-order="21" data-rating="4,4869" data-rating-count="23143" data-release="">
+					<a class="game-icon game-id-4127" href="/games/earn-to-die-2012-part-1/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/earntodie2012.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Earntodie2012 Oyna" title="Earn to Die 2012: Part 1 Oyna" width="84" height="63" /><span class="meta">Earntodie2012</span></a>				</li>
+				<li data-order="22" data-rating="4,4638" data-rating-count="5172" data-release="">
+					<a class="game-icon game-id-3836" href="/games/once-upon-a-life/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/once_upon_a_life.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Once Upon Oyna" title="Once Upon A Life Oyna" width="84" height="63" /><span class="meta">Once Upon</span></a>				</li>
+				<li data-order="23" data-rating="4,4925" data-rating-count="33187" data-release="">
+					<a class="game-icon game-id-4126" href="/games/earn-to-die/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/EarnToDiev3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Earn to Die Oyna" title="Earn to Die Oyna" width="84" height="63" /><span class="meta">Earn to Die</span></a>				</li>
+				<li data-order="24" data-rating="4,4031" data-rating-count="4197" data-release="">
+					<a class="game-icon game-id-4147" href="/games/vvvvvv/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/vvvvvv.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Vvvvvv Oyna" title="Vvvvvv Oyna" width="84" height="63" /><span class="meta">Vvvvvv</span></a>				</li>
+				<li data-order="25" data-rating="4,1991" data-rating-count="2948" data-release="">
+					<a class="game-icon game-id-4152" href="/games/bazooki-pocalypse/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Bazookipocalypse.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bazooki-P Oyna" title="Bazooki-Pocalypse Oyna" width="84" height="63" /><span class="meta">Bazooki-P</span></a>				</li>
+				<li data-order="26" data-rating="4,5011" data-rating-count="6743" data-release="-62169984000">
+					<a class="game-icon game-id-3786" href="/games/zombality/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zombality.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombality Oyna" title="Zombality Oyna" width="84" height="63" /><span class="meta">Zombality</span></a>				</li>
+				<li data-order="27" data-rating="4,4062" data-rating-count="10626" data-release="">
+					<a class="game-icon game-id-4050" href="/games/zombinsanity/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Zombinsanity.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombinsanity Oyna" title="Zombinsanity Oyna" width="84" height="63" /><span class="meta">Zombinsanity</span></a>				</li>
+				<li data-order="28" data-rating="3,8704" data-rating-count="264329" data-release="1321401600">
+					<a class="game-icon game-id-2597" href="/games/commando-3/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/commando3v3.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Commando 3 Oyna" title="Commando 3 Oyna" width="84" height="63" /><span class="meta">Commando 3</span></a>				</li>
+				<li data-order="29" data-rating="4,4295" data-rating-count="14090" data-release="-62169984000">
+					<a class="game-icon game-id-3746" href="/games/slime-laboratory-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelab2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab 2 Oyna" title="Slime Laboratory 2 Oyna" width="84" height="63" /><span class="meta">Slime Lab 2</span></a>				</li>
+				<li data-order="30" data-rating="4,4837" data-rating-count="34336" data-release="">
+					<a class="game-icon game-id-4062" href="/games/man-or-monster/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/MoM.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ManOrMonster Oyna" title="Man or Monster Oyna" width="84" height="63" /><span class="meta">ManOrMonster</span></a>				</li>
+				<li data-order="31" data-rating="4,4931" data-rating-count="86032" data-release="">
+					<a class="game-icon game-id-3894" href="/games/bob-the-robber-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bobtherobber2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BobRobber2 Oyna" title="Bob the Robber 2 Oyna" width="84" height="63" /><span class="meta">BobRobber2</span></a>				</li>
+				<li data-order="32" data-rating="4,3989" data-rating-count="11064" data-release="">
+					<a class="game-icon game-id-4130" href="/games/pyro-jump/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/pyro_mock2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pyro Jump Oyna" title="Pyro Jump Oyna" width="84" height="63" /><span class="meta">Pyro Jump</span></a>				</li>
+				<li data-order="33" data-rating="4,4105" data-rating-count="11717" data-release="">
+					<a class="game-icon game-id-4076" href="/games/blym/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/BLYM.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Blym Oyna" title="Blym Oyna" width="84" height="63" /><span class="meta">Blym</span></a>				</li>
+				<li data-order="34" data-rating="4,4071" data-rating-count="28351" data-release="">
+					<a class="game-icon game-id-3890" href="/games/papa-louie-2/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/PapaLouie2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Papa Louie 2 Oyna" title="Papa Louie 2 Oyna" width="84" height="63" /><span class="meta">Papa Louie 2</span></a>				</li>
+				<li data-order="35" data-rating="4,4991" data-rating-count="56935" data-release="">
+					<a class="game-icon game-id-4038" href="/games/ski-safari/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/skisafari2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ski Safari Oyna" title="Ski Safari Oyna" width="84" height="63" /><span class="meta">Ski Safari</span></a>				</li>
+				<li data-order="36" data-rating="4,4948" data-rating-count="168150" data-release="">
+					<a class="game-icon game-id-3944" href="/games/raft-wars-2/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/raftwars2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Raft Wars 2 Oyna" title="Raft Wars 2 Oyna" width="84" height="63" /><span class="meta">Raft Wars 2</span></a>				</li>
+				<li data-order="37" data-rating="4,4995" data-rating-count="10272" data-release="-62169984000">
+					<a class="game-icon game-id-3896" href="/games/quantum-patrol/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/quantumpatrolv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Q Patrol Oyna" title="Quantum Patrol Oyna" width="84" height="63" /><span class="meta">Q Patrol</span></a>				</li>
+				<li data-order="38" data-rating="4,13" data-rating-count="777" data-release="-62169984000">
+					<a class="game-icon game-id-3740" href="/games/super-stocktake/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/superstocktake.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Super Stock Oyna" title="Super Stocktake Oyna" width="84" height="63" /><span class="meta">Super Stock</span></a>				</li>
+				<li data-order="39" data-rating="4,4137" data-rating-count="2695" data-release="-62169984000">
+					<a class="game-icon game-id-3738" href="/games/plunger/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/plunger.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Plunger Oyna" title="Plunger Oyna" width="84" height="63" /><span class="meta">Plunger</span></a>				</li>
+				<li data-order="40" data-rating="4,2137" data-rating-count="172238" data-release="1222214400">
+					<a class="game-icon game-id-1902" href="/games/commando-2/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Commando2new.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Commando2 Oyna" title="Commando 2 Oyna" width="84" height="63" /><span class="meta">Commando2</span></a>				</li>
+				<li data-order="41" data-rating="4,4884" data-rating-count="3487" data-release="1363564800">
+					<a class="game-icon game-id-3662" href="/games/transmorpher/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/transmorphermedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Transmorpher Oyna" title="Transmorpher Oyna" width="84" height="63" /><span class="meta">Transmorpher</span></a>				</li>
+				<li data-order="42" data-rating="4,4325" data-rating-count="39578" data-release="1357171200">
+					<a class="game-icon game-id-3636" href="/games/jacksmith/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/jacksmithv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jacksmith Oyna" title="Jacksmith Oyna" width="84" height="63" /><span class="meta">Jacksmith</span></a>				</li>
+				<li data-order="43" data-rating="4,4735" data-rating-count="7803" data-release="1353283200">
+					<a class="game-icon game-id-3503" href="/games/minecart-madness/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/minecartmadnessv2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cart Madness Oyna" title="Minecart Madness Oyna" width="84" height="63" /><span class="meta">Cart Madness</span></a>				</li>
+				<li data-order="44" data-rating="4,4462" data-rating-count="2071" data-release="1354492800">
+					<a class="game-icon game-id-3612" href="/games/spellstorm/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/spellstorm.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Spellstorm Oyna" title="Spellstorm Oyna" width="84" height="63" /><span class="meta">Spellstorm</span></a>				</li>
+				<li data-order="45" data-rating="4,4075" data-rating-count="4638" data-release="1363219200">
+					<a class="game-icon game-id-3652" href="/games/jack-lantern/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/jacklanternmedicon.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Jack Lantern Oyna" title="Jack Lantern Oyna" width="84" height="63" /><span class="meta">Jack Lantern</span></a>				</li>
+				<li data-order="46" data-rating="4,4096" data-rating-count="166" data-release="1355961600">
+					<a class="game-icon game-id-3640" href="/games/call-of-gods/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/callofgods.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Call of Gods Oyna" title="Call of Gods Oyna" width="84" height="63" /><span class="meta">Call of Gods</span></a>				</li>
+				<li data-order="47" data-rating="4,2791" data-rating-count="6280" data-release="1352073600">
+					<a class="game-icon game-id-3418" href="/games/300-miles-to-pigsland/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/300milestopigsland.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="300 Miles Oyna" title="300 Miles to Pigsland Oyna" width="84" height="63" /><span class="meta">300 Miles</span></a>				</li>
+				<li data-order="48" data-rating="4,3288" data-rating-count="1104" data-release="-62169984000">
+					<a class="game-icon game-id-3790" href="/games/flip-and-go/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/flipandgo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Flip and Go Oyna" title="Flip and Go Oyna" width="84" height="63" /><span class="meta">Flip and Go</span></a>				</li>
+				<li data-order="49" data-rating="4,3529" data-rating-count="306" data-release="1352073600">
+					<a class="game-icon game-id-3243" href="/games/verge/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/verge.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Verge Oyna" title="Verge Oyna" width="84" height="63" /><span class="meta">Verge</span></a>				</li>
+				<li data-order="50" data-rating="4,495" data-rating-count="25552" data-release="1320019200">
+					<a class="game-icon game-id-2959" href="/games/zombotron/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/zombotron.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Zombotron Oyna" title="Zombotron Oyna" width="84" height="63" /><span class="meta">Zombotron</span></a>				</li>
+				<li data-order="51" data-rating="4,3462" data-rating-count="650" data-release="1343692800">
+					<a class="game-icon game-id-3396" href="/games/owl-spin/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/owlspin.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Owl Spin Oyna" title="Owl Spin Oyna" width="84" height="63" /><span class="meta">Owl Spin</span></a>				</li>
+				<li data-order="52" data-rating="4,5" data-rating-count="2" data-release="-62169984000">
+					<a class="game-icon game-id-3672" href="/games/drakensang/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/drakensang_150x110_20150417.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Drakensang Oyna" title="Drakensang Oyna" width="84" height="63" /><span class="meta">Drakensang</span></a>				</li>
+				<li data-order="53" data-rating="4,4204" data-rating-count="904" data-release="1300924800">
+					<a class="game-icon game-id-2697" href="/games/wizard-hult/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/wizardhult.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wizard Hult Oyna" title="Wizard Hult Oyna" width="84" height="63" /><span class="meta">Wizard Hult</span></a>				</li>
+				<li data-order="54" data-rating="4,4669" data-rating-count="36997" data-release="1315785600">
+					<a class="game-icon game-id-2459" href="/games/hong-kong-ninja/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/hongkongninja2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hong Kong Oyna" title="Hong Kong Ninja Oyna" width="84" height="63" /><span class="meta">Hong Kong</span></a>				</li>
+				<li data-order="55" data-rating="4,4979" data-rating-count="3318" data-release="1326153600">
+					<a class="game-icon game-id-2889" href="/games/arcuz/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/arcuz.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Arcuz Oyna" title="Arcuz Oyna" width="84" height="63" /><span class="meta">Arcuz</span></a>				</li>
+				<li data-order="56" data-rating="4,4381" data-rating-count="897" data-release="1345420800">
+					<a class="game-icon game-id-3320" href="/games/skyward-ninja/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/skywardninja.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Skyward N Oyna" title="Skyward Ninja Oyna" width="84" height="63" /><span class="meta">Skyward N</span></a>				</li>
+				<li data-order="57" data-rating="4,4974" data-rating-count="26207" data-release="1326326400">
+					<a class="game-icon game-id-3187" href="/games/cactus-mccoy-2/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cactusmccoy2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cactus McC2 Oyna" title="Cactus McCoy 2 Oyna" width="84" height="63" /><span class="meta">Cactus McC2</span></a>				</li>
+				<li data-order="58" data-rating="4,4547" data-rating-count="1082" data-release="1329782400">
+					<a class="game-icon game-id-3268" href="/games/snow-tale/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/snowtale.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Snow Tale Oyna" title="Snow Tale Oyna" width="84" height="63" /><span class="meta">Snow Tale</span></a>				</li>
+				<li data-order="59" data-rating="4,5012" data-rating-count="8461" data-release="1307577600">
+					<a class="game-icon game-id-2457" href="/games/egyptian-tale/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/EgyptianTalenew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Egyptian Tale Oyna" title="Egyptian Tale Oyna" width="84" height="63" /><span class="meta">Egyptian Tale</span></a>				</li>
+				<li data-order="60" data-rating="4,497" data-rating-count="11715" data-release="1304380800">
+					<a class="game-icon game-id-2727" href="/games/cactus-mccoy/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/cactusmccoy.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cactus McCoy Oyna" title="Cactus McCoy Oyna" width="84" height="63" /><span class="meta">Cactus McCoy</span></a>				</li>
+				<li data-order="61" data-rating="4,4777" data-rating-count="17432" data-release="1309392000">
+					<a class="game-icon game-id-2451" href="/games/super-robot-war/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/superrobotwar.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Robot War Oyna" title="Super Robot War Oyna" width="84" height="63" /><span class="meta">Robot War</span></a>				</li>
+				<li data-order="62" data-rating="4,3542" data-rating-count="1649" data-release="1296604800">
+					<a class="game-icon game-id-2485" href="/games/canary/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Canary.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Canary Oyna" title="Canary Oyna" width="84" height="63" /><span class="meta">Canary</span></a>				</li>
+				<li data-order="63" data-rating="4,4808" data-rating-count="3488" data-release="-62169984000">
+					<a class="game-icon game-id-1752" href="/games/acid-factory/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/AcidFactorynew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Acid Factory Oyna" title="Acid Factory Oyna" width="84" height="63" /><span class="meta">Acid Factory</span></a>				</li>
+				<li data-order="64" data-rating="4,4686" data-rating-count="4652" data-release="1301356800">
+					<a class="game-icon game-id-2661" href="/games/rhino-rush/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/RhinoRushnew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Rhino Rush Oyna" title="Rhino Rush Oyna" width="84" height="63" /><span class="meta">Rhino Rush</span></a>				</li>
+				<li data-order="65" data-rating="4,1829" data-rating-count="3624" data-release="-62169984000">
+					<a class="game-icon game-id-1435" href="/games/black-knight/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/blackknight.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Black Knight Oyna" title="Black Knight Oyna" width="84" height="63" /><span class="meta">Black Knight</span></a>				</li>
+				<li data-order="66" data-rating="4,3336" data-rating-count="12660" data-release="1180396800">
+					<a class="game-icon game-id-1812" href="/games/candy-and-clyde/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/candyandclyde.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Candy n Clyde Oyna" title="Candy and Clyde Oyna" width="84" height="63" /><span class="meta">Candy n Clyde</span></a>				</li>
+				<li data-order="67" data-rating="4,451" data-rating-count="2492" data-release="-62169984000">
+					<a class="game-icon game-id-1421" href="/games/aqua-energizer/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/aquaenergizer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Aqua Energ Oyna" title="Aqua Energizer Oyna" width="84" height="63" /><span class="meta">Aqua Energ</span></a>				</li>
+				<li data-order="68" data-rating="4,4417" data-rating-count="1725" data-release="1266451200">
+					<a class="game-icon game-id-2105" href="/games/art-thief/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/artthief.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Art Thief Oyna" title="Art Thief Oyna" width="84" height="63" /><span class="meta">Art Thief</span></a>				</li>
+				<li data-order="69" data-rating="4,4379" data-rating-count="2455" data-release="1261440000">
+					<a class="game-icon game-id-2221" href="/games/avalanche/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/avalanche.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Avalanche Oyna" title="Avalanche Oyna" width="84" height="63" /><span class="meta">Avalanche</span></a>				</li>
+				<li data-order="70" data-rating="4,4911" data-rating-count="2313" data-release="1254873600">
+					<a class="game-icon game-id-2171" href="/games/cave-chaos/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/cavechaos.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cave Chaos Oyna" title="Cave Chaos Oyna" width="84" height="63" /><span class="meta">Cave Chaos</span></a>				</li>
+				<li data-order="71" data-rating="4,3937" data-rating-count="4003" data-release="1195084800">
+					<a class="game-icon game-id-1859" href="/games/caveman/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/caveman.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Caveman Oyna" title="Caveman Oyna" width="84" height="63" /><span class="meta">Caveman</span></a>				</li>
+				<li data-order="72" data-rating="4,4748" data-rating-count="1784" data-release="1207785600">
+					<a class="game-icon game-id-1897" href="/games/cheese-dreams/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/cheesedreams.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cheese Dre Oyna" title="Cheese Dreams Oyna" width="84" height="63" /><span class="meta">Cheese Dre</span></a>				</li>
+				<li data-order="73" data-rating="4,4537" data-rating-count="335" data-release="1242000000">
+					<a class="game-icon game-id-2051" href="/games/chronotron/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/chronotron.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Chronotron Oyna" title="Chronotron Oyna" width="84" height="63" /><span class="meta">Chronotron</span></a>				</li>
+				<li data-order="74" data-rating="4,3488" data-rating-count="37748" data-release="-62169984000">
+					<a class="game-icon game-id-1760" href="/games/commando/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Commandonew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Commando Oyna" title="Commando Oyna" width="84" height="63" /><span class="meta">Commando</span></a>				</li>
+				<li data-order="75" data-rating="4,4493" data-rating-count="6474" data-release="1310083200">
+					<a class="game-icon game-id-2682" href="/games/slime-laboratory/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/slimelaboratory.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Slime Lab Oyna" title="Slime Laboratory Oyna" width="84" height="63" /><span class="meta">Slime Lab</span></a>				</li>
+				<li data-order="76" data-rating="4,2724" data-rating-count="646" data-release="1255478400">
+					<a class="game-icon game-id-2141" href="/games/adventures-of-bloo/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/theadventuresofbloo.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Adventures Oyna" title="Adventures of Bloo Oyna" width="84" height="63" /><span class="meta">Adventures</span></a>				</li>
+				<li data-order="77" data-rating="4,4991" data-rating-count="2280" data-release="1283990400">
+					<a class="game-icon game-id-2231" href="/games/asgard/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/asgard.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Asgard Oyna" title="Asgard Oyna" width="84" height="63" /><span class="meta">Asgard</span></a>				</li>
+				<li data-order="78" data-rating="4,4237" data-rating-count="8371" data-release="-62169984000">
+					<a class="game-icon game-id-1452" href="/games/bush-shoot-out/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/bushshootoutgame.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Bush Shoot Oyna" title="Bush Shoot-Out Oyna" width="84" height="63" /><span class="meta">Bush Shoot</span></a>				</li>
+				<li data-order="79" data-rating="4,2957" data-rating-count="717" data-release="1314748800">
+					<a class="game-icon game-id-2985" href="/games/little-fins/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/littlefins.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Little Fins Oyna" title="Little Fins Oyna" width="84" height="63" /><span class="meta">Little Fins</span></a>				</li>
+				<li data-order="80" data-rating="4,4809" data-rating-count="1391" data-release="1290643200">
+					<a class="game-icon game-id-2567" href="/games/turkey-run/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/turkeyrun.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Turkey Run Oyna" title="Turkey Run Oyna" width="84" height="63" /><span class="meta">Turkey Run</span></a>				</li>
+				<li data-order="81" data-rating="4,3457" data-rating-count="5490" data-release="-62169984000">
+					<a class="game-icon game-id-1410" href="/games/3-foot-ninja/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/3footninja.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="3 Foot Ninja Oyna" title="3 Foot Ninja Oyna" width="84" height="63" /><span class="meta">3 Foot Ninja</span></a>				</li>
+				<li data-order="82" data-rating="4,4685" data-rating-count="6858" data-release="-62169984000">
+					<a class="game-icon game-id-1411" href="/games/3-foot-ninja-ii/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/3footninja2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="3FootNinja 2 Oyna" title="3 Foot Ninja II Oyna" width="84" height="63" /><span class="meta">3FootNinja 2</span></a>				</li>
+				<li data-order="83" data-rating="4,1722" data-rating-count="970" data-release="1347840000">
+					<a class="game-icon game-id-3479" href="/games/hot-air-jr/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/hotairjr.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hot Air Jr Oyna" title="Hot Air Jr Oyna" width="84" height="63" /><span class="meta">Hot Air Jr</span></a>				</li>
+				<li data-order="84" data-rating="4,3685" data-rating-count="1718" data-release="1336694400">
+					<a class="game-icon game-id-3070" href="/games/shadows-of-mummies/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/shadowsofmummies.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mummies Oyna" title="Shadows of Mummies Oyna" width="84" height="63" /><span class="meta">Mummies</span></a>				</li>
+				<li data-order="85" data-rating="4,3497" data-rating-count="549" data-release="1309132800">
+					<a class="game-icon game-id-2667" href="/games/tumblestump-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Tumblestump2new.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Tumblestump 2 Oyna" title="Tumblestump 2 Oyna" width="84" height="63" /><span class="meta">Tumblestump 2</span></a>				</li>
+				<li data-order="86" data-rating="4,4414" data-rating-count="6140" data-release="-62169984000">
+					<a class="game-icon game-id-3792" href="/games/barons-gate/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/baronsgate.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Barons Gate Oyna" title="Barons Gate Oyna" width="84" height="63" /><span class="meta">Barons Gate</span></a>				</li>
+				<li data-order="87" data-rating="4,4358" data-rating-count="865" data-release="1288051200">
+					<a class="game-icon game-id-2435" href="/games/ghosts-stole-my-dog/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ghostsstolemydog.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ghosts Stole Oyna" title="Ghosts Stole My Dog Oyna" width="84" height="63" /><span class="meta">Ghosts Stole</span></a>				</li>
+				<li data-order="88" data-rating="4,5034" data-rating-count="298" data-release="1333584000">
+					<a class="game-icon game-id-3086" href="/games/super-goblin-war-machine/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/supergoblinwarmachine.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Super Goblin  Oyna" title="Super Goblin War Machine Oyna" width="84" height="63" /><span class="meta">Super Goblin </span></a>				</li>
+				<li data-order="89" data-rating="4,4805" data-rating-count="2229" data-release="1332115200">
+					<a class="game-icon game-id-2893" href="/games/cursed-treasure/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/cursedtreasure.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="CursedTreasure Oyna" title="Cursed Treasure Oyna" width="84" height="63" /><span class="meta">CursedTreasure</span></a>				</li>
+				<li data-order="90" data-rating="4,4896" data-rating-count="1389" data-release="1288828800">
+					<a class="game-icon game-id-2433" href="/games/dream-tower/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/DreamTowernew.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Dream Tower Oyna" title="Dream Tower Oyna" width="84" height="63" /><span class="meta">Dream Tower</span></a>				</li>
+				<li data-order="91" data-rating="4,1231" data-rating-count="195" data-release="">
+					<a class="game-icon game-id-4207" href="/games/alkekopter/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/alkekopter.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Alkekopter Oyna" title="Alkekopter Oyna" width="84" height="63" /><span class="meta">Alkekopter</span></a>				</li>
+				<li data-order="92" data-rating="4,3967" data-rating-count="5951" data-release="-62169984000">
+					<a class="game-icon game-id-1470" href="/games/crypt-raider/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/crypt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crypt Raider Oyna" title="Crypt Raider Oyna" width="84" height="63" /><span class="meta">Crypt Raider</span></a>				</li>
+				<li data-order="93" data-rating="4,4571" data-rating-count="1691" data-release="1311552000">
+					<a class="game-icon game-id-2686" href="/games/gravinaytor/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gravinaytor.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Gravinaytor Oyna" title="Gravinaytor Oyna" width="84" height="63" /><span class="meta">Gravinaytor</span></a>				</li>
+				<li data-order="94" data-rating="4,3929" data-rating-count="784" data-release="-62169984000">
+					<a class="game-icon game-id-1670" href="/games/ufo-joe/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/ufojoe.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="UFO Joe Oyna" title="UFO Joe Oyna" width="84" height="63" /><span class="meta">UFO Joe</span></a>				</li>
+				<li data-order="95" data-rating="4,3915" data-rating-count="27229" data-release="1295481600">
+					<a class="game-icon game-id-2585" href="/games/light-temple/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/lighttemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Light Temple Oyna" title="Light Temple Oyna" width="84" height="63" /><span class="meta">Light Temple</span></a>				</li>
+				<li data-order="96" data-rating="4,411" data-rating-count="34429" data-release="1325635200">
+					<a class="game-icon game-id-3195" href="/games/ice-temple/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/icetemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Ice Temple Oyna" title="Ice Temple Oyna" width="84" height="63" /><span class="meta">Ice Temple</span></a>				</li>
+				<li data-order="97" data-rating="4,396" data-rating-count="47696" data-release="1271289600">
+					<a class="game-icon game-id-2247" href="/games/forest-temple/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/foresttemple.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="ForestTemple Oyna" title="Forest Temple Oyna" width="84" height="63" /><span class="meta">ForestTemple</span></a>				</li>
+				<li data-order="98" data-rating="4,4283" data-rating-count="55447" data-release="1382572800">
+					<a class="game-icon game-id-3868" href="/games/crystal-temple/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/FBWG4.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Crystal Temple Oyna" title="Crystal Temple Oyna" width="84" height="63" /><span class="meta">Crystal Temple</span></a>				</li>
+				<li data-order="99" data-rating="4,1098" data-rating-count="1584" data-release="1338163200">
+					<a class="game-icon game-id-3245" href="/games/major-miner/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/majorminer.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Major Miner Oyna" title="Major Miner Oyna" width="84" height="63" /><span class="meta">Major Miner</span></a>				</li>
+				<li data-order="100" data-rating="4,3171" data-rating-count="246" data-release="-62169984000">
+					<a class="game-icon game-id-1681" href="/games/wheels-of-salvation/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/wheelsofsalvation.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Wheels of Salv Oyna" title="Wheels of Salvatio Oyna" width="84" height="63" /><span class="meta">Wheels of Salv</span></a>				</li>
+				<li data-order="101" data-rating="4,313" data-rating-count="262" data-release="1242950400">
+					<a class="game-icon game-id-2094" href="/games/storybook/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/storybook.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Storybook Oyna" title="Storybook Oyna" width="84" height="63" /><span class="meta">Storybook</span></a>				</li>
+				<li data-order="102" data-rating="4,2758" data-rating-count="1095" data-release="-62169984000">
+					<a class="game-icon game-id-1565" href="/games/pharaohs-tomb/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/pharaoh.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pharaoh's Tomb Oyna" title="Pharaoh's Tomb Oyna" width="84" height="63" /><span class="meta">Pharaoh's Tomb</span></a>				</li>
+				<li data-order="103" data-rating="4,4973" data-rating-count="4126" data-release="1342396800">
+					<a class="game-icon game-id-3060" href="/games/pirate-hunter/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/piratehunter.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pirate Hunter Oyna" title="Pirate Hunter Oyna" width="84" height="63" /><span class="meta">Pirate Hunter</span></a>				</li>
+				<li data-order="104" data-rating="4,4997" data-rating-count="13696" data-release="">
+					<a class="game-icon game-id-3898" href="/games/cursed-treasure-2/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/cursedtreasure2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Cursed Treas2 Oyna" title="Cursed Treasure 2 Oyna" width="84" height="63" /><span class="meta">Cursed Treas2</span></a>				</li>
+				<li data-order="105" data-rating="4,3873" data-rating-count="426" data-release="1256169600">
+					<a class="game-icon game-id-2153" href="/games/pumpkin-push/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/pumpkinpush.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pumpkin Push Oyna" title="Pumpkin Push Oyna" width="84" height="63" /><span class="meta">Pumpkin Push</span></a>				</li>
+				<li data-order="106" data-rating="4,4645" data-rating-count="18018" data-release="">
+					<a class="game-icon game-id-4128" href="/games/earn-to-die-2012-part-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/earn-to-die-20122.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="E2D 2012: Pt2 Oyna" title="Earn to Die 2012: Part 2 Oyna" width="84" height="63" /><span class="meta">E2D 2012: Pt2</span></a>				</li>
+				<li data-order="107" data-rating="4,4187" data-rating-count="7925" data-release="">
+					<a class="game-icon game-id-4196" href="/games/bow-master-halloween/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/bowmasterhalloween.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="BM Halloween Oyna" title="Bow Master Halloween Oyna" width="84" height="63" /><span class="meta">BM Halloween</span></a>				</li>
+				<li data-order="108" data-rating="4,3142" data-rating-count="11427" data-release="1440633600">
+					<a class="game-icon game-id-4183" href="/games/on-the-run/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/OnTheRun_150x110_2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="On The Run Oyna" title="On The Run Oyna" width="84" height="63" /><span class="meta">On The Run</span></a>				</li>
+				<li data-order="109" data-rating="4,273" data-rating-count="6780" data-release="">
+					<a class="game-icon game-id-4155" href="/games/canabalt/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/canabalt.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Canabalt Oyna" title="Canabalt Oyna" width="84" height="63" /><span class="meta">Canabalt</span></a>				</li>
+				<li data-order="110" data-rating="4,4395" data-rating-count="3834" data-release="1430956800">
+					<a class="game-icon game-id-4341" href="/games/beast-quest/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Beast-Quest-150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Beast Quest Oyna" title="Beast Quest Oyna" width="84" height="63" /><span class="meta">Beast Quest</span></a>				</li>
+				<li data-order="111" data-rating="2,5" data-rating-count="0" data-release="">
+					<a class="game-icon game-id-4277" href="/games/game-of-thrones-ascent/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/game-of-thrones-ascent_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="GameOfThrones Oyna" title="Game of Thrones Ascent Oyna" width="84" height="63" /><span class="meta">GameOfThrones</span></a>				</li>
+				<li data-order="112" data-rating="4,0488" data-rating-count="615" data-release="">
+					<a class="game-icon game-id-4383" href="/games/pilot-heroes/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Pilot-Heroes_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Pilot Heroes Oyna" title="Pilot Heroes Oyna" width="84" height="63" /><span class="meta">Pilot Heroes</span></a>				</li>
+				<li data-order="113" data-rating="2,5" data-rating-count="0" data-release="">
+					<a class="game-icon game-id-4372" href="/games/knights-and-brides/tr/#t-c-f" title=""><div class="notification blip offset hot">Yeni!</div><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/KnightsAndBrides_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="KnightsBrides Oyna" title="Knights and Brides Oyna" width="84" height="63" /><span class="meta">KnightsBrides</span></a>				</li>
+				<li data-order="114" data-rating="2,5" data-rating-count="0" data-release="">
+					<a class="game-icon game-id-4443" href="/games/legends-of-honor/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/LegendsOfHonor_150x110_2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Legends Oyna" title="Legends of Honor Oyna" width="84" height="63" /><span class="meta">Legends</span></a>				</li>
+				<li data-order="115" data-rating="4,2991" data-rating-count="2277" data-release="">
+					<a class="game-icon game-id-4551" href="/games/stick-rpg-2/tr/#t-c-f" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/StickRPG2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Stick RPG 2 Oyna" title="Stick RPG 2 Oyna" width="84" height="63" /><span class="meta">Stick RPG 2</span></a>				</li>
+				<li data-order="116" data-rating="4,4052" data-rating-count="844" data-release="">
+					<a class="game-icon game-id-4494" href="/games/mad-day/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/Mad-Day_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mad Day Oyna" title="Mad Day Oyna" width="84" height="63" /><span class="meta">Mad Day</span></a>				</li>
+				<li data-order="117" data-rating="4,3948" data-rating-count="1687" data-release="">
+					<a class="game-icon game-id-4496" href="/games/mad-day-2/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/May-Day-2_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mad Day 2 Oyna" title="Mad Day 2 Oyna" width="84" height="63" /><span class="meta">Mad Day 2</span></a>				</li>
+				<li data-order="118" data-rating="4,3922" data-rating-count="51" data-release="-62169984000">
+					<a class="game-icon game-id-4675" href="/games/mariachi-mayhem/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/ICON_150x110.png" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Mariachi Oyna" title="Mariachi Mayhem Oyna" width="84" height="63" /><span class="meta">Mariachi</span></a>				</li>
+				<li data-order="119" data-rating="4,3571" data-rating-count="14" data-release="">
+					<a class="game-icon game-id-4518" href="/games/hero-in-the-ocean/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/herointheocean_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Hero Ocean Oyna" title="Hero in the Ocean Oyna" width="84" height="63" /><span class="meta">Hero Ocean</span></a>				</li>
+				<li data-order="120" data-rating="4,2259" data-rating-count="540" data-release="">
+					<a class="game-icon game-id-4687" href="/games/last-horizon/tr/#t-c-f" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/lasst_horizon_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Last Horizon Oyna" title="Last Horizon Oyna" width="84" height="63" /><span class="meta">Last Horizon</span></a>				</li>
+				<li data-order="121" data-rating="4,3855" data-rating-count="978" data-release="">
+					<a class="game-icon game-id-4703" href="/games/doodle-jump/tr/#t-c-f" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/DoodleJump_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Doodle Jump Oyna" title="Doodle Jump Oyna" width="84" height="63" /><span class="meta">Doodle Jump</span></a>				</li>
+			</ul>
+		</div>
+	</section>
+
+	<section class="secondary">
+    <section id="mpu-unit-1" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_atf" id="dfp-mpu" class="container-300x250"></div>
+        <p>
+            Reklam            <a href="#" rel="nofollow" class="feedback">Geri bildirim</a>
+        </p>
+    </section>
+<section class="widget box widget-category widget-category-7 widget-919">
+	<header>
+		<a class="button category greedy cat-7" href="/games/genre-7/latest/tr/#t-w-c" title="Daha Fazla En Son
+ Oyunları">
+			En Son
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/tr/#t-w-c" title=""><div class="notification blip offset hot">Yeni!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io Oyna" title="Squadd.io Oyna" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4727" href="/games/guns-and-glory-heroes/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/gunsandglory_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Guns and Glory Oyna" title="Guns and Glory Heroes Oyna" width="84" height="63" /><span class="meta">Guns and Glory</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4715" href="/games/basket-champs/tr/#t-w-c" title=""><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/basket_champs_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Basket Champs Oyna" title="Basket Champs Oyna" width="84" height="63" /><span class="meta">Basket Champs</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4650" href="/games/call-of-war/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/COW_MINICLIP_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Call of War Oyna" title="Call of War Oyna" width="84" height="63" /><span class="meta">Call of War</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4720" href="/games/street-ball-jam/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/StreetBall_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Street Ball Oyna" title="Street Ball Jam Oyna" width="84" height="63" /><span class="meta">Street Ball</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar Oyna" title="Elvenar Oyna" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-7/latest/tr/#t-w-c">
+			Daha Fazla En Son
+		</a>
+	</footer>
+</section>
+    <section id="mpu-unit-2" class="widget box widget-mpu">
+        <div data-pw-desk="med_rect_btf" id="dfp-mpu-2" class="container-300x250"></div>
+        <p>
+            Reklam            <a href="#" rel="nofollow" class="feedback">Geri bildirim</a>
+        </p>
+    </section>
+<section class="widget box widget-top-ten widget-919">
+    <header>
+		<a class="cat-6 button category greedy" href="/games/genre-6/-top-10/tr/">
+			Top 10 Web Games		</a>
+	</header>
+    <ol>
+		<li class="counter-1">
+			<span>1</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" data-tip="Join the Squadd in this frantic, PvP arena shooter!" data-tip-position="top" href="/games/squaddio/tr/#t-w-t" title="Squadd.io Oyna">Squadd.io</a>
+					</li>
+		<li class="counter-2">
+			<span>2</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/8-Ball-Pool_26-02-2015.jpg" data-tip="Canlı oyuncularla sekiz toplu bilardo oynayın." data-tip-position="top" href="/games/8-ball-pool-multiplayer/tr/#t-w-t" title="8 Ball Pool Oyna">8 Ball Pool</a>
+					</li>
+		<li class="counter-3">
+			<span>3</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" data-tip="Gerçek zamanlı çevrimiçi çoklu oyuncu oyunu" data-tip-position="top" href="/games/soccer-stars-mobile/tr/#t-w-t" title="Soccer Stars Mobile Oyna">Soccer Stars Mobile</a>
+					</li>
+		<li class="counter-4">
+			<span>4</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/tankionlinev3.jpg" data-tip="Tanki Online, oyuncular arasında gerçek zamanlı savaşlara olanak tanıyan." data-tip-position="top" href="/games/tanki-online/tr/#t-w-t" title="Tanki Online Oyna">Tanki Online</a>
+					</li>
+		<li class="counter-5">
+			<span>5</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/BasketballStars_150x110.png" data-tip="Show your skills, moves and fakes to juke out your opponent and shoot for the basket! " data-tip-position="top" href="/games/basketball-stars/tr/#t-w-t" title="Basketball Stars Oyna">Basketball Stars</a>
+					</li>
+		<li class="counter-6">
+			<span>6</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Happy_wheels_150x110.jpg" data-tip="Choose your inadequately prepared racer, and ignore severe consequences in your desperate search for victory." data-tip-position="top" href="/games/happy-wheels/tr/#t-w-t" title="Happy Wheels Oyna">Happy Wheels</a>
+					</li>
+		<li class="counter-7">
+			<span>7</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/Agar.io_150x110_20150709.jpg" data-tip="Bulaşıcı sansasyon! Senden küçük olan hücreleri ye ve senden büyük olan hücreler sen yemesin!" data-tip-position="top" href="/games/agar-io/tr/#t-w-t" title="Agar.io Oyna">Agar.io</a>
+					</li>
+		<li class="counter-8">
+			<span>8</span>
+			<a class="tooltip" data-tip-gameicon="//static.miniclipcdn.com/content/game-icons/medium/flipdiving_150x110.jpg" data-tip="Join International Rescue on an amazing adventure full of action, hi-tech gadgets and the mighty Thunderbirds!" data-tip-position="top" href="/games/flip-diving/tr/#t-w-t" title="Flip Diving Oyna">Flip Diving</a>
+					</li>
+		<li class="counter-9">
+			<span>9</span>
+			<a class="tooltip" data-tip-gameicon="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" data-tip="Build your fleet to dominate the space1.io arena. Shoot to grow and take out your opponents." data-tip-position="top" href="/games/space1io/tr/#t-w-t" title="Space1.io Oyna">Space1.io</a>
+					</li>
+		<li class="counter-10">
+			<span>10</span>
+			<a class="tooltip" data-tip-gameicon="//static3.miniclipcdn.com/content/game-icons/medium/colorswitch_150x110.jpg" data-tip="Tap the ball carefully trough the matching hues and collect your points along the way. " data-tip-position="top" href="/games/color-switch/tr/#t-w-t" title="Color Switch Oyna">Color Switch</a>
+					</li>
+    </ol>
+</section>
+<section class="widget box widget-category widget-category-2 widget-863">
+	<header>
+		<a class="button category greedy cat-2" href="/games/genre-2/multiplayer/tr/#t-w-c" title="Daha Fazla Çok Oyunculu
+ Oyunları">
+			Çok Oyunculu
+		</a>
+	</header>
+
+	<ul class="games-list inner">
+		<li>
+			<a class="game-icon game-id-4718" href="/games/squaddio/tr/#t-w-c" title=""><div class="notification blip offset hot">Yeni!</div><img data-src="//static3.miniclipcdn.com/content/game-icons/medium/SQD-MIN-Large_Icon_150x110_20170320.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Squadd.io Oyna" title="Squadd.io Oyna" width="84" height="63" /><span class="meta">Squadd.io</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-3276" href="/games/empire/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Empire_King_20150602_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Empire Oyna" title="Empire Oyna" width="84" height="63" /><span class="meta">Empire</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4384" href="/games/forge-of-empires/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/forgeofempires_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Forge Oyna" title="Forge of Empires Oyna" width="84" height="63" /><span class="meta">Forge</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4706" href="/games/elvenar/tr/#t-w-c" title=""><img data-src="//static.miniclipcdn.com/content/game-icons/medium/Elvenar_150x110_v2.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Elvenar Oyna" title="Elvenar Oyna" width="84" height="63" /><span class="meta">Elvenar</span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4138" href="/games/soccer-stars-mobile/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/SoccerStarsMobile_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Soccer Stars  Oyna" title="Soccer Stars Oyna" width="84" height="63" /><span class="meta">Soccer Stars </span></a>		</li>
+		<li>
+			<a class="game-icon game-id-4710" href="/games/space1io/tr/#t-w-c" title=""><img data-src="//static2.miniclipcdn.com/content/game-icons/medium/Space-io-MIN-Icons_150x110.jpg" class="lazyload" src="//static.miniclipcdn.com/layout/icons/default-game-icon.png" alt="Space1.io Oyna" title="Space1.io Oyna" width="84" height="63" /><span class="meta">Space1.io</span></a>		</li>
+	</ul>
+
+	<footer class="overhang">
+		<a class="button fun greedy action" href="/games/genre-2/multiplayer/tr/#t-w-c">
+			Çok Oyunculu
+		</a>
+	</footer>
+</section>
+	</section>
+
+	<script>
+		var category = {
+			language_id: 'en',
+			category_id: 515		};
+
+		$(function(){
+
+			$('.category-sort .button').on('click', function(e) {
+				reorder_games( 'li', '#category-games-list ul', $(this).data('order') );
+				$('.category-sort .button').removeClass('selected');
+				$(this).addClass('selected');
+				e.preventDefault();
+			});
+
+			function reorder_games(items, container, order) {
+
+				var parent = $( container );
+				var elems = parent.find( items );
+
+				elems.sort(function(a, b) {
+					return compare_element( a, b, order );
+				});
+
+				parent.append( elems );
+			}
+
+			function compare_element( a, b, value_order ) {
+
+				var value_a = parseFloat( $( a ).data( value_order ) );
+				var value_b = parseFloat( $( b ).data( value_order ) );
+
+				var direction = 1;
+				if ( value_order === 'rating' || value_order === 'rating-count' ) {
+					direction = -1;
+				}
+
+				if ( value_a > value_b ) {
+					return (1 * direction);
+				} else if ( value_a < value_b ) {
+					return (-1 * direction);
+				}
+
+				// Within the ratings order by rating count
+				if (value_order === 'rating') {
+					return compare_element( a, b, 'rating-count');
+				}
+
+				// prevent an infinite loop
+				if (value_order === 'order') {
+					return 0;
+				}
+
+				return compare_element( a, b, 'order' );
+
+			}
+
+		});
+	</script>
+<!-- footer -->
+	<footer class="container box" id="site-footer">
+		<nav class="menu box alt clean">
+			<h2 class="logo">
+				<a href="/games/tr/" rel="nofollow">Miniclip.com'da Oyun Oyna</a>
+			</h2>
+			<ul>
+				<li><a href="/" class="home">Ana Sayfa</a></li>
+				<li><a href="/games/genre-1194/" class="ios">iPhone Oyunları</a></li>
+				<li><a href="/games/genre-503/" class="android">Android Oyunları</a></li>
+				<li><a href="http://blog.miniclip.com/" class="feed">Blog</a></li>
+				<li><a href="/webmasters/" class="webmasters">İnternet siten için Ücretsiz Oyunlar</a></li>
+			</ul>
+		</nav>
+		<section>
+			<nav class="menu" role="navigation">
+				<ul>
+					<li><a href="http://corporate.miniclip.com/developers/">Bir Oyun Gönder</a></li>
+					<li><a href="http://corporate.miniclip.com/advertising/" title="Want to advertise on Miniclip?">Reklam verenler</a></li>
+					<li><a href="http://corporate.miniclip.com/contact/" rel="nofollow" title="Miniclip Ekibi ile irtibata geç">Bize Ulaş</a></li>
+					<li><a href="http://corporate.miniclip.com/" title="Miniclip.com Hakkında">Kurumsal</a></li>
+					<li><a href="http://corporate.miniclip.com/careers/" title="Miniclip.com'da Mevcut İş Olanakları">Kariyerler</a></li>
+					<li><a href="/games/page/tr/internet-safety/" title="İnternet Güvenliği">İnternet Güvenliği</a></li>
+					<li><a href="/videos/">Video Önerileri ve Hileler</a></li>
+					<li><a href="/games/tr/feed.xml" rel="nofollow">RSS Canlı Oyun Yayını</a></li>
+					<li><a href="/games/page/tr/sitemap/">Site haritası</a></li>
+				</ul>
+			</nav>
+		</section>
+	<section>
+		<nav class="menu legal">
+			<ul>
+				<li>&copy; 2001 - 2017 Miniclip SA</li>
+				<li><a href="/games/page/tr/terms-and-conditions/" rel="nofollow">Şartlar ve Koşullar</a></li>
+				<li><a href="/privacy/" rel="nofollow">Gizlilik Politikası</a></li>
+				<li><a href="/privacy/#cookies" rel="nofollow">Tanımlama Bilgileri</a></li>
+				<li><a href="https://support.miniclip.com" rel="nofollow" class="help">Yardım</a></li>
+			</ul>
+		</nav>
+
+		<nav class="menu social">
+			<ul>
+				<li class="facebook-like">
+					<div class="fb-like" data-href="https://www.facebook.com/miniclip" data-send="false" data-layout="button_count" data-width="100" data-show-faces="false"></div>
+				</li>
+				<li class="google-plusone">
+					<g:plusone size="medium" expandTo="left" callback="plusOneCallback"></g:plusone>
+				</li>
+				<li class="youtube-follow">
+					<div class="g-ytsubscribe" data-channel="miniclip" data-layout="default"></div>
+				</li>
+			</ul>
+		</nav>
+	</section>
+	</footer>
+</div><!--!/#container -->
+</div>
+<div id="fb-root"></div>
+<!-- Login Dropdown -->
+<div class="drawer" id="drawer-login-signup">
+	<div class="container">
+		<form id="login-form" name="login-form" action="#" method="post">
+			<header>
+				<h2>Miniclip.com'da oturum aç</h2>
+			</header>
+
+			<label>
+				<span>E-posta Adresi				<input type="text" id="login-username" class="greedy" name="login-username" />
+			</label>
+
+			<label>
+				<span>Parola</span>
+				<input type="password" id="login-password" class="greedy" name="login-password" />
+			</label>
+
+			<label>
+				<input id="login-form-submit" class="greedy positive action" type="submit" name="submit" value="Giriş" />
+			</label>
+			<label class="col">
+				<span class="inline">Beni Anımsa</span>
+				<input type="checkbox" name="login-remember" id="login-remember" class="inline" value="checked" />
+			</label>
+
+			<label class="col">
+				<a href="/user/password-reminder/tr/">Parola Anımsatıcısı</a>
+			</label>
+			<div id="fb-login-button"></div>
+		</form>
+
+		<div class="signup-form">
+			<header>
+				<h2><em>Ücretsiz</em> Kaydol</h2>
+			</header>
+			<div class="flash-login">
+				<div id="flash-login-embed"></div>
+			</div>
+			<script type="text/javascript">
+				var flashvars = {
+					'sessid': '5tr8hkaacu3qn7k5lf4mrok0u2',
+					'loggedin': '0',
+					'cfg': 'stop',
+					'screen': 'signup'
+				};
+
+				var params = {
+					'menu': 'false',
+					'quality': 'best'
+				};
+
+				var attributes = {
+					'id': 'miniclipLoginBox460',
+					'name': 'miniclipLoginBox460'
+				};
+				var playerVersion = swfobject.getFlashPlayerVersion();
+
+				if (playerVersion.major < 0) {
+					$('#no-flash-notification').show();
+				} else {
+					swfobject.embedSWF('/players/swf/components/loginbox.swf', 'flash-login-embed', '324', '200', '9', 'false', flashvars, params, attributes);
+				}
+			</script>
+			<div id="flash-login-embed"></div>
+			<div id="no-flash-notification" class="notification error" style="display: none;">
+				You need to install <strong>Adobe Flash Player</strong> to sign up <strong></strong>. <a href="https://get.adobe.com/flashplayer/" target="_blank">Download the Flash Player now</a>.			</div>
+		</div>
+	</div>
+	<a class="button-close" href="#" rel="nofollow"><span class="screen-reader">çekmeceyi kapa</span></a>
+</div>
+		<!-- Push Ads -->
+		<script type="text/javascript">
+			$(document).ready(function() {
+				do_page_tagging();
+			});
+
+							var push_ads = {"hp-single-1":[{"push_ad_id":"4035","url":"\/games\/man-or-monster\/","image_file":"MoM_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4235","url":"\/games\/flip-diving\/","image_file":"FlipDiving_New_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4147","url":"\/games\/ourworld\/","image_file":"bento_box_216X287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4258","url":"\/games\/snowfight-io\/","image_file":"snowfight_216x287_20170313.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4227","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_216-287_20150709.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4177","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_216x287.jpg","token":"hp-single-1","push_ad_type_id":"181","is_tracked":"0","keep_visible":"0"}],"hp-double":[{"push_ad_id":"4113","url":"\/games\/basketball-stars\/","image_file":"Push-Ads_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4276","url":"\/games\/squaddio\/","image_file":"SQD-MIN-Banner_444x287_20170324.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4229","url":"http:\/\/www.miniclip.com\/games\/agar-io\/","image_file":"Agar.io_MC_444x287.png","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4201","url":"\/games\/snowfight-io\/","image_file":"snowfight_444x287_20170313.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4243","url":"\/games\/call-of-war\/","image_file":"CallOfWar_20130313_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3765","url":"\/games\/forge-of-empires\/","image_file":"jan_forgeofempires_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4138","url":"\/games\/man-or-monster\/","image_file":"MoM_444x287.jpg","token":"hp-double","push_ad_type_id":"183","is_tracked":"0","keep_visible":"0"}],"fb-banner":[{"push_ad_id":"4165","url":"https:\/\/apps.facebook.com\/agar-io\/","image_file":"Agar.io_FB_pushad_750-90.png","token":"fb-banner","push_ad_type_id":"141","is_tracked":"0","keep_visible":"1"}],"push-small":[{"push_ad_id":"3475","url":"\/games\/genre-1301\/2-player\/","image_file":"2player_218x78_20140908.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3941","url":"\/games\/age-of-speed-underworld\/","image_file":"ageofspeed_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3911","url":"games\/clicker-heroes\/","image_file":"clickerheroes_218x78.jpg","token":"push-small","push_ad_type_id":"1","is_tracked":"0","keep_visible":"0"}],"cat-side-1":[{"push_ad_id":"4180","url":"\/games\/game-of-thrones-ascent\/","image_file":"game-of-thones-ascent_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3770","url":"\/games\/world-soccer-forever\/","image_file":"WorldSoccerForever_321x287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4175","url":"\/games\/agar-io","image_file":"Agar.io_pushad_321-287.jpg","token":"cat-side-1","push_ad_type_id":"187","is_tracked":"0","keep_visible":"0"}],"filler-768x90":[{"push_ad_id":"1940","url":"\/games\/motocross-nitro\/","image_file":"Motocross-Nitro-banner-766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1932","url":"\/games\/8-ball-pool-multiplayer\/","image_file":"Pool-Promo-Mobile-FREE--766x88-.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1994","url":"\/games\/tanki-online\/","image_file":"766x88_play.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"1950","url":"\/games\/mini-pets\/","image_file":"766x88.jpg","token":"filler-768x90","push_ad_type_id":"62","is_tracked":"0","keep_visible":"0"}],"cat-side-2":[{"push_ad_id":"3772","url":"\/games\/tanki\/","image_file":"tanki_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3775","url":"\/games\/gladiator\/","image_file":"gladiatortruestory_321x287.jpg","token":"cat-side-2","push_ad_type_id":"188","is_tracked":"0","keep_visible":"0"}],"hp-single-2":[{"push_ad_id":"4095","url":"\/games\/soccer-physics\/","image_file":"soccer_physics_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4051","url":"\/games\/color-switch\/","image_file":"colorswitch_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4170","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3907","url":"\/games\/super-soccer-noggins\/","image_file":"SSN_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4099","url":"\/games\/forge-of-empires","image_file":"Jan_forgeofempires_216x287.jpg","token":"hp-single-2","push_ad_type_id":"182","is_tracked":"0","keep_visible":"0"}],"homepagelarge2":[{"push_ad_id":"3901","url":"\/games\/spurt\/","image_file":"spurt_218x262_20150223.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3917","url":"\/games\/clicker-heroes\/","image_file":"clickerheroes_218x262.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"3622","url":"\/games\/genre-1299\/platinum\/","image_file":"Platinum_218x262_2.jpg","token":"homepagelarge2","push_ad_type_id":"90","is_tracked":"0","keep_visible":"0"}],"hp-sidebar":[{"push_ad_id":"4183","url":"\/games\/on-the-run\/","image_file":"OnTheRun_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"},{"push_ad_id":"4172","url":"\/games\/earn-to-die-2-exodus\/","image_file":"EarnToDie2Exodus_321x287.jpg","token":"hp-sidebar","push_ad_type_id":"184","is_tracked":"0","keep_visible":"0"}],"HPLarge":[{"push_ad_id":"3634","url":"\/games\/tanki-online\/","image_file":"tanki_218x262_20140516.jpg","token":"HPLarge","push_ad_type_id":"36","is_tracked":"0","keep_visible":"0"}],"filler-300x250":[{"push_ad_id":"3692","url":"\/games\/supercar-showdown\/","image_file":"supercar_298x248_20141204.jpg","token":"filler-300x250","push_ad_type_id":"64","is_tracked":"0","keep_visible":"0"}]};
+			
+			//show signup form
+					</script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/core.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/modal.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/gamesearch.js?760" async="true" defer="true" ></script>
+<script type="text/javascript" src="//static.miniclipcdn.com/js/browser-features.js?760" ></script>    <div id='dfp-takeover' style="display: none;"></div>
+<script type="text/javascript"></script>
+<script>
+	$(function(){
+		$('.ab-test').on('click', function (){
+			var test_id = $(this).data('test');
+			var icon = $(this).data('icon');
+			statTrackerUA(test_id,'AB','Click','/binary/ab/icons/game_icons/' + test_id + '/' + icon);
+		});
+	});
+</script><script type="text/javascript">
+// called on page footer to cache estimated ads for page
+jQuery(function(){
+	
+	var data = {
+		ads : {
+			ad_728x90 : $('.container-728x90').length,
+			ad_300x250 : $('.container-300x250').length,
+			takeover : $('.takeover').length,
+			showcase : $('#showcase').length,
+		},
+		page : 'miniclip.com/games/genre-515/macera/tr/'
+	}
+	
+	// post data to server to calc estimation and cache
+	// DISABLED AD TRACKER
+	// $.ajax({
+	// 	type: 'POST',
+	// 	async: true,
+	// 	dataType: 'json',
+	// 	url: '/games/ajax/adTrackingPageSet',
+	// 	data: data
+	// });
+});
+</script>
+<!-- 
+	ab = 2
+	h = prod-website-site-i-08212ccadce252e38
+	q's = 2
+	c's = 1
+	w = 15
+	c = US
+ -->
+		<div id="adsense"></div>
+		<div id="screen-overlay"></div>
+
+				
+			<div id="adsense" style="visibility: hidden;"></div>
+
+					<script type="text/javascript">
+				//adblock tracker
+				$(function(){
+					setTimeout(function() {
+						var adBlockEnabled = $('#adsense').width()==0?true:false;
+						stats_manager.trackerAdblockUser(adBlockEnabled);
+
+					}, 1000);
+				});
+
+				$(document).ready(function() {
+										if((typeof takeover !== 'undefined') && takeover != {}) {
+						do_takeover(takeover);
+					}
+										setTimeout(function() {
+						var result = BrowserFeatures.collect();
+
+						stats_manager.trackerBrowserFeatures({
+							"WebGL": (result.webgl.supported ? "Yes" : "No"),
+							"WebGL2": (result.webgl2.supported ? "Yes" : "No"),
+							"HardwareConcurrency": result.page.navigator.hardwareConcurrency,
+							"WebWorkers": (result.webworker ? "Yes" : "No"),
+							"WebSockets": (result.websocket ? "Yes" : "No"),
+							"WebAudio": (result.webAudioData ? "Yes" : "No"),
+							"RequestAnimationFrame": (result.requestAnimationFrame ? "Yes" : "No")
+						});
+					}, 1000);
+
+				});
+
+			</script>
+	<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"f246896502","applicationID":"34081554","transactionName":"MVFRZktRWhJVAkVYVwgbcEdKRFsMGwZQXF0VG1BTTVVTDkYY","queueTime":0,"applicationTime":95,"atts":"HRZSEANLSRw=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
